@@ -55,4 +55,41 @@ NSString * TKOStringReplaceAll(NSString *stringToSearch, NSString * searchFor, N
 
 @implementation NSString (TKOKit)
 
+- (NSString *)stringByTrimmingWhitespace
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+
+- (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+
+- (NSString *)stringByStrippingPrefix:(NSString *)prefix
+                        caseSensitive:(BOOL)caseSensitive
+{
+	if (TKOStringIsEmpty(prefix)) {
+		return self;
+	}
+	
+    if (!caseSensitive) {
+        if (![[self lowercaseString] hasPrefix:[prefix lowercaseString]])
+            return self;
+    }
+    else if (![self hasPrefix:prefix]) {
+        return self;
+	}
+    
+    if ([self isEqualToString:prefix]) {
+        return @"";
+	}
+    if (!caseSensitive && [self caseInsensitiveCompare:prefix] == NSOrderedSame) {
+        return @"";
+	}
+    
+    return [self substringFromIndex:[prefix length]];
+}
+
 @end

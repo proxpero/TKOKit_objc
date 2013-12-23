@@ -11,11 +11,15 @@
 NSArray * TKOComponentsBySplittingOnWhitespaceWithString(NSString *string);
 
 BOOL TKOStringIsEmpty(NSString *s); /*Yes if null, NSNull, or length < 1*/
-
 BOOL TKOEqualStrings(NSString *s1, NSString *s2); /*Equal if both are nil*/
 
-NSString *QSStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSString *replaceWith); /*Literal search*/
+NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSString *replaceWith); /*Literal search*/
 
 @interface NSString (TKOKit)
+
+- (NSString *)stringByTrimmingWhitespace;
+- (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters;
+- (NSString *)stringByStrippingPrefix:(NSString *)prefix
+                        caseSensitive:(BOOL)caseSensitive;
 
 @end
