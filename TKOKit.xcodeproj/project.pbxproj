@@ -18,6 +18,7 @@
 		45EA101F1868F1BB005677B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EA0FFE1868F1BA005677B0 /* Cocoa.framework */; };
 		45EA10271868F1BB005677B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45EA10251868F1BB005677B0 /* InfoPlist.strings */; };
 		45EA10291868F1BB005677B0 /* TKOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10281868F1BB005677B0 /* TKOKitTests.m */; };
+		45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10331868F227005677B0 /* NSString+TKOKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		45EA10241868F1BB005677B0 /* TKOKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOKitTests-Info.plist"; sourceTree = "<group>"; };
 		45EA10261868F1BB005677B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45EA10281868F1BB005677B0 /* TKOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOKitTests.m; sourceTree = "<group>"; };
+		45EA10321868F227005677B0 /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TKOKit.h"; path = "Classes/NSString+TKOKit.h"; sourceTree = "<group>"; };
+		45EA10331868F227005677B0 /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TKOKit.m"; path = "Classes/NSString+TKOKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				45EA10041868F1BA005677B0 /* TKOKit */,
+				45EA10351868F22E005677B0 /* Classes */,
 				45EA10221868F1BB005677B0 /* TKOKitTests */,
 				45EA0FFD1868F1BA005677B0 /* Frameworks */,
 				45EA0FFC1868F1BA005677B0 /* Products */,
@@ -152,6 +156,15 @@
 				45EA10251868F1BB005677B0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45EA10351868F22E005677B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				45EA10321868F227005677B0 /* NSString+TKOKit.h */,
+				45EA10331868F227005677B0 /* NSString+TKOKit.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45EA100B1868F1BA005677B0 /* main.m in Sources */,
+				45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */,
 				45EA10121868F1BA005677B0 /* TKOAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
