@@ -17,9 +17,24 @@ NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSS
 
 @interface NSString (TKOKit)
 
+- (NSString *)stringWithCollapsedWhitespace;
 - (NSString *)stringByTrimmingWhitespace;
 - (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters;
 - (NSString *)stringByStrippingPrefix:(NSString *)prefix
                         caseSensitive:(BOOL)caseSensitive;
+
+/*0.0f to 1.0f for each.*/
+
+typedef struct {
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    CGFloat alpha;
+} TKORGBAComponents;
+
+/*red, green, blue components default to 1.0 if not specified.
+ alpha defaults to 1.0 if not specified.*/
+
+- (TKORGBAComponents)rgbaComponents;
 
 @end

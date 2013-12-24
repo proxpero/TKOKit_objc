@@ -19,6 +19,10 @@
 		45EA10271868F1BB005677B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45EA10251868F1BB005677B0 /* InfoPlist.strings */; };
 		45EA10291868F1BB005677B0 /* TKOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10281868F1BB005677B0 /* TKOKitTests.m */; };
 		45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10331868F227005677B0 /* NSString+TKOKit.m */; };
+		45EA10371868FDB6005677B0 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10361868FDB6005677B0 /* NSStringTests.m */; };
+		45EA103A186926E9005677B0 /* NSView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA1039186926E9005677B0 /* NSView+TKOKit.m */; };
+		45EA103D18692D6E005677B0 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA103C18692D6E005677B0 /* NSColor+TKOKit.m */; };
+		45EA103F18692F17005677B0 /* NSColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA103E18692F17005677B0 /* NSColorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 		45EA10281868F1BB005677B0 /* TKOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOKitTests.m; sourceTree = "<group>"; };
 		45EA10321868F227005677B0 /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TKOKit.h"; path = "Classes/NSString+TKOKit.h"; sourceTree = "<group>"; };
 		45EA10331868F227005677B0 /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TKOKit.m"; path = "Classes/NSString+TKOKit.m"; sourceTree = "<group>"; };
+		45EA10361868FDB6005677B0 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
+		45EA1038186926E9005677B0 /* NSView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+TKOKit.h"; path = "Classes/NSView+TKOKit.h"; sourceTree = "<group>"; };
+		45EA1039186926E9005677B0 /* NSView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+TKOKit.m"; path = "Classes/NSView+TKOKit.m"; sourceTree = "<group>"; };
+		45EA103B18692D6E005677B0 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+TKOKit.h"; sourceTree = "<group>"; };
+		45EA103C18692D6E005677B0 /* NSColor+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+TKOKit.m"; sourceTree = "<group>"; };
+		45EA103E18692F17005677B0 /* NSColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				45EA10281868F1BB005677B0 /* TKOKitTests.m */,
+				45EA10361868FDB6005677B0 /* NSStringTests.m */,
+				45EA103E18692F17005677B0 /* NSColorTests.m */,
 				45EA10231868F1BB005677B0 /* Supporting Files */,
 			);
 			path = TKOKitTests;
@@ -163,6 +175,10 @@
 			children = (
 				45EA10321868F227005677B0 /* NSString+TKOKit.h */,
 				45EA10331868F227005677B0 /* NSString+TKOKit.m */,
+				45EA1038186926E9005677B0 /* NSView+TKOKit.h */,
+				45EA1039186926E9005677B0 /* NSView+TKOKit.m */,
+				45EA103B18692D6E005677B0 /* NSColor+TKOKit.h */,
+				45EA103C18692D6E005677B0 /* NSColor+TKOKit.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -268,7 +284,9 @@
 			files = (
 				45EA100B1868F1BA005677B0 /* main.m in Sources */,
 				45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */,
+				45EA103D18692D6E005677B0 /* NSColor+TKOKit.m in Sources */,
 				45EA10121868F1BA005677B0 /* TKOAppDelegate.m in Sources */,
+				45EA103A186926E9005677B0 /* NSView+TKOKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45EA10291868F1BB005677B0 /* TKOKitTests.m in Sources */,
+				45EA10371868FDB6005677B0 /* NSStringTests.m in Sources */,
+				45EA103F18692F17005677B0 /* NSColorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

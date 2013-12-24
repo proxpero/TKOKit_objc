@@ -33,7 +33,7 @@ BOOL TKOEqualStrings(NSString *s1, NSString *s2) {
 }
 
 
-NSString * TKOStringReplaceAll(NSString *stringToSearch, NSString * searchFor, NSString * replaceWith) {
+NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, NSString * replaceWith) {
     
 	if (TKOStringIsEmpty(stringToSearch)) {
 		return stringToSearch;
@@ -54,6 +54,39 @@ NSString * TKOStringReplaceAll(NSString *stringToSearch, NSString * searchFor, N
 
 
 @implementation NSString (TKOKit)
+
+
+- (NSString *)stringWithCollapsedWhitespace
+{
+	NSMutableString *dest = [self mutableCopy];
+    
+	CFStringTrimWhitespace((__bridge CFMutableStringRef)dest);
+    
+	[dest replaceOccurrencesOfString:@"\t"
+                          withString:@" "
+                             options:NSLiteralSearch
+                               range:NSMakeRange(0, [dest length])];
+    
+	[dest replaceOccurrencesOfString:@"\r"
+                          withString:@" "
+                             options:NSLiteralSearch
+                               range:NSMakeRange(0, [dest length])];
+    
+	[dest replaceOccurrencesOfString:@"\n"
+                          withString:@" "
+                             options:NSLiteralSearch
+                               range:NSMakeRange(0, [dest length])];
+    
+	while ([dest rangeOfString:@"  " options:0].location != NSNotFound) {
+		[dest replaceOccurrencesOfString:@"  "
+                              withString:@" "
+                                 options:NSLiteralSearch
+                                   range:NSMakeRange(0, [dest length])];
+	}
+    
+	return dest;
+}
+
 
 - (NSString *)stringByTrimmingWhitespace
 {
@@ -77,8 +110,7 @@ NSString * TKOStringReplaceAll(NSString *stringToSearch, NSString * searchFor, N
     if (!caseSensitive) {
         if (![[self lowercaseString] hasPrefix:[prefix lowercaseString]])
             return self;
-    }
-    else if (![self hasPrefix:prefix]) {
+    } else if (![self hasPrefix:prefix]) {
         return self;
 	}
     
@@ -91,5 +123,47 @@ NSString * TKOStringReplaceAll(NSString *stringToSearch, NSString * searchFor, N
     
     return [self substringFromIndex:[prefix length]];
 }
+
+
+- (TKORGBAComponents)rgbaComponents
+{
+	TKORGBAComponents components = {0.0f, 0.0f, 0.0f, 1.0f};
+    
+	NSMutableString * s = [self mutableCopy];
+	[s replaceOccurrencesOfString:@"#"
+                       withString:@""
+                          options:NSLiteralSearch
+                            range:NSMakeRange(0, [s length])];
+	CFStringTrimWhitespace((__bridge CFMutableStringRef)s);
+    
+	unsigned int red = 0, green = 0, blue = 0, alpha = 0;
+    
+	if ([s length] >= 2) {
+		if ([[NSScanner scannerWithString:[s substringWithRange:NSMakeRange(0, 2)]] scanHexInt:&red]) {
+			components.red = (CGFloat)red / 255.0f;
+		}
+	}
+    
+	if ([s length] >= 4) {
+		if ([[NSScanner scannerWithString:[s substringWithRange:NSMakeRange(2, 2)]] scanHexInt:&green]) {
+			components.green = (CGFloat)green / 255.0f;
+		}
+	}
+    
+	if ([s length] >= 6) {
+		if ([[NSScanner scannerWithString:[s substringWithRange:NSMakeRange(4, 2)]] scanHexInt:&blue]) {
+			components.blue = (CGFloat)blue / 255.0f;
+		}
+	}
+    
+	if ([s length] >= 8) {
+		if ([[NSScanner scannerWithString:[s substringWithRange:NSMakeRange(6, 2)]] scanHexInt:&alpha]) {
+			components.alpha = (CGFloat)alpha / 255.0f;
+		}
+	}
+    
+	return components;
+}
+
 
 @end
