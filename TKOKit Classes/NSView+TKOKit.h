@@ -10,7 +10,7 @@
 
 @interface NSView (TKOKit)
 
-+ (id)viewForClass:(Class)clss;
++ (id)viewWithClass:(Class)clss;
 
 - (void)addFullSizeConstraintsForSubview:(NSView *)view;
 

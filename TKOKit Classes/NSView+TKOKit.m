@@ -11,7 +11,7 @@
 @implementation NSView (TKOKit)
 
 
-+ (id)viewForClass:(Class)clss
++ (id)viewWithClass:(Class)clss
 {
     NSView * view = [[clss alloc] initWithFrame:NSZeroRect];
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
