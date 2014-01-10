@@ -18,6 +18,11 @@
     return view;
 }
 
+- (void)addSubviewWithFullSizeConstraints:(NSView *)view
+{
+    [self addSubview:view];
+    [self addFullSizeConstraintsForSubview:view];
+}
 
 - (void)addFullSizeConstraintsForSubview:(NSView *)view
 {

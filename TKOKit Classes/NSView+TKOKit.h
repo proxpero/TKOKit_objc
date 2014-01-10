@@ -12,6 +12,7 @@
 
 + (id)viewWithClass:(Class)clss;
 
+- (void)addSubviewWithFullSizeConstraints:(NSView *)view;
 - (void)addFullSizeConstraintsForSubview:(NSView *)view;
 
 @end
