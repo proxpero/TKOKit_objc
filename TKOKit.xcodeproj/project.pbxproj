@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459A7CC41899738F007A4AA7 /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB01899738F007A4AA7 /* NSAttributedString+TKOKit.m */; };
+		459A7CC51899738F007A4AA7 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB21899738F007A4AA7 /* NSColor+TKOKit.m */; };
+		459A7CC61899738F007A4AA7 /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB41899738F007A4AA7 /* NSImage+TKOKit.m */; };
+		459A7CC71899738F007A4AA7 /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB61899738F007A4AA7 /* NSString+TKOKit.m */; };
+		459A7CC81899738F007A4AA7 /* NSView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB81899738F007A4AA7 /* NSView+TKOKit.m */; };
+		459A7CC91899738F007A4AA7 /* TKODisclosureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CBA1899738F007A4AA7 /* TKODisclosureViewController.m */; };
+		459A7CCA1899738F007A4AA7 /* TKODisclosureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459A7CBB1899738F007A4AA7 /* TKODisclosureViewController.xib */; };
+		459A7CCB1899738F007A4AA7 /* TKOFlippedClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CBD1899738F007A4AA7 /* TKOFlippedClipView.m */; };
+		459A7CCC1899738F007A4AA7 /* TKOKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CBF1899738F007A4AA7 /* TKOKeyValueObserver.m */; };
+		459A7CCD1899738F007A4AA7 /* TKOPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CC11899738F007A4AA7 /* TKOPlatform.m */; };
+		459A7CCE1899738F007A4AA7 /* TKOStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CC31899738F007A4AA7 /* TKOStore.m */; };
+		459A7CD1189973C5007A4AA7 /* TKOControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CD0189973C5007A4AA7 /* TKOControl.m */; };
+		459A7CD618997442007A4AA7 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CD318997442007A4AA7 /* TKOTheme.m */; };
+		459A7CD718997442007A4AA7 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CD518997442007A4AA7 /* TKOThemeLoader.m */; };
+		459A7CDA189977A6007A4AA7 /* TKOControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CD9189977A6007A4AA7 /* TKOControlCell.m */; };
 		45EA0FFF1868F1BA005677B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EA0FFE1868F1BA005677B0 /* Cocoa.framework */; };
 		45EA10091868F1BA005677B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45EA10071868F1BA005677B0 /* InfoPlist.strings */; };
 		45EA100B1868F1BA005677B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA100A1868F1BA005677B0 /* main.m */; };
@@ -18,16 +33,9 @@
 		45EA101F1868F1BB005677B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EA0FFE1868F1BA005677B0 /* Cocoa.framework */; };
 		45EA10271868F1BB005677B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45EA10251868F1BB005677B0 /* InfoPlist.strings */; };
 		45EA10291868F1BB005677B0 /* TKOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10281868F1BB005677B0 /* TKOKitTests.m */; };
-		45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10331868F227005677B0 /* NSString+TKOKit.m */; };
 		45EA10371868FDB6005677B0 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10361868FDB6005677B0 /* NSStringTests.m */; };
-		45EA103A186926E9005677B0 /* NSView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA1039186926E9005677B0 /* NSView+TKOKit.m */; };
 		45EA103F18692F17005677B0 /* NSColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA103E18692F17005677B0 /* NSColorTests.m */; };
-		45EA1042186951BF005677B0 /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA1041186951BF005677B0 /* NSImage+TKOKit.m */; };
-		45EA10451869D546005677B0 /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10441869D546005677B0 /* NSAttributedString+TKOKit.m */; };
-		45EA10481869D6AA005677B0 /* TKOPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10471869D6AA005677B0 /* TKOPlatform.m */; };
 		45EA104A1869D978005677B0 /* NSAttributedStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA10491869D978005677B0 /* NSAttributedStringTests.m */; };
-		45F3398A186A41B800A37EE6 /* TKOStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F33987186A41B800A37EE6 /* TKOStore.m */; };
-		45F3398B186A41B800A37EE6 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F33989186A41B800A37EE6 /* NSColor+TKOKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +49,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		459A7CAF1899738F007A4AA7 /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+TKOKit.h"; path = "TKOKit Classes/NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
+		459A7CB01899738F007A4AA7 /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+TKOKit.m"; path = "TKOKit Classes/NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
+		459A7CB11899738F007A4AA7 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+TKOKit.h"; path = "TKOKit Classes/NSColor+TKOKit.h"; sourceTree = "<group>"; };
+		459A7CB21899738F007A4AA7 /* NSColor+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+TKOKit.m"; path = "TKOKit Classes/NSColor+TKOKit.m"; sourceTree = "<group>"; };
+		459A7CB31899738F007A4AA7 /* NSImage+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+TKOKit.h"; path = "TKOKit Classes/NSImage+TKOKit.h"; sourceTree = "<group>"; };
+		459A7CB41899738F007A4AA7 /* NSImage+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+TKOKit.m"; path = "TKOKit Classes/NSImage+TKOKit.m"; sourceTree = "<group>"; };
+		459A7CB51899738F007A4AA7 /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TKOKit.h"; path = "TKOKit Classes/NSString+TKOKit.h"; sourceTree = "<group>"; };
+		459A7CB61899738F007A4AA7 /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TKOKit.m"; path = "TKOKit Classes/NSString+TKOKit.m"; sourceTree = "<group>"; };
+		459A7CB71899738F007A4AA7 /* NSView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+TKOKit.h"; path = "TKOKit Classes/NSView+TKOKit.h"; sourceTree = "<group>"; };
+		459A7CB81899738F007A4AA7 /* NSView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+TKOKit.m"; path = "TKOKit Classes/NSView+TKOKit.m"; sourceTree = "<group>"; };
+		459A7CB91899738F007A4AA7 /* TKODisclosureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKODisclosureViewController.h; path = "TKOKit Classes/TKODisclosureViewController.h"; sourceTree = "<group>"; };
+		459A7CBA1899738F007A4AA7 /* TKODisclosureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKODisclosureViewController.m; path = "TKOKit Classes/TKODisclosureViewController.m"; sourceTree = "<group>"; };
+		459A7CBB1899738F007A4AA7 /* TKODisclosureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TKODisclosureViewController.xib; path = "TKOKit Classes/TKODisclosureViewController.xib"; sourceTree = "<group>"; };
+		459A7CBC1899738F007A4AA7 /* TKOFlippedClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOFlippedClipView.h; path = "TKOKit Classes/TKOFlippedClipView.h"; sourceTree = "<group>"; };
+		459A7CBD1899738F007A4AA7 /* TKOFlippedClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOFlippedClipView.m; path = "TKOKit Classes/TKOFlippedClipView.m"; sourceTree = "<group>"; };
+		459A7CBE1899738F007A4AA7 /* TKOKeyValueObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOKeyValueObserver.h; path = "TKOKit Classes/TKOKeyValueObserver.h"; sourceTree = "<group>"; };
+		459A7CBF1899738F007A4AA7 /* TKOKeyValueObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOKeyValueObserver.m; path = "TKOKit Classes/TKOKeyValueObserver.m"; sourceTree = "<group>"; };
+		459A7CC01899738F007A4AA7 /* TKOPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOPlatform.h; path = "TKOKit Classes/TKOPlatform.h"; sourceTree = "<group>"; };
+		459A7CC11899738F007A4AA7 /* TKOPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOPlatform.m; path = "TKOKit Classes/TKOPlatform.m"; sourceTree = "<group>"; };
+		459A7CC21899738F007A4AA7 /* TKOStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOStore.h; path = "TKOKit Classes/TKOStore.h"; sourceTree = "<group>"; };
+		459A7CC31899738F007A4AA7 /* TKOStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOStore.m; path = "TKOKit Classes/TKOStore.m"; sourceTree = "<group>"; };
+		459A7CCF189973C5007A4AA7 /* TKOControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOControl.h; path = "TKOKit Classes/TKOControl.h"; sourceTree = "<group>"; };
+		459A7CD0189973C5007A4AA7 /* TKOControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOControl.m; path = "TKOKit Classes/TKOControl.m"; sourceTree = "<group>"; };
+		459A7CD218997442007A4AA7 /* TKOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTheme.h; sourceTree = "<group>"; };
+		459A7CD318997442007A4AA7 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
+		459A7CD418997442007A4AA7 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
+		459A7CD518997442007A4AA7 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		459A7CD8189977A6007A4AA7 /* TKOControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOControlCell.h; sourceTree = "<group>"; };
+		459A7CD9189977A6007A4AA7 /* TKOControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOControlCell.m; sourceTree = "<group>"; };
 		45EA0FFB1868F1BA005677B0 /* TKOKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45EA0FFE1868F1BA005677B0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45EA10011868F1BA005677B0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -60,23 +97,9 @@
 		45EA10241868F1BB005677B0 /* TKOKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOKitTests-Info.plist"; sourceTree = "<group>"; };
 		45EA10261868F1BB005677B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45EA10281868F1BB005677B0 /* TKOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOKitTests.m; sourceTree = "<group>"; };
-		45EA10321868F227005677B0 /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TKOKit.h"; path = "Classes/NSString+TKOKit.h"; sourceTree = "<group>"; };
-		45EA10331868F227005677B0 /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TKOKit.m"; path = "Classes/NSString+TKOKit.m"; sourceTree = "<group>"; };
 		45EA10361868FDB6005677B0 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
-		45EA1038186926E9005677B0 /* NSView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+TKOKit.h"; path = "Classes/NSView+TKOKit.h"; sourceTree = "<group>"; };
-		45EA1039186926E9005677B0 /* NSView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+TKOKit.m"; path = "Classes/NSView+TKOKit.m"; sourceTree = "<group>"; };
 		45EA103E18692F17005677B0 /* NSColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColorTests.m; sourceTree = "<group>"; };
-		45EA1040186951BF005677B0 /* NSImage+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+TKOKit.h"; path = "Classes/NSImage+TKOKit.h"; sourceTree = "<group>"; };
-		45EA1041186951BF005677B0 /* NSImage+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+TKOKit.m"; path = "Classes/NSImage+TKOKit.m"; sourceTree = "<group>"; };
-		45EA10431869D546005677B0 /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+TKOKit.h"; path = "Classes/NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
-		45EA10441869D546005677B0 /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+TKOKit.m"; path = "Classes/NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
-		45EA10461869D6AA005677B0 /* TKOPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOPlatform.h; path = Classes/TKOPlatform.h; sourceTree = "<group>"; };
-		45EA10471869D6AA005677B0 /* TKOPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOPlatform.m; path = Classes/TKOPlatform.m; sourceTree = "<group>"; };
 		45EA10491869D978005677B0 /* NSAttributedStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringTests.m; sourceTree = "<group>"; };
-		45F33986186A41B800A37EE6 /* TKOStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOStore.h; path = Classes/TKOStore.h; sourceTree = "<group>"; };
-		45F33987186A41B800A37EE6 /* TKOStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOStore.m; path = Classes/TKOStore.m; sourceTree = "<group>"; };
-		45F33988186A41B800A37EE6 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+TKOKit.h"; path = "Classes/NSColor+TKOKit.h"; sourceTree = "<group>"; };
-		45F33989186A41B800A37EE6 /* NSColor+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+TKOKit.m"; path = "Classes/NSColor+TKOKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,20 +211,35 @@
 		45EA10351868F22E005677B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				45F33986186A41B800A37EE6 /* TKOStore.h */,
-				45F33987186A41B800A37EE6 /* TKOStore.m */,
-				45F33988186A41B800A37EE6 /* NSColor+TKOKit.h */,
-				45F33989186A41B800A37EE6 /* NSColor+TKOKit.m */,
-				45EA10461869D6AA005677B0 /* TKOPlatform.h */,
-				45EA10471869D6AA005677B0 /* TKOPlatform.m */,
-				45EA10321868F227005677B0 /* NSString+TKOKit.h */,
-				45EA10331868F227005677B0 /* NSString+TKOKit.m */,
-				45EA10431869D546005677B0 /* NSAttributedString+TKOKit.h */,
-				45EA10441869D546005677B0 /* NSAttributedString+TKOKit.m */,
-				45EA1038186926E9005677B0 /* NSView+TKOKit.h */,
-				45EA1039186926E9005677B0 /* NSView+TKOKit.m */,
-				45EA1040186951BF005677B0 /* NSImage+TKOKit.h */,
-				45EA1041186951BF005677B0 /* NSImage+TKOKit.m */,
+				459A7CD218997442007A4AA7 /* TKOTheme.h */,
+				459A7CD318997442007A4AA7 /* TKOTheme.m */,
+				459A7CD418997442007A4AA7 /* TKOThemeLoader.h */,
+				459A7CD518997442007A4AA7 /* TKOThemeLoader.m */,
+				459A7CAF1899738F007A4AA7 /* NSAttributedString+TKOKit.h */,
+				459A7CB01899738F007A4AA7 /* NSAttributedString+TKOKit.m */,
+				459A7CB11899738F007A4AA7 /* NSColor+TKOKit.h */,
+				459A7CB21899738F007A4AA7 /* NSColor+TKOKit.m */,
+				459A7CB31899738F007A4AA7 /* NSImage+TKOKit.h */,
+				459A7CB41899738F007A4AA7 /* NSImage+TKOKit.m */,
+				459A7CB51899738F007A4AA7 /* NSString+TKOKit.h */,
+				459A7CB61899738F007A4AA7 /* NSString+TKOKit.m */,
+				459A7CB71899738F007A4AA7 /* NSView+TKOKit.h */,
+				459A7CB81899738F007A4AA7 /* NSView+TKOKit.m */,
+				459A7CB91899738F007A4AA7 /* TKODisclosureViewController.h */,
+				459A7CBA1899738F007A4AA7 /* TKODisclosureViewController.m */,
+				459A7CBB1899738F007A4AA7 /* TKODisclosureViewController.xib */,
+				459A7CBC1899738F007A4AA7 /* TKOFlippedClipView.h */,
+				459A7CBD1899738F007A4AA7 /* TKOFlippedClipView.m */,
+				459A7CBE1899738F007A4AA7 /* TKOKeyValueObserver.h */,
+				459A7CBF1899738F007A4AA7 /* TKOKeyValueObserver.m */,
+				459A7CC01899738F007A4AA7 /* TKOPlatform.h */,
+				459A7CC11899738F007A4AA7 /* TKOPlatform.m */,
+				459A7CC21899738F007A4AA7 /* TKOStore.h */,
+				459A7CC31899738F007A4AA7 /* TKOStore.m */,
+				459A7CCF189973C5007A4AA7 /* TKOControl.h */,
+				459A7CD0189973C5007A4AA7 /* TKOControl.m */,
+				459A7CD8189977A6007A4AA7 /* TKOControlCell.h */,
+				459A7CD9189977A6007A4AA7 /* TKOControlCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -283,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459A7CCA1899738F007A4AA7 /* TKODisclosureViewController.xib in Resources */,
 				45EA10091868F1BA005677B0 /* InfoPlist.strings in Resources */,
 				45EA10171868F1BA005677B0 /* Images.xcassets in Resources */,
 				45EA100F1868F1BA005677B0 /* Credits.rtf in Resources */,
@@ -305,15 +344,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F3398A186A41B800A37EE6 /* TKOStore.m in Sources */,
-				45EA1042186951BF005677B0 /* NSImage+TKOKit.m in Sources */,
+				459A7CC61899738F007A4AA7 /* NSImage+TKOKit.m in Sources */,
+				459A7CC51899738F007A4AA7 /* NSColor+TKOKit.m in Sources */,
+				459A7CC41899738F007A4AA7 /* NSAttributedString+TKOKit.m in Sources */,
+				459A7CCB1899738F007A4AA7 /* TKOFlippedClipView.m in Sources */,
+				459A7CD618997442007A4AA7 /* TKOTheme.m in Sources */,
+				459A7CD718997442007A4AA7 /* TKOThemeLoader.m in Sources */,
+				459A7CCD1899738F007A4AA7 /* TKOPlatform.m in Sources */,
 				45EA100B1868F1BA005677B0 /* main.m in Sources */,
-				45EA10341868F228005677B0 /* NSString+TKOKit.m in Sources */,
-				45EA10481869D6AA005677B0 /* TKOPlatform.m in Sources */,
-				45F3398B186A41B800A37EE6 /* NSColor+TKOKit.m in Sources */,
-				45EA10451869D546005677B0 /* NSAttributedString+TKOKit.m in Sources */,
+				459A7CCE1899738F007A4AA7 /* TKOStore.m in Sources */,
+				459A7CC81899738F007A4AA7 /* NSView+TKOKit.m in Sources */,
+				459A7CDA189977A6007A4AA7 /* TKOControlCell.m in Sources */,
 				45EA10121868F1BA005677B0 /* TKOAppDelegate.m in Sources */,
-				45EA103A186926E9005677B0 /* NSView+TKOKit.m in Sources */,
+				459A7CD1189973C5007A4AA7 /* TKOControl.m in Sources */,
+				459A7CCC1899738F007A4AA7 /* TKOKeyValueObserver.m in Sources */,
+				459A7CC91899738F007A4AA7 /* TKODisclosureViewController.m in Sources */,
+				459A7CC71899738F007A4AA7 /* NSString+TKOKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
