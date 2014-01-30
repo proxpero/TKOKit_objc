@@ -1,19 +1,16 @@
 //
-//  TKOControl.h
+//  TKOColorPickerView.h
 //  TKOKit
 //
-//  Created by Todd Olsen on 1/29/14.
+//  Created by Todd Olsen on 1/30/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@class TKOTheme;
-
-@interface TKOControl : NSControl
-
+@interface TKOColorPickerView : NSView
 @property (strong, nonatomic) NSColor * selectedColor;
-@property (strong, nonatomic) TKOTheme * theme;
-
 @end
 
+@interface TKOPaletteViewController : NSViewController
+@end

@@ -16,10 +16,8 @@
     if (!self)
         return nil;
     
+    [self setBordered:NO];
     [self setDefaultColors];
-    self.target = nil;
-    self.action = NULL;
-    self.title = @"";
     self.borderMask = TKOBorderMaskBottom;
     
     return self;
@@ -42,7 +40,6 @@
         [self.controlView setNeedsDisplay:YES];
     }
 }
-
 
 - (void)setBackgroundHighlightColor:(NSColor *)backgroundHighlightColor {
     if (_backgroundHighlightColor != backgroundHighlightColor) {
@@ -71,8 +68,9 @@
 - (void)drawWithFrame:(NSRect)cellFrame
                inView:(NSView *)controlView
 {
-    [super drawWithFrame:cellFrame
-                  inView:controlView];
+    [((self.state|self.isHighlighted) ? self.backgroundHighlightColor : self.backgroundColor) set];
+    NSRectFill(cellFrame);
+    
     [self drawBordersInCellFrame:cellFrame];
 }
 

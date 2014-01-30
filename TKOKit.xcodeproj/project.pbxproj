@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459469D2189ADD020068D9CB /* TKOColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459469D1189ADD020068D9CB /* TKOColorPickerView.m */; };
+		459469D5189AF6230068D9CB /* color1.png in Resources */ = {isa = PBXBuildFile; fileRef = 459469D3189AF6230068D9CB /* color1.png */; };
+		459469D6189AF6230068D9CB /* color1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459469D4189AF6230068D9CB /* color1@2x.png */; };
+		459469D8189AFEF40068D9CB /* TKOPaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459469D7189AFEF30068D9CB /* TKOPaletteViewController.xib */; };
 		459A7CC41899738F007A4AA7 /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB01899738F007A4AA7 /* NSAttributedString+TKOKit.m */; };
 		459A7CC51899738F007A4AA7 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB21899738F007A4AA7 /* NSColor+TKOKit.m */; };
 		459A7CC61899738F007A4AA7 /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A7CB41899738F007A4AA7 /* NSImage+TKOKit.m */; };
@@ -49,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		459469D0189ADD020068D9CB /* TKOColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOColorPickerView.h; sourceTree = "<group>"; };
+		459469D1189ADD020068D9CB /* TKOColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOColorPickerView.m; sourceTree = "<group>"; };
+		459469D3189AF6230068D9CB /* color1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color1.png; sourceTree = "<group>"; };
+		459469D4189AF6230068D9CB /* color1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color1@2x.png"; sourceTree = "<group>"; };
+		459469D7189AFEF30068D9CB /* TKOPaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOPaletteViewController.xib; sourceTree = "<group>"; };
 		459A7CAF1899738F007A4AA7 /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+TKOKit.h"; path = "TKOKit Classes/NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
 		459A7CB01899738F007A4AA7 /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+TKOKit.m"; path = "TKOKit Classes/NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
 		459A7CB11899738F007A4AA7 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+TKOKit.h"; path = "TKOKit Classes/NSColor+TKOKit.h"; sourceTree = "<group>"; };
@@ -236,6 +245,11 @@
 				459A7CC11899738F007A4AA7 /* TKOPlatform.m */,
 				459A7CC21899738F007A4AA7 /* TKOStore.h */,
 				459A7CC31899738F007A4AA7 /* TKOStore.m */,
+				459469D0189ADD020068D9CB /* TKOColorPickerView.h */,
+				459469D1189ADD020068D9CB /* TKOColorPickerView.m */,
+				459469D7189AFEF30068D9CB /* TKOPaletteViewController.xib */,
+				459469D3189AF6230068D9CB /* color1.png */,
+				459469D4189AF6230068D9CB /* color1@2x.png */,
 				459A7CCF189973C5007A4AA7 /* TKOControl.h */,
 				459A7CD0189973C5007A4AA7 /* TKOControl.m */,
 				459A7CD8189977A6007A4AA7 /* TKOControlCell.h */,
@@ -321,9 +335,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459469D6189AF6230068D9CB /* color1@2x.png in Resources */,
+				459469D8189AFEF40068D9CB /* TKOPaletteViewController.xib in Resources */,
 				459A7CCA1899738F007A4AA7 /* TKODisclosureViewController.xib in Resources */,
 				45EA10091868F1BA005677B0 /* InfoPlist.strings in Resources */,
 				45EA10171868F1BA005677B0 /* Images.xcassets in Resources */,
+				459469D5189AF6230068D9CB /* color1.png in Resources */,
 				45EA100F1868F1BA005677B0 /* Credits.rtf in Resources */,
 				45EA10151868F1BA005677B0 /* MainMenu.xib in Resources */,
 			);
@@ -359,6 +376,7 @@
 				459A7CD1189973C5007A4AA7 /* TKOControl.m in Sources */,
 				459A7CCC1899738F007A4AA7 /* TKOKeyValueObserver.m in Sources */,
 				459A7CC91899738F007A4AA7 /* TKODisclosureViewController.m in Sources */,
+				459469D2189ADD020068D9CB /* TKOColorPickerView.m in Sources */,
 				459A7CC71899738F007A4AA7 /* NSString+TKOKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

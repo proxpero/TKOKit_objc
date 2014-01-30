@@ -122,7 +122,8 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
 	if (color == nil)
 		color = [TKO_COLOR blackColor];
 
-	[self.colorCache setObject:color forKey:key];
+	[self.colorCache setObject:color
+                        forKey:key];
 
 	return color;
 }
