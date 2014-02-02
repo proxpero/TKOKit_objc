@@ -7,12 +7,20 @@
 //
 
 #import "TKOAppDelegate.h"
+#import "TKOColorPickerView.h"
 
 @implementation TKOAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+//    The following code is unnecessary since the Target/Action are set in IB
+//    [self.colorPicker setTarget:self];
+//    [self.colorPicker setAction:@selector(colorPickerChangedColorAction:)];
+}
+
+- (IBAction)colorPickerChangedColorAction:(id)sender
+{
+    [self.colorWell setColor:self.colorPicker.selectedColor];
 }
 
 @end

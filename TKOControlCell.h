@@ -17,13 +17,14 @@ typedef enum {
     TKOBorderMaskBottom  = (1<<3)
 } TKOBorderMask;
 
-@interface TKOControlCell : NSCell
+@interface TKOControlCell : NSButtonCell
 
 @property (nonatomic) TKOBorderMask   borderMask;
 @property (nonatomic, copy) NSColor * backgroundColor;
 @property (nonatomic, copy) NSColor * backgroundHighlightColor;
 @property (nonatomic, copy) NSColor * borderColor;
 @property (nonatomic, copy) NSColor * borderHighlightColor;
+@property (nonatomic) BOOL hasAdaptiveBorderColor;
 
 @end
 

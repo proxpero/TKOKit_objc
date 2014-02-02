@@ -8,9 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TKOColorPickerView : NSView
+@interface TKOColorPickerView : NSControl
 @property (strong, nonatomic) NSColor * selectedColor;
-@end
-
-@interface TKOPaletteViewController : NSViewController
 @end

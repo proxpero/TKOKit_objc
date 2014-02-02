@@ -37,6 +37,10 @@
 {
     if (_backgroundColor != backgroundColor) {
         _backgroundColor = backgroundColor.copy;
+        if (_hasAdaptiveBorderColor) {
+            _borderColor = [_backgroundColor blendedColorWithFraction:.30
+                                                              ofColor:[NSColor blackColor]];
+        }
         [self.controlView setNeedsDisplay:YES];
     }
 }
@@ -48,7 +52,6 @@
     }
 }
 
-
 - (void)setBorderColor:(NSColor *)borderColor
 {
     if (_borderColor != borderColor) {
@@ -56,7 +59,6 @@
         [self.controlView setNeedsDisplay:YES];
     }
 }
-
 
 - (void)setBorderHighlightColor:(NSColor *)borderHighlightColor {
     if (_borderHighlightColor != borderHighlightColor) {
@@ -72,6 +74,8 @@
     NSRectFill(cellFrame);
     
     [self drawBordersInCellFrame:cellFrame];
+    [self drawInteriorWithFrame:cellFrame
+                         inView:controlView];
 }
 
 - (void)drawBordersInCellFrame:(NSRect)cellFrame

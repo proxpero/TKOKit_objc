@@ -124,7 +124,6 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
     return [self substringFromIndex:[prefix length]];
 }
 
-
 - (TKORGBAComponents)rgbaComponents
 {
 	TKORGBAComponents components = {0.0f, 0.0f, 0.0f, 1.0f};

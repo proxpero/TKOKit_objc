@@ -22,6 +22,7 @@ NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSS
 - (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters;
 - (NSString *)stringByStrippingPrefix:(NSString *)prefix
                         caseSensitive:(BOOL)caseSensitive;
+//- (NSString *)hexWithColor:(NSColor *)color;
 
 /*0.0f to 1.0f for each.*/
 

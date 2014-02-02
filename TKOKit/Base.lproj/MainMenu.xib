@@ -656,14 +656,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="249" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NDc-fk-Gj4" customClass="TKOControl">
-                        <rect key="frame" x="163" y="20" width="66" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="EaO-rg-KJZ"/>
-                            <constraint firstAttribute="width" constant="66" id="ewH-LL-JF3"/>
-                        </constraints>
-                    </customView>
                     <colorWell bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhb-xw-VHL">
                         <rect key="frame" x="20" y="49" width="209" height="231"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -676,25 +668,25 @@
                             <constraint firstAttribute="height" constant="21" id="m75-A1-jyE"/>
                             <constraint firstAttribute="width" constant="66" id="w5d-EU-Lrb"/>
                         </constraints>
+                        <connections>
+                            <action selector="colorPickerChangedColorAction:" target="494" id="Crs-wk-Zys"/>
+                        </connections>
                     </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="NDc-fk-Gj4" firstAttribute="top" secondItem="Yhb-xw-VHL" secondAttribute="bottom" constant="8" symbolic="YES" id="2SM-Fh-xmQ"/>
-                    <constraint firstAttribute="trailing" secondItem="NDc-fk-Gj4" secondAttribute="trailing" constant="20" id="3dc-WF-0QZ"/>
                     <constraint firstItem="VFw-d3-H9S" firstAttribute="top" secondItem="Yhb-xw-VHL" secondAttribute="bottom" constant="8" symbolic="YES" id="5Iv-Kj-mCU"/>
                     <constraint firstItem="VFw-d3-H9S" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" id="9Bs-G4-zl6"/>
                     <constraint firstAttribute="bottom" secondItem="VFw-d3-H9S" secondAttribute="bottom" constant="20" symbolic="YES" id="VmA-zr-U0s"/>
                     <constraint firstItem="Yhb-xw-VHL" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="YBQ-1T-myT"/>
-                    <constraint firstItem="Yhb-xw-VHL" firstAttribute="trailing" secondItem="NDc-fk-Gj4" secondAttribute="trailing" id="ciX-jJ-8I9"/>
-                    <constraint firstAttribute="bottom" secondItem="NDc-fk-Gj4" secondAttribute="bottom" constant="20" id="fCf-Zh-yUG"/>
                     <constraint firstAttribute="trailing" secondItem="Yhb-xw-VHL" secondAttribute="trailing" constant="20" symbolic="YES" id="ih4-hv-cv7"/>
                     <constraint firstItem="Yhb-xw-VHL" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="n3h-qJ-EF0"/>
-                    <constraint firstItem="NDc-fk-Gj4" firstAttribute="bottom" secondItem="VFw-d3-H9S" secondAttribute="bottom" id="xAo-Of-KpQ"/>
                 </constraints>
             </view>
         </window>
         <customObject id="494" customClass="TKOAppDelegate">
             <connections>
+                <outlet property="colorPicker" destination="VFw-d3-H9S" id="0FK-tz-tel"/>
+                <outlet property="colorWell" destination="Yhb-xw-VHL" id="JEe-Kt-rzX"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
