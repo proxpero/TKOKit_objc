@@ -240,37 +240,37 @@
     [matrix setIntercellSpacing:NSMakeSize(1, 1)];
     [matrix setAutorecalculatesCellSize:NO];
     [matrix setAutosizesCells:NO];
-    
-5//                         [NSColor colorWithHexString:@"44b3e5"], // blue
-//                         [NSColor colorWithHexString:@"7fea41"],
-//                         [NSColor colorWithHexString:@"ffe43a"],
-//                         [NSColor colorWithHexString:@"ffbf5d"],
-//                         [NSColor colorWithHexString:@"fe444a"],
-//                         [NSColor colorWithHexString:@"ad19bd"],
-//                         [NSColor colorWithHexString:@"1b9bcf"], // blue
-//                         [NSColor colorWithHexString:@"40ca14"],
-//                         [NSColor colorWithHexString:@"f6d305"],
-//                         [NSColor colorWithHexString:@"ffa700"],
-//                         [NSColor colorWithHexString:@"ff0202"],
-//                         [NSColor colorWithHexString:@"780089"],
-//                         [NSColor colorWithHexString:@"037da7"], // blue
-//                         [NSColor colorWithHexString:@"63b426"],
-//                         [NSColor colorWithHexString:@"eaba00"],
-//                         [NSColor colorWithHexString:@"fa9d00"],
-//                         [NSColor colorWithHexString:@"e20200"],
-//                         [NSColor colorWithHexString:@"5e006f"],
-//                         [NSColor colorWithHexString:@"02567c"], // blue
-//                         [NSColor colorWithHexString:@"418d0b"],
-//                         [NSColor colorWithHexString:@"cf9400"],
-//                         [NSColor colorWithHexString:@"df7b01"],
-//                         [NSColor colorWithHexString:@"bf0000"],
-//                         [NSColor colorWithHexString:@"44004c"],
-//                         [NSColor colorWithHexString:@"ffffff"], // white
-//                         [NSColor colorWithHexString:@"d5d5d5"],
-//                         [NSColor colorWithHexString:@"aaaaaa"],
-//                         [NSColor colorWithHexString:@"808080"],
-//                         [NSColor colorWithHexString:@"555555"],
-//                         [NSColor colorWithHexString:@"000000"]
+    NSArray * colors = @[
+                         [NSColor colorWithHexString:@"44b3e5"], // blue
+                         [NSColor colorWithHexString:@"7fea41"],
+                         [NSColor colorWithHexString:@"ffe43a"],
+                         [NSColor colorWithHexString:@"ffbf5d"],
+                         [NSColor colorWithHexString:@"fe444a"],
+                         [NSColor colorWithHexString:@"ad19bd"],
+                         [NSColor colorWithHexString:@"1b9bcf"], // blue
+                         [NSColor colorWithHexString:@"40ca14"],
+                         [NSColor colorWithHexString:@"f6d305"],
+                         [NSColor colorWithHexString:@"ffa700"],
+                         [NSColor colorWithHexString:@"ff0202"],
+                         [NSColor colorWithHexString:@"780089"],
+                         [NSColor colorWithHexString:@"037da7"], // blue
+                         [NSColor colorWithHexString:@"63b426"],
+                         [NSColor colorWithHexString:@"eaba00"],
+                         [NSColor colorWithHexString:@"fa9d00"],
+                         [NSColor colorWithHexString:@"e20200"],
+                         [NSColor colorWithHexString:@"5e006f"],
+                         [NSColor colorWithHexString:@"02567c"], // blue
+                         [NSColor colorWithHexString:@"418d0b"],
+                         [NSColor colorWithHexString:@"cf9400"],
+                         [NSColor colorWithHexString:@"df7b01"],
+                         [NSColor colorWithHexString:@"bf0000"],
+                         [NSColor colorWithHexString:@"44004c"],
+                         [NSColor colorWithHexString:@"ffffff"], // white
+                         [NSColor colorWithHexString:@"d5d5d5"],
+                         [NSColor colorWithHexString:@"aaaaaa"],
+                         [NSColor colorWithHexString:@"808080"],
+                         [NSColor colorWithHexString:@"555555"],
+                         [NSColor colorWithHexString:@"000000"]
                          ];
     
     // myMatrix.cells: the order of cells goes left to right, and top to bottom, like reading English.
