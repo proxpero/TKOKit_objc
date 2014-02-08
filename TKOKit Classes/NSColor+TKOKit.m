@@ -15,7 +15,7 @@
 + (instancetype)colorWithHexString:(NSString *)hexString
 {
 	TKORGBAComponents components = [hexString rgbaComponents];
-
+    
     return [NSColor colorWithCalibratedRed:components.red
                                      green:components.green
                                       blue:components.blue

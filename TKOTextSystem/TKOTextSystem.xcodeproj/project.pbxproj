@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45A22EB318A533E20055F894 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A22EB218A533E20055F894 /* Cocoa.framework */; };
+		45A22EBD18A533E20055F894 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A22EBB18A533E20055F894 /* InfoPlist.strings */; };
+		45A22EBF18A533E20055F894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EBE18A533E20055F894 /* main.m */; };
+		45A22EC318A533E20055F894 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 45A22EC118A533E20055F894 /* Credits.rtf */; };
+		45A22EC618A533E20055F894 /* TKODocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EC518A533E20055F894 /* TKODocument.m */; };
+		45A22EC918A533E20055F894 /* TKODocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A22EC718A533E20055F894 /* TKODocument.xib */; };
+		45A22ECC18A533E20055F894 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A22ECA18A533E20055F894 /* MainMenu.xib */; };
+		45A22ECE18A533E20055F894 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A22ECD18A533E20055F894 /* Images.xcassets */; };
+		45A22ED518A533E20055F894 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A22ED418A533E20055F894 /* XCTest.framework */; };
+		45A22ED618A533E20055F894 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A22EB218A533E20055F894 /* Cocoa.framework */; };
+		45A22EDE18A533E20055F894 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A22EDC18A533E20055F894 /* InfoPlist.strings */; };
+		45A22EE018A533E20055F894 /* TKOTextSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EDF18A533E20055F894 /* TKOTextSystemTests.m */; };
+		45A22F0218A535F50055F894 /* TKOLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EFB18A535F50055F894 /* TKOLayoutManager.m */; };
+		45A22F0318A535F50055F894 /* TKOTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EFD18A535F50055F894 /* TKOTextContainer.m */; };
+		45A22F0418A535F50055F894 /* TKOTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EFF18A535F50055F894 /* TKOTextStorage.m */; };
+		45A22F0518A535F50055F894 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22F0118A535F50055F894 /* TKOTextView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45A22ED718A533E20055F894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A22EA718A533E20055F894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A22EAE18A533E20055F894;
+			remoteInfo = TKOTextSystem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45A22EAF18A533E20055F894 /* TKOTextSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOTextSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A22EB218A533E20055F894 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		45A22EB518A533E20055F894 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		45A22EB618A533E20055F894 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		45A22EB718A533E20055F894 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45A22EBA18A533E20055F894 /* TKOTextSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOTextSystem-Info.plist"; sourceTree = "<group>"; };
+		45A22EBC18A533E20055F894 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45A22EBE18A533E20055F894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45A22EC018A533E20055F894 /* TKOTextSystem-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKOTextSystem-Prefix.pch"; sourceTree = "<group>"; };
+		45A22EC218A533E20055F894 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		45A22EC418A533E20055F894 /* TKODocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKODocument.h; sourceTree = "<group>"; };
+		45A22EC518A533E20055F894 /* TKODocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKODocument.m; sourceTree = "<group>"; };
+		45A22EC818A533E20055F894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TKODocument.xib; sourceTree = "<group>"; };
+		45A22ECB18A533E20055F894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		45A22ECD18A533E20055F894 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45A22ED318A533E20055F894 /* TKOTextSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKOTextSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A22ED418A533E20055F894 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		45A22EDB18A533E20055F894 /* TKOTextSystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOTextSystemTests-Info.plist"; sourceTree = "<group>"; };
+		45A22EDD18A533E20055F894 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45A22EDF18A533E20055F894 /* TKOTextSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOTextSystemTests.m; sourceTree = "<group>"; };
+		45A22EFA18A535F50055F894 /* TKOLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOLayoutManager.h; sourceTree = "<group>"; };
+		45A22EFB18A535F50055F894 /* TKOLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOLayoutManager.m; sourceTree = "<group>"; };
+		45A22EFC18A535F50055F894 /* TKOTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextContainer.h; sourceTree = "<group>"; };
+		45A22EFD18A535F50055F894 /* TKOTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextContainer.m; sourceTree = "<group>"; };
+		45A22EFE18A535F50055F894 /* TKOTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextStorage.h; sourceTree = "<group>"; };
+		45A22EFF18A535F50055F894 /* TKOTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextStorage.m; sourceTree = "<group>"; };
+		45A22F0018A535F50055F894 /* TKOTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextView.h; sourceTree = "<group>"; };
+		45A22F0118A535F50055F894 /* TKOTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45A22EAC18A533E20055F894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22EB318A533E20055F894 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A22ED018A533E20055F894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22ED618A533E20055F894 /* Cocoa.framework in Frameworks */,
+				45A22ED518A533E20055F894 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45A22EA618A533E20055F894 = {
+			isa = PBXGroup;
+			children = (
+				45A22EF918A535F50055F894 /* Text System Classes */,
+				45A22EB818A533E20055F894 /* TKOTextSystem */,
+				45A22ED918A533E20055F894 /* TKOTextSystemTests */,
+				45A22EB118A533E20055F894 /* Frameworks */,
+				45A22EB018A533E20055F894 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45A22EB018A533E20055F894 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EAF18A533E20055F894 /* TKOTextSystem.app */,
+				45A22ED318A533E20055F894 /* TKOTextSystemTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45A22EB118A533E20055F894 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EB218A533E20055F894 /* Cocoa.framework */,
+				45A22ED418A533E20055F894 /* XCTest.framework */,
+				45A22EB418A533E20055F894 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45A22EB418A533E20055F894 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EB518A533E20055F894 /* AppKit.framework */,
+				45A22EB618A533E20055F894 /* CoreData.framework */,
+				45A22EB718A533E20055F894 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		45A22EB818A533E20055F894 /* TKOTextSystem */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EC418A533E20055F894 /* TKODocument.h */,
+				45A22EC518A533E20055F894 /* TKODocument.m */,
+				45A22EC718A533E20055F894 /* TKODocument.xib */,
+				45A22ECA18A533E20055F894 /* MainMenu.xib */,
+				45A22ECD18A533E20055F894 /* Images.xcassets */,
+				45A22EB918A533E20055F894 /* Supporting Files */,
+			);
+			path = TKOTextSystem;
+			sourceTree = "<group>";
+		};
+		45A22EB918A533E20055F894 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EBA18A533E20055F894 /* TKOTextSystem-Info.plist */,
+				45A22EBB18A533E20055F894 /* InfoPlist.strings */,
+				45A22EBE18A533E20055F894 /* main.m */,
+				45A22EC018A533E20055F894 /* TKOTextSystem-Prefix.pch */,
+				45A22EC118A533E20055F894 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45A22ED918A533E20055F894 /* TKOTextSystemTests */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EDF18A533E20055F894 /* TKOTextSystemTests.m */,
+				45A22EDA18A533E20055F894 /* Supporting Files */,
+			);
+			path = TKOTextSystemTests;
+			sourceTree = "<group>";
+		};
+		45A22EDA18A533E20055F894 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EDB18A533E20055F894 /* TKOTextSystemTests-Info.plist */,
+				45A22EDC18A533E20055F894 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45A22EF918A535F50055F894 /* Text System Classes */ = {
+			isa = PBXGroup;
+			children = (
+				45A22EFA18A535F50055F894 /* TKOLayoutManager.h */,
+				45A22EFB18A535F50055F894 /* TKOLayoutManager.m */,
+				45A22EFC18A535F50055F894 /* TKOTextContainer.h */,
+				45A22EFD18A535F50055F894 /* TKOTextContainer.m */,
+				45A22EFE18A535F50055F894 /* TKOTextStorage.h */,
+				45A22EFF18A535F50055F894 /* TKOTextStorage.m */,
+				45A22F0018A535F50055F894 /* TKOTextView.h */,
+				45A22F0118A535F50055F894 /* TKOTextView.m */,
+			);
+			path = "Text System Classes";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45A22EAE18A533E20055F894 /* TKOTextSystem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A22EE318A533E20055F894 /* Build configuration list for PBXNativeTarget "TKOTextSystem" */;
+			buildPhases = (
+				45A22EAB18A533E20055F894 /* Sources */,
+				45A22EAC18A533E20055F894 /* Frameworks */,
+				45A22EAD18A533E20055F894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKOTextSystem;
+			productName = TKOTextSystem;
+			productReference = 45A22EAF18A533E20055F894 /* TKOTextSystem.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45A22ED218A533E20055F894 /* TKOTextSystemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A22EE618A533E20055F894 /* Build configuration list for PBXNativeTarget "TKOTextSystemTests" */;
+			buildPhases = (
+				45A22ECF18A533E20055F894 /* Sources */,
+				45A22ED018A533E20055F894 /* Frameworks */,
+				45A22ED118A533E20055F894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45A22ED818A533E20055F894 /* PBXTargetDependency */,
+			);
+			name = TKOTextSystemTests;
+			productName = TKOTextSystemTests;
+			productReference = 45A22ED318A533E20055F894 /* TKOTextSystemTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45A22EA718A533E20055F894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					45A22ED218A533E20055F894 = {
+						TestTargetID = 45A22EAE18A533E20055F894;
+					};
+				};
+			};
+			buildConfigurationList = 45A22EAA18A533E20055F894 /* Build configuration list for PBXProject "TKOTextSystem" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45A22EA618A533E20055F894;
+			productRefGroup = 45A22EB018A533E20055F894 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45A22EAE18A533E20055F894 /* TKOTextSystem */,
+				45A22ED218A533E20055F894 /* TKOTextSystemTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45A22EAD18A533E20055F894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22EBD18A533E20055F894 /* InfoPlist.strings in Resources */,
+				45A22ECE18A533E20055F894 /* Images.xcassets in Resources */,
+				45A22EC318A533E20055F894 /* Credits.rtf in Resources */,
+				45A22EC918A533E20055F894 /* TKODocument.xib in Resources */,
+				45A22ECC18A533E20055F894 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A22ED118A533E20055F894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22EDE18A533E20055F894 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45A22EAB18A533E20055F894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22F0218A535F50055F894 /* TKOLayoutManager.m in Sources */,
+				45A22EBF18A533E20055F894 /* main.m in Sources */,
+				45A22EC618A533E20055F894 /* TKODocument.m in Sources */,
+				45A22F0418A535F50055F894 /* TKOTextStorage.m in Sources */,
+				45A22F0518A535F50055F894 /* TKOTextView.m in Sources */,
+				45A22F0318A535F50055F894 /* TKOTextContainer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A22ECF18A533E20055F894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A22EE018A533E20055F894 /* TKOTextSystemTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45A22ED818A533E20055F894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A22EAE18A533E20055F894 /* TKOTextSystem */;
+			targetProxy = 45A22ED718A533E20055F894 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45A22EBB18A533E20055F894 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A22EBC18A533E20055F894 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		45A22EC118A533E20055F894 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A22EC218A533E20055F894 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		45A22EC718A533E20055F894 /* TKODocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A22EC818A533E20055F894 /* Base */,
+			);
+			name = TKODocument.xib;
+			sourceTree = "<group>";
+		};
+		45A22ECA18A533E20055F894 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A22ECB18A533E20055F894 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		45A22EDC18A533E20055F894 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A22EDD18A533E20055F894 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45A22EE118A533E20055F894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		45A22EE218A533E20055F894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		45A22EE418A533E20055F894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextSystem/TKOTextSystem-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextSystem/TKOTextSystem-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		45A22EE518A533E20055F894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextSystem/TKOTextSystem-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextSystem/TKOTextSystem-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		45A22EE718A533E20055F894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOTextSystem.app/Contents/MacOS/TKOTextSystem";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextSystem/TKOTextSystem-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TKOTextSystemTests/TKOTextSystemTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		45A22EE818A533E20055F894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOTextSystem.app/Contents/MacOS/TKOTextSystem";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextSystem/TKOTextSystem-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextSystemTests/TKOTextSystemTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45A22EAA18A533E20055F894 /* Build configuration list for PBXProject "TKOTextSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A22EE118A533E20055F894 /* Debug */,
+				45A22EE218A533E20055F894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45A22EE318A533E20055F894 /* Build configuration list for PBXNativeTarget "TKOTextSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A22EE418A533E20055F894 /* Debug */,
+				45A22EE518A533E20055F894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45A22EE618A533E20055F894 /* Build configuration list for PBXNativeTarget "TKOTextSystemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A22EE718A533E20055F894 /* Debug */,
+				45A22EE818A533E20055F894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45A22EA718A533E20055F894 /* Project object */;
+}
