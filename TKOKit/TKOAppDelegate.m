@@ -7,7 +7,6 @@
 //
 
 #import "TKOAppDelegate.h"
-#import "TKOColorPickerView.h"
 
 @implementation TKOAppDelegate
 
@@ -18,9 +17,5 @@
 //    [self.colorPicker setAction:@selector(colorPickerChangedColorAction:)];
 }
 
-- (IBAction)colorPickerChangedColorAction:(id)sender
-{
-    [self.colorWell setColor:self.colorPicker.selectedColor];
-}
 
 @end

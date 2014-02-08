@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4598978B18A6805E005CDD90 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598978A18A6805E005CDD90 /* Cocoa.framework */; };
+		4598979518A6805E005CDD90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4598979318A6805E005CDD90 /* InfoPlist.strings */; };
+		4598979718A6805E005CDD90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4598979618A6805E005CDD90 /* main.m */; };
+		4598979B18A6805E005CDD90 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4598979918A6805E005CDD90 /* Credits.rtf */; };
+		4598979E18A6805E005CDD90 /* TKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4598979D18A6805E005CDD90 /* TKOAppDelegate.m */; };
+		459897A118A6805E005CDD90 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4598979F18A6805E005CDD90 /* MainMenu.xib */; };
+		459897A318A6805E005CDD90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459897A218A6805E005CDD90 /* Images.xcassets */; };
+		459897AA18A6805E005CDD90 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459897A918A6805E005CDD90 /* XCTest.framework */; };
+		459897AB18A6805E005CDD90 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598978A18A6805E005CDD90 /* Cocoa.framework */; };
+		459897B318A6805E005CDD90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459897B118A6805E005CDD90 /* InfoPlist.strings */; };
+		459897B518A6805E005CDD90 /* TKOColorPickerControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897B418A6805E005CDD90 /* TKOColorPickerControlTests.m */; };
+		459897C318A68140005CDD90 /* TKOColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897C018A68140005CDD90 /* TKOColorPickerView.m */; };
+		459897C418A68140005CDD90 /* TKOPullDownImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 459897C118A68140005CDD90 /* TKOPullDownImage.png */; };
+		459897C518A68140005CDD90 /* TKOPullDownImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459897C218A68140005CDD90 /* TKOPullDownImage@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		459897AC18A6805E005CDD90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4598977F18A6805E005CDD90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4598978618A6805E005CDD90;
+			remoteInfo = TKOColorPickerControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4598978718A6805E005CDD90 /* TKOColorPickerControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOColorPickerControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4598978A18A6805E005CDD90 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4598978D18A6805E005CDD90 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4598978E18A6805E005CDD90 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4598978F18A6805E005CDD90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4598979218A6805E005CDD90 /* TKOColorPickerControl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOColorPickerControl-Info.plist"; sourceTree = "<group>"; };
+		4598979418A6805E005CDD90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4598979618A6805E005CDD90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4598979818A6805E005CDD90 /* TKOColorPickerControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKOColorPickerControl-Prefix.pch"; sourceTree = "<group>"; };
+		4598979A18A6805E005CDD90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4598979C18A6805E005CDD90 /* TKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKOAppDelegate.h; sourceTree = "<group>"; };
+		4598979D18A6805E005CDD90 /* TKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOAppDelegate.m; sourceTree = "<group>"; };
+		459897A018A6805E005CDD90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		459897A218A6805E005CDD90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		459897A818A6805E005CDD90 /* TKOColorPickerControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKOColorPickerControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		459897A918A6805E005CDD90 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		459897B018A6805E005CDD90 /* TKOColorPickerControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOColorPickerControlTests-Info.plist"; sourceTree = "<group>"; };
+		459897B218A6805E005CDD90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		459897B418A6805E005CDD90 /* TKOColorPickerControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOColorPickerControlTests.m; sourceTree = "<group>"; };
+		459897BF18A68140005CDD90 /* TKOColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOColorPickerView.h; sourceTree = "<group>"; };
+		459897C018A68140005CDD90 /* TKOColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOColorPickerView.m; sourceTree = "<group>"; };
+		459897C118A68140005CDD90 /* TKOPullDownImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOPullDownImage.png; sourceTree = "<group>"; };
+		459897C218A68140005CDD90 /* TKOPullDownImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOPullDownImage@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4598978418A6805E005CDD90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4598978B18A6805E005CDD90 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459897A518A6805E005CDD90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459897AB18A6805E005CDD90 /* Cocoa.framework in Frameworks */,
+				459897AA18A6805E005CDD90 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4598977E18A6805E005CDD90 = {
+			isa = PBXGroup;
+			children = (
+				459897BE18A68140005CDD90 /* Color Picker Control Classes */,
+				4598979018A6805E005CDD90 /* TKOColorPickerControl */,
+				459897AE18A6805E005CDD90 /* TKOColorPickerControlTests */,
+				4598978918A6805E005CDD90 /* Frameworks */,
+				4598978818A6805E005CDD90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4598978818A6805E005CDD90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4598978718A6805E005CDD90 /* TKOColorPickerControl.app */,
+				459897A818A6805E005CDD90 /* TKOColorPickerControlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4598978918A6805E005CDD90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4598978A18A6805E005CDD90 /* Cocoa.framework */,
+				459897A918A6805E005CDD90 /* XCTest.framework */,
+				4598978C18A6805E005CDD90 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4598978C18A6805E005CDD90 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4598978D18A6805E005CDD90 /* AppKit.framework */,
+				4598978E18A6805E005CDD90 /* CoreData.framework */,
+				4598978F18A6805E005CDD90 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4598979018A6805E005CDD90 /* TKOColorPickerControl */ = {
+			isa = PBXGroup;
+			children = (
+				4598979C18A6805E005CDD90 /* TKOAppDelegate.h */,
+				4598979D18A6805E005CDD90 /* TKOAppDelegate.m */,
+				4598979F18A6805E005CDD90 /* MainMenu.xib */,
+				459897A218A6805E005CDD90 /* Images.xcassets */,
+				4598979118A6805E005CDD90 /* Supporting Files */,
+			);
+			path = TKOColorPickerControl;
+			sourceTree = "<group>";
+		};
+		4598979118A6805E005CDD90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4598979218A6805E005CDD90 /* TKOColorPickerControl-Info.plist */,
+				4598979318A6805E005CDD90 /* InfoPlist.strings */,
+				4598979618A6805E005CDD90 /* main.m */,
+				4598979818A6805E005CDD90 /* TKOColorPickerControl-Prefix.pch */,
+				4598979918A6805E005CDD90 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		459897AE18A6805E005CDD90 /* TKOColorPickerControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				459897B418A6805E005CDD90 /* TKOColorPickerControlTests.m */,
+				459897AF18A6805E005CDD90 /* Supporting Files */,
+			);
+			path = TKOColorPickerControlTests;
+			sourceTree = "<group>";
+		};
+		459897AF18A6805E005CDD90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				459897B018A6805E005CDD90 /* TKOColorPickerControlTests-Info.plist */,
+				459897B118A6805E005CDD90 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		459897BE18A68140005CDD90 /* Color Picker Control Classes */ = {
+			isa = PBXGroup;
+			children = (
+				459897BF18A68140005CDD90 /* TKOColorPickerView.h */,
+				459897C018A68140005CDD90 /* TKOColorPickerView.m */,
+				459897C118A68140005CDD90 /* TKOPullDownImage.png */,
+				459897C218A68140005CDD90 /* TKOPullDownImage@2x.png */,
+			);
+			path = "Color Picker Control Classes";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4598978618A6805E005CDD90 /* TKOColorPickerControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459897B818A6805E005CDD90 /* Build configuration list for PBXNativeTarget "TKOColorPickerControl" */;
+			buildPhases = (
+				4598978318A6805E005CDD90 /* Sources */,
+				4598978418A6805E005CDD90 /* Frameworks */,
+				4598978518A6805E005CDD90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKOColorPickerControl;
+			productName = TKOColorPickerControl;
+			productReference = 4598978718A6805E005CDD90 /* TKOColorPickerControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		459897A718A6805E005CDD90 /* TKOColorPickerControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459897BB18A6805E005CDD90 /* Build configuration list for PBXNativeTarget "TKOColorPickerControlTests" */;
+			buildPhases = (
+				459897A418A6805E005CDD90 /* Sources */,
+				459897A518A6805E005CDD90 /* Frameworks */,
+				459897A618A6805E005CDD90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				459897AD18A6805E005CDD90 /* PBXTargetDependency */,
+			);
+			name = TKOColorPickerControlTests;
+			productName = TKOColorPickerControlTests;
+			productReference = 459897A818A6805E005CDD90 /* TKOColorPickerControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4598977F18A6805E005CDD90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					459897A718A6805E005CDD90 = {
+						TestTargetID = 4598978618A6805E005CDD90;
+					};
+				};
+			};
+			buildConfigurationList = 4598978218A6805E005CDD90 /* Build configuration list for PBXProject "TKOColorPickerControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4598977E18A6805E005CDD90;
+			productRefGroup = 4598978818A6805E005CDD90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4598978618A6805E005CDD90 /* TKOColorPickerControl */,
+				459897A718A6805E005CDD90 /* TKOColorPickerControlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4598978518A6805E005CDD90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459897C518A68140005CDD90 /* TKOPullDownImage@2x.png in Resources */,
+				4598979518A6805E005CDD90 /* InfoPlist.strings in Resources */,
+				459897C418A68140005CDD90 /* TKOPullDownImage.png in Resources */,
+				459897A318A6805E005CDD90 /* Images.xcassets in Resources */,
+				4598979B18A6805E005CDD90 /* Credits.rtf in Resources */,
+				459897A118A6805E005CDD90 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459897A618A6805E005CDD90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459897B318A6805E005CDD90 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4598978318A6805E005CDD90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4598979718A6805E005CDD90 /* main.m in Sources */,
+				459897C318A68140005CDD90 /* TKOColorPickerView.m in Sources */,
+				4598979E18A6805E005CDD90 /* TKOAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459897A418A6805E005CDD90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459897B518A6805E005CDD90 /* TKOColorPickerControlTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		459897AD18A6805E005CDD90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4598978618A6805E005CDD90 /* TKOColorPickerControl */;
+			targetProxy = 459897AC18A6805E005CDD90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4598979318A6805E005CDD90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4598979418A6805E005CDD90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4598979918A6805E005CDD90 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4598979A18A6805E005CDD90 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4598979F18A6805E005CDD90 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				459897A018A6805E005CDD90 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		459897B118A6805E005CDD90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				459897B218A6805E005CDD90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		459897B618A6805E005CDD90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		459897B718A6805E005CDD90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		459897B918A6805E005CDD90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOColorPickerControl/TKOColorPickerControl-Prefix.pch";
+				INFOPLIST_FILE = "TKOColorPickerControl/TKOColorPickerControl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		459897BA18A6805E005CDD90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOColorPickerControl/TKOColorPickerControl-Prefix.pch";
+				INFOPLIST_FILE = "TKOColorPickerControl/TKOColorPickerControl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		459897BC18A6805E005CDD90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOColorPickerControl.app/Contents/MacOS/TKOColorPickerControl";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOColorPickerControl/TKOColorPickerControl-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TKOColorPickerControlTests/TKOColorPickerControlTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		459897BD18A6805E005CDD90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOColorPickerControl.app/Contents/MacOS/TKOColorPickerControl";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOColorPickerControl/TKOColorPickerControl-Prefix.pch";
+				INFOPLIST_FILE = "TKOColorPickerControlTests/TKOColorPickerControlTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4598978218A6805E005CDD90 /* Build configuration list for PBXProject "TKOColorPickerControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459897B618A6805E005CDD90 /* Debug */,
+				459897B718A6805E005CDD90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		459897B818A6805E005CDD90 /* Build configuration list for PBXNativeTarget "TKOColorPickerControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459897B918A6805E005CDD90 /* Debug */,
+				459897BA18A6805E005CDD90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		459897BB18A6805E005CDD90 /* Build configuration list for PBXNativeTarget "TKOColorPickerControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459897BC18A6805E005CDD90 /* Debug */,
+				459897BD18A6805E005CDD90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4598977F18A6805E005CDD90 /* Project object */;
+}

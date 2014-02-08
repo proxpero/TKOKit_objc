@@ -12,10 +12,5 @@
 @interface TKOAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet TKOColorPickerView *colorPicker;
-@property (weak) IBOutlet NSColorWell *colorWell;
-
-- (IBAction)colorPickerChangedColorAction:(id)sender;
-
 
 @end

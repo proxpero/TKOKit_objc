@@ -13,10 +13,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="TKOKit" id="56">
-                    <menu key="submenu" title="TKOKit" systemMenu="apple" id="57">
+                <menuItem title="TKOColorPickerControl" id="56">
+                    <menu key="submenu" title="TKOColorPickerControl" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About TKOKit" id="58">
+                            <menuItem title="About TKOColorPickerControl" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -35,7 +35,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide TKOKit" keyEquivalent="h" id="134">
+                            <menuItem title="Hide TKOColorPickerControl" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -54,7 +54,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit TKOKit" keyEquivalent="q" id="136">
+                            <menuItem title="Quit TKOColorPickerControl" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -636,7 +636,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="491">
                         <items>
-                            <menuItem title="TKOKit Help" keyEquivalent="?" id="492">
+                            <menuItem title="TKOColorPickerControl Help" keyEquivalent="?" id="492">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
@@ -646,22 +646,47 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="TKOKit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="101" y="253" width="524" height="334"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
-            <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="524" height="334"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-        </window>
         <customObject id="494" customClass="TKOAppDelegate">
             <connections>
-                <outlet property="window" destination="371" id="532"/>
+                <outlet property="colorPicker" destination="VW0-jT-t9O" id="TJC-H5-MbF"/>
+                <outlet property="colorWell" destination="PEj-Qf-m5Q" id="Tp9-Ai-2mI"/>
+                <outlet property="window" destination="DVc-oC-SH8" id="RKF-au-N1X"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
+        <window title="TKOKit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="DVc-oC-SH8">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="101" y="253" width="249" height="300"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
+            <view key="contentView" id="qmx-by-KIY">
+                <rect key="frame" x="0.0" y="0.0" width="249" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <colorWell bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEj-Qf-m5Q">
+                        <rect key="frame" x="20" y="49" width="209" height="231"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="color" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                    </colorWell>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="VW0-jT-t9O" customClass="TKOColorPickerView">
+                        <rect key="frame" x="20" y="20" width="66" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="IEN-zl-svK"/>
+                            <constraint firstAttribute="width" constant="66" id="uLz-X3-aMO"/>
+                        </constraints>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="VW0-jT-t9O" secondAttribute="bottom" constant="20" symbolic="YES" id="Frw-46-q47"/>
+                    <constraint firstItem="VW0-jT-t9O" firstAttribute="leading" secondItem="qmx-by-KIY" secondAttribute="leading" constant="20" id="Ldc-8E-lsf"/>
+                    <constraint firstItem="VW0-jT-t9O" firstAttribute="top" secondItem="PEj-Qf-m5Q" secondAttribute="bottom" constant="8" symbolic="YES" id="NBe-7b-VLe"/>
+                    <constraint firstItem="PEj-Qf-m5Q" firstAttribute="leading" secondItem="qmx-by-KIY" secondAttribute="leading" constant="20" symbolic="YES" id="eV5-sM-2cz"/>
+                    <constraint firstItem="PEj-Qf-m5Q" firstAttribute="top" secondItem="qmx-by-KIY" secondAttribute="top" constant="20" symbolic="YES" id="xg1-Tq-kqT"/>
+                    <constraint firstAttribute="trailing" secondItem="PEj-Qf-m5Q" secondAttribute="trailing" constant="20" symbolic="YES" id="zkd-4G-Kar"/>
+                </constraints>
+            </view>
+        </window>
     </objects>
 </document>

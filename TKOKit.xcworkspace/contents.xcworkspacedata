@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:TKOKit/TKOKit.xcodeproj">
+      location = "group:TKOColorPickerControl/TKOColorPickerControl.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TKOKit/TKOTextSystem/TKOTextSystem.xcodeproj">
+      location = "group:TKOTextSystem/TKOTextSystem.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TKOKit.xcodeproj">
    </FileRef>
 </Workspace>
