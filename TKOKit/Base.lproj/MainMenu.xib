@@ -650,11 +650,24 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="101" y="253" width="524" height="334"/>
+            <rect key="contentRect" x="101" y="253" width="329" height="334"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="524" height="334"/>
+                <rect key="frame" x="0.0" y="0.0" width="329" height="334"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zuk-QU-SPb">
+                        <rect key="frame" x="14" y="286" width="82" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hm1-qc-5fr">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showColorPicker:" target="494" id="MLz-0N-awH"/>
+                        </connections>
+                    </button>
+                </subviews>
             </view>
         </window>
         <customObject id="494" customClass="TKOAppDelegate">

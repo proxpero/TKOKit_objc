@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7F9D2A44-D94B-487C-BEF0-F702CB5DA146</string>
+	<string>59E90192-A178-4C7E-9083-F76F305E34BC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TKOTextSystem</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/proxpero/TKOKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TKOTextSystem/TKOTextSystem.xcodeproj/project.xcworkspace</string>
+	<string>Demos/Text System/TKOTextSystem.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0ED56782-6F6D-4555-90AA-CBDA5B6B2C20</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/proxpero/TKOKit.git</string>

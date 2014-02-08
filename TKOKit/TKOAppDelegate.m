@@ -17,5 +17,9 @@
 //    [self.colorPicker setAction:@selector(colorPickerChangedColorAction:)];
 }
 
+- (IBAction)showColorPicker:(id)sender
+{
+    
+}
 
 @end

@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DC14F397-F6E4-4AF0-B05A-A9EC8FF13D72</string>
+	<string>53214B2C-3AE8-4873-8C7A-84E3ED32B248</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TKOKit</string>
+	<string>TKOColorPickerControl</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0ED56782-6F6D-4555-90AA-CBDA5B6B2C20</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TKOKit.xcworkspace</string>
+	<string>Demos/Color Picker/TKOColorPickerControl.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0ED56782-6F6D-4555-90AA-CBDA5B6B2C20</key>
-		<string>..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/proxpero/TKOKit.git</string>

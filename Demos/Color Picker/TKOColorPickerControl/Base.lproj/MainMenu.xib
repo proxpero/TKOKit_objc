@@ -654,18 +654,18 @@
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <window title="TKOKit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="DVc-oC-SH8">
+        <window title="Color Picker Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="DVc-oC-SH8">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="101" y="253" width="249" height="300"/>
+            <rect key="contentRect" x="101" y="253" width="330" height="304"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="qmx-by-KIY">
-                <rect key="frame" x="0.0" y="0.0" width="249" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="304"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <colorWell bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEj-Qf-m5Q">
-                        <rect key="frame" x="20" y="49" width="209" height="231"/>
+                        <rect key="frame" x="20" y="49" width="290" height="235"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="color" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                     </colorWell>
@@ -676,6 +676,9 @@
                             <constraint firstAttribute="height" constant="21" id="IEN-zl-svK"/>
                             <constraint firstAttribute="width" constant="66" id="uLz-X3-aMO"/>
                         </constraints>
+                        <connections>
+                            <action selector="colorPickerChangedColorAction:" target="494" id="mKc-xN-Yv7"/>
+                        </connections>
                     </customView>
                 </subviews>
                 <constraints>
