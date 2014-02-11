@@ -11,7 +11,15 @@
 #import "TKOTextStorage.h"
 #import "TKOColorPickerView.h"
 
+enum {
+    TKOBoldSegment = 0,
+    TKOObliquitySegment = 1,
+    TKOUnderlineSegment = 2,
+};
+
 @interface TKOFontInspectorViewController () <NSTextViewDelegate>
+
+@property (unsafe_unretained, nonatomic) TKOTextView * textView;
 
 @property (strong, nonatomic) NSString * selectedFontFamilyName;
 @property (strong, nonatomic) NSString * selectedFontFaceName;
@@ -48,32 +56,16 @@
     [self setupFontFamilies];
 }
 
-- (void)setDelegate:(id<TKOFontInspectorDelegate>)delegate
-{
-    if (_delegate == delegate)
-        return;
-    
-    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(fontInspectorDidModifyFontFamily:)])
-        [defaultCenter removeObserver:_delegate
-                                 name:TKOFontInspectorDidModifyFontFamilyNotification
-                               object:self];
-    _delegate = delegate;
-    if (_delegate && [_delegate respondsToSelector:@selector(fontInspectorDidModifyFontFamily:)])
-        [defaultCenter addObserver:_delegate
-                          selector:@selector(fontInspectorDidModifyFontFamily:)
-                              name:TKOFontInspectorDidModifyFontFamilyNotification
-                            object:self];
-}
-
 - (void)textViewDidChangeFont:(NSNotification *)notification
 {
+    [self setTextView:[notification object]];
+    
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
     BOOL isMultiple = [fontManager isMultiple];
     if (isMultiple) {
         
     }
+    
     NSFont * font = [fontManager selectedFont];
     NSFontDescriptor * fd = [font fontDescriptor];
     
@@ -82,10 +74,15 @@
     [self setSelectedFontSize:[font pointSize]];
     [self.fontTraitsSegmentedControl setSelected:[fontManager fontNamed:[fd objectForKey:NSFontNameAttribute]
                                                               hasTraits:NSBoldFontMask]
-                                      forSegment:0];
+                                      forSegment:TKOBoldSegment];
     [self.fontTraitsSegmentedControl setSelected:[fontManager fontNamed:[fd objectForKey:NSFontNameAttribute]
                                                               hasTraits:NSItalicFontMask]
-                                      forSegment:1];    
+                                      forSegment:TKOObliquitySegment];
+    BOOL isUnderlined = ([self.textView.textStorage attribute:NSUnderlineStyleAttributeName
+                                                      atIndex:self.textView.selectedRange.location
+                                               effectiveRange:NULL] > 0);
+    [self.fontTraitsSegmentedControl setSelected:isUnderlined
+                                      forSegment:TKOUnderlineSegment];
 }
 
 # pragma mark - Popup Buttons
@@ -135,6 +132,22 @@
     }
 }
 
+- (void)modifyAttribute:(NSString *)name
+                  value:(id)value
+{
+    if (!self.textView)
+        return;
+    if (!value)
+        return;
+    
+    for (NSValue * r in self.textView.selectedRanges) {
+        NSRange range = [r rangeValue];
+        [self.textView.textStorage addAttribute:name
+                                          value:value
+                                          range:range];
+    }
+}
+
 - (void)selectFontFamilyAction:(id)sender
 {
     NSString * proposedNewFamilyName = self.fontFamilyPopUpButton.selectedItem.title;
@@ -143,9 +156,10 @@
     
     _selectedFontFamilyName = proposedNewFamilyName.copy;
     
-    if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyFontFamily:)])
-        [self.delegate fontInspectorDidModifyFontFamily:_selectedFontFamilyName];
-    
+    NSFontManager * fontManager = [NSFontManager sharedFontManager];
+    [self modifyAttribute:NSFontAttributeName
+                    value:[fontManager convertFont:[fontManager selectedFont]
+                                          toFamily:_selectedFontFaceName]];
     [self setupFontFaces];
 }
 
@@ -167,8 +181,11 @@
     
     _selectedFontFaceName = proposedNewFaceName.copy;
     
-    if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyFontFace:)])
-        [self.delegate fontInspectorDidModifyFontFace:postscriptName];
+    NSFontManager * fontManager = [NSFontManager sharedFontManager];
+    
+    [self modifyAttribute:NSFontAttributeName
+                    value:[fontManager convertFont:[fontManager selectedFont]
+                                            toFace:postscriptName]];
 }
 
 - (void)setSelectedFontFaceName:(NSString *)selectedFontFaceName
@@ -186,8 +203,10 @@
     if (_selectedFontSize < 0.0)
         _selectedFontSize = 6.0; // Minimum Font Size (Magic)
     
-    if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyFontSize:)])
-        [self.delegate fontInspectorDidModifyFontSize:_selectedFontSize];
+    NSFontManager * fontManager = [NSFontManager sharedFontManager];    
+    [self modifyAttribute:NSFontAttributeName
+                    value:[fontManager convertFont:[fontManager selectedFont]
+                                            toSize:_selectedFontSize]];
 }
 
 - (void)setSelectedFontSize:(CGFloat)selectedFontSize
@@ -199,49 +218,44 @@
     self.fontSizeTextField.stringValue = [NSString stringWithFormat:@"%g pt", _selectedFontSize];
 }
 
-enum {
-    TKOBoldSegment = 0,
-    TKOObliquitySegment = 1,
-    TKOUnderlineSegment = 2,
-};
-
 - (IBAction)modifyFontTraitsAction:(id)sender
 {
-    switch ([sender selectedSegment]) { // Most recently selected segment index
-        case TKOBoldSegment:
-            
-            if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyBoldness:)])
-                [self.delegate fontInspectorDidModifyBoldness:[self.fontTraitsSegmentedControl isSelectedForSegment:TKOBoldSegment]];
-            
-            break;
-        case TKOObliquitySegment:
-
-            if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyObliquity:)])
-                [self.delegate fontInspectorDidModifyObliquity:[self.fontTraitsSegmentedControl isSelectedForSegment:TKOObliquitySegment]];
-            
-            break;
-            
-        case TKOUnderlineSegment:
-            
-            if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyUnderlining:)])
-                [self.delegate fontInspectorDidModifyUnderlining:[self.fontTraitsSegmentedControl isSelectedForSegment:TKOUnderlineSegment]];
-            
-            break;
-        default:
-            
-            
-            
-            break;
-    }
+    NSFontManager * fontManager = [NSFontManager sharedFontManager];
+    NSString * attributeName;
+    id value;
     
+    NSInteger selectedSegment = [sender selectedSegment];
+    
+    if (selectedSegment == TKOBoldSegment) {
+    
+        attributeName = NSFontAttributeName;
+        BOOL isBold = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOBoldSegment];
+        value = [fontManager convertFont:[fontManager selectedFont]
+                             toHaveTrait:isBold ? NSBoldFontMask : NSUnboldFontMask];
+        
+    } else if (selectedSegment == TKOObliquitySegment) {
+        
+        attributeName = NSFontAttributeName;
+        BOOL isOblique = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOObliquitySegment];
+        value = [fontManager convertFont:[fontManager selectedFont]
+                             toHaveTrait:isOblique ? NSItalicFontMask : NSUnitalicFontMask];
+        
+    } else if (selectedSegment == TKOUnderlineSegment) {
+        
+        attributeName = NSUnderlineStyleAttributeName;
+        BOOL isUnderlined = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOUnderlineSegment];
+        value = isUnderlined ? @(NSUnderlinePatternSolid|NSUnderlineStyleSingle) : @0;
+        
+    }
+
+    [self modifyAttribute:attributeName
+                    value:value];
 }
 
 - (IBAction)modifyForegroundTextColorAction:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(fontInspectorDidModifyTextColor:)])
-        [self.delegate fontInspectorDidModifyTextColor:self.foregroundTextColorPicker.selectedColor];
+    [self modifyAttribute:NSForegroundColorAttributeName
+                    value:self.foregroundTextColorPicker.selectedColor];
 }
 
 @end
-
-NSString * TKOFontInspectorDidModifyFontFamilyNotification = @"TKOFontInspectorDidModifyFontFamilyNotification";

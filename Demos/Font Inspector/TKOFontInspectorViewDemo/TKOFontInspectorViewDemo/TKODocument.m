@@ -43,9 +43,10 @@
                                                   textContainer:textContainer];
     
     [textView setTextContainerInset:NSMakeSize(20, 20)];
-    [textView setDelegate:self];
-    [textView setFontDelegate:self.fontInspector];
-    [self.fontInspector setDelegate:textView];
+    [[NSNotificationCenter defaultCenter] addObserver:self.fontInspector
+                                             selector:@selector(textViewDidChangeFont:)
+                                                 name:TKOTextViewDidChangeFontNotification
+                                               object:textView];
     [self.textScrollView setDocumentView:textView];
 }
 

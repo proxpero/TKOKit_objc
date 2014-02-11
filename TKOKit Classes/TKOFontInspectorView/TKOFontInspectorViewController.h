@@ -10,9 +10,9 @@
 #import "TKOFontInspection.h"
 #import "TKOTextView.h"
 
-@interface TKOFontInspectorViewController : NSViewController <NSTextDelegate, NSTextViewDelegate, TKOTextViewFontDelegate>
+@interface TKOFontInspectorViewController : NSViewController // <NSTextDelegate, NSTextViewDelegate, TKOTextViewFontDelegate>
 
-@property (unsafe_unretained, nonatomic) TKOTextView * textView;
-@property (unsafe_unretained, nonatomic) id <TKOFontInspectorDelegate> delegate;
+//@property (unsafe_unretained, nonatomic) TKOTextView * textView;
+//@property (unsafe_unretained, nonatomic) id <TKOFontInspectorDelegate> delegate;
 
 @end

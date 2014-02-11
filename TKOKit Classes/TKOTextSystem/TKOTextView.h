@@ -13,8 +13,4 @@
 
 @interface TKOTextView : NSTextView <TKOFontInspectorDelegate>
 
-//@property (strong, nonatomic) TKOTextStorage * textStorage;
-
-@property (weak, nonatomic) id <TKOTextViewFontDelegate> fontDelegate;
-
 @end

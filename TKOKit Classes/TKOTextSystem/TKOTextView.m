@@ -11,8 +11,6 @@
 #import "TKOTextContainer.h"
 #import "TKOLayoutManager.h"
 
-//#import "TKOFontInspectorViewController.h"
-
 @implementation TKOTextView
 
 - (id)init
@@ -61,25 +59,6 @@
 //    return self;
 //}
 
-- (void)setFontDelegate:(id<TKOTextViewFontDelegate>)fontDelegate
-{
-    if (_fontDelegate == fontDelegate)
-        return;
-    
-    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
-    
-    if (_fontDelegate && [_fontDelegate respondsToSelector:@selector(textViewDidChangeFont:)])
-        [defaultCenter removeObserver:_fontDelegate
-                                 name:TKOTextViewDidChangeFontNotification
-                               object:self];
-    _fontDelegate = fontDelegate;
-    if (_fontDelegate && [_fontDelegate respondsToSelector:@selector(textViewDidChangeFont:)])
-        [defaultCenter addObserver:_fontDelegate
-                          selector:@selector(textViewDidChangeFont:)
-                              name:TKOTextViewDidChangeFontNotification
-                            object:self];
-}
-
 - (void)configureTextView
 {
     [self setTextContainerInset:NSMakeSize(20, 20)];
@@ -113,104 +92,6 @@
     NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter postNotificationName:TKOTextViewDidChangeFontNotification
                                  object:self];
-}
-
-- (void)fontInspectorDidModifyFontFamily:(NSString *)familyName
-{
-    NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSArray * ranges = [self selectedRanges];
-    NSFont * oldFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:oldFont toFamily:familyName];
-    
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSFontAttributeName
-                                 value:newFont
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyFontFace:(NSString *)faceName
-{
-    NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSArray * ranges = [self selectedRanges];
-    NSFont * oldFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:oldFont toFace:faceName];
-    
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSFontAttributeName
-                                 value:newFont
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyFontSize:(CGFloat)size
-{
-    NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSArray * ranges = [self selectedRanges];
-    NSFont * oldFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:oldFont toSize:size];
-    
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSFontAttributeName
-                                 value:newFont
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyBoldness:(BOOL)isBold
-{
-    NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSArray * ranges = [self selectedRanges];
-    NSFont * oldFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:oldFont toHaveTrait:isBold ? NSBoldFontMask : NSUnboldFontMask];
-    
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSFontAttributeName
-                                 value:newFont
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyObliquity:(BOOL)isOblique
-{
-    NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSArray * ranges = [self selectedRanges];
-    NSFont * oldFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:oldFont toHaveTrait:isOblique ? NSItalicFontMask : NSUnitalicFontMask];
-    
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSFontAttributeName
-                                 value:newFont
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyUnderlining:(BOOL)isUnderlined
-{
-    NSInteger underlining = isUnderlined ? (NSUnderlinePatternSolid|NSUnderlineStyleSingle) : 0;
-    NSArray * ranges = [self selectedRanges];
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSUnderlineStyleAttributeName
-                                 value:@(underlining)
-                                 range:range];
-    }
-}
-
-- (void)fontInspectorDidModifyTextColor:(NSColor *)color
-{
-    NSArray * ranges = [self selectedRanges];
-    for (NSValue * value in ranges) {
-        NSRange range = [value rangeValue];
-        [self.textStorage addAttribute:NSForegroundColorAttributeName
-                                 value:color
-                                 range:range];
-    }
 }
 
 - (BOOL)isOpaque {
