@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>13611C8D-FFBA-43B5-837C-FDA5ECF5272B</string>
+	<string>D5AAB246-9291-432E-97CB-678CB710EE80</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TKOKit</string>
+	<string>TKOFontInspectorViewDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0ED56782-6F6D-4555-90AA-CBDA5B6B2C20</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TKOKit.xcodeproj/project.xcworkspace</string>
+	<string>Demos/Font Inspector/TKOFontInspectorViewDemo/TKOFontInspectorViewDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0ED56782-6F6D-4555-90AA-CBDA5B6B2C20</key>
-		<string>../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/proxpero/TKOKit.git</string>

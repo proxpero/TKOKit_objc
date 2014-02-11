@@ -9,7 +9,7 @@
 #import "TKOTextContainer.h"
 
 #define WIDTH_TRACKS        YES
-#define HEIGHT_TRACKS       YES
+#define HEIGHT_TRACKS       NO
 
 #define CONTAINER_WIDTH     FLT_MAX
 #define CONTAINER_HEIGHT    FLT_MAX

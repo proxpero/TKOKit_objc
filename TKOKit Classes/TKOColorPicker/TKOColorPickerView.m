@@ -119,13 +119,6 @@
         return;
     
     _paletteButton = [[TKOPaletteButton alloc] initWithFrame:NSMakeRect(0, 0, 46, 21)];
-//    [_paletteButton setTitle:@""];
-//    [_paletteButton setBordered:NO];
-//    
-//    TKOPaletteCell * cell = _paletteButton.cell;
-//    NSLog(@"cell class %@", NSStringFromClass([cell class]));
-//    
-//    [_paletteButton.cell setHighlightsBy:NSNoCellMask];
     [_paletteButton setWantsLayer:YES];
     _paletteButton.layer.backgroundColor = [self.selectedColor CGColor];
     [_paletteButton setTarget:self];

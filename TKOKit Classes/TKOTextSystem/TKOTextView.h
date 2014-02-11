@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOFontInspection.h"
 
 @class TKOTextStorage;
 
-@interface TKOTextView : NSTextView
+@interface TKOTextView : NSTextView <TKOFontInspectorDelegate>
 
-@property (strong, nonatomic) TKOTextStorage * textStorage;
+//@property (strong, nonatomic) TKOTextStorage * textStorage;
+
+@property (weak, nonatomic) id <TKOTextViewFontDelegate> fontDelegate;
 
 @end
