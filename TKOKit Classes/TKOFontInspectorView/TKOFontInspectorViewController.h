@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOFontInspection.h"
-#import "TKOTextView.h"
+//#import "TKOFontInspection.h"
+//#import "TKOTextView.h"
 
 @interface TKOFontInspectorViewController : NSViewController // <NSTextDelegate, NSTextViewDelegate, TKOTextViewFontDelegate>
 

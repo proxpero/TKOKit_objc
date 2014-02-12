@@ -33,7 +33,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fwp-dV-cQ0" userLabel="Available Fonts Popup">
+                <popUpButton toolTip="Choose the font family." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fwp-dV-cQ0" userLabel="Available Fonts Popup">
                     <rect key="frame" x="13" y="107" width="243" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
@@ -68,7 +68,7 @@
                         <action selector="modifyFontSizeAction:" target="-2" id="qsU-nE-R7Z"/>
                     </connections>
                 </textField>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-jc-RkS">
+                <popUpButton toolTip="Choose the typeface." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-jc-RkS">
                     <rect key="frame" x="13" y="75" width="165" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>

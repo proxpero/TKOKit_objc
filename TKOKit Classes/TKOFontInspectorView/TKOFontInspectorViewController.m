@@ -7,8 +7,9 @@
 //
 
 #import "TKOFontInspectorViewController.h"
-#import "TKOTextView.h"
-#import "TKOTextStorage.h"
+#import "TKOTextSystem.h"
+//#import "TKOTextView.h"
+//#import "TKOTextStorage.h"
 #import "TKOColorPickerView.h"
 
 enum {
@@ -17,7 +18,7 @@ enum {
     TKOUnderlineSegment = 2,
 };
 
-@interface TKOFontInspectorViewController () <NSTextViewDelegate>
+@interface TKOFontInspectorViewController () // <NSTextViewDelegate>
 
 @property (unsafe_unretained, nonatomic) TKOTextView * textView;
 

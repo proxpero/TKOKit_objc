@@ -1,26 +1,34 @@
 //
 //  TKODocument.m
-//  TKOFontInspectorViewDemo
+//  TKOAlignmentInspectorViewDemo
 //
-//  Created by Todd Olsen on 2/8/14.
+//  Created by Todd Olsen on 2/11/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
 #import "TKODocument.h"
 #import "TKOTextSystem.h"
-#import "TKOFontInspectorViewController.h"
+#import "TKOAlignmentInspectorViewController.h"
 
-@interface TKODocument () <NSTextViewDelegate>
+@interface TKODocument ()
 
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet NSScrollView *textScrollView;
 @property (weak) IBOutlet NSScrollView *inspectorScrollView;
 
-@property (strong) TKOFontInspectorViewController * fontInspector;
+@property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentInspector;
 
 @end
 
 @implementation TKODocument
+
+- (void)setupAlignmentInspector
+{
+    if (self.alignmentInspector)
+        return;
+    self.alignmentInspector = [[TKOAlignmentInspectorViewController alloc] init];
+    [self.inspectorScrollView setDocumentView:self.alignmentInspector.view];
+}
 
 - (void)setupTextSystem
 {
@@ -33,21 +41,11 @@
                                                   textContainer:textContainer];
     
     [textView setTextContainerInset:NSMakeSize(20, 20)];
-    [[NSNotificationCenter defaultCenter] addObserver:self.fontInspector
-                                             selector:@selector(textViewDidChangeFont:)
-                                                 name:TKOTextViewDidChangeFontNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self.alignmentInspector
+                                             selector:@selector(textViewDidChangeAlignment:)
+                                                 name:NSTextViewDidChangeSelectionNotification
                                                object:textView];
     [self.textScrollView setDocumentView:textView];
-}
-
-- (void)setupFontInspector
-{
-    if (self.fontInspector)
-        return;
-    
-    self.fontInspector = [[TKOFontInspectorViewController alloc] init];
-    [self.inspectorScrollView setDocumentView:self.fontInspector.view];
-    
 }
 
 - (id)init
@@ -67,7 +65,7 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
-    [self setupFontInspector];
+    [self setupAlignmentInspector];
     [self setupTextSystem];
 }
 
@@ -76,17 +74,14 @@
     return YES;
 }
 
-- (NSData *)dataOfType:(NSString *)typeName
-                 error:(NSError **)outError
+- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     NSAttributedString * string = [self.textStorage attributedSubstringFromRange:NSMakeRange(0, self.textStorage.length)];
     NSData * data = [NSKeyedArchiver archivedDataWithRootObject:string];
     return data;
 }
 
-- (BOOL)readFromData:(NSData *)data
-              ofType:(NSString *)typeName
-               error:(NSError **)outError
+- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
     NSAttributedString * string = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if (string) {

@@ -119,6 +119,8 @@
         return;
     
     _paletteButton = [[TKOPaletteButton alloc] initWithFrame:NSMakeRect(0, 0, 46, 21)];
+    NSString * tooltip = NSLocalizedString(@"Click to choose a color.", @"Click to show a palette of colors to choose from.");
+    [_paletteButton setToolTip:tooltip];
     [_paletteButton setWantsLayer:YES];
     _paletteButton.layer.backgroundColor = [self.selectedColor CGColor];
     [_paletteButton setTarget:self];
