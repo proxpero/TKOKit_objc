@@ -45,7 +45,7 @@
     
     // Alignment
     
-    NSTextAlignment alignment;
+    NSTextAlignment alignment = 0;
     CGFloat headIndent, firstLineHeadIndent;
     
     NSArray * ranges = [self.textView selectedRanges];
