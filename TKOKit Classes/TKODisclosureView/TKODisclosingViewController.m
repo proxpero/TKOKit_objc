@@ -65,18 +65,15 @@
 - (void)awakeFromNib
 {
     _disclosureIsClosed = NO;
-        NSLog(@"h %f", NSHeight(self.headerView.bounds));
 }
 
 - (IBAction)toggleContentViewAction:(id)sender
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    if (!_disclosureIsClosed) {
-        
+    if (!_disclosureIsClosed)
+    {
         CGFloat distanceFromHeaderToBottom = NSMinY(self.view.bounds) - NSMinY(self.headerView.frame);
-        
-        if (!self.heightConstraint) {
-            
+        if (!self.heightConstraint)
+        {
             self.heightConstraint = [NSLayoutConstraint constraintWithItem:self.headerView
                                                                  attribute:NSLayoutAttributeBottom
                                                                  relatedBy:NSLayoutRelationEqual
@@ -85,24 +82,21 @@
                                                                 multiplier:1
                                                                   constant:distanceFromHeaderToBottom];
         }
-        
         self.heightConstraint.constant = distanceFromHeaderToBottom;
         [self.view addConstraint:self.heightConstraint];
         
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
             context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
             self.heightConstraint.animator.constant = 0;
-//            self.disclosureButton.title = @"Show";
         } completionHandler:^{
             _disclosureIsClosed = YES;
         }];
-        
-    } else {
-        
+    }
+    else
+    {
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
             context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
             self.heightConstraint.animator.constant -= self.contentView.frame.size.height;
-//            self.disclosureButton.title = @"Hide";
         } completionHandler:^{
             [self.view removeConstraint:self.heightConstraint];
             _disclosureIsClosed = NO;
