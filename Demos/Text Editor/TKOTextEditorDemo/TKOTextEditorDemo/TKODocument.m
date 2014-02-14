@@ -12,6 +12,7 @@
 #import "TKOFontInspectorViewController.h"
 #import "TKOAlignmentInspectorViewController.h"
 #import "TKOSpacingInspectorViewController.h"
+#import "TKOListsInspectorViewController.h"
 
 @interface TKODocument ()
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) TKOFontInspectorViewController * fontInspector;
 @property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentInspector;
 @property (strong, nonatomic) TKOSpacingInspectorViewController * spacingInspector;
+@property (strong, nonatomic) TKOListsInspectorViewController * listInspector;
 
 @end
 
@@ -32,14 +34,16 @@
     if (!self.inspectorScrollView || (self.fontInspector && self.alignmentInspector && self.spacingInspector))
         return;
     
-    self.fontInspector = [[TKOFontInspectorViewController alloc] init];
+    self.fontInspector      = [[TKOFontInspectorViewController alloc] init];
     self.alignmentInspector = [[TKOAlignmentInspectorViewController alloc] init];
-    self.spacingInspector = [[TKOSpacingInspectorViewController alloc] init];
+    self.spacingInspector   = [[TKOSpacingInspectorViewController alloc] init];
+    self.listInspector      = [[TKOListsInspectorViewController alloc] init];
     
     NSStackView * stackView = [NSStackView stackViewWithViews:@[
                                                                 self.fontInspector.view,
                                                                 self.alignmentInspector.view,
-                                                                self.spacingInspector.view
+                                                                self.spacingInspector.view,
+                                                                self.listInspector.view,
                                                                 ]];
     stackView.orientation = NSUserInterfaceLayoutOrientationVertical;
     stackView.alignment = NSLayoutAttributeCenterX;

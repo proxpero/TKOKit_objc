@@ -46,21 +46,11 @@
                                 <binding destination="-2" name="value" keyPath="title" id="yRk-7h-Bn3"/>
                             </connections>
                         </textField>
-                        <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oxY-Fb-Cq4">
-                            <rect key="frame" x="0.0" y="44" width="258" height="5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <font key="titleFont" metaFont="system"/>
-                        </box>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="oxY-Fb-Cq4" secondAttribute="trailing" id="04i-M8-f1B"/>
                         <constraint firstAttribute="height" constant="47" id="7Wk-QP-oto"/>
                         <constraint firstItem="bba-z1-ywn" firstAttribute="centerY" secondItem="4mN-9f-MNe" secondAttribute="centerY" id="7ZK-By-dJO"/>
-                        <constraint firstItem="oxY-Fb-Cq4" firstAttribute="leading" secondItem="4mN-9f-MNe" secondAttribute="leading" id="HAg-NL-4Qt"/>
                         <constraint firstAttribute="trailing" secondItem="Y4Y-PC-7T0" secondAttribute="trailing" constant="20" symbolic="YES" id="Rt8-da-9QC"/>
-                        <constraint firstItem="oxY-Fb-Cq4" firstAttribute="top" secondItem="4mN-9f-MNe" secondAttribute="top" id="UwI-nk-DsA"/>
                         <constraint firstItem="Y4Y-PC-7T0" firstAttribute="centerY" secondItem="bba-z1-ywn" secondAttribute="centerY" constant="-1" id="ajw-7F-0CR"/>
                         <constraint firstItem="bba-z1-ywn" firstAttribute="leading" secondItem="4mN-9f-MNe" secondAttribute="leading" constant="15" id="gWr-kR-SOf"/>
                         <constraint firstItem="Y4Y-PC-7T0" firstAttribute="leading" secondItem="bba-z1-ywn" secondAttribute="trailing" constant="8" symbolic="YES" id="zTp-Wz-Hgs"/>

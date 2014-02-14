@@ -84,7 +84,7 @@
                     </connections>
                 </segmentedControl>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-wD-MUb">
-                    <rect key="frame" x="0.0" y="137" width="268" height="5"/>
+                    <rect key="frame" x="0.0" y="-2" width="268" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -93,16 +93,14 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="qag-l8-rHt" secondAttribute="bottom" constant="14" id="1e9-T2-5qW"/>
-                <constraint firstItem="AVS-wD-MUb" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="F0l-ne-qjj"/>
                 <constraint firstItem="qag-l8-rHt" firstAttribute="top" secondItem="vML-pZ-4gM" secondAttribute="bottom" constant="11" id="HM5-fO-t02"/>
-                <constraint firstItem="AVS-wD-MUb" firstAttribute="top" secondItem="1" secondAttribute="top" id="RDI-ql-h9b"/>
-                <constraint firstAttribute="trailing" secondItem="AVS-wD-MUb" secondAttribute="trailing" id="SzX-gV-fM2"/>
-                <constraint firstItem="AVS-wD-MUb" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ZJv-7Q-PHK"/>
-                <constraint firstItem="AVS-wD-MUb" firstAttribute="top" secondItem="1" secondAttribute="top" id="cuK-mv-w4h"/>
+                <constraint firstAttribute="bottom" secondItem="AVS-wD-MUb" secondAttribute="bottom" id="Jit-vF-pLO"/>
+                <constraint firstItem="AVS-wD-MUb" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Uzk-4e-BxU"/>
                 <constraint firstItem="TTs-to-vTe" firstAttribute="leading" secondItem="gCl-aJ-uB3" secondAttribute="leading" id="fJh-CE-Xz1"/>
                 <constraint firstItem="TTs-to-vTe" firstAttribute="top" secondItem="gCl-aJ-uB3" secondAttribute="bottom" constant="11" id="fUx-HJ-XYQ"/>
                 <constraint firstItem="qag-l8-rHt" firstAttribute="leading" secondItem="gCl-aJ-uB3" secondAttribute="leading" id="kLA-CK-DAC"/>
                 <constraint firstItem="TTs-to-vTe" firstAttribute="leading" secondItem="vML-pZ-4gM" secondAttribute="leading" id="lV2-L3-VHk"/>
+                <constraint firstAttribute="trailing" secondItem="AVS-wD-MUb" secondAttribute="trailing" id="nin-ff-tz8"/>
                 <constraint firstItem="vML-pZ-4gM" firstAttribute="top" secondItem="TTs-to-vTe" secondAttribute="bottom" constant="11" id="poT-SZ-Pdn"/>
                 <constraint firstItem="gCl-aJ-uB3" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="15" id="tM6-MP-BjR"/>
                 <constraint firstItem="gCl-aJ-uB3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="13" id="xFY-wp-3im"/>

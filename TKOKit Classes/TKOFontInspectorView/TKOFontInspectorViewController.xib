@@ -125,7 +125,7 @@
                     </textFieldCell>
                 </textField>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-Zr-6f6">
-                    <rect key="frame" x="0.0" y="169" width="268" height="5"/>
+                    <rect key="frame" x="0.0" y="-2" width="268" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -142,13 +142,14 @@
             <constraints>
                 <constraint firstItem="3TU-jc-RkS" firstAttribute="bottom" secondItem="ZXs-mH-JeS" secondAttribute="bottom" id="2RA-Fm-G3f"/>
                 <constraint firstItem="pta-7p-sIn" firstAttribute="bottom" secondItem="Ow7-Mt-4DE" secondAttribute="bottom" id="2iB-cw-KzQ"/>
+                <constraint firstAttribute="trailing" secondItem="vAW-Zr-6f6" secondAttribute="trailing" id="30U-qC-t6n"/>
                 <constraint firstAttribute="width" constant="268" id="5Wo-WV-4wT"/>
-                <constraint firstItem="vAW-Zr-6f6" firstAttribute="leading" secondItem="Yn5-Ta-Gnc" secondAttribute="leading" id="6ne-5l-6kR"/>
                 <constraint firstItem="Fwp-dV-cQ0" firstAttribute="top" secondItem="k3u-1I-Z5c" secondAttribute="bottom" constant="11" id="7Pr-HW-X4m"/>
+                <constraint firstAttribute="bottom" secondItem="vAW-Zr-6f6" secondAttribute="bottom" id="DuO-cm-GHH"/>
                 <constraint firstItem="Buy-0b-259" firstAttribute="top" secondItem="Fwp-dV-cQ0" secondAttribute="bottom" constant="1" id="EWR-nS-kY8"/>
                 <constraint firstItem="3TU-jc-RkS" firstAttribute="top" secondItem="ZXs-mH-JeS" secondAttribute="top" id="Hzs-Iz-chU"/>
-                <constraint firstAttribute="trailing" secondItem="vAW-Zr-6f6" secondAttribute="trailing" id="IAM-7P-k5B"/>
                 <constraint firstItem="Ow7-Mt-4DE" firstAttribute="leading" secondItem="ZXs-mH-JeS" secondAttribute="leading" id="IeY-xS-X6I"/>
+                <constraint firstItem="vAW-Zr-6f6" firstAttribute="leading" secondItem="Yn5-Ta-Gnc" secondAttribute="leading" id="JKx-4M-cEc"/>
                 <constraint firstItem="3TU-jc-RkS" firstAttribute="leading" secondItem="Fwp-dV-cQ0" secondAttribute="leading" id="PJU-s9-beP"/>
                 <constraint firstItem="xyD-7x-tdY" firstAttribute="trailing" secondItem="Fwp-dV-cQ0" secondAttribute="trailing" id="UzE-SN-WfR"/>
                 <constraint firstItem="Ow7-Mt-4DE" firstAttribute="top" secondItem="Buy-0b-259" secondAttribute="bottom" constant="1" id="W6c-hg-xKu"/>
@@ -165,9 +166,8 @@
                 <constraint firstItem="pta-7p-sIn" firstAttribute="top" secondItem="3TU-jc-RkS" secondAttribute="bottom" constant="11" id="mxK-mE-gKB"/>
                 <constraint firstItem="xyD-7x-tdY" firstAttribute="baseline" secondItem="wMI-BX-e5O" secondAttribute="baseline" id="nib-gs-6aF"/>
                 <constraint firstItem="Buy-0b-259" firstAttribute="centerY" secondItem="ZXs-mH-JeS" secondAttribute="centerY" id="tvs-Fp-6sp"/>
-                <constraint firstAttribute="height" constant="172" id="wDd-71-LJe"/>
+                <constraint firstItem="vAW-Zr-6f6" firstAttribute="top" secondItem="xyD-7x-tdY" secondAttribute="bottom" constant="13" id="vZ8-KB-iao"/>
                 <constraint firstItem="pta-7p-sIn" firstAttribute="leading" secondItem="3TU-jc-RkS" secondAttribute="leading" id="whM-cN-E1y"/>
-                <constraint firstItem="vAW-Zr-6f6" firstAttribute="top" secondItem="Yn5-Ta-Gnc" secondAttribute="top" id="xWm-NC-Xrm"/>
                 <constraint firstItem="Fwp-dV-cQ0" firstAttribute="leading" secondItem="k3u-1I-Z5c" secondAttribute="leading" id="zFR-pB-mP6"/>
             </constraints>
         </customView>

@@ -65,6 +65,8 @@
 		4520E39818ADD96F005BA1DF /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36718ADD96F005BA1DF /* TKOTextView.m */; };
 		4520E39918ADD96F005BA1DF /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36A18ADD96F005BA1DF /* TKOTheme.m */; };
 		4520E39A18ADD96F005BA1DF /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */; };
+		45498F7B18AEC99200F4EA8C /* TKOListsInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45498F7918AEC99200F4EA8C /* TKOListsInspectorViewController.m */; };
+		45498F7C18AEC99200F4EA8C /* TKOListsInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,9 @@
 		4520E36A18ADD96F005BA1DF /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		4520E36B18ADD96F005BA1DF /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		45498F7818AEC99200F4EA8C /* TKOListsInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOListsInspectorViewController.h; sourceTree = "<group>"; };
+		45498F7918AEC99200F4EA8C /* TKOListsInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOListsInspectorViewController.m; sourceTree = "<group>"; };
+		45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOListsInspectorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +282,7 @@
 		4520E31D18ADD96E005BA1DF /* TKOKit Classes */ = {
 			isa = PBXGroup;
 			children = (
+				45498F7718AEC99200F4EA8C /* TKOListsInspectorView */,
 				4520E31E18ADD96E005BA1DF /* Categories */,
 				4520E32918ADD96E005BA1DF /* TKOAlignmentInspectorView */,
 				4520E33F18ADD96E005BA1DF /* TKOColorPicker */,
@@ -424,6 +430,16 @@
 			path = TKOTheme;
 			sourceTree = "<group>";
 		};
+		45498F7718AEC99200F4EA8C /* TKOListsInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				45498F7818AEC99200F4EA8C /* TKOListsInspectorViewController.h */,
+				45498F7918AEC99200F4EA8C /* TKOListsInspectorViewController.m */,
+				45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */,
+			);
+			path = TKOListsInspectorView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +538,7 @@
 				4520E37A18ADD96F005BA1DF /* TKOJustifiedAlignmentImage.png in Resources */,
 				4520E38518ADD96F005BA1DF /* TKORightAlignmentImage@2x.png in Resources */,
 				4520E38118ADD96F005BA1DF /* TKOPositionCenterImage@2x.png in Resources */,
+				45498F7C18AEC99200F4EA8C /* TKOListsInspectorViewController.xib in Resources */,
 				4520E37318ADD96F005BA1DF /* TKOAlignmentInspectorViewController.xib in Resources */,
 				4520E2FD18ADD94F005BA1DF /* TKODocument.xib in Resources */,
 				4520E37C18ADD96F005BA1DF /* TKOLeftAlignmentImage.png in Resources */,
@@ -555,6 +572,7 @@
 				4520E38E18ADD96F005BA1DF /* TKOFontInspectorViewController.m in Sources */,
 				4520E39018ADD96F005BA1DF /* TKOKeyValueObserver.m in Sources */,
 				4520E38B18ADD96F005BA1DF /* TKODisclosingViewController.m in Sources */,
+				45498F7B18AEC99200F4EA8C /* TKOListsInspectorViewController.m in Sources */,
 				4520E38D18ADD96F005BA1DF /* TKOFlippedClipView.m in Sources */,
 				4520E36E18ADD96F005BA1DF /* NSColor+TKOKit.m in Sources */,
 				4520E39818ADD96F005BA1DF /* TKOTextView.m in Sources */,
