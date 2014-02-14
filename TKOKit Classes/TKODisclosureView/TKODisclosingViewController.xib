@@ -20,11 +20,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="4mN-9f-MNe" userLabel="Header View">
-                    <rect key="frame" x="0.0" y="206" width="258" height="45"/>
+                    <rect key="frame" x="0.0" y="204" width="258" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bba-z1-ywn">
-                            <rect key="frame" x="15" y="16" width="13" height="13"/>
+                            <rect key="frame" x="15" y="17" width="13" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="disclosureTriangle" bezelStyle="disclosure" imagePosition="only" alignment="left" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g8e-F7-fYH">
                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
@@ -35,7 +35,7 @@
                             </connections>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Y-PC-7T0">
-                            <rect key="frame" x="34" y="14" width="206" height="17"/>
+                            <rect key="frame" x="34" y="16" width="206" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Vwe-5T-BwM">
                                 <font key="font" metaFont="systemBold"/>
@@ -47,7 +47,7 @@
                             </connections>
                         </textField>
                         <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oxY-Fb-Cq4">
-                            <rect key="frame" x="0.0" y="42" width="258" height="5"/>
+                            <rect key="frame" x="0.0" y="44" width="258" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -56,20 +56,30 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="oxY-Fb-Cq4" secondAttribute="trailing" id="04i-M8-f1B"/>
-                        <constraint firstAttribute="height" constant="45" id="7Wk-QP-oto"/>
+                        <constraint firstAttribute="height" constant="47" id="7Wk-QP-oto"/>
                         <constraint firstItem="bba-z1-ywn" firstAttribute="centerY" secondItem="4mN-9f-MNe" secondAttribute="centerY" id="7ZK-By-dJO"/>
                         <constraint firstItem="oxY-Fb-Cq4" firstAttribute="leading" secondItem="4mN-9f-MNe" secondAttribute="leading" id="HAg-NL-4Qt"/>
                         <constraint firstAttribute="trailing" secondItem="Y4Y-PC-7T0" secondAttribute="trailing" constant="20" symbolic="YES" id="Rt8-da-9QC"/>
                         <constraint firstItem="oxY-Fb-Cq4" firstAttribute="top" secondItem="4mN-9f-MNe" secondAttribute="top" id="UwI-nk-DsA"/>
-                        <constraint firstItem="Y4Y-PC-7T0" firstAttribute="centerY" secondItem="bba-z1-ywn" secondAttribute="centerY" id="ajw-7F-0CR"/>
+                        <constraint firstItem="Y4Y-PC-7T0" firstAttribute="centerY" secondItem="bba-z1-ywn" secondAttribute="centerY" constant="-1" id="ajw-7F-0CR"/>
                         <constraint firstItem="bba-z1-ywn" firstAttribute="leading" secondItem="4mN-9f-MNe" secondAttribute="leading" constant="15" id="gWr-kR-SOf"/>
                         <constraint firstItem="Y4Y-PC-7T0" firstAttribute="leading" secondItem="bba-z1-ywn" secondAttribute="trailing" constant="8" symbolic="YES" id="zTp-Wz-Hgs"/>
                     </constraints>
                 </customView>
+                <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="cqn-Ma-adH">
+                    <rect key="frame" x="0.0" y="-2" width="258" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="cqn-Ma-adH" secondAttribute="bottom" id="7vg-cR-rSj"/>
+                <constraint firstAttribute="trailing" secondItem="cqn-Ma-adH" secondAttribute="trailing" id="9TJ-ME-IRG"/>
                 <constraint firstAttribute="trailing" secondItem="4mN-9f-MNe" secondAttribute="trailing" id="Toq-cR-Af2"/>
                 <constraint firstItem="4mN-9f-MNe" firstAttribute="leading" secondItem="hDV-m3-Enk" secondAttribute="leading" id="Zvp-Vs-fJW"/>
+                <constraint firstItem="cqn-Ma-adH" firstAttribute="leading" secondItem="hDV-m3-Enk" secondAttribute="leading" id="lhk-05-YH7"/>
                 <constraint firstItem="4mN-9f-MNe" firstAttribute="top" secondItem="hDV-m3-Enk" secondAttribute="top" id="sf1-Y6-ZAh"/>
             </constraints>
         </customView>
