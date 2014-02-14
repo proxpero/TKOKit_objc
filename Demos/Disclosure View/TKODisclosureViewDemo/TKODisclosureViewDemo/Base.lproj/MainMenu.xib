@@ -673,7 +673,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="15i-RR-C6y">
-                            <rect key="frame" x="300" y="0.0" width="16" height="436"/>
+                            <rect key="frame" x="301" y="0.0" width="15" height="436"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -688,14 +688,13 @@
         </window>
         <customObject id="494" customClass="TKOAppDelegate">
             <connections>
-                <outlet property="buttonsDVC" destination="bnf-K5-wJh" id="YVE-iq-xlT"/>
-                <outlet property="buttonsView" destination="guN-5V-mSe" id="hq4-z2-fK2"/>
+                <outlet property="buttonsView" destination="guN-5V-mSe" id="SbZ-Rz-FFI"/>
                 <outlet property="scrollView" destination="Kxf-Fq-jXo" id="1VE-fN-HXR"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <customView id="guN-5V-mSe">
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="guN-5V-mSe">
             <rect key="frame" x="0.0" y="0.0" width="237" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -793,10 +792,5 @@
                 <constraint firstItem="c7Z-5o-8au" firstAttribute="top" secondItem="caN-ea-vKX" secondAttribute="bottom" constant="12" id="yaQ-DL-1U4"/>
             </constraints>
         </customView>
-        <viewController title="Buttons" id="bnf-K5-wJh" customClass="TKODisclosingViewController">
-            <connections>
-                <outlet property="contentView" destination="guN-5V-mSe" id="MNe-4C-kap"/>
-            </connections>
-        </viewController>
     </objects>
 </document>

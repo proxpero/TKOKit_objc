@@ -14,10 +14,12 @@
 @interface TKOAppDelegate ()
 
 @property (weak) IBOutlet NSScrollView *scrollView;
-@property (strong, nonatomic) TKOFontInspectorViewController * fontInspector;
-@property (strong, nonatomic) TKODisclosingViewController * fontDVC;
+//@property (strong, nonatomic) TKOFontInspectorViewController * fontInspector;
+//@property (strong, nonatomic) TKODisclosingViewController * fontDVC;
 
-@property (strong, nonatomic) IBOutlet TKODisclosingViewController * buttonsDVC;
+@property (strong, nonatomic) TKODisclosingViewController * buttonsDVC;
+@property (weak) IBOutlet NSView *buttonsView;
+
 
 @end
 
@@ -25,12 +27,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.fontDVC = [[TKODisclosingViewController alloc] init];
-    [self.fontDVC setTitle:@"Font Inspector"];
-    self.fontInspector = [[TKOFontInspectorViewController alloc] init];
-    [self.fontDVC setContentView:self.fontInspector.view];
+    self.buttonsDVC = [[TKODisclosingViewController alloc] init];
+    [self.buttonsDVC setContentView:self.buttonsView];
     
-    NSStackView * stackView = [NSStackView stackViewWithViews:@[self.buttonsDVC.view, self.fontDVC.view]];
+    NSStackView * stackView = [NSStackView stackViewWithViews:@[
+                                                                self.buttonsDVC.view
+                                                                ]];
     stackView.orientation = NSUserInterfaceLayoutOrientationVertical;
     stackView.alignment = NSLayoutAttributeCenterX;
     stackView.spacing = 0; // No spacing between the disclosure views

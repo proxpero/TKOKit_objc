@@ -79,11 +79,14 @@ enum {
     [self.fontTraitsSegmentedControl setSelected:[fontManager fontNamed:[fd objectForKey:NSFontNameAttribute]
                                                               hasTraits:NSItalicFontMask]
                                       forSegment:TKOObliquitySegment];
-    BOOL isUnderlined = ([self.textView.textStorage attribute:NSUnderlineStyleAttributeName
-                                                      atIndex:self.textView.selectedRange.location
-                                               effectiveRange:NULL] > 0);
-    [self.fontTraitsSegmentedControl setSelected:isUnderlined
-                                      forSegment:TKOUnderlineSegment];
+    
+    if (self.textView.selectedRange.location < self.textView.string.length) {
+        BOOL isUnderlined = ([self.textView.textStorage attribute:NSUnderlineStyleAttributeName
+                                                          atIndex:self.textView.selectedRange.location
+                                                   effectiveRange:NULL] > 0);
+        [self.fontTraitsSegmentedControl setSelected:isUnderlined
+                                          forSegment:TKOUnderlineSegment];
+    }
 }
 
 # pragma mark - Popup Buttons
