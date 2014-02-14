@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKODisclosingViewController.h"
 
-@interface TKOSpacingInspectorViewController : NSViewController
-
+@interface TKOSpacingInspectorViewController : TKODisclosingViewController
+- (void)textViewDidChangeSpacing:(NSNotification *)notification;
 @end

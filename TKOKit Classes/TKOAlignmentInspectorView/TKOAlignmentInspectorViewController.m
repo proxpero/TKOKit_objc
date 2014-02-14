@@ -177,8 +177,6 @@
     }
 }
 
-- (IBAction)modifyPositioningAction:(id)sender
-{
-    
-}
+- (IBAction)modifyPositioningAction:(id)sender { }
+
 @end
