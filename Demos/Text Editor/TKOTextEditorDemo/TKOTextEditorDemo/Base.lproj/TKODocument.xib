@@ -6,84 +6,81 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TKODocument">
             <connections>
-                <outlet property="inspectorScrollView" destination="log-Na-4zt" id="9tt-4O-ldy"/>
-                <outlet property="textScrollView" destination="eWi-a0-qFJ" id="Rcw-HA-Fiy"/>
-                <outlet property="window" destination="5" id="18"/>
+                <outlet property="inspectorScrollView" destination="UfH-SH-FcY" id="M6q-IE-r50"/>
+                <outlet property="textScrollView" destination="PRE-0k-X8Q" id="Bmy-ON-EAN"/>
+                <outlet property="window" destination="rsj-Mz-EnZ" id="O1y-ha-Gmc"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="rsj-Mz-EnZ" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="133" y="235" width="649" height="413"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
             <value key="minSize" type="size" width="94" height="86"/>
-            <view key="contentView" id="6">
+            <view key="contentView" id="HXU-A5-uwR">
                 <rect key="frame" x="0.0" y="0.0" width="649" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWi-a0-qFJ" userLabel="Text Scroll">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRE-0k-X8Q" userLabel="Text Scroll">
                         <rect key="frame" x="-1" y="-1" width="383" height="415"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="RtS-Fo-d35">
+                        <clipView key="contentView" id="EGD-JY-bDM">
                             <rect key="frame" x="0.0" y="0.0" width="383" height="415"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwG-Z7-52e">
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYR-sG-wdw">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="415"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="JBz-VH-f2v">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="k8q-CV-e38">
                             <rect key="frame" x="-100" y="-100" width="383" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="XZ3-6f-85Y">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="nBn-iA-ojZ">
                             <rect key="frame" x="367" y="0.0" width="16" height="415"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="log-Na-4zt" userLabel="Font Inspector Scroll">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfH-SH-FcY" userLabel="Font Inspector Scroll">
                         <rect key="frame" x="382" y="-1" width="268" height="415"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" copiesOnScroll="NO" id="pA4-uk-xLw" customClass="TKOFlippedClipView">
+                        <clipView key="contentView" copiesOnScroll="NO" id="JHu-ST-X6k" customClass="TKOFlippedClipView">
                             <rect key="frame" x="0.0" y="0.0" width="268" height="415"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sec-CI-QGs">
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8y-m7-XaN">
                                     <rect key="frame" x="0.0" y="0.0" width="268" height="415"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </subviews>
                         </clipView>
                         <constraints>
-                            <constraint firstAttribute="width" constant="268" id="40O-4W-ZVS"/>
+                            <constraint firstAttribute="width" constant="268" id="0LL-pp-gMg"/>
                         </constraints>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="6em-YW-4rA">
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="X99-Dd-KH8">
                             <rect key="frame" x="0.0" y="399" width="268" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="13Y-uf-eIt">
-                            <rect key="frame" x="252" y="0.0" width="16" height="415"/>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9fG-X1-uKH">
+                            <rect key="frame" x="253" y="0.0" width="15" height="415"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="log-Na-4zt" secondAttribute="trailing" constant="-1" id="2vu-dZ-gOB"/>
-                    <constraint firstAttribute="bottom" secondItem="log-Na-4zt" secondAttribute="bottom" constant="-1" id="FPi-D1-O7X"/>
-                    <constraint firstItem="log-Na-4zt" firstAttribute="bottom" secondItem="eWi-a0-qFJ" secondAttribute="bottom" id="Tm5-aJ-80k"/>
-                    <constraint firstItem="log-Na-4zt" firstAttribute="top" secondItem="6" secondAttribute="top" constant="-1" id="Wyv-oJ-JRV"/>
-                    <constraint firstItem="log-Na-4zt" firstAttribute="leading" secondItem="eWi-a0-qFJ" secondAttribute="trailing" id="YeG-Hd-EAv"/>
-                    <constraint firstItem="eWi-a0-qFJ" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="-1" id="qhW-hQ-gKN"/>
-                    <constraint firstItem="log-Na-4zt" firstAttribute="top" secondItem="eWi-a0-qFJ" secondAttribute="top" id="xS1-o2-jRv"/>
+                    <constraint firstAttribute="trailing" secondItem="UfH-SH-FcY" secondAttribute="trailing" constant="-1" id="8gi-1l-24D"/>
+                    <constraint firstItem="UfH-SH-FcY" firstAttribute="top" secondItem="PRE-0k-X8Q" secondAttribute="top" id="W3S-gb-lf6"/>
+                    <constraint firstItem="UfH-SH-FcY" firstAttribute="top" secondItem="HXU-A5-uwR" secondAttribute="top" constant="-1" id="c2m-63-D4d"/>
+                    <constraint firstItem="UfH-SH-FcY" firstAttribute="leading" secondItem="PRE-0k-X8Q" secondAttribute="trailing" id="gc5-9T-K8g"/>
+                    <constraint firstItem="UfH-SH-FcY" firstAttribute="bottom" secondItem="PRE-0k-X8Q" secondAttribute="bottom" id="idc-p8-J62"/>
+                    <constraint firstAttribute="bottom" secondItem="UfH-SH-FcY" secondAttribute="bottom" constant="-1" id="lON-TI-XX0"/>
+                    <constraint firstItem="PRE-0k-X8Q" firstAttribute="leading" secondItem="HXU-A5-uwR" secondAttribute="leading" constant="-1" id="sFO-jR-mAl"/>
                 </constraints>
             </view>
-            <connections>
-                <outlet property="delegate" destination="-2" id="17"/>
-            </connections>
         </window>
-        <customObject id="-3" userLabel="Application"/>
     </objects>
 </document>

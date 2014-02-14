@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4520E2E718ADD94F005BA1DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520E2E618ADD94F005BA1DF /* Cocoa.framework */; };
+		4520E2F118ADD94F005BA1DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4520E2EF18ADD94F005BA1DF /* InfoPlist.strings */; };
+		4520E2F318ADD94F005BA1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E2F218ADD94F005BA1DF /* main.m */; };
+		4520E2F718ADD94F005BA1DF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4520E2F518ADD94F005BA1DF /* Credits.rtf */; };
+		4520E2FA18ADD94F005BA1DF /* TKODocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E2F918ADD94F005BA1DF /* TKODocument.m */; };
+		4520E2FD18ADD94F005BA1DF /* TKODocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E2FB18ADD94F005BA1DF /* TKODocument.xib */; };
+		4520E30018ADD94F005BA1DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E2FE18ADD94F005BA1DF /* MainMenu.xib */; };
+		4520E30218ADD94F005BA1DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4520E30118ADD94F005BA1DF /* Images.xcassets */; };
+		4520E30918ADD94F005BA1DF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520E30818ADD94F005BA1DF /* XCTest.framework */; };
+		4520E30A18ADD94F005BA1DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520E2E618ADD94F005BA1DF /* Cocoa.framework */; };
+		4520E31218ADD94F005BA1DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4520E31018ADD94F005BA1DF /* InfoPlist.strings */; };
+		4520E31418ADD94F005BA1DF /* TKOTextEditorDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E31318ADD94F005BA1DF /* TKOTextEditorDemoTests.m */; };
+		4520E36D18ADD96F005BA1DF /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32018ADD96E005BA1DF /* NSAttributedString+TKOKit.m */; };
+		4520E36E18ADD96F005BA1DF /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32218ADD96E005BA1DF /* NSColor+TKOKit.m */; };
+		4520E36F18ADD96F005BA1DF /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32418ADD96E005BA1DF /* NSImage+TKOKit.m */; };
+		4520E37018ADD96F005BA1DF /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32618ADD96E005BA1DF /* NSString+TKOKit.m */; };
+		4520E37118ADD96F005BA1DF /* NSView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32818ADD96E005BA1DF /* NSView+TKOKit.m */; };
+		4520E37218ADD96F005BA1DF /* TKOAlignmentInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E32B18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.m */; };
+		4520E37318ADD96F005BA1DF /* TKOAlignmentInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E32C18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.xib */; };
+		4520E37418ADD96F005BA1DF /* TKOCenterAlignmentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E32D18ADD96E005BA1DF /* TKOCenterAlignmentImage.png */; };
+		4520E37518ADD96F005BA1DF /* TKOCenterAlignmentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E32E18ADD96E005BA1DF /* TKOCenterAlignmentImage@2x.png */; };
+		4520E37618ADD96F005BA1DF /* TKODecreaseIndentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E32F18ADD96E005BA1DF /* TKODecreaseIndentImage.png */; };
+		4520E37718ADD96F005BA1DF /* TKODecreaseIndentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33018ADD96E005BA1DF /* TKODecreaseIndentImage@2x.png */; };
+		4520E37818ADD96F005BA1DF /* TKOIncreaseIndentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33118ADD96E005BA1DF /* TKOIncreaseIndentImage.png */; };
+		4520E37918ADD96F005BA1DF /* TKOIncreaseIndentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33218ADD96E005BA1DF /* TKOIncreaseIndentImage@2x.png */; };
+		4520E37A18ADD96F005BA1DF /* TKOJustifiedAlignmentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33318ADD96E005BA1DF /* TKOJustifiedAlignmentImage.png */; };
+		4520E37B18ADD96F005BA1DF /* TKOJustifiedAlignmentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33418ADD96E005BA1DF /* TKOJustifiedAlignmentImage@2x.png */; };
+		4520E37C18ADD96F005BA1DF /* TKOLeftAlignmentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33518ADD96E005BA1DF /* TKOLeftAlignmentImage.png */; };
+		4520E37D18ADD96F005BA1DF /* TKOLeftAlignmentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33618ADD96E005BA1DF /* TKOLeftAlignmentImage@2x.png */; };
+		4520E37E18ADD96F005BA1DF /* TKOPositionBottomImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33718ADD96E005BA1DF /* TKOPositionBottomImage.png */; };
+		4520E37F18ADD96F005BA1DF /* TKOPositionBottomImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33818ADD96E005BA1DF /* TKOPositionBottomImage@2x.png */; };
+		4520E38018ADD96F005BA1DF /* TKOPositionCenterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33918ADD96E005BA1DF /* TKOPositionCenterImage.png */; };
+		4520E38118ADD96F005BA1DF /* TKOPositionCenterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33A18ADD96E005BA1DF /* TKOPositionCenterImage@2x.png */; };
+		4520E38218ADD96F005BA1DF /* TKOPositionTopImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33B18ADD96E005BA1DF /* TKOPositionTopImage.png */; };
+		4520E38318ADD96F005BA1DF /* TKOPositionTopImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33C18ADD96E005BA1DF /* TKOPositionTopImage@2x.png */; };
+		4520E38418ADD96F005BA1DF /* TKORightAlignmentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33D18ADD96E005BA1DF /* TKORightAlignmentImage.png */; };
+		4520E38518ADD96F005BA1DF /* TKORightAlignmentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E33E18ADD96E005BA1DF /* TKORightAlignmentImage@2x.png */; };
+		4520E38618ADD96F005BA1DF /* TKOColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E34118ADD96E005BA1DF /* TKOColorPickerView.m */; };
+		4520E38718ADD96F005BA1DF /* TKOPullDownImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E34218ADD96E005BA1DF /* TKOPullDownImage.png */; };
+		4520E38818ADD96F005BA1DF /* TKOPullDownImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4520E34318ADD96E005BA1DF /* TKOPullDownImage@2x.png */; };
+		4520E38918ADD96F005BA1DF /* TKOControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E34618ADD96E005BA1DF /* TKOControl.m */; };
+		4520E38A18ADD96F005BA1DF /* TKOControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E34818ADD96E005BA1DF /* TKOControlCell.m */; };
+		4520E38B18ADD96F005BA1DF /* TKODisclosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E34B18ADD96E005BA1DF /* TKODisclosingViewController.m */; };
+		4520E38C18ADD96F005BA1DF /* TKODisclosingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E34C18ADD96E005BA1DF /* TKODisclosingViewController.xib */; };
+		4520E38D18ADD96F005BA1DF /* TKOFlippedClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E34E18ADD96E005BA1DF /* TKOFlippedClipView.m */; };
+		4520E38E18ADD96F005BA1DF /* TKOFontInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E35118ADD96E005BA1DF /* TKOFontInspectorViewController.m */; };
+		4520E38F18ADD96F005BA1DF /* TKOFontInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E35218ADD96E005BA1DF /* TKOFontInspectorViewController.xib */; };
+		4520E39018ADD96F005BA1DF /* TKOKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E35418ADD96E005BA1DF /* TKOKeyValueObserver.m */; };
+		4520E39118ADD96F005BA1DF /* TKOPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E35618ADD96E005BA1DF /* TKOPlatform.m */; };
+		4520E39218ADD96F005BA1DF /* TKOSpacingInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E35918ADD96E005BA1DF /* TKOSpacingInspectorViewController.m */; };
+		4520E39318ADD96F005BA1DF /* TKOSpacingInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520E35A18ADD96E005BA1DF /* TKOSpacingInspectorViewController.xib */; };
+		4520E39418ADD96F005BA1DF /* TKOStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E35C18ADD96E005BA1DF /* TKOStore.m */; };
+		4520E39518ADD96F005BA1DF /* TKOLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36018ADD96F005BA1DF /* TKOLayoutManager.m */; };
+		4520E39618ADD96F005BA1DF /* TKOTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36218ADD96F005BA1DF /* TKOTextContainer.m */; };
+		4520E39718ADD96F005BA1DF /* TKOTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36418ADD96F005BA1DF /* TKOTextStorage.m */; };
+		4520E39818ADD96F005BA1DF /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36718ADD96F005BA1DF /* TKOTextView.m */; };
+		4520E39918ADD96F005BA1DF /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36A18ADD96F005BA1DF /* TKOTheme.m */; };
+		4520E39A18ADD96F005BA1DF /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4520E30B18ADD94F005BA1DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520E2DB18ADD94F005BA1DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4520E2E218ADD94F005BA1DF;
+			remoteInfo = TKOTextEditorDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4520E2E318ADD94F005BA1DF /* TKOTextEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOTextEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4520E2E618ADD94F005BA1DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4520E2E918ADD94F005BA1DF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4520E2EA18ADD94F005BA1DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4520E2EB18ADD94F005BA1DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4520E2EE18ADD94F005BA1DF /* TKOTextEditorDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOTextEditorDemo-Info.plist"; sourceTree = "<group>"; };
+		4520E2F018ADD94F005BA1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4520E2F218ADD94F005BA1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4520E2F418ADD94F005BA1DF /* TKOTextEditorDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKOTextEditorDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4520E2F618ADD94F005BA1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4520E2F818ADD94F005BA1DF /* TKODocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKODocument.h; sourceTree = "<group>"; };
+		4520E2F918ADD94F005BA1DF /* TKODocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKODocument.m; sourceTree = "<group>"; };
+		4520E2FC18ADD94F005BA1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TKODocument.xib; sourceTree = "<group>"; };
+		4520E2FF18ADD94F005BA1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4520E30118ADD94F005BA1DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4520E30718ADD94F005BA1DF /* TKOTextEditorDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKOTextEditorDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4520E30818ADD94F005BA1DF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4520E30F18ADD94F005BA1DF /* TKOTextEditorDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOTextEditorDemoTests-Info.plist"; sourceTree = "<group>"; };
+		4520E31118ADD94F005BA1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4520E31318ADD94F005BA1DF /* TKOTextEditorDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOTextEditorDemoTests.m; sourceTree = "<group>"; };
+		4520E31F18ADD96E005BA1DF /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
+		4520E32018ADD96E005BA1DF /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
+		4520E32118ADD96E005BA1DF /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+TKOKit.h"; sourceTree = "<group>"; };
+		4520E32218ADD96E005BA1DF /* NSColor+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+TKOKit.m"; sourceTree = "<group>"; };
+		4520E32318ADD96E005BA1DF /* NSImage+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+TKOKit.h"; sourceTree = "<group>"; };
+		4520E32418ADD96E005BA1DF /* NSImage+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+TKOKit.m"; sourceTree = "<group>"; };
+		4520E32518ADD96E005BA1DF /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKOKit.h"; sourceTree = "<group>"; };
+		4520E32618ADD96E005BA1DF /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKOKit.m"; sourceTree = "<group>"; };
+		4520E32718ADD96E005BA1DF /* NSView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+TKOKit.h"; sourceTree = "<group>"; };
+		4520E32818ADD96E005BA1DF /* NSView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+TKOKit.m"; sourceTree = "<group>"; };
+		4520E32A18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOAlignmentInspectorViewController.h; sourceTree = "<group>"; };
+		4520E32B18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOAlignmentInspectorViewController.m; sourceTree = "<group>"; };
+		4520E32C18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOAlignmentInspectorViewController.xib; sourceTree = "<group>"; };
+		4520E32D18ADD96E005BA1DF /* TKOCenterAlignmentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOCenterAlignmentImage.png; sourceTree = "<group>"; };
+		4520E32E18ADD96E005BA1DF /* TKOCenterAlignmentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOCenterAlignmentImage@2x.png"; sourceTree = "<group>"; };
+		4520E32F18ADD96E005BA1DF /* TKODecreaseIndentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKODecreaseIndentImage.png; sourceTree = "<group>"; };
+		4520E33018ADD96E005BA1DF /* TKODecreaseIndentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKODecreaseIndentImage@2x.png"; sourceTree = "<group>"; };
+		4520E33118ADD96E005BA1DF /* TKOIncreaseIndentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOIncreaseIndentImage.png; sourceTree = "<group>"; };
+		4520E33218ADD96E005BA1DF /* TKOIncreaseIndentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOIncreaseIndentImage@2x.png"; sourceTree = "<group>"; };
+		4520E33318ADD96E005BA1DF /* TKOJustifiedAlignmentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOJustifiedAlignmentImage.png; sourceTree = "<group>"; };
+		4520E33418ADD96E005BA1DF /* TKOJustifiedAlignmentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOJustifiedAlignmentImage@2x.png"; sourceTree = "<group>"; };
+		4520E33518ADD96E005BA1DF /* TKOLeftAlignmentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOLeftAlignmentImage.png; sourceTree = "<group>"; };
+		4520E33618ADD96E005BA1DF /* TKOLeftAlignmentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOLeftAlignmentImage@2x.png"; sourceTree = "<group>"; };
+		4520E33718ADD96E005BA1DF /* TKOPositionBottomImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOPositionBottomImage.png; sourceTree = "<group>"; };
+		4520E33818ADD96E005BA1DF /* TKOPositionBottomImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOPositionBottomImage@2x.png"; sourceTree = "<group>"; };
+		4520E33918ADD96E005BA1DF /* TKOPositionCenterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOPositionCenterImage.png; sourceTree = "<group>"; };
+		4520E33A18ADD96E005BA1DF /* TKOPositionCenterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOPositionCenterImage@2x.png"; sourceTree = "<group>"; };
+		4520E33B18ADD96E005BA1DF /* TKOPositionTopImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOPositionTopImage.png; sourceTree = "<group>"; };
+		4520E33C18ADD96E005BA1DF /* TKOPositionTopImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOPositionTopImage@2x.png"; sourceTree = "<group>"; };
+		4520E33D18ADD96E005BA1DF /* TKORightAlignmentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKORightAlignmentImage.png; sourceTree = "<group>"; };
+		4520E33E18ADD96E005BA1DF /* TKORightAlignmentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKORightAlignmentImage@2x.png"; sourceTree = "<group>"; };
+		4520E34018ADD96E005BA1DF /* TKOColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOColorPickerView.h; sourceTree = "<group>"; };
+		4520E34118ADD96E005BA1DF /* TKOColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOColorPickerView.m; sourceTree = "<group>"; };
+		4520E34218ADD96E005BA1DF /* TKOPullDownImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOPullDownImage.png; sourceTree = "<group>"; };
+		4520E34318ADD96E005BA1DF /* TKOPullDownImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOPullDownImage@2x.png"; sourceTree = "<group>"; };
+		4520E34518ADD96E005BA1DF /* TKOControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOControl.h; sourceTree = "<group>"; };
+		4520E34618ADD96E005BA1DF /* TKOControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOControl.m; sourceTree = "<group>"; };
+		4520E34718ADD96E005BA1DF /* TKOControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOControlCell.h; sourceTree = "<group>"; };
+		4520E34818ADD96E005BA1DF /* TKOControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOControlCell.m; sourceTree = "<group>"; };
+		4520E34A18ADD96E005BA1DF /* TKODisclosingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODisclosingViewController.h; sourceTree = "<group>"; };
+		4520E34B18ADD96E005BA1DF /* TKODisclosingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODisclosingViewController.m; sourceTree = "<group>"; };
+		4520E34C18ADD96E005BA1DF /* TKODisclosingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKODisclosingViewController.xib; sourceTree = "<group>"; };
+		4520E34D18ADD96E005BA1DF /* TKOFlippedClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFlippedClipView.h; sourceTree = "<group>"; };
+		4520E34E18ADD96E005BA1DF /* TKOFlippedClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFlippedClipView.m; sourceTree = "<group>"; };
+		4520E35018ADD96E005BA1DF /* TKOFontInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFontInspectorViewController.h; sourceTree = "<group>"; };
+		4520E35118ADD96E005BA1DF /* TKOFontInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFontInspectorViewController.m; sourceTree = "<group>"; };
+		4520E35218ADD96E005BA1DF /* TKOFontInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOFontInspectorViewController.xib; sourceTree = "<group>"; };
+		4520E35318ADD96E005BA1DF /* TKOKeyValueObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOKeyValueObserver.h; sourceTree = "<group>"; };
+		4520E35418ADD96E005BA1DF /* TKOKeyValueObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOKeyValueObserver.m; sourceTree = "<group>"; };
+		4520E35518ADD96E005BA1DF /* TKOPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOPlatform.h; sourceTree = "<group>"; };
+		4520E35618ADD96E005BA1DF /* TKOPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOPlatform.m; sourceTree = "<group>"; };
+		4520E35818ADD96E005BA1DF /* TKOSpacingInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSpacingInspectorViewController.h; sourceTree = "<group>"; };
+		4520E35918ADD96E005BA1DF /* TKOSpacingInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSpacingInspectorViewController.m; sourceTree = "<group>"; };
+		4520E35A18ADD96E005BA1DF /* TKOSpacingInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOSpacingInspectorViewController.xib; sourceTree = "<group>"; };
+		4520E35B18ADD96E005BA1DF /* TKOStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOStore.h; sourceTree = "<group>"; };
+		4520E35C18ADD96E005BA1DF /* TKOStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOStore.m; sourceTree = "<group>"; };
+		4520E35E18ADD96E005BA1DF /* TKOFontInspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFontInspection.h; sourceTree = "<group>"; };
+		4520E35F18ADD96E005BA1DF /* TKOLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOLayoutManager.h; sourceTree = "<group>"; };
+		4520E36018ADD96F005BA1DF /* TKOLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOLayoutManager.m; sourceTree = "<group>"; };
+		4520E36118ADD96F005BA1DF /* TKOTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextContainer.h; sourceTree = "<group>"; };
+		4520E36218ADD96F005BA1DF /* TKOTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextContainer.m; sourceTree = "<group>"; };
+		4520E36318ADD96F005BA1DF /* TKOTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextStorage.h; sourceTree = "<group>"; };
+		4520E36418ADD96F005BA1DF /* TKOTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextStorage.m; sourceTree = "<group>"; };
+		4520E36518ADD96F005BA1DF /* TKOTextSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextSystem.h; sourceTree = "<group>"; };
+		4520E36618ADD96F005BA1DF /* TKOTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextView.h; sourceTree = "<group>"; };
+		4520E36718ADD96F005BA1DF /* TKOTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextView.m; sourceTree = "<group>"; };
+		4520E36918ADD96F005BA1DF /* TKOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTheme.h; sourceTree = "<group>"; };
+		4520E36A18ADD96F005BA1DF /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
+		4520E36B18ADD96F005BA1DF /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
+		4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4520E2E018ADD94F005BA1DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E2E718ADD94F005BA1DF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4520E30418ADD94F005BA1DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E30A18ADD94F005BA1DF /* Cocoa.framework in Frameworks */,
+				4520E30918ADD94F005BA1DF /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4520E2DA18ADD94F005BA1DF = {
+			isa = PBXGroup;
+			children = (
+				4520E31D18ADD96E005BA1DF /* TKOKit Classes */,
+				4520E2EC18ADD94F005BA1DF /* TKOTextEditorDemo */,
+				4520E30D18ADD94F005BA1DF /* TKOTextEditorDemoTests */,
+				4520E2E518ADD94F005BA1DF /* Frameworks */,
+				4520E2E418ADD94F005BA1DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4520E2E418ADD94F005BA1DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4520E2E318ADD94F005BA1DF /* TKOTextEditorDemo.app */,
+				4520E30718ADD94F005BA1DF /* TKOTextEditorDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4520E2E518ADD94F005BA1DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4520E2E618ADD94F005BA1DF /* Cocoa.framework */,
+				4520E30818ADD94F005BA1DF /* XCTest.framework */,
+				4520E2E818ADD94F005BA1DF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4520E2E818ADD94F005BA1DF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4520E2E918ADD94F005BA1DF /* AppKit.framework */,
+				4520E2EA18ADD94F005BA1DF /* CoreData.framework */,
+				4520E2EB18ADD94F005BA1DF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4520E2EC18ADD94F005BA1DF /* TKOTextEditorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4520E2F818ADD94F005BA1DF /* TKODocument.h */,
+				4520E2F918ADD94F005BA1DF /* TKODocument.m */,
+				4520E2FB18ADD94F005BA1DF /* TKODocument.xib */,
+				4520E2FE18ADD94F005BA1DF /* MainMenu.xib */,
+				4520E30118ADD94F005BA1DF /* Images.xcassets */,
+				4520E2ED18ADD94F005BA1DF /* Supporting Files */,
+			);
+			path = TKOTextEditorDemo;
+			sourceTree = "<group>";
+		};
+		4520E2ED18ADD94F005BA1DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4520E2EE18ADD94F005BA1DF /* TKOTextEditorDemo-Info.plist */,
+				4520E2EF18ADD94F005BA1DF /* InfoPlist.strings */,
+				4520E2F218ADD94F005BA1DF /* main.m */,
+				4520E2F418ADD94F005BA1DF /* TKOTextEditorDemo-Prefix.pch */,
+				4520E2F518ADD94F005BA1DF /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4520E30D18ADD94F005BA1DF /* TKOTextEditorDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4520E31318ADD94F005BA1DF /* TKOTextEditorDemoTests.m */,
+				4520E30E18ADD94F005BA1DF /* Supporting Files */,
+			);
+			path = TKOTextEditorDemoTests;
+			sourceTree = "<group>";
+		};
+		4520E30E18ADD94F005BA1DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4520E30F18ADD94F005BA1DF /* TKOTextEditorDemoTests-Info.plist */,
+				4520E31018ADD94F005BA1DF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4520E31D18ADD96E005BA1DF /* TKOKit Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4520E31E18ADD96E005BA1DF /* Categories */,
+				4520E32918ADD96E005BA1DF /* TKOAlignmentInspectorView */,
+				4520E33F18ADD96E005BA1DF /* TKOColorPicker */,
+				4520E34418ADD96E005BA1DF /* TKOControl */,
+				4520E34918ADD96E005BA1DF /* TKODisclosureView */,
+				4520E34D18ADD96E005BA1DF /* TKOFlippedClipView.h */,
+				4520E34E18ADD96E005BA1DF /* TKOFlippedClipView.m */,
+				4520E34F18ADD96E005BA1DF /* TKOFontInspectorView */,
+				4520E35318ADD96E005BA1DF /* TKOKeyValueObserver.h */,
+				4520E35418ADD96E005BA1DF /* TKOKeyValueObserver.m */,
+				4520E35518ADD96E005BA1DF /* TKOPlatform.h */,
+				4520E35618ADD96E005BA1DF /* TKOPlatform.m */,
+				4520E35718ADD96E005BA1DF /* TKOSpacingInspectorView */,
+				4520E35B18ADD96E005BA1DF /* TKOStore.h */,
+				4520E35C18ADD96E005BA1DF /* TKOStore.m */,
+				4520E35D18ADD96E005BA1DF /* TKOTextSystem */,
+				4520E36818ADD96F005BA1DF /* TKOTheme */,
+			);
+			name = "TKOKit Classes";
+			path = "../../../TKOKit Classes";
+			sourceTree = "<group>";
+		};
+		4520E31E18ADD96E005BA1DF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4520E31F18ADD96E005BA1DF /* NSAttributedString+TKOKit.h */,
+				4520E32018ADD96E005BA1DF /* NSAttributedString+TKOKit.m */,
+				4520E32118ADD96E005BA1DF /* NSColor+TKOKit.h */,
+				4520E32218ADD96E005BA1DF /* NSColor+TKOKit.m */,
+				4520E32318ADD96E005BA1DF /* NSImage+TKOKit.h */,
+				4520E32418ADD96E005BA1DF /* NSImage+TKOKit.m */,
+				4520E32518ADD96E005BA1DF /* NSString+TKOKit.h */,
+				4520E32618ADD96E005BA1DF /* NSString+TKOKit.m */,
+				4520E32718ADD96E005BA1DF /* NSView+TKOKit.h */,
+				4520E32818ADD96E005BA1DF /* NSView+TKOKit.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4520E32918ADD96E005BA1DF /* TKOAlignmentInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				4520E32A18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.h */,
+				4520E32B18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.m */,
+				4520E32C18ADD96E005BA1DF /* TKOAlignmentInspectorViewController.xib */,
+				4520E32D18ADD96E005BA1DF /* TKOCenterAlignmentImage.png */,
+				4520E32E18ADD96E005BA1DF /* TKOCenterAlignmentImage@2x.png */,
+				4520E32F18ADD96E005BA1DF /* TKODecreaseIndentImage.png */,
+				4520E33018ADD96E005BA1DF /* TKODecreaseIndentImage@2x.png */,
+				4520E33118ADD96E005BA1DF /* TKOIncreaseIndentImage.png */,
+				4520E33218ADD96E005BA1DF /* TKOIncreaseIndentImage@2x.png */,
+				4520E33318ADD96E005BA1DF /* TKOJustifiedAlignmentImage.png */,
+				4520E33418ADD96E005BA1DF /* TKOJustifiedAlignmentImage@2x.png */,
+				4520E33518ADD96E005BA1DF /* TKOLeftAlignmentImage.png */,
+				4520E33618ADD96E005BA1DF /* TKOLeftAlignmentImage@2x.png */,
+				4520E33718ADD96E005BA1DF /* TKOPositionBottomImage.png */,
+				4520E33818ADD96E005BA1DF /* TKOPositionBottomImage@2x.png */,
+				4520E33918ADD96E005BA1DF /* TKOPositionCenterImage.png */,
+				4520E33A18ADD96E005BA1DF /* TKOPositionCenterImage@2x.png */,
+				4520E33B18ADD96E005BA1DF /* TKOPositionTopImage.png */,
+				4520E33C18ADD96E005BA1DF /* TKOPositionTopImage@2x.png */,
+				4520E33D18ADD96E005BA1DF /* TKORightAlignmentImage.png */,
+				4520E33E18ADD96E005BA1DF /* TKORightAlignmentImage@2x.png */,
+			);
+			path = TKOAlignmentInspectorView;
+			sourceTree = "<group>";
+		};
+		4520E33F18ADD96E005BA1DF /* TKOColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4520E34018ADD96E005BA1DF /* TKOColorPickerView.h */,
+				4520E34118ADD96E005BA1DF /* TKOColorPickerView.m */,
+				4520E34218ADD96E005BA1DF /* TKOPullDownImage.png */,
+				4520E34318ADD96E005BA1DF /* TKOPullDownImage@2x.png */,
+			);
+			path = TKOColorPicker;
+			sourceTree = "<group>";
+		};
+		4520E34418ADD96E005BA1DF /* TKOControl */ = {
+			isa = PBXGroup;
+			children = (
+				4520E34518ADD96E005BA1DF /* TKOControl.h */,
+				4520E34618ADD96E005BA1DF /* TKOControl.m */,
+				4520E34718ADD96E005BA1DF /* TKOControlCell.h */,
+				4520E34818ADD96E005BA1DF /* TKOControlCell.m */,
+			);
+			path = TKOControl;
+			sourceTree = "<group>";
+		};
+		4520E34918ADD96E005BA1DF /* TKODisclosureView */ = {
+			isa = PBXGroup;
+			children = (
+				4520E34A18ADD96E005BA1DF /* TKODisclosingViewController.h */,
+				4520E34B18ADD96E005BA1DF /* TKODisclosingViewController.m */,
+				4520E34C18ADD96E005BA1DF /* TKODisclosingViewController.xib */,
+			);
+			path = TKODisclosureView;
+			sourceTree = "<group>";
+		};
+		4520E34F18ADD96E005BA1DF /* TKOFontInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				4520E35018ADD96E005BA1DF /* TKOFontInspectorViewController.h */,
+				4520E35118ADD96E005BA1DF /* TKOFontInspectorViewController.m */,
+				4520E35218ADD96E005BA1DF /* TKOFontInspectorViewController.xib */,
+			);
+			path = TKOFontInspectorView;
+			sourceTree = "<group>";
+		};
+		4520E35718ADD96E005BA1DF /* TKOSpacingInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				4520E35818ADD96E005BA1DF /* TKOSpacingInspectorViewController.h */,
+				4520E35918ADD96E005BA1DF /* TKOSpacingInspectorViewController.m */,
+				4520E35A18ADD96E005BA1DF /* TKOSpacingInspectorViewController.xib */,
+			);
+			path = TKOSpacingInspectorView;
+			sourceTree = "<group>";
+		};
+		4520E35D18ADD96E005BA1DF /* TKOTextSystem */ = {
+			isa = PBXGroup;
+			children = (
+				4520E35E18ADD96E005BA1DF /* TKOFontInspection.h */,
+				4520E35F18ADD96E005BA1DF /* TKOLayoutManager.h */,
+				4520E36018ADD96F005BA1DF /* TKOLayoutManager.m */,
+				4520E36118ADD96F005BA1DF /* TKOTextContainer.h */,
+				4520E36218ADD96F005BA1DF /* TKOTextContainer.m */,
+				4520E36318ADD96F005BA1DF /* TKOTextStorage.h */,
+				4520E36418ADD96F005BA1DF /* TKOTextStorage.m */,
+				4520E36518ADD96F005BA1DF /* TKOTextSystem.h */,
+				4520E36618ADD96F005BA1DF /* TKOTextView.h */,
+				4520E36718ADD96F005BA1DF /* TKOTextView.m */,
+			);
+			path = TKOTextSystem;
+			sourceTree = "<group>";
+		};
+		4520E36818ADD96F005BA1DF /* TKOTheme */ = {
+			isa = PBXGroup;
+			children = (
+				4520E36918ADD96F005BA1DF /* TKOTheme.h */,
+				4520E36A18ADD96F005BA1DF /* TKOTheme.m */,
+				4520E36B18ADD96F005BA1DF /* TKOThemeLoader.h */,
+				4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */,
+			);
+			path = TKOTheme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4520E2E218ADD94F005BA1DF /* TKOTextEditorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4520E31718ADD94F005BA1DF /* Build configuration list for PBXNativeTarget "TKOTextEditorDemo" */;
+			buildPhases = (
+				4520E2DF18ADD94F005BA1DF /* Sources */,
+				4520E2E018ADD94F005BA1DF /* Frameworks */,
+				4520E2E118ADD94F005BA1DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKOTextEditorDemo;
+			productName = TKOTextEditorDemo;
+			productReference = 4520E2E318ADD94F005BA1DF /* TKOTextEditorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4520E30618ADD94F005BA1DF /* TKOTextEditorDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4520E31A18ADD94F005BA1DF /* Build configuration list for PBXNativeTarget "TKOTextEditorDemoTests" */;
+			buildPhases = (
+				4520E30318ADD94F005BA1DF /* Sources */,
+				4520E30418ADD94F005BA1DF /* Frameworks */,
+				4520E30518ADD94F005BA1DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4520E30C18ADD94F005BA1DF /* PBXTargetDependency */,
+			);
+			name = TKOTextEditorDemoTests;
+			productName = TKOTextEditorDemoTests;
+			productReference = 4520E30718ADD94F005BA1DF /* TKOTextEditorDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4520E2DB18ADD94F005BA1DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					4520E30618ADD94F005BA1DF = {
+						TestTargetID = 4520E2E218ADD94F005BA1DF;
+					};
+				};
+			};
+			buildConfigurationList = 4520E2DE18ADD94F005BA1DF /* Build configuration list for PBXProject "TKOTextEditorDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4520E2DA18ADD94F005BA1DF;
+			productRefGroup = 4520E2E418ADD94F005BA1DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4520E2E218ADD94F005BA1DF /* TKOTextEditorDemo */,
+				4520E30618ADD94F005BA1DF /* TKOTextEditorDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4520E2E118ADD94F005BA1DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E38318ADD96F005BA1DF /* TKOPositionTopImage@2x.png in Resources */,
+				4520E37E18ADD96F005BA1DF /* TKOPositionBottomImage.png in Resources */,
+				4520E38818ADD96F005BA1DF /* TKOPullDownImage@2x.png in Resources */,
+				4520E37F18ADD96F005BA1DF /* TKOPositionBottomImage@2x.png in Resources */,
+				4520E37418ADD96F005BA1DF /* TKOCenterAlignmentImage.png in Resources */,
+				4520E39318ADD96F005BA1DF /* TKOSpacingInspectorViewController.xib in Resources */,
+				4520E2F118ADD94F005BA1DF /* InfoPlist.strings in Resources */,
+				4520E38218ADD96F005BA1DF /* TKOPositionTopImage.png in Resources */,
+				4520E38418ADD96F005BA1DF /* TKORightAlignmentImage.png in Resources */,
+				4520E38C18ADD96F005BA1DF /* TKODisclosingViewController.xib in Resources */,
+				4520E30218ADD94F005BA1DF /* Images.xcassets in Resources */,
+				4520E37618ADD96F005BA1DF /* TKODecreaseIndentImage.png in Resources */,
+				4520E37D18ADD96F005BA1DF /* TKOLeftAlignmentImage@2x.png in Resources */,
+				4520E38018ADD96F005BA1DF /* TKOPositionCenterImage.png in Resources */,
+				4520E2F718ADD94F005BA1DF /* Credits.rtf in Resources */,
+				4520E37B18ADD96F005BA1DF /* TKOJustifiedAlignmentImage@2x.png in Resources */,
+				4520E37718ADD96F005BA1DF /* TKODecreaseIndentImage@2x.png in Resources */,
+				4520E37518ADD96F005BA1DF /* TKOCenterAlignmentImage@2x.png in Resources */,
+				4520E37A18ADD96F005BA1DF /* TKOJustifiedAlignmentImage.png in Resources */,
+				4520E38518ADD96F005BA1DF /* TKORightAlignmentImage@2x.png in Resources */,
+				4520E38118ADD96F005BA1DF /* TKOPositionCenterImage@2x.png in Resources */,
+				4520E37318ADD96F005BA1DF /* TKOAlignmentInspectorViewController.xib in Resources */,
+				4520E2FD18ADD94F005BA1DF /* TKODocument.xib in Resources */,
+				4520E37C18ADD96F005BA1DF /* TKOLeftAlignmentImage.png in Resources */,
+				4520E38718ADD96F005BA1DF /* TKOPullDownImage.png in Resources */,
+				4520E37818ADD96F005BA1DF /* TKOIncreaseIndentImage.png in Resources */,
+				4520E30018ADD94F005BA1DF /* MainMenu.xib in Resources */,
+				4520E38F18ADD96F005BA1DF /* TKOFontInspectorViewController.xib in Resources */,
+				4520E37918ADD96F005BA1DF /* TKOIncreaseIndentImage@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4520E30518ADD94F005BA1DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E31218ADD94F005BA1DF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4520E2DF18ADD94F005BA1DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E39418ADD96F005BA1DF /* TKOStore.m in Sources */,
+				4520E39218ADD96F005BA1DF /* TKOSpacingInspectorViewController.m in Sources */,
+				4520E39718ADD96F005BA1DF /* TKOTextStorage.m in Sources */,
+				4520E39A18ADD96F005BA1DF /* TKOThemeLoader.m in Sources */,
+				4520E38E18ADD96F005BA1DF /* TKOFontInspectorViewController.m in Sources */,
+				4520E39018ADD96F005BA1DF /* TKOKeyValueObserver.m in Sources */,
+				4520E38B18ADD96F005BA1DF /* TKODisclosingViewController.m in Sources */,
+				4520E38D18ADD96F005BA1DF /* TKOFlippedClipView.m in Sources */,
+				4520E36E18ADD96F005BA1DF /* NSColor+TKOKit.m in Sources */,
+				4520E39818ADD96F005BA1DF /* TKOTextView.m in Sources */,
+				4520E38618ADD96F005BA1DF /* TKOColorPickerView.m in Sources */,
+				4520E37018ADD96F005BA1DF /* NSString+TKOKit.m in Sources */,
+				4520E37118ADD96F005BA1DF /* NSView+TKOKit.m in Sources */,
+				4520E39518ADD96F005BA1DF /* TKOLayoutManager.m in Sources */,
+				4520E38918ADD96F005BA1DF /* TKOControl.m in Sources */,
+				4520E37218ADD96F005BA1DF /* TKOAlignmentInspectorViewController.m in Sources */,
+				4520E38A18ADD96F005BA1DF /* TKOControlCell.m in Sources */,
+				4520E39118ADD96F005BA1DF /* TKOPlatform.m in Sources */,
+				4520E36D18ADD96F005BA1DF /* NSAttributedString+TKOKit.m in Sources */,
+				4520E2F318ADD94F005BA1DF /* main.m in Sources */,
+				4520E2FA18ADD94F005BA1DF /* TKODocument.m in Sources */,
+				4520E39918ADD96F005BA1DF /* TKOTheme.m in Sources */,
+				4520E36F18ADD96F005BA1DF /* NSImage+TKOKit.m in Sources */,
+				4520E39618ADD96F005BA1DF /* TKOTextContainer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4520E30318ADD94F005BA1DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4520E31418ADD94F005BA1DF /* TKOTextEditorDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4520E30C18ADD94F005BA1DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4520E2E218ADD94F005BA1DF /* TKOTextEditorDemo */;
+			targetProxy = 4520E30B18ADD94F005BA1DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4520E2EF18ADD94F005BA1DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520E2F018ADD94F005BA1DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4520E2F518ADD94F005BA1DF /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520E2F618ADD94F005BA1DF /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4520E2FB18ADD94F005BA1DF /* TKODocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520E2FC18ADD94F005BA1DF /* Base */,
+			);
+			name = TKODocument.xib;
+			sourceTree = "<group>";
+		};
+		4520E2FE18ADD94F005BA1DF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520E2FF18ADD94F005BA1DF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4520E31018ADD94F005BA1DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520E31118ADD94F005BA1DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4520E31518ADD94F005BA1DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4520E31618ADD94F005BA1DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4520E31818ADD94F005BA1DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextEditorDemo/TKOTextEditorDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextEditorDemo/TKOTextEditorDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4520E31918ADD94F005BA1DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextEditorDemo/TKOTextEditorDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextEditorDemo/TKOTextEditorDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4520E31B18ADD94F005BA1DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOTextEditorDemo.app/Contents/MacOS/TKOTextEditorDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextEditorDemo/TKOTextEditorDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TKOTextEditorDemoTests/TKOTextEditorDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4520E31C18ADD94F005BA1DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOTextEditorDemo.app/Contents/MacOS/TKOTextEditorDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOTextEditorDemo/TKOTextEditorDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOTextEditorDemoTests/TKOTextEditorDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4520E2DE18ADD94F005BA1DF /* Build configuration list for PBXProject "TKOTextEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4520E31518ADD94F005BA1DF /* Debug */,
+				4520E31618ADD94F005BA1DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4520E31718ADD94F005BA1DF /* Build configuration list for PBXNativeTarget "TKOTextEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4520E31818ADD94F005BA1DF /* Debug */,
+				4520E31918ADD94F005BA1DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4520E31A18ADD94F005BA1DF /* Build configuration list for PBXNativeTarget "TKOTextEditorDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4520E31B18ADD94F005BA1DF /* Debug */,
+				4520E31C18ADD94F005BA1DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4520E2DB18ADD94F005BA1DF /* Project object */;
+}
