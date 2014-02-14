@@ -46,7 +46,7 @@ typedef enum {
 
 NSString * title = @"Spacing";
 NSString * nibName = @"TKOSpacingInspectorViewController";
-NSString * viewID = @"TKOSpacingContentViewdentifier";
+NSString * viewID = @"TKOSpacingContentViewIdentifier";
 
 @implementation TKOSpacingInspectorViewController
 

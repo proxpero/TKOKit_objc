@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA2D57A3-559C-44A3-8BF9-87C34E563C1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TKOSpacingInspectorDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A91BDFD5-5877-4A71-920D-F28E517DD017</key>
+		<string>https://github.com/proxpero/TKOKit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Demos/Spacing Inspector/TKOSpacingInspectorDemo/TKOSpacingInspectorDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A91BDFD5-5877-4A71-920D-F28E517DD017</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/proxpero/TKOKit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A91BDFD5-5877-4A71-920D-F28E517DD017</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A91BDFD5-5877-4A71-920D-F28E517DD017</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TKOKit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
