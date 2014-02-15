@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOFontInspection.h"
 
-@class TKOTextStorage;
+extern NSString * const TKOTextViewDidChangeFontNotification;
 
-@interface TKOTextView : NSTextView <TKOFontInspectorDelegate>
+//@class TKOTextStorage;
+
+@interface TKOTextView : NSTextView
 
 @end

@@ -36,28 +36,10 @@
         return nil;
     
     [self configureTextView];
+    NSLog(@"textview self.frame %@", NSStringFromRect(self.frame));
     
     return self;
 }
-
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (!self)
-//        return nil;
-//
-//    _textStorage = [[TKOTextStorage alloc] init];
-//    TKOLayoutManager * layoutManager = [[TKOLayoutManager alloc] init];
-//    [_textStorage addLayoutManager:layoutManager];
-//    
-//    TKOTextContainer * textContainer = [[TKOTextContainer alloc] init];
-//    [layoutManager addTextContainer:textContainer];
-//    
-//    [textContainer setTextView:self];
-//    [self configureTextView];
-//
-//    return self;
-//}
 
 - (void)configureTextView
 {
@@ -88,10 +70,9 @@
 
 - (void)updateFontPanel
 {
-    [super updateFontPanel];    
-    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter postNotificationName:TKOTextViewDidChangeFontNotification
-                                 object:self];
+    [super updateFontPanel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKOTextViewDidChangeFontNotification
+                                                        object:self];
 }
 
 - (BOOL)isOpaque {
@@ -101,6 +82,24 @@
     return YES;
 }
 
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder];
+//    if (!self)
+//        return nil;
+//
+//    _textStorage = [[TKOTextStorage alloc] init];
+//    TKOLayoutManager * layoutManager = [[TKOLayoutManager alloc] init];
+//    [_textStorage addLayoutManager:layoutManager];
+//
+//    TKOTextContainer * textContainer = [[TKOTextContainer alloc] init];
+//    [layoutManager addTextContainer:textContainer];
+//
+//    [textContainer setTextView:self];
+//    [self configureTextView];
+//
+//    return self;
+//}
 @end
 
-NSString * TKOTextViewDidChangeFontNotification = @"TKOTextViewDidChangeFontNotification";
+NSString * const TKOTextViewDidChangeFontNotification = @"TKOTextViewDidChangeFontNotification";
