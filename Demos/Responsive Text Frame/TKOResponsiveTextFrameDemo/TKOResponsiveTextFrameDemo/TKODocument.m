@@ -42,7 +42,6 @@
                                                                      // after the textView alloc/init a strange
                                                                      // bug caused the tv frame to sharply decrease.
     [self.textScrollView setFitToWidth:YES];
-
 }
 
 - (id)init

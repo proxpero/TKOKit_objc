@@ -8,8 +8,6 @@
 
 #import "TKOFontInspectorViewController.h"
 #import "TKOTextSystem.h"
-//#import "TKOTextView.h"
-//#import "TKOTextStorage.h"
 #import "TKOColorPickerView.h"
 
 enum {
@@ -93,7 +91,7 @@ enum {
 
 - (void)setupFontFamilies
 {
-    static NSMenu * fontFamilyMenu = nil;
+    NSMenu * fontFamilyMenu = nil;
     if (!fontFamilyMenu) {
         
         fontFamilyMenu = [[NSMenu alloc] init];
@@ -146,6 +144,7 @@ enum {
     
     for (NSValue * r in self.textView.selectedRanges) {
         NSRange range = [r rangeValue];
+//        NSMutableAttributedString * attstr = self.textView.textStorage;
         [self.textView.textStorage addAttribute:name
                                           value:value
                                           range:range];
@@ -161,6 +160,9 @@ enum {
     _selectedFontFamilyName = proposedNewFamilyName.copy;
     
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
+    NSFont * selectedFont = [fontManager selectedFont];
+    NSFont * newFont = [fontManager convertFont:selectedFont
+                                       toFamily:_selectedFontFaceName];
     [self modifyAttribute:NSFontAttributeName
                     value:[fontManager convertFont:[fontManager selectedFont]
                                           toFamily:_selectedFontFaceName]];

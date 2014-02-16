@@ -67,6 +67,7 @@
 		4520E39A18ADD96F005BA1DF /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520E36C18ADD96F005BA1DF /* TKOThemeLoader.m */; };
 		45498F7B18AEC99200F4EA8C /* TKOListsInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45498F7918AEC99200F4EA8C /* TKOListsInspectorViewController.m */; };
 		45498F7C18AEC99200F4EA8C /* TKOListsInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */; };
+		4591CCB318AFFEF800B4289F /* TKOScalingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4591CCB218AFFEF800B4289F /* TKOScalingScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +157,6 @@
 		4520E35A18ADD96E005BA1DF /* TKOSpacingInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOSpacingInspectorViewController.xib; sourceTree = "<group>"; };
 		4520E35B18ADD96E005BA1DF /* TKOStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOStore.h; sourceTree = "<group>"; };
 		4520E35C18ADD96E005BA1DF /* TKOStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOStore.m; sourceTree = "<group>"; };
-		4520E35E18ADD96E005BA1DF /* TKOFontInspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFontInspection.h; sourceTree = "<group>"; };
 		4520E35F18ADD96E005BA1DF /* TKOLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOLayoutManager.h; sourceTree = "<group>"; };
 		4520E36018ADD96F005BA1DF /* TKOLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOLayoutManager.m; sourceTree = "<group>"; };
 		4520E36118ADD96F005BA1DF /* TKOTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextContainer.h; sourceTree = "<group>"; };
@@ -173,6 +173,8 @@
 		45498F7818AEC99200F4EA8C /* TKOListsInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOListsInspectorViewController.h; sourceTree = "<group>"; };
 		45498F7918AEC99200F4EA8C /* TKOListsInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOListsInspectorViewController.m; sourceTree = "<group>"; };
 		45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOListsInspectorViewController.xib; sourceTree = "<group>"; };
+		4591CCB118AFFEF800B4289F /* TKOScalingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOScalingScrollView.h; sourceTree = "<group>"; };
+		4591CCB218AFFEF800B4289F /* TKOScalingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOScalingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 		4520E31D18ADD96E005BA1DF /* TKOKit Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4591CCB018AFFEF800B4289F /* TKOScalingScrollView */,
 				45498F7718AEC99200F4EA8C /* TKOListsInspectorView */,
 				4520E31E18ADD96E005BA1DF /* Categories */,
 				4520E32918ADD96E005BA1DF /* TKOAlignmentInspectorView */,
@@ -405,7 +408,6 @@
 		4520E35D18ADD96E005BA1DF /* TKOTextSystem */ = {
 			isa = PBXGroup;
 			children = (
-				4520E35E18ADD96E005BA1DF /* TKOFontInspection.h */,
 				4520E35F18ADD96E005BA1DF /* TKOLayoutManager.h */,
 				4520E36018ADD96F005BA1DF /* TKOLayoutManager.m */,
 				4520E36118ADD96F005BA1DF /* TKOTextContainer.h */,
@@ -438,6 +440,15 @@
 				45498F7A18AEC99200F4EA8C /* TKOListsInspectorViewController.xib */,
 			);
 			path = TKOListsInspectorView;
+			sourceTree = "<group>";
+		};
+		4591CCB018AFFEF800B4289F /* TKOScalingScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				4591CCB118AFFEF800B4289F /* TKOScalingScrollView.h */,
+				4591CCB218AFFEF800B4289F /* TKOScalingScrollView.m */,
+			);
+			path = TKOScalingScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +594,7 @@
 				4520E38918ADD96F005BA1DF /* TKOControl.m in Sources */,
 				4520E37218ADD96F005BA1DF /* TKOAlignmentInspectorViewController.m in Sources */,
 				4520E38A18ADD96F005BA1DF /* TKOControlCell.m in Sources */,
+				4591CCB318AFFEF800B4289F /* TKOScalingScrollView.m in Sources */,
 				4520E39118ADD96F005BA1DF /* TKOPlatform.m in Sources */,
 				4520E36D18ADD96F005BA1DF /* NSAttributedString+TKOKit.m in Sources */,
 				4520E2F318ADD94F005BA1DF /* main.m in Sources */,

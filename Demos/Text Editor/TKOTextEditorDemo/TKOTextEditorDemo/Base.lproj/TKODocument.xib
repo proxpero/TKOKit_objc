@@ -30,7 +30,7 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRE-0k-X8Q" userLabel="Text Scroll">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRE-0k-X8Q" userLabel="Text Scroll" customClass="TKOScalingScrollView">
                         <rect key="frame" x="-1" y="-1" width="382" height="415"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="EGD-JY-bDM">
@@ -73,7 +73,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9fG-X1-uKH">
-                            <rect key="frame" x="252" y="0.0" width="16" height="415"/>
+                            <rect key="frame" x="253" y="0.0" width="15" height="415"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>

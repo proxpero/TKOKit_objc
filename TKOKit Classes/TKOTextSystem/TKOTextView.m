@@ -35,9 +35,7 @@
     if (!self)
         return nil;
     
-    [self configureTextView];
-    NSLog(@"textview self.frame %@", NSStringFromRect(self.frame));
-    
+    [self configureTextView];    
     return self;
 }
 

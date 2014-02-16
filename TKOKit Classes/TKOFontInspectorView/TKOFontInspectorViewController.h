@@ -7,12 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import "TKOFontInspection.h"
-//#import "TKOTextView.h"
 
-@interface TKOFontInspectorViewController : NSViewController // <NSTextDelegate, NSTextViewDelegate, TKOTextViewFontDelegate>
+@interface TKOFontInspectorViewController : NSViewController
 
-//@property (unsafe_unretained, nonatomic) TKOTextView * textView;
-//@property (unsafe_unretained, nonatomic) id <TKOFontInspectorDelegate> delegate;
+- (void)textViewDidChangeFont:(NSNotification *)notification;
 
 @end
