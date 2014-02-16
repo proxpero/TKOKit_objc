@@ -160,12 +160,9 @@ enum {
     _selectedFontFamilyName = proposedNewFamilyName.copy;
     
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
-    NSFont * selectedFont = [fontManager selectedFont];
-    NSFont * newFont = [fontManager convertFont:selectedFont
-                                       toFamily:_selectedFontFaceName];
     [self modifyAttribute:NSFontAttributeName
                     value:[fontManager convertFont:[fontManager selectedFont]
-                                          toFamily:_selectedFontFaceName]];
+                                          toFamily:_selectedFontFamilyName]];
     [self setupFontFaces];
 }
 
