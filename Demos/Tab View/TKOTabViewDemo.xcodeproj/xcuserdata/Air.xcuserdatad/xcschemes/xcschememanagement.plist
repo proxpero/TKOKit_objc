@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TKOParagraphStylePickerViewDemo.xcscheme</key>
+		<key>TKOTabViewDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4591CCBC18B2A5AC00B4289F</key>
+		<key>45A33BC018B2FE220029423E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4591CCE018B2A5AC00B4289F</key>
+		<key>45A33BE118B2FE220029423E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

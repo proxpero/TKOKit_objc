@@ -1,6 +1,6 @@
 //
-//  TKOParagraphStylePickerViewDemoTests.m
-//  TKOParagraphStylePickerViewDemoTests
+//  TKOTabViewDemoTests.m
+//  TKOTabViewDemoTests
 //
 //  Created by Todd Olsen on 2/17/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface TKOParagraphStylePickerViewDemoTests : XCTestCase
+@interface TKOTabViewDemoTests : XCTestCase
 
 @end
 
-@implementation TKOParagraphStylePickerViewDemoTests
+@implementation TKOTabViewDemoTests
 
 - (void)setUp
 {

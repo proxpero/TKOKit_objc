@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4591CCBC18B2A5AC00B4289F"
-               BuildableName = "TKOParagraphStylePickerViewDemo.app"
-               BlueprintName = "TKOParagraphStylePickerViewDemo"
-               ReferencedContainer = "container:TKOParagraphStylePickerViewDemo.xcodeproj">
+               BlueprintIdentifier = "45A33BC018B2FE220029423E"
+               BuildableName = "TKOTabViewDemo.app"
+               BlueprintName = "TKOTabViewDemo"
+               ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4591CCE018B2A5AC00B4289F"
-               BuildableName = "TKOParagraphStylePickerViewDemoTests.xctest"
-               BlueprintName = "TKOParagraphStylePickerViewDemoTests"
-               ReferencedContainer = "container:TKOParagraphStylePickerViewDemo.xcodeproj">
+               BlueprintIdentifier = "45A33BE118B2FE220029423E"
+               BuildableName = "TKOTabViewDemoTests.xctest"
+               BlueprintName = "TKOTabViewDemoTests"
+               ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4591CCBC18B2A5AC00B4289F"
-            BuildableName = "TKOParagraphStylePickerViewDemo.app"
-            BlueprintName = "TKOParagraphStylePickerViewDemo"
-            ReferencedContainer = "container:TKOParagraphStylePickerViewDemo.xcodeproj">
+            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BuildableName = "TKOTabViewDemo.app"
+            BlueprintName = "TKOTabViewDemo"
+            ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4591CCBC18B2A5AC00B4289F"
-            BuildableName = "TKOParagraphStylePickerViewDemo.app"
-            BlueprintName = "TKOParagraphStylePickerViewDemo"
-            ReferencedContainer = "container:TKOParagraphStylePickerViewDemo.xcodeproj">
+            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BuildableName = "TKOTabViewDemo.app"
+            BlueprintName = "TKOTabViewDemo"
+            ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4591CCBC18B2A5AC00B4289F"
-            BuildableName = "TKOParagraphStylePickerViewDemo.app"
-            BlueprintName = "TKOParagraphStylePickerViewDemo"
-            ReferencedContainer = "container:TKOParagraphStylePickerViewDemo.xcodeproj">
+            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BuildableName = "TKOTabViewDemo.app"
+            BlueprintName = "TKOTabViewDemo"
+            ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
