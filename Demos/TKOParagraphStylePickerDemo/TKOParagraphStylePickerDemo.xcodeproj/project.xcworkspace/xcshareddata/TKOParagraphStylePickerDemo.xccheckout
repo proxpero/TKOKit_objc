@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6725EE8C-E92C-4C97-A2AB-43EEE4210DE3</string>
+	<string>783052BF-FF5E-4F5F-BF72-0E688D7290E1</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TKOTabViewDemo</string>
+	<string>TKOParagraphStylePickerDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1A185577-F939-4D05-9F4C-B16797B27C41</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Demos/Tab View/TKOTabViewDemo.xcodeproj/project.xcworkspace</string>
+	<string>Demos/TKOParagraphStylePickerDemo/TKOParagraphStylePickerDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1A185577-F939-4D05-9F4C-B16797B27C41</key>

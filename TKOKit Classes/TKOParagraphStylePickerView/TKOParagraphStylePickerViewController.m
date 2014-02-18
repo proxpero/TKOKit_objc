@@ -36,6 +36,9 @@
         self.view.layer.backgroundColor = [[NSColor whiteColor] CGColor];
     }
     
+    [self.popover setAppearance:NSPopoverAppearanceMinimal];
+    [self.popover setBehavior:NSPopoverBehaviorTransient];
+    
     return self;
 }
 
@@ -43,6 +46,6 @@
 {
     [self.popover showRelativeToRect:[sender bounds]
                               ofView:sender
-                       preferredEdge:NSMinXEdge];
+                       preferredEdge:NSMinYEdge];
 }
 @end
