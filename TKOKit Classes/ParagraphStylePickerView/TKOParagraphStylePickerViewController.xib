@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TKOParagraphStylePickerViewController">
+            <connections>
+                <outlet property="popover" destination="Wd9-z0-t5z" id="nO0-0A-sRp"/>
+                <outlet property="view" destination="1" id="2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="CR8-pC-QpJ">
+                    <rect key="frame" x="14" y="14" width="240" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" title="My Paragraph Style" bezelStyle="rounded" image="TKOPullDownTemplate" imagePosition="right" alignment="left" imageScaling="proportionallyDown" inset="2" id="UEG-4O-Cg0">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system" size="15"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="showPopover:" target="-2" id="DTS-Ch-D3r"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="CR8-pC-QpJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="14" id="0pk-BG-di2"/>
+                <constraint firstAttribute="height" constant="68" id="HPC-EY-ub0"/>
+                <constraint firstAttribute="trailing" secondItem="CR8-pC-QpJ" secondAttribute="trailing" constant="14" id="Zbj-Wb-anL"/>
+                <constraint firstAttribute="bottom" secondItem="CR8-pC-QpJ" secondAttribute="bottom" constant="14" id="hpj-ns-5cL"/>
+                <constraint firstItem="CR8-pC-QpJ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="14" id="kia-f9-GaN"/>
+                <constraint firstAttribute="width" constant="268" id="xhj-ft-7xe"/>
+            </constraints>
+        </customView>
+        <viewController id="Aj7-d0-h5p" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="VTv-QX-PKd" id="HP0-C8-VGJ"/>
+            </connections>
+        </viewController>
+        <popover id="Wd9-z0-t5z">
+            <connections>
+                <outlet property="contentViewController" destination="Aj7-d0-h5p" id="9aR-sV-gTV"/>
+            </connections>
+        </popover>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="VTv-QX-PKd">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="483"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVK-It-cew">
+                    <rect key="frame" x="0.0" y="0.0" width="268" height="455"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <clipView key="contentView" id="4vf-C2-ZXA">
+                        <rect key="frame" x="0.0" y="0.0" width="268" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOK-Mk-plL">
+                                <rect key="frame" x="0.0" y="0.0" width="268" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="cle-ge-Juh">
+                        <rect key="frame" x="0.0" y="439" width="268" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="8JB-Gh-sUu">
+                        <rect key="frame" x="252" y="0.0" width="16" height="455"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3Uc-Jg-PtX">
+                    <rect key="frame" x="0.0" y="455" width="268" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HDy-BM-Qf7">
+                            <rect key="frame" x="80" y="6" width="108" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Paragraph Styles" id="0qE-H1-pD2">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="3lb-Cg-Zo4">
+                            <rect key="frame" x="224" y="0.0" width="44" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="vbS-cE-gGC"/>
+                            </constraints>
+                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="9kE-cJ-pth">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3lb-Cg-Zo4" secondAttribute="trailing" id="FWt-mV-qeV"/>
+                        <constraint firstItem="HDy-BM-Qf7" firstAttribute="centerX" secondItem="3Uc-Jg-PtX" secondAttribute="centerX" id="W8C-LF-BzX"/>
+                        <constraint firstAttribute="bottom" secondItem="3lb-Cg-Zo4" secondAttribute="bottom" id="XCH-ty-eqK"/>
+                        <constraint firstItem="HDy-BM-Qf7" firstAttribute="centerY" secondItem="3Uc-Jg-PtX" secondAttribute="centerY" id="cdt-LV-cf7"/>
+                        <constraint firstAttribute="height" constant="28" id="pDJ-ZQ-xX7"/>
+                        <constraint firstItem="3lb-Cg-Zo4" firstAttribute="top" secondItem="3Uc-Jg-PtX" secondAttribute="top" id="ptI-RD-VlY"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="DVK-It-cew" firstAttribute="leading" secondItem="3Uc-Jg-PtX" secondAttribute="leading" id="99L-NX-Ww8"/>
+                <constraint firstAttribute="trailing" secondItem="3Uc-Jg-PtX" secondAttribute="trailing" id="Mrf-09-RBP"/>
+                <constraint firstItem="DVK-It-cew" firstAttribute="top" secondItem="3Uc-Jg-PtX" secondAttribute="bottom" id="NlA-iy-3CZ"/>
+                <constraint firstAttribute="bottom" secondItem="DVK-It-cew" secondAttribute="bottom" id="Q6K-ly-W31"/>
+                <constraint firstItem="DVK-It-cew" firstAttribute="trailing" secondItem="3Uc-Jg-PtX" secondAttribute="trailing" id="Wey-Zy-KTl"/>
+                <constraint firstItem="3Uc-Jg-PtX" firstAttribute="leading" secondItem="VTv-QX-PKd" secondAttribute="leading" id="huH-bR-PaV"/>
+                <constraint firstAttribute="width" constant="268" id="kQM-eX-66X"/>
+                <constraint firstItem="3Uc-Jg-PtX" firstAttribute="top" secondItem="VTv-QX-PKd" secondAttribute="top" id="y3k-IR-rHE"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="TKOPullDownTemplate" width="13" height="6"/>
+    </resources>
+</document>
