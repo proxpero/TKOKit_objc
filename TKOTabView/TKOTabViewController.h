@@ -1,5 +1,5 @@
 //
-//  TKOTabView.h
+//  TKOTabViewController.h
 //  TKOTabViewDemo
 //
 //  Created by Todd Olsen on 2/18/14.
@@ -7,8 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOTextTabControl.h"
 
-@interface TKOTabView : NSView
-
+@interface TKOTabViewController : NSViewController
+@property (strong, nonatomic) NSArray * tabViewControllers;
 @end

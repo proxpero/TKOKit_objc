@@ -7,11 +7,14 @@
 //
 
 #import "TKOAppDelegate.h"
-#import "TKOTabView.h"
+#import "TKOTabViewController.h"
+#import "NSView+TKOKit.h"
 
 @interface TKOAppDelegate ()
 
-@property (weak) IBOutlet TKOTabView *tabView;
+@property (strong, nonatomic) TKOTabViewController * tabController;
+@property (unsafe_unretained) IBOutlet NSViewController *vc1;
+@property (unsafe_unretained) IBOutlet NSViewController *vc2;
 
 @end
 
@@ -19,7 +22,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
+    self.tabController = [[TKOTabViewController alloc] init];
+//    [self.window.contentView addSubview:self.tabController.view];
+//    [self.window.contentView addFullSizeConstraintsForSubview:self.tabController.view];
+    [self.window setContentView:self.tabController.view];
+    [self.tabController setTabViewControllers:@[self.vc1, self.vc2]];
 }
 
 @end

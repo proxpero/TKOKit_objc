@@ -649,19 +649,78 @@
         <window title="TKOTabViewDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="406" height="469"/>
+            <rect key="contentRect" x="335" y="390" width="398" height="469"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
-            <view key="contentView" id="372" customClass="TKOTabView">
-                <rect key="frame" x="0.0" y="0.0" width="406" height="469"/>
+            <view key="contentView" id="372">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="469"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
         <customObject id="494" customClass="TKOAppDelegate">
             <connections>
                 <outlet property="tabView" destination="372" id="oDn-Ug-NNa"/>
+                <outlet property="vc1" destination="Yii-Rx-SKM" id="jdM-vu-Rat"/>
+                <outlet property="vc2" destination="gPZ-RT-aWA" id="0Wd-KR-UiY"/>
+                <outlet property="view1" destination="4bn-u5-cQU" id="Pqe-QP-vTh"/>
+                <outlet property="view2" destination="RIy-xM-eKe" id="38a-nh-hK8"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="4bn-u5-cQU">
+            <rect key="frame" x="0.0" y="0.0" width="204" height="352"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box autoresizesSubviews="NO" title="View 1" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-9s-P6b">
+                    <rect key="frame" x="17" y="16" width="170" height="316"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="168" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QIe-9s-P6b" firstAttribute="top" secondItem="4bn-u5-cQU" secondAttribute="top" constant="20" symbolic="YES" id="Md3-HI-9n1"/>
+                <constraint firstItem="QIe-9s-P6b" firstAttribute="leading" secondItem="4bn-u5-cQU" secondAttribute="leading" constant="20" symbolic="YES" id="dA8-XR-2QL"/>
+                <constraint firstAttribute="bottom" secondItem="QIe-9s-P6b" secondAttribute="bottom" constant="20" symbolic="YES" id="ifd-vK-AZj"/>
+                <constraint firstAttribute="trailing" secondItem="QIe-9s-P6b" secondAttribute="trailing" constant="20" symbolic="YES" id="lM2-IK-ay8"/>
+            </constraints>
+        </customView>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="RIy-xM-eKe">
+            <rect key="frame" x="0.0" y="0.0" width="204" height="352"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box autoresizesSubviews="NO" title="View 2" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="HVh-mb-eoA">
+                    <rect key="frame" x="17" y="16" width="170" height="316"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="168" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="HVh-mb-eoA" secondAttribute="bottom" constant="20" symbolic="YES" id="DZn-oR-Kfg"/>
+                <constraint firstItem="HVh-mb-eoA" firstAttribute="top" secondItem="RIy-xM-eKe" secondAttribute="top" constant="20" symbolic="YES" id="L5n-d8-10K"/>
+                <constraint firstAttribute="trailing" secondItem="HVh-mb-eoA" secondAttribute="trailing" constant="20" symbolic="YES" id="dnc-PU-3qn"/>
+                <constraint firstItem="HVh-mb-eoA" firstAttribute="leading" secondItem="RIy-xM-eKe" secondAttribute="leading" constant="20" symbolic="YES" id="sth-i2-eyY"/>
+            </constraints>
+        </customView>
+        <viewController id="zXu-F8-GS6" userLabel="Tab View Controller"/>
+        <viewController title="View 1" id="Yii-Rx-SKM" userLabel="vc1">
+            <connections>
+                <outlet property="view" destination="4bn-u5-cQU" id="Yf7-Yn-nQc"/>
+            </connections>
+        </viewController>
+        <viewController title="View 2" id="gPZ-RT-aWA" userLabel="vc2">
+            <connections>
+                <outlet property="view" destination="RIy-xM-eKe" id="HJI-3g-DBM"/>
+            </connections>
+        </viewController>
     </objects>
 </document>
