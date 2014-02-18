@@ -7,7 +7,7 @@
 //
 
 #import "TKOControl.h"
-#import "TKOControlCell.h"
+#import "TKOButtonCell.h"
 #import "NSColor+TKOKit.h"
 #import "NSView+TKOKit.h"
 #import "TKOTheme.h"
@@ -22,7 +22,7 @@
 
 + (Class)cellClass
 {
-    return [TKOControlCell class];
+    return [TKOButtonCell class];
 }
 
 - (void)setTheme:(TKOTheme *)theme

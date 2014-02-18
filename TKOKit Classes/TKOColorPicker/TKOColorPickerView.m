@@ -9,7 +9,7 @@
 #import "TKOColorPickerView.h"
 #import "NSView+TKOKit.h"
 #import "NSColor+TKOKit.h"
-#import "TKOControlCell.h"
+#import "TKOButtonCell.h"
 
 @interface TKOPaletteViewController : NSViewController
 
@@ -34,7 +34,7 @@
 @property (nonatomic) BOOL showsPullDownImage;
 @end
 
-@interface TKOPanelButtonCell : TKOControlCell
+@interface TKOPanelButtonCell : TKOButtonCell
 @end
 
 @implementation TKOColorPickerView
@@ -227,7 +227,7 @@
     
     matrix = [[NSMatrix alloc] initWithFrame:NSZeroRect
                                         mode:NSRadioModeMatrix
-                                   cellClass:[TKOControlCell class]
+                                   cellClass:[TKOButtonCell class]
                                 numberOfRows:5
                              numberOfColumns:6];
     [matrix setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -269,7 +269,7 @@
                          ];
     
     // myMatrix.cells: the order of cells goes left to right, and top to bottom, like reading English.
-    [matrix.cells enumerateObjectsUsingBlock:^(TKOControlCell * cell, NSUInteger idx, BOOL *stop) {
+    [matrix.cells enumerateObjectsUsingBlock:^(TKOButtonCell * cell, NSUInteger idx, BOOL *stop) {
         [cell setBordered:NO];
         [cell setHighlightsBy:NSNoCellMask];
         [cell setTitle:@""];

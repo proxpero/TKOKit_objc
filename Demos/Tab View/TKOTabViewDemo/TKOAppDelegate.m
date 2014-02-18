@@ -7,12 +7,19 @@
 //
 
 #import "TKOAppDelegate.h"
+#import "TKOTabView.h"
+
+@interface TKOAppDelegate ()
+
+@property (weak) IBOutlet TKOTabView *tabView;
+
+@end
 
 @implementation TKOAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    
 }
 
 @end
