@@ -21,6 +21,8 @@
 @property (weak) IBOutlet TKOScalingScrollView *textScrollView;
 @property (weak) IBOutlet NSScrollView *inspectorScrollView;
 
+
+
 @property (strong, nonatomic) TKOFontInspectorViewController * fontInspector;
 @property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentInspector;
 @property (strong, nonatomic) TKOSpacingInspectorViewController * spacingInspector;

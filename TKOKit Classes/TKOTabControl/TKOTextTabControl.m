@@ -63,7 +63,7 @@
 - (void)layoutTabs:(NSArray *)tabs
 {
     // remove old constraints, if any...
-    [self removeConstraints:self.constraints];
+//    [self removeConstraints:self.constraints];
     
     // constrain passed tabs into a horizontal list...
     NSButton * prev = nil;
@@ -124,13 +124,13 @@
     NSButton * tab = [NSView viewWithClass:[NSButton class]];
     [tab setCell:tabCell];
 
-    [tab addConstraint:[NSLayoutConstraint constraintWithItem:tab
-                                                    attribute:NSLayoutAttributeHeight
-                                                    relatedBy:NSLayoutRelationEqual
-                                                       toItem:nil
-                                                    attribute:NSLayoutAttributeNotAnAttribute
-                                                   multiplier:1.0
-                                                     constant:self.bounds.size.height]];
+//    [tab addConstraint:[NSLayoutConstraint constraintWithItem:tab
+//                                                    attribute:NSLayoutAttributeHeight
+//                                                    relatedBy:NSLayoutRelationEqual
+//                                                       toItem:nil
+//                                                    attribute:NSLayoutAttributeNotAnAttribute
+//                                                   multiplier:1.0
+//                                                     constant:self.bounds.size.height]];
     return tab;
 }
 
