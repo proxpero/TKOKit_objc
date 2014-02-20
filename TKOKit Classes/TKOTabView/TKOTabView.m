@@ -14,7 +14,7 @@
 @interface TKOTabView () <TKOTabControlDataSource>
 
 @property (strong, nonatomic) TKOTextTabControl * tabControl;
-@property (weak, nonatomic) NSView * currentView;
+@property (weak, nonatomic) TKOTabViewItem * currentItem;
 
 @end
 
@@ -31,12 +31,8 @@
 
 - (void)awakeFromNib
 {
-    if ([super respondsToSelector:@selector(awakeFromNib)]) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-        [super awakeFromNib];
-    }
+    [super awakeFromNib]; // [super responds].
     [self configureTabControl];
-    
 }
 
 - (void)configureTabControl
@@ -70,12 +66,12 @@
     [_tabControl setDataSource:self];
 }
 
-- (void)setTabViewControllers:(NSArray *)tabViewControllers
+- (void)setTabViewItems:(NSArray *)tabViewItems
 {
-    if (_tabViewControllers == tabViewControllers)
+    if (_tabViewItems == tabViewItems)
         return;
     
-    _tabViewControllers = tabViewControllers;
+    _tabViewItems = tabViewItems;
     [self.tabControl reloadData];
 }
 
@@ -83,13 +79,13 @@
 
 - (NSUInteger)tabControlNumberOfTabs:(TKOTabControl *)tabControl
 {
-    return self.tabViewControllers.count;
+    return self.tabViewItems.count;
 }
 
 - (id)tabControl:(TKOTabControl *)tabControl
      itemAtIndex:(NSUInteger)index
 {
-    return self.tabViewControllers[index];
+    return self.tabViewItems[index];
 }
 
 - (NSString *)tabControl:(TKOTabControl *)tabControl
@@ -100,20 +96,33 @@
 
 - (void)tabControlDidChangeSelection:(NSNotification *)notification
 {
-    [_currentView removeFromSuperview];
-    NSViewController * vc = [self.tabControl selectedItem];
-    _currentView = vc.view;
-    [self addSubview:_currentView];
+    [_currentItem.view removeFromSuperview];
+    _currentItem = [self.tabControl selectedItem];
+    NSView * subview = _currentItem.view;
+    [self addSubview:subview];
     [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_tabControl][_currentView]|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_tabControl][subview]|"
                                              options:0
                                              metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_tabControl, _currentView)]];
+                                               views:NSDictionaryOfVariableBindings(_tabControl, subview)]];
     [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_currentView]|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[subview]|"
                                              options:0
                                              metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_currentView)]];
+                                               views:NSDictionaryOfVariableBindings(subview)]];
+}
+
+@end
+
+@implementation TKOTabViewItem
+
++ (instancetype)itemWithView:(NSView *)view
+                       title:(NSString *)title
+{
+    TKOTabViewItem * item = [[self alloc] init];
+    [item setView:view];
+    [item setTitle:title];
+    return item;
 }
 
 @end

@@ -9,5 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 @interface TKOTabView : NSView
-@property (strong, nonatomic) NSArray * tabViewControllers;
+@property (strong, nonatomic) NSArray * tabViewItems;
+@end
+
+@interface TKOTabViewItem : NSObject
+
+@property (strong, nonatomic) NSView * view;
+@property (strong, nonatomic) NSString * title;
+
++ (instancetype)itemWithView:(NSView *)view
+                       title:(NSString *)title;
+
 @end

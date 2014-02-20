@@ -25,7 +25,12 @@
 {    
     self.tabView = [NSView viewWithClass:[TKOTabView class]];
     [self.window.contentView addSubviewWithFullSizeConstraints:self.tabView];
-    [self.tabView setTabViewControllers:@[self.vc1, self.vc2]];
+    [self.tabView setTabViewItems:@[
+                                    [TKOTabViewItem itemWithView:self.vc1.view
+                                                           title:self.vc1.title],
+                                    [TKOTabViewItem itemWithView:self.vc2.view
+                                                           title:self.vc2.title]
+                                    ]];
 }
 
 @end
