@@ -17,10 +17,11 @@
 
 @implementation TKOParagraphStylePickerViewController
 
-- (id)init
+- (id)initWithTextView:(TKOTextView *)textView
 {
     self = [self initWithNibName:@"TKOParagraphStylePickerViewController"
                           bundle:nil];
+    [self setTextView:textView];
     return self;
 }
 
@@ -40,6 +41,33 @@
     [self.popover setBehavior:NSPopoverBehaviorTransient];
     
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self
+                             name:NSTextViewDidChangeSelectionNotification
+                           object:_textView];
+    
+    _textView = textView;
+    
+    [defaultCenter addObserver:self
+                      selector:@selector(textViewDidChangeParagraphStyle:)
+                          name:NSTextViewDidChangeSelectionNotification
+                        object:textView];
+}
+
+- (void)textViewDidChangeParagraphStyle:(NSNotification *)notification
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (IBAction)showPopover:(id)sender

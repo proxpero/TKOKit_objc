@@ -8,8 +8,11 @@
 
 #import "TKODisclosingViewController.h"
 
+@class TKOTextView;
+
 @interface TKOListsInspectorViewController : TKODisclosingViewController
 
+- (id)initWithTextView:(TKOTextView *)textView;
 - (void)textViewDidChangeListAttributes:(NSNotification *)notification;
 
 @end

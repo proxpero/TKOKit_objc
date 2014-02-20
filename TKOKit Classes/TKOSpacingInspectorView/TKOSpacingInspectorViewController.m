@@ -18,8 +18,6 @@ typedef enum {
 
 @interface TKOSpacingInspectorViewController ()
 
-@property (unsafe_unretained, nonatomic) TKOTextView * textView;
-
 @property (nonatomic) TKOLineSpacingMode lineSpacingMode;
 @property (nonatomic) CGFloat lineSpacing;
 @property (nonatomic) CGFloat lineHeightMultiple;
@@ -311,8 +309,39 @@ NSString * viewID = @"TKOSpacingContentViewIdentifier";
         if ([object isKindOfClass:[NSView class]] && [[object identifier] isEqualToString:viewID])
             [self setContentView:object];
     }
+    return self;
+}
+
+- (id)initWithTextView:(TKOTextView *)textView
+{
+    self = [self init];
+    
+    [self setTextView:textView];
     
     return self;
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self
+                             name:NSTextViewDidChangeSelectionNotification
+                           object:_textView];
+    
+    _textView = textView;
+    
+    [defaultCenter addObserver:self
+                      selector:@selector(textViewDidChangeSpacing:)
+                          name:NSTextViewDidChangeSelectionNotification
+                        object:textView];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

@@ -11,8 +11,6 @@
 
 @interface TKOAlignmentInspectorViewController ()
 
-@property (unsafe_unretained, nonatomic) TKOTextView * textView;
-
 @property (nonatomic) NSTextAlignment alignment;
 @property (nonatomic) CGFloat headIndent;
 @property (nonatomic) CGFloat firstLineHeadIndent;
@@ -33,10 +31,42 @@
 {
     self = [super initWithNibName:@"TKOAlignmentInspectorViewController"
                            bundle:nil];
-    if (self) {
-        // Initialization code here.
-    }
+    if (!self)
+        return nil;
+    
     return self;
+}
+
+- (id)initWithTextView:(TKOTextView *)textView
+{
+    self = [self init];
+    
+    [self setTextView:textView];
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self
+                             name:NSTextViewDidChangeSelectionNotification
+                           object:_textView];
+    
+    _textView = textView;
+    
+    [defaultCenter addObserver:self
+                      selector:@selector(textViewDidChangeAlignment:)
+                          name:NSTextViewDidChangeSelectionNotification
+                        object:_textView];
 }
 
 - (void)textViewDidChangeAlignment:(NSNotification *)notification

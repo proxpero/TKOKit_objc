@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class TKOTextView;
+
 @interface TKOParagraphStylePickerViewController : NSViewController
+@property (strong, nonatomic) TKOTextView * textView;
+- (id)initWithTextView:(TKOTextView *)textView;
 
 @end

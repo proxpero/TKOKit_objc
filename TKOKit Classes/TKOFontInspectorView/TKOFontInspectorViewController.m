@@ -18,7 +18,7 @@ enum {
 
 @interface TKOFontInspectorViewController () // <NSTextViewDelegate>
 
-@property (unsafe_unretained, nonatomic) TKOTextView * textView;
+//@property (unsafe_unretained, nonatomic) TKOTextView * textView;
 
 @property (strong, nonatomic) NSString * selectedFontFamilyName;
 @property (strong, nonatomic) NSString * selectedFontFaceName;
@@ -46,8 +46,39 @@ enum {
                            bundle:nil];
     if (!self)
         return nil;
+    return self;
+}
+
+- (id)initWithTextView:(TKOTextView *)textView
+{
+    self = [self init];
+
+    [self setTextView:textView];
     
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self
+                             name:TKOTextViewDidChangeFontNotification
+                           object:_textView];
+    
+    _textView = textView;
+    
+    [defaultCenter addObserver:self
+                      selector:@selector(textViewDidChangeFont:)
+                          name:TKOTextViewDidChangeFontNotification
+                        object:_textView];
 }
 
 - (void)awakeFromNib

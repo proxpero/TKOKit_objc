@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TKOFontInspectorViewController : NSViewController
+@class TKOTextView;
 
+@interface TKOFontInspectorViewController : NSViewController
+@property (strong, nonatomic) TKOTextView * textView;
+- (id)initWithTextView:(TKOTextView *)textView;
 - (void)textViewDidChangeFont:(NSNotification *)notification;
 
 @end

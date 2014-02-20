@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TKOAlignmentInspectorViewController : NSViewController
+@class TKOTextView;
 
+@interface TKOAlignmentInspectorViewController : NSViewController
+@property (strong, nonatomic) TKOTextView * textView;
+- (id)initWithTextView:(TKOTextView *)textView;
 - (void)textViewDidChangeAlignment:(NSNotification *)notification;
 
 @end
