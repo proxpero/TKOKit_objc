@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TKODocument">
             <connections>
+                <outlet property="tabView" destination="PRp-rY-ka6" id="SkX-C2-ZeT"/>
+                <outlet property="textScrollView" destination="34B-In-J7j" id="bVG-6W-cyx"/>
                 <outlet property="window" destination="rwy-hS-0Tb" id="Jm8-nc-T3R"/>
             </connections>
         </customObject>
@@ -22,21 +24,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <box autoresizesSubviews="NO" horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-zB-Wzv">
-                        <rect key="frame" x="379" y="0.0" width="5" height="413"/>
+                        <rect key="frame" x="378" y="0.0" width="5" height="413"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34B-In-J7j" userLabel="Text Scroll" customClass="TKOScalingScrollView">
-                        <rect key="frame" x="-1" y="-1" width="382" height="415"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="413"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="BQI-2e-1VI">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="415"/>
+                            <rect key="frame" x="0.0" y="0.0" width="380" height="413"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJg-9B-X0G">
-                                    <rect key="frame" x="0.0" y="0.0" width="382" height="415"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="413"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </subviews>
@@ -46,47 +48,31 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="G7A-E6-o3Z">
-                            <rect key="frame" x="366" y="0.0" width="16" height="415"/>
+                            <rect key="frame" x="364" y="0.0" width="16" height="413"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-jN-CKh" userLabel="Font Inspector Scroll">
-                        <rect key="frame" x="382" y="-1" width="268" height="415"/>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="PRp-rY-ka6" customClass="TKOTabView">
+                        <rect key="frame" x="381" y="0.0" width="268" height="413"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" copiesOnScroll="NO" id="68k-Df-LVs" customClass="TKOFlippedClipView">
-                            <rect key="frame" x="0.0" y="0.0" width="268" height="415"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-bt-8uI">
-                                    <rect key="frame" x="0.0" y="0.0" width="268" height="415"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </subviews>
-                        </clipView>
                         <constraints>
-                            <constraint firstAttribute="width" constant="268" id="xaF-yX-0rZ"/>
+                            <constraint firstAttribute="width" constant="268" id="Uj1-gv-BeI"/>
                         </constraints>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="oX5-sy-zZQ">
-                            <rect key="frame" x="0.0" y="399" width="268" height="16"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="pHi-ZF-Lz1">
-                            <rect key="frame" x="252" y="0.0" width="16" height="415"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
+                    </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="hdG-jN-CKh" secondAttribute="bottom" constant="-1" id="C5h-hZ-dFt"/>
-                    <constraint firstItem="34B-In-J7j" firstAttribute="top" secondItem="hdG-jN-CKh" secondAttribute="top" id="E0X-wv-ciy"/>
-                    <constraint firstAttribute="trailing" secondItem="hdG-jN-CKh" secondAttribute="trailing" constant="-1" id="NwZ-ne-tJY"/>
-                    <constraint firstItem="34B-In-J7j" firstAttribute="bottom" secondItem="hdG-jN-CKh" secondAttribute="bottom" id="Oln-gn-Bcf"/>
-                    <constraint firstItem="34B-In-J7j" firstAttribute="leading" secondItem="n0k-l0-KMr" secondAttribute="leading" constant="-1" id="XIK-y6-Rv5"/>
+                    <constraint firstItem="PRp-rY-ka6" firstAttribute="leading" secondItem="WhC-zB-Wzv" secondAttribute="trailing" id="4CV-hd-gPY"/>
+                    <constraint firstAttribute="bottom" secondItem="WhC-zB-Wzv" secondAttribute="bottom" id="CYT-Kz-NEs"/>
+                    <constraint firstItem="PRp-rY-ka6" firstAttribute="top" secondItem="n0k-l0-KMr" secondAttribute="top" id="DMv-sQ-2HA"/>
+                    <constraint firstAttribute="trailing" secondItem="PRp-rY-ka6" secondAttribute="trailing" id="Hsx-1o-Q6o"/>
+                    <constraint firstAttribute="bottom" secondItem="PRp-rY-ka6" secondAttribute="bottom" id="Ofb-3v-pGj"/>
+                    <constraint firstItem="WhC-zB-Wzv" firstAttribute="leading" secondItem="34B-In-J7j" secondAttribute="trailing" id="POw-6B-bi3"/>
+                    <constraint firstItem="34B-In-J7j" firstAttribute="leading" secondItem="n0k-l0-KMr" secondAttribute="leading" id="UQp-hI-1Zf"/>
                     <constraint firstAttribute="bottom" secondItem="WhC-zB-Wzv" secondAttribute="bottom" id="Y37-me-hY1"/>
-                    <constraint firstItem="hdG-jN-CKh" firstAttribute="leading" secondItem="WhC-zB-Wzv" secondAttribute="trailing" id="YfW-mn-mzn"/>
-                    <constraint firstItem="hdG-jN-CKh" firstAttribute="top" secondItem="n0k-l0-KMr" secondAttribute="top" constant="-1" id="gG2-gU-i66"/>
+                    <constraint firstItem="34B-In-J7j" firstAttribute="bottom" secondItem="WhC-zB-Wzv" secondAttribute="bottom" id="a4B-w3-eVT"/>
+                    <constraint firstItem="WhC-zB-Wzv" firstAttribute="top" secondItem="n0k-l0-KMr" secondAttribute="top" id="h81-2Q-uqH"/>
                     <constraint firstItem="WhC-zB-Wzv" firstAttribute="top" secondItem="n0k-l0-KMr" secondAttribute="top" id="lXa-Y2-Qe8"/>
-                    <constraint firstItem="WhC-zB-Wzv" firstAttribute="leading" secondItem="34B-In-J7j" secondAttribute="trailing" id="ycV-AN-PQ1"/>
+                    <constraint firstItem="34B-In-J7j" firstAttribute="top" secondItem="WhC-zB-Wzv" secondAttribute="top" id="z7D-Z0-y8K"/>
                 </constraints>
             </view>
         </window>

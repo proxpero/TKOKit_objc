@@ -7,19 +7,35 @@
 //
 
 #import "TKODocument.h"
+#import "TKOTabView.h"
 #import "TKOTextSystem.h"
 #import "TKOScalingScrollView.h"
+
+#import "TKOTextInspectorViewController.h"
 
 
 @interface TKODocument ()
 
+@property (weak) IBOutlet TKOTabView *tabView;
+
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet TKOScalingScrollView * textScrollView;
+
+@property (strong, nonatomic) TKOTextInspectorViewController * textInspector;
 
 @end
 
 
 @implementation TKODocument
+
+- (void)setupTabView
+{
+    self.textInspector = [[TKOTextInspectorViewController alloc] initWithTextView:self.textScrollView.documentView];
+    [self.tabView setTabViewItems:@[
+                                   [TKOTabViewItem itemWithView:self.textInspector.view
+                                                          title:self.textInspector.title]
+                                   ]];
+}
 
 - (void)setupTextSystem
 {
@@ -36,30 +52,12 @@
     [textContainer setWidthTracksTextView:YES];
     [layoutManager addTextContainer:textContainer];
     
-    NSRect frameRect = NSMakeRect(0, 0, docWidth, 1);
-    // Using FLT_MAX or CGFloat_Max for frameRect height caused
-    // <Error>: CGAffineTransformInvert: singular matrix.
-    // See Peter Hosey's comment: http://stackoverflow.com/questions/7471027/overriding-layoutsubviews-causes-cgaffinetransforminvert-singular-matrix-ran#comment23126967_7471027
+    NSRect frameRect = NSMakeRect(0, 0, docWidth, 1); // Using FLT_MAX or CGFloat_Max for frameRect height caused <Error>: CGAffineTransformInvert: singular matrix. See Peter Hosey's comment: http://stackoverflow.com/questions/7471027/overriding-layoutsubviews-causes-cgaffinetransforminvert-singular-matrix-ran#comment23126967_7471027
     
     TKOTextView * textView = [[TKOTextView alloc] initWithFrame:frameRect
                                                   textContainer:textContainer];
     [textView setHorizontallyResizable:NO];
     [textView setAutoresizingMask:NSViewHeightSizable];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self.fontInspector
-//                                             selector:@selector(textViewDidChangeFont:)
-//                                                 name:TKOTextViewDidChangeFontNotification
-//                                               object:textView];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self.alignmentInspector
-//                                             selector:@selector(textViewDidChangeAlignment:)
-//                                                 name:NSTextViewDidChangeSelectionNotification
-//                                               object:textView];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self.spacingInspector
-//                                             selector:@selector(textViewDidChangeSpacing:)
-//                                                 name:NSTextViewDidChangeSelectionNotification
-//                                               object:textView];
 
     [self.textScrollView setDocumentWidth:docWidth];
     [self.textScrollView setDocumentInset:docInset];
@@ -87,6 +85,7 @@
     [super windowControllerDidLoadNib:aController];
 
     [self setupTextSystem];
+    [self setupTabView];
 }
 
 + (BOOL)autosavesInPlace
