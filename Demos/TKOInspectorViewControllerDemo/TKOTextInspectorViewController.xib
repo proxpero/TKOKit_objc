@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TKOTextInspectorViewController">
             <connections>
+                <outlet property="inspectorScrollView" destination="drb-XB-dkB" id="gp5-z5-2KH"/>
+                <outlet property="stylePicker" destination="sY0-Pp-TbQ" id="HRh-v6-eNQ"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -16,22 +18,44 @@
             <rect key="frame" x="0.0" y="0.0" width="268" height="512"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box autoresizesSubviews="NO" title="Text Inspector" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="59u-VG-NKy">
-                    <rect key="frame" x="17" y="16" width="234" height="476"/>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="sY0-Pp-TbQ" customClass="TKOPopoverPickerControl">
+                    <rect key="frame" x="0.0" y="444" width="268" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="232" height="460"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="SAS-b3-7HB"/>
+                    </constraints>
+                </customView>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drb-XB-dkB">
+                    <rect key="frame" x="0.0" y="0.0" width="268" height="444"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <clipView key="contentView" id="PwH-L1-mBd" customClass="TKOFlippedClipView">
+                        <rect key="frame" x="0.0" y="0.0" width="268" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </box>
+                        <subviews>
+                            <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNZ-ca-ZB4">
+                                <rect key="frame" x="0.0" y="0.0" width="268" height="444"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="atF-bd-27F">
+                        <rect key="frame" x="0.0" y="428" width="268" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ffU-sP-xcg">
+                        <rect key="frame" x="252" y="0.0" width="16" height="444"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="59u-VG-NKy" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="AZa-dK-eS4"/>
-                <constraint firstAttribute="bottom" secondItem="59u-VG-NKy" secondAttribute="bottom" constant="20" symbolic="YES" id="EA3-K1-BPu"/>
-                <constraint firstAttribute="trailing" secondItem="59u-VG-NKy" secondAttribute="trailing" constant="20" symbolic="YES" id="UqN-sd-jaY"/>
-                <constraint firstItem="59u-VG-NKy" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="WTT-kU-Lx4"/>
+                <constraint firstItem="drb-XB-dkB" firstAttribute="top" secondItem="sY0-Pp-TbQ" secondAttribute="bottom" id="5ky-ZL-HCp"/>
+                <constraint firstItem="drb-XB-dkB" firstAttribute="trailing" secondItem="sY0-Pp-TbQ" secondAttribute="trailing" id="BJM-NS-fAn"/>
+                <constraint firstItem="drb-XB-dkB" firstAttribute="leading" secondItem="sY0-Pp-TbQ" secondAttribute="leading" id="Lgk-Ee-TpX"/>
+                <constraint firstAttribute="trailing" secondItem="sY0-Pp-TbQ" secondAttribute="trailing" id="SE0-85-KGd"/>
+                <constraint firstAttribute="bottom" secondItem="drb-XB-dkB" secondAttribute="bottom" id="X0x-42-ss1"/>
+                <constraint firstItem="sY0-Pp-TbQ" firstAttribute="top" secondItem="1" secondAttribute="top" id="X46-HW-pSo"/>
+                <constraint firstItem="sY0-Pp-TbQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="lHz-oB-WfB"/>
             </constraints>
         </customView>
     </objects>

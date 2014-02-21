@@ -9,7 +9,7 @@
 #import "TKOTextInspectorViewController.h"
 #import "TKOTextSystem.h"
 
-#import "TKOParagraphStylePickerViewController.h"
+#import "TKOPopoverPickerControl.h"
 
 #import "TKOFontInspectorViewController.h"
 #import "TKOAlignmentInspectorViewController.h"
@@ -19,8 +19,8 @@
 
 @interface TKOTextInspectorViewController ()
 
-@property (strong, nonatomic) TKOParagraphStylePickerViewController * stylePicker;
-@property (strong, nonatomic) NSScrollView                          * inspectorScrollView;
+@property (weak) IBOutlet TKOPopoverPickerControl                   * stylePicker;
+@property (strong, nonatomic) IBOutlet NSScrollView                          * inspectorScrollView;
 
 @property (strong, nonatomic) TKOFontInspectorViewController        * fontInspector;
 @property (strong, nonatomic) TKOAlignmentInspectorViewController   * alignmentInspector;
@@ -33,31 +33,46 @@
 
 - (id)initWithTextView:(TKOTextView *)textView
 {
-    self = [self initWithNibName:@"TKOTextInspectorViewController"
-                          bundle:nil];
+    self = [super initWithNibName:@"TKOTextInspectorViewController"
+                           bundle:nil];
 
     [self setTitle:@"Text"];
     
+    [self setTextView:textView];
+
     self.fontInspector      = [[TKOFontInspectorViewController alloc] initWithTextView:textView];
     self.alignmentInspector = [[TKOAlignmentInspectorViewController alloc] initWithTextView:textView];
     self.spacingInspector   = [[TKOSpacingInspectorViewController alloc] initWithTextView:textView];
     self.listInspector      = [[TKOListsInspectorViewController alloc] initWithTextView:textView];
 
-    
-    
-    
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil
-               bundle:(NSBundle *)nibBundleOrNil
+- (void)awakeFromNib
 {
-    self = [super initWithNibName:nibNameOrNil
-                           bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
+    [super awakeFromNib];
+    [self.stylePicker setTextView:self.textView];
+    NSStackView * stackView = [NSStackView stackViewWithViews:@[
+                                                                self.fontInspector.view,
+                                                                self.alignmentInspector.view,
+                                                                self.spacingInspector.view,
+                                                                self.listInspector.view,
+                                                                ]];
+    stackView.orientation = NSUserInterfaceLayoutOrientationVertical;
+    stackView.alignment = NSLayoutAttributeCenterX;
+    stackView.spacing = 0; // No spacing between the disclosure views
+    [stackView setHuggingPriority:NSLayoutPriorityDefaultHigh
+                   forOrientation:NSLayoutConstraintOrientationHorizontal];
+    [self.inspectorScrollView setDocumentView:stackView];
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    _textView = textView;
+    
+    [self.stylePicker setTextView:_textView];
 }
 
 @end

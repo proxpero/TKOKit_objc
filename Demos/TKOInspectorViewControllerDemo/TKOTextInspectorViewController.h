@@ -12,6 +12,7 @@
 
 @interface TKOTextInspectorViewController : NSViewController
 
+@property (strong, nonatomic) TKOTextView * textView;
 - (id)initWithTextView:(TKOTextView *)textView;
 
 @end
