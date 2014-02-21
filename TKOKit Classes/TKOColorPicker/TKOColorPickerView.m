@@ -65,7 +65,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:NSWindowWillCloseNotification
                                                   object:[NSColorPanel sharedColorPanel]];
-
 }
 
 - (void)awakeFromNib
