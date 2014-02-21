@@ -69,6 +69,7 @@
     [super windowControllerDidLoadNib:aController];
     [self setupFontInspector];
     [self setupTextSystem];
+    [self.fontInspector setTextView:self.textScrollView.documentView];
 }
 
 + (BOOL)autosavesInPlace

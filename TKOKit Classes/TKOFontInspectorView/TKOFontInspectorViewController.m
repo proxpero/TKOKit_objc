@@ -88,8 +88,6 @@ enum {
 
 - (void)textViewDidChangeFont:(NSNotification *)notification
 {
-    [self setTextView:[notification object]];
-    
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
     BOOL isMultiple = [fontManager isMultiple];
     if (isMultiple) {
@@ -173,13 +171,13 @@ enum {
     if (!value)
         return;
     
-    for (NSValue * r in self.textView.selectedRanges) {
-        NSRange range = [r rangeValue];
-//        NSMutableAttributedString * attstr = self.textView.textStorage;
+    for (NSValue * range in self.textView.selectedRanges)
+    {
         [self.textView.textStorage addAttribute:name
                                           value:value
-                                          range:range];
+                                          range:[range rangeValue]];
     }
+    
 }
 
 - (void)selectFontFamilyAction:(id)sender
@@ -260,26 +258,26 @@ enum {
     
     NSInteger selectedSegment = [sender selectedSegment];
     
-    if (selectedSegment == TKOBoldSegment) {
-    
+    if (selectedSegment == TKOBoldSegment)
+    {
         attributeName = NSFontAttributeName;
         BOOL isBold = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOBoldSegment];
         value = [fontManager convertFont:[fontManager selectedFont]
                              toHaveTrait:isBold ? NSBoldFontMask : NSUnboldFontMask];
-        
-    } else if (selectedSegment == TKOObliquitySegment) {
-        
+    }
+    else if (selectedSegment == TKOObliquitySegment)
+    {
         attributeName = NSFontAttributeName;
         BOOL isOblique = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOObliquitySegment];
         value = [fontManager convertFont:[fontManager selectedFont]
                              toHaveTrait:isOblique ? NSItalicFontMask : NSUnitalicFontMask];
         
-    } else if (selectedSegment == TKOUnderlineSegment) {
-        
+    }
+    else if (selectedSegment == TKOUnderlineSegment)
+    {
         attributeName = NSUnderlineStyleAttributeName;
         BOOL isUnderlined = [self.fontTraitsSegmentedControl isSelectedForSegment:TKOUnderlineSegment];
         value = isUnderlined ? @(NSUnderlinePatternSolid|NSUnderlineStyleSingle) : @0;
-        
     }
 
     [self modifyAttribute:attributeName
