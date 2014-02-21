@@ -21,7 +21,7 @@
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="n0k-l0-KMr">
                 <rect key="frame" x="0.0" y="0.0" width="649" height="413"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <box autoresizesSubviews="NO" horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-zB-Wzv">
                         <rect key="frame" x="378" y="0.0" width="5" height="413"/>

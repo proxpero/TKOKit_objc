@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOControl.h"
 
 @class TKOPopoverPickerControl;
 
@@ -22,6 +23,13 @@
 
 @end
 
-@interface TKOPopoverPickerControl : NSControl
+@class TKOTextView;
+
+@interface TKOPopoverPickerControl : TKOControl
+
+@property (strong, nonatomic) TKOTextView * textView;
+@property (weak, nonatomic) id <TKOPopoverPickerControlDataSource> dataSource;
+
+- (void)textViewDidChangeParagraphStyle:(NSNotification *)notification;
 
 @end

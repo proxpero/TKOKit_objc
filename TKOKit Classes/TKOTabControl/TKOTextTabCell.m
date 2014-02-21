@@ -12,12 +12,13 @@
 
 @implementation TKOTextTabCell
 
+
 - (void)drawWithFrame:(NSRect)cellFrame
                inView:(NSView *)controlView
 {
     [(self.state ? self.backgroundHighlightColor : self.backgroundColor) set];
     NSRectFill(cellFrame);
-
+    
     NSMutableAttributedString * attributedTitle = self.attributedTitle.mutableCopy;
     [attributedTitle addAttributes:@{ NSForegroundColorAttributeName : (self.state ? self.textHighlightColor : self.textColor) }
                              range:NSMakeRange(0, attributedTitle.length)];
@@ -25,8 +26,8 @@
     [self drawTitle:attributedTitle
           withFrame:NSOffsetRect(cellFrame, 0, 0)
              inView:controlView];
-
-
+    
+    
     [self drawBordersInCellFrame:cellFrame];
 }
 

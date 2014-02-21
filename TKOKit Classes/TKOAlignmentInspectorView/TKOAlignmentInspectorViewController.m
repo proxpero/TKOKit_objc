@@ -203,7 +203,6 @@
                                                   range:paragraphRange];
             }
         }
-        
     }
 }
 

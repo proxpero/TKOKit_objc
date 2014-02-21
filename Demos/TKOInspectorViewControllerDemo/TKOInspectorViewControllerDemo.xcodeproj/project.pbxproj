@@ -83,6 +83,8 @@
 		45A33F7D18B4EEFE0029423E /* TKOTextInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33F7B18B4EEFE0029423E /* TKOTextInspectorViewController.m */; };
 		45A33F7E18B4EEFE0029423E /* TKOTextInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A33F7C18B4EEFE0029423E /* TKOTextInspectorViewController.xib */; };
 		45A33F8318B635C50029423E /* TKOPopoverPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33F8218B635C50029423E /* TKOPopoverPickerControl.m */; };
+		45A33F8718B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33F8518B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.m */; };
+		45A33F8818B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A33F8618B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +220,9 @@
 		45A33F7C18B4EEFE0029423E /* TKOTextInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTextInspectorViewController.xib; sourceTree = "<group>"; };
 		45A33F8118B635C50029423E /* TKOPopoverPickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOPopoverPickerControl.h; sourceTree = "<group>"; };
 		45A33F8218B635C50029423E /* TKOPopoverPickerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOPopoverPickerControl.m; sourceTree = "<group>"; };
+		45A33F8418B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOParagraphStylePickerPopoverContentViewController.h; sourceTree = "<group>"; };
+		45A33F8518B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOParagraphStylePickerPopoverContentViewController.m; sourceTree = "<group>"; };
+		45A33F8618B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOParagraphStylePickerPopoverContentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +461,9 @@
 				45A33EF418B421AD0029423E /* TKOParagraphStylePickerViewController.xib */,
 				45A33F8118B635C50029423E /* TKOPopoverPickerControl.h */,
 				45A33F8218B635C50029423E /* TKOPopoverPickerControl.m */,
+				45A33F8418B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.h */,
+				45A33F8518B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.m */,
+				45A33F8618B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib */,
 			);
 			path = TKOParagraphStylePickerView;
 			sourceTree = "<group>";
@@ -641,6 +649,7 @@
 				45A33F3D18B421AD0029423E /* TKOPositionTopImage.png in Resources */,
 				45A33F3F18B421AD0029423E /* TKORightAlignmentImage.png in Resources */,
 				45A33F4718B421AD0029423E /* TKODisclosingViewController.xib in Resources */,
+				45A33F8818B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib in Resources */,
 				45A33E9518B421400029423E /* Images.xcassets in Resources */,
 				45A33F3118B421AD0029423E /* TKODecreaseIndentImage.png in Resources */,
 				45A33F3818B421AD0029423E /* TKOLeftAlignmentImage@2x.png in Resources */,
@@ -712,6 +721,7 @@
 				45A33F5818B421AD0029423E /* TKOHeaderCell.m in Sources */,
 				45A33F4E18B421AD0029423E /* TKOListsInspectorViewController.m in Sources */,
 				45A33F2818B421AD0029423E /* NSAttributedString+TKOKit.m in Sources */,
+				45A33F8718B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */,
 				45A33F6618B421AD0029423E /* TKOTextView.m in Sources */,
 				45A33E8618B421400029423E /* main.m in Sources */,
 				45A33F6018B421AD0029423E /* TKOTextTabControl.m in Sources */,
@@ -940,6 +950,7 @@
 				45A33EAC18B421400029423E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45A33EAD18B421400029423E /* Build configuration list for PBXNativeTarget "TKOInspectorViewControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -948,6 +959,7 @@
 				45A33EAF18B421400029423E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
