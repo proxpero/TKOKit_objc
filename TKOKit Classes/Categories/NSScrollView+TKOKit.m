@@ -7,9 +7,9 @@
 //
 
 #define BUFFER 2
-#define MAX_TALL 10
 
 #import "NSScrollView+TKOKit.h"
+#import "NSTableView+TKOKit.h"
 
 @implementation NSScrollView (TKOKit)
 
@@ -22,6 +22,15 @@
     
     if (![[tableView dataSource] respondsToSelector:@selector(numberOfRowsInTableView:)])
         return;
+    
+    NSInteger maxRows   = NSIntegerMax;
+    CGFloat buffer      = BUFFER;
+    
+    if ([[tableView dataSource] respondsToSelector:@selector(maximumNumberOfVisibleRowsInTableView:)] &&
+        [[tableView dataSource] conformsToProtocol:@protocol(TKODynamicTableViewDataSource)]) {
+        id <TKODynamicTableViewDataSource> dataSource = (id <TKODynamicTableViewDataSource>)[tableView dataSource];
+        maxRows = [dataSource maximumNumberOfVisibleRowsInTableView:tableView];
+    }
 
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
     NSLayoutConstraint * heightConstraint = [[self.constraints filteredArrayUsingPredicate:predicate] firstObject];
@@ -30,8 +39,8 @@
     NSInteger rows = [[tableView dataSource] numberOfRowsInTableView:tableView];
     
     height = [tableView rowHeight] + 2;
-    height = (rows > MAX_TALL) ? height * MAX_TALL : height * rows;
-    height += BUFFER;
+    height = (rows > maxRows) ? height * maxRows : height * rows;
+    height += buffer;
    
     heightConstraint.constant = height;
 }

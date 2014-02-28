@@ -8,6 +8,7 @@
 
 #import "TKOTableViewDelegate.h"
 #import "NSScrollView+TKOKit.h"
+#import "NSTableView+TKOKit.h"
 
 @implementation TKOTableViewDelegate
 
@@ -43,6 +44,13 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
                       row:(NSInteger)row
 {
     return nil;
+}
+
+# pragma mark - TKODynamicTableViewDataSource Protocol
+
+- (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView // in NSTableView+TKOKit: inherits from NSTableViewDataSource
+{
+    return 12;
 }
 
 # pragma mark - UI Actions
