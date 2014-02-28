@@ -18,8 +18,10 @@
 
     _rows = rows;
     [self.tableView reloadData];
-    [[self.tableView enclosingScrollView] updateHeight];
+    [[self.tableView enclosingScrollView] updateHeight]; // -updateHeight is a custom catagory on NSScrollView
 }
+
+# pragma mark - NSTableView Delegate and Data Source Protocols
 
 - (NSView *)tableView:(NSTableView *)tableView
    viewForTableColumn:(NSTableColumn *)tableColumn
@@ -42,6 +44,8 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 {
     return nil;
 }
+
+# pragma mark - UI Actions
 
 - (IBAction)addRow:(id)sender
 {

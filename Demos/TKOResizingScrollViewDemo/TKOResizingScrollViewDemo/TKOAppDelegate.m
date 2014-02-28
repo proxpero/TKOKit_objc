@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [self.tableViewDelegate setRows:3];
+    [self.tableViewDelegate setRows:3]; // Arbitrary initial number of rows
 }
 
 @end

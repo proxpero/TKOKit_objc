@@ -654,7 +654,7 @@
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
         <window title="ITResizingTableView" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="Eac-ar-bCM">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="449" height="236"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
@@ -745,11 +745,11 @@
                             <action selector="addRow:" target="qeE-4d-QFI" id="ONj-IL-9Ip"/>
                         </connections>
                     </button>
-                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jXJ-Qy-OZ8">
-                        <rect key="frame" x="17" y="16" width="415" height="121"/>
+                    <box autoresizesSubviews="NO" title="I'm a view below the table" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="jXJ-Qy-OZ8">
+                        <rect key="frame" x="17" y="16" width="415" height="119"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="413" height="119"/>
+                            <rect key="frame" x="1" y="1" width="413" height="103"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                         <constraints>
