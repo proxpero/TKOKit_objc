@@ -19,30 +19,32 @@
         return;
     
     NSTableView * tableView = self.documentView;
+    id dataSource = [tableView dataSource];
     
-    if (![[tableView dataSource] respondsToSelector:@selector(numberOfRowsInTableView:)])
+    if (![dataSource respondsToSelector:@selector(numberOfRowsInTableView:)])
         return;
     
-    NSInteger maxRows   = NSIntegerMax;
-    CGFloat buffer      = BUFFER;
+    NSInteger rowsLimit = NSIntegerMax; // Unlimited number of visible rows
     
-    if ([[tableView dataSource] respondsToSelector:@selector(maximumNumberOfVisibleRowsInTableView:)] &&
-        [[tableView dataSource] conformsToProtocol:@protocol(TKODynamicTableViewDataSource)]) {
-        id <TKODynamicTableViewDataSource> dataSource = (id <TKODynamicTableViewDataSource>)[tableView dataSource];
-        maxRows = [dataSource maximumNumberOfVisibleRowsInTableView:tableView];
+    BOOL responds = [dataSource respondsToSelector:@selector(maximumNumberOfVisibleRowsInTableView:)];
+    BOOL conforms = [dataSource conformsToProtocol:@protocol(TKODynamicHeightTableViewDataSource)];
+    
+    if (responds && conforms) {
+        id <TKODynamicHeightTableViewDataSource> dataSource = (id <TKODynamicHeightTableViewDataSource>)[tableView dataSource];
+        rowsLimit = [dataSource maximumNumberOfVisibleRowsInTableView:tableView];
+        if (rowsLimit < 0)
+            rowsLimit = 0;
     }
-
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
-    NSLayoutConstraint * heightConstraint = [[self.constraints filteredArrayUsingPredicate:predicate] firstObject];
     
-    CGFloat height = 0.0;
-    NSInteger rows = [[tableView dataSource] numberOfRowsInTableView:tableView];
+    NSInteger rows      = [[tableView dataSource] numberOfRowsInTableView:tableView];
+    CGFloat multiplier  = (rows > rowsLimit) ? rowsLimit : rows;
+    CGFloat rowHeight   = tableView.rowHeight + 2;
     
-    height = [tableView rowHeight] + 2;
-    height = (rows > maxRows) ? height * maxRows : height * rows;
-    height += buffer;
-   
-    heightConstraint.constant = height;
+    CGFloat newHeight   = rowHeight * multiplier + BUFFER;
+    
+    NSPredicate * findHeightConstraint = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
+    NSLayoutConstraint * heightConstraint = [[self.constraints filteredArrayUsingPredicate:findHeightConstraint] firstObject];
+    heightConstraint.constant = newHeight;
 }
 
 @end

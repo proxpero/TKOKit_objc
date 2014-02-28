@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "NSTableView+TKOKit.h"
 
-@interface TKOTableViewDelegate : NSObject <NSTableViewDelegate, TKODynamicTableViewDataSource>
+@interface TKOTableViewDelegate : NSObject <NSTableViewDelegate, TKODynamicHeightTableViewDataSource>
 
 @property (nonatomic) NSInteger rows;
+@property (nonatomic) NSInteger visibleRows;
+
+@property (strong, nonatomic) NSColor * textColor;
+
 @property (strong) IBOutlet NSTableView *tableView;
 
 - (IBAction)addRow:(id)sender;

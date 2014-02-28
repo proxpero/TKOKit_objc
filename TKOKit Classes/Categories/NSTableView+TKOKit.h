@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol TKODynamicTableViewDataSource <NSTableViewDataSource>
+@protocol TKODynamicHeightTableViewDataSource <NSTableViewDataSource>
 
 // required by NSScrollView+TKOKit's -updateHeight method
 - (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView;
