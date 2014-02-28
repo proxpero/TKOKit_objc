@@ -64,8 +64,9 @@
 
 # pragma mark - TKODynamicTableViewDataSource Protocol
 
+// in NSTableView+TKOKit: inherits from NSTableViewDataSource
 // If this method is not implemented, the maximum visible rows will be NSIntegerMax. If it returns a negative number, max is 0;
-- (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView // in NSTableView+TKOKit: inherits from NSTableViewDataSource
+- (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView
 {
     return self.visibleRows;
 }

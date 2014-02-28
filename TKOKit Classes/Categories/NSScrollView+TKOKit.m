@@ -11,6 +11,8 @@
 #import "NSScrollView+TKOKit.h"
 #import "NSTableView+TKOKit.h"
 
+NSLayoutConstraint * heightConstraint = nil;
+
 @implementation NSScrollView (TKOKit)
 
 - (void)updateHeight
@@ -42,8 +44,10 @@
     
     CGFloat newHeight   = rowHeight * multiplier + BUFFER;
     
-    NSPredicate * findHeightConstraint = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
-    NSLayoutConstraint * heightConstraint = [[self.constraints filteredArrayUsingPredicate:findHeightConstraint] firstObject];
+    if (!heightConstraint) {
+        NSPredicate * findHeightConstraint = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
+        heightConstraint = [[self.constraints filteredArrayUsingPredicate:findHeightConstraint] firstObject];
+    }
     heightConstraint.constant = newHeight;
 }
 
