@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4510112018BA72EB0071E602 /* TKODecreaseIndentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510111F18BA72EB0071E602 /* TKODecreaseIndentImage.png */; };
+		4510112318BA98510071E602 /* TKOAlignmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510112218BA98510071E602 /* TKOAlignmentControl.m */; };
 		45A33E7A18B421400029423E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A33E7918B421400029423E /* Cocoa.framework */; };
 		45A33E8418B421400029423E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A33E8218B421400029423E /* InfoPlist.strings */; };
 		45A33E8618B421400029423E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E8518B421400029423E /* main.m */; };
@@ -28,7 +30,6 @@
 		45A33F2E18B421AD0029423E /* TKOAlignmentInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EBF18B421AC0029423E /* TKOAlignmentInspectorViewController.xib */; };
 		45A33F2F18B421AD0029423E /* TKOCenterAlignmentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC018B421AC0029423E /* TKOCenterAlignmentImage.png */; };
 		45A33F3018B421AD0029423E /* TKOCenterAlignmentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC118B421AC0029423E /* TKOCenterAlignmentImage@2x.png */; };
-		45A33F3118B421AD0029423E /* TKODecreaseIndentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC218B421AC0029423E /* TKODecreaseIndentImage.png */; };
 		45A33F3218B421AD0029423E /* TKODecreaseIndentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC318B421AC0029423E /* TKODecreaseIndentImage@2x.png */; };
 		45A33F3318B421AD0029423E /* TKOIncreaseIndentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC418B421AC0029423E /* TKOIncreaseIndentImage.png */; };
 		45A33F3418B421AD0029423E /* TKOIncreaseIndentImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A33EC518B421AC0029423E /* TKOIncreaseIndentImage@2x.png */; };
@@ -98,6 +99,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4510111F18BA72EB0071E602 /* TKODecreaseIndentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKODecreaseIndentImage.png; sourceTree = "<group>"; };
+		4510112118BA98510071E602 /* TKOAlignmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOAlignmentControl.h; sourceTree = "<group>"; };
+		4510112218BA98510071E602 /* TKOAlignmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOAlignmentControl.m; sourceTree = "<group>"; };
 		45A33E7618B421400029423E /* TKOInspectorViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOInspectorViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A33E7918B421400029423E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45A33E7C18B421400029423E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -133,7 +137,6 @@
 		45A33EBF18B421AC0029423E /* TKOAlignmentInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOAlignmentInspectorViewController.xib; sourceTree = "<group>"; };
 		45A33EC018B421AC0029423E /* TKOCenterAlignmentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOCenterAlignmentImage.png; sourceTree = "<group>"; };
 		45A33EC118B421AC0029423E /* TKOCenterAlignmentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOCenterAlignmentImage@2x.png"; sourceTree = "<group>"; };
-		45A33EC218B421AC0029423E /* TKODecreaseIndentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKODecreaseIndentImage.png; sourceTree = "<group>"; };
 		45A33EC318B421AC0029423E /* TKODecreaseIndentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKODecreaseIndentImage@2x.png"; sourceTree = "<group>"; };
 		45A33EC418B421AC0029423E /* TKOIncreaseIndentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOIncreaseIndentImage.png; sourceTree = "<group>"; };
 		45A33EC518B421AC0029423E /* TKOIncreaseIndentImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOIncreaseIndentImage@2x.png"; sourceTree = "<group>"; };
@@ -378,12 +381,12 @@
 		45A33EBC18B421AC0029423E /* TKOAlignmentInspectorView */ = {
 			isa = PBXGroup;
 			children = (
+				4510111F18BA72EB0071E602 /* TKODecreaseIndentImage.png */,
 				45A33EBD18B421AC0029423E /* TKOAlignmentInspectorViewController.h */,
 				45A33EBE18B421AC0029423E /* TKOAlignmentInspectorViewController.m */,
 				45A33EBF18B421AC0029423E /* TKOAlignmentInspectorViewController.xib */,
 				45A33EC018B421AC0029423E /* TKOCenterAlignmentImage.png */,
 				45A33EC118B421AC0029423E /* TKOCenterAlignmentImage@2x.png */,
-				45A33EC218B421AC0029423E /* TKODecreaseIndentImage.png */,
 				45A33EC318B421AC0029423E /* TKODecreaseIndentImage@2x.png */,
 				45A33EC418B421AC0029423E /* TKOIncreaseIndentImage.png */,
 				45A33EC518B421AC0029423E /* TKOIncreaseIndentImage@2x.png */,
@@ -399,6 +402,8 @@
 				45A33ECF18B421AD0029423E /* TKOPositionTopImage@2x.png */,
 				45A33ED018B421AD0029423E /* TKORightAlignmentImage.png */,
 				45A33ED118B421AD0029423E /* TKORightAlignmentImage@2x.png */,
+				4510112118BA98510071E602 /* TKOAlignmentControl.h */,
+				4510112218BA98510071E602 /* TKOAlignmentControl.m */,
 			);
 			path = TKOAlignmentInspectorView;
 			sourceTree = "<group>";
@@ -645,13 +650,13 @@
 				45A33F7E18B4EEFE0029423E /* TKOTextInspectorViewController.xib in Resources */,
 				45A33F3A18B421AD0029423E /* TKOPositionBottomImage@2x.png in Resources */,
 				45A33F2F18B421AD0029423E /* TKOCenterAlignmentImage.png in Resources */,
+				4510112018BA72EB0071E602 /* TKODecreaseIndentImage.png in Resources */,
 				45A33E8418B421400029423E /* InfoPlist.strings in Resources */,
 				45A33F3D18B421AD0029423E /* TKOPositionTopImage.png in Resources */,
 				45A33F3F18B421AD0029423E /* TKORightAlignmentImage.png in Resources */,
 				45A33F4718B421AD0029423E /* TKODisclosingViewController.xib in Resources */,
 				45A33F8818B690750029423E /* TKOParagraphStylePickerPopoverContentViewController.xib in Resources */,
 				45A33E9518B421400029423E /* Images.xcassets in Resources */,
-				45A33F3118B421AD0029423E /* TKODecreaseIndentImage.png in Resources */,
 				45A33F3818B421AD0029423E /* TKOLeftAlignmentImage@2x.png in Resources */,
 				45A33F3B18B421AD0029423E /* TKOPositionCenterImage.png in Resources */,
 				45A33E8A18B421400029423E /* Credits.rtf in Resources */,
@@ -713,6 +718,7 @@
 				45A33F5218B421AD0029423E /* TKOPlatform.m in Sources */,
 				45A33F4418B421AD0029423E /* TKOControl.m in Sources */,
 				45A33F5618B421AD0029423E /* TKOStore.m in Sources */,
+				4510112318BA98510071E602 /* TKOAlignmentControl.m in Sources */,
 				45A33F2D18B421AD0029423E /* TKOAlignmentInspectorViewController.m in Sources */,
 				45A33F7118B455310029423E /* TKOTabView.m in Sources */,
 				45A33F5018B421AD0029423E /* TKOParagraphStylePickerViewController.m in Sources */,

@@ -43,10 +43,11 @@
     
     [textView setTextContainerInset:NSMakeSize(20, 20)];
     [[NSNotificationCenter defaultCenter] addObserver:self.listInspector
-                                             selector:@selector(textViewDidChangeListAttributes:)
+                                             selector:@selector(updateListAttributes:)
                                                  name:NSTextViewDidChangeSelectionNotification
                                                object:textView];
     [self.textScrollView setDocumentView:textView];
+    [self.listInspector setTextView:textView];
 }
 
 - (id)init

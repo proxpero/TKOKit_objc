@@ -20,7 +20,7 @@
 @interface TKOTextInspectorViewController ()
 
 @property (weak) IBOutlet TKOPopoverPickerControl                   * stylePicker;
-@property (strong, nonatomic) IBOutlet NSScrollView                          * inspectorScrollView;
+@property (strong, nonatomic) IBOutlet NSScrollView                 * inspectorScrollView;
 
 @property (strong, nonatomic) TKOFontInspectorViewController        * fontInspector;
 @property (strong, nonatomic) TKOAlignmentInspectorViewController   * alignmentInspector;
@@ -38,13 +38,13 @@
 
     [self setTitle:@"Text"];
     
-    [self setTextView:textView];
+    self.fontInspector      = [[TKOFontInspectorViewController alloc] init];
+    self.alignmentInspector = [[TKOAlignmentInspectorViewController alloc] init];
+    self.spacingInspector   = [[TKOSpacingInspectorViewController alloc] init];
+    self.listInspector      = [[TKOListsInspectorViewController alloc] init];
 
-    self.fontInspector      = [[TKOFontInspectorViewController alloc] initWithTextView:textView];
-    self.alignmentInspector = [[TKOAlignmentInspectorViewController alloc] initWithTextView:textView];
-    self.spacingInspector   = [[TKOSpacingInspectorViewController alloc] initWithTextView:textView];
-    self.listInspector      = [[TKOListsInspectorViewController alloc] initWithTextView:textView];
-
+    _textView = textView;
+    
     return self;
 }
 
@@ -64,6 +64,7 @@
     [stackView setHuggingPriority:NSLayoutPriorityDefaultHigh
                    forOrientation:NSLayoutConstraintOrientationHorizontal];
     [self.inspectorScrollView setDocumentView:stackView];
+    [self updateTextViewForComponents];
 }
 
 - (void)setTextView:(TKOTextView *)textView
@@ -72,7 +73,16 @@
         return;
     _textView = textView;
     
+    [self updateTextViewForComponents];
+}
+
+- (void)updateTextViewForComponents
+{
     [self.stylePicker setTextView:_textView];
+    [self.fontInspector setTextView:_textView];
+    [self.alignmentInspector setTextView:_textView];
+    [self.spacingInspector setTextView:_textView];
+    [self.listInspector setTextView:_textView];
 }
 
 @end

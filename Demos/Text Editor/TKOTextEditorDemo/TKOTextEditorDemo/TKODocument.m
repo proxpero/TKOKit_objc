@@ -17,16 +17,14 @@
 
 @interface TKODocument ()
 
-@property (strong, nonatomic) TKOTextStorage * textStorage;
-@property (weak) IBOutlet TKOScalingScrollView *textScrollView;
-@property (weak) IBOutlet NSScrollView *inspectorScrollView;
+@property (strong, nonatomic) TKOTextStorage                        * textStorage;
+@property (weak) IBOutlet     TKOScalingScrollView                  * textScrollView;
+@property (weak) IBOutlet     NSScrollView                          * inspectorScrollView;
 
-
-
-@property (strong, nonatomic) TKOFontInspectorViewController * fontInspector;
-@property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentInspector;
-@property (strong, nonatomic) TKOSpacingInspectorViewController * spacingInspector;
-@property (strong, nonatomic) TKOListsInspectorViewController * listInspector;
+@property (strong, nonatomic) TKOFontInspectorViewController        * fontInspector;
+@property (strong, nonatomic) TKOAlignmentInspectorViewController   * alignmentInspector;
+@property (strong, nonatomic) TKOSpacingInspectorViewController     * spacingInspector;
+@property (strong, nonatomic) TKOListsInspectorViewController       * listInspector;
 
 @end
 
@@ -71,10 +69,7 @@
     [textContainer setWidthTracksTextView:YES];
     [layoutManager addTextContainer:textContainer];
     
-    NSRect frameRect = NSMakeRect(0, 0, docWidth, 1);
-    // Using FLT_MAX or CGFloat_Max for frameRect height caused
-    // <Error>: CGAffineTransformInvert: singular matrix.
-    // See Peter Hosey's comment: http://stackoverflow.com/questions/7471027/overriding-layoutsubviews-causes-cgaffinetransforminvert-singular-matrix-ran#comment23126967_7471027
+    NSRect frameRect = NSMakeRect(0, 0, docWidth, 1); // Using FLT_MAX or CGFloat_Max for frameRect height caused <Error>: CGAffineTransformInvert: singular matrix. See also Peter Hosey's comment: http://stackoverflow.com/questions/7471027/overriding-layoutsubviews-causes-cgaffinetransforminvert-singular-matrix-ran#comment23126967_7471027
     
     TKOTextView * textView = [[TKOTextView alloc] initWithFrame:frameRect
                                                   textContainer:textContainer];

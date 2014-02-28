@@ -77,8 +77,6 @@
 		45A33E5C18B409D20029423E /* TKOTabControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E4F18B409D20029423E /* TKOTabControl.m */; };
 		45A33E5D18B409D20029423E /* TKOTextTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E5218B409D20029423E /* TKOTextTabCell.m */; };
 		45A33E5E18B409D20029423E /* TKOTextTabControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E5418B409D20029423E /* TKOTextTabControl.m */; };
-		45A33E6818B41DC60029423E /* TKOTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E6618B41DC60029423E /* TKOTabViewController.m */; };
-		45A33E6918B41DC60029423E /* TKOTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A33E6718B41DC60029423E /* TKOTabViewController.xib */; };
 		45A33E6C18B41F270029423E /* TKOInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A33E6B18B41F270029423E /* TKOInspectorViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -205,9 +203,6 @@
 		45A33E5218B409D20029423E /* TKOTextTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextTabCell.m; sourceTree = "<group>"; };
 		45A33E5318B409D20029423E /* TKOTextTabControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextTabControl.h; sourceTree = "<group>"; };
 		45A33E5418B409D20029423E /* TKOTextTabControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextTabControl.m; sourceTree = "<group>"; };
-		45A33E6518B41DC60029423E /* TKOTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTabViewController.h; sourceTree = "<group>"; };
-		45A33E6618B41DC60029423E /* TKOTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTabViewController.m; sourceTree = "<group>"; };
-		45A33E6718B41DC60029423E /* TKOTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTabViewController.xib; sourceTree = "<group>"; };
 		45A33E6A18B41F270029423E /* TKOInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOInspectorViewController.h; sourceTree = "<group>"; };
 		45A33E6B18B41F270029423E /* TKOInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOInspectorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -518,9 +513,6 @@
 		45A33E6418B41DC60029423E /* TKOTabView */ = {
 			isa = PBXGroup;
 			children = (
-				45A33E6518B41DC60029423E /* TKOTabViewController.h */,
-				45A33E6618B41DC60029423E /* TKOTabViewController.m */,
-				45A33E6718B41DC60029423E /* TKOTabViewController.xib */,
 			);
 			path = TKOTabView;
 			sourceTree = "<group>";
@@ -615,7 +607,6 @@
 				4520E30218ADD94F005BA1DF /* Images.xcassets in Resources */,
 				4520E37618ADD96F005BA1DF /* TKODecreaseIndentImage.png in Resources */,
 				4520E37D18ADD96F005BA1DF /* TKOLeftAlignmentImage@2x.png in Resources */,
-				45A33E6918B41DC60029423E /* TKOTabViewController.xib in Resources */,
 				4520E38018ADD96F005BA1DF /* TKOPositionCenterImage.png in Resources */,
 				4520E2F718ADD94F005BA1DF /* Credits.rtf in Resources */,
 				4520E37B18ADD96F005BA1DF /* TKOJustifiedAlignmentImage@2x.png in Resources */,
@@ -654,7 +645,6 @@
 			files = (
 				4520E39418ADD96F005BA1DF /* TKOStore.m in Sources */,
 				45A33E5518B409D20029423E /* TKOButtonCell.m in Sources */,
-				45A33E6818B41DC60029423E /* TKOTabViewController.m in Sources */,
 				4520E39218ADD96F005BA1DF /* TKOSpacingInspectorViewController.m in Sources */,
 				4520E39718ADD96F005BA1DF /* TKOTextStorage.m in Sources */,
 				45A33E5818B409D20029423E /* TKOImageTabControl.m in Sources */,
