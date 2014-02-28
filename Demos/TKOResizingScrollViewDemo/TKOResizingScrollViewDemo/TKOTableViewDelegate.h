@@ -7,20 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSTableView+TKOKit.h"
 
-@interface TKOTableViewDelegate : NSObject <NSTableViewDelegate, TKODynamicHeightTableViewDataSource>
+@interface TKOTableViewDelegate : NSObject <NSTableViewDelegate, NSTableViewDataSource>
 
 @property (nonatomic) NSInteger rows;
 @property (nonatomic) NSInteger visibleRows;
-
 @property (strong, nonatomic) NSColor * textColor;
 
 @property (strong) IBOutlet NSTableView *tableView;
 
 - (IBAction)addRow:(id)sender;
 - (IBAction)removeRow:(id)sender;
-
-- (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView;
 
 @end

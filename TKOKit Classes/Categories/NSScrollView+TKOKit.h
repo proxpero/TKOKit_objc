@@ -12,6 +12,9 @@
 
 @interface NSScrollView (TKOKit)
 
+@property (nonatomic) BOOL updatesHeight;
+@property (nonatomic) NSInteger maximumVisibleRows;
+
 - (void)updateHeight;
 
 @end

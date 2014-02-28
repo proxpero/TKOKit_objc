@@ -20,7 +20,6 @@
 		456C1A7218C0C6AE0013751D /* TKOResizingScrollViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C1A7118C0C6AE0013751D /* TKOResizingScrollViewDemoTests.m */; };
 		456C1A7D18C0C6E90013751D /* NSScrollView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C1A7C18C0C6E90013751D /* NSScrollView+TKOKit.m */; };
 		456C1A8018C0C74F0013751D /* TKOTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C1A7F18C0C74F0013751D /* TKOTableViewDelegate.m */; };
-		456C1A8318C0EDC90013751D /* NSTableView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C1A8218C0EDC90013751D /* NSTableView+TKOKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		456C1A7C18C0C6E90013751D /* NSScrollView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSScrollView+TKOKit.m"; path = "../../TKOKit Classes/Categories/NSScrollView+TKOKit.m"; sourceTree = "<group>"; };
 		456C1A7E18C0C74F0013751D /* TKOTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTableViewDelegate.h; sourceTree = "<group>"; };
 		456C1A7F18C0C74F0013751D /* TKOTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTableViewDelegate.m; sourceTree = "<group>"; };
-		456C1A8118C0EDC90013751D /* NSTableView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTableView+TKOKit.h"; path = "../../TKOKit Classes/Categories/NSTableView+TKOKit.h"; sourceTree = "<group>"; };
-		456C1A8218C0EDC90013751D /* NSTableView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTableView+TKOKit.m"; path = "../../TKOKit Classes/Categories/NSTableView+TKOKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +82,6 @@
 		456C1A3B18C0C6AD0013751D = {
 			isa = PBXGroup;
 			children = (
-				456C1A8118C0EDC90013751D /* NSTableView+TKOKit.h */,
-				456C1A8218C0EDC90013751D /* NSTableView+TKOKit.m */,
 				456C1A7B18C0C6E90013751D /* NSScrollView+TKOKit.h */,
 				456C1A7C18C0C6E90013751D /* NSScrollView+TKOKit.m */,
 				456C1A4D18C0C6AD0013751D /* TKOResizingScrollViewDemo */,
@@ -268,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				456C1A8318C0EDC90013751D /* NSTableView+TKOKit.m in Sources */,
 				456C1A5418C0C6AD0013751D /* main.m in Sources */,
 				456C1A8018C0C74F0013751D /* TKOTableViewDelegate.m in Sources */,
 				456C1A7D18C0C6E90013751D /* NSScrollView+TKOKit.m in Sources */,

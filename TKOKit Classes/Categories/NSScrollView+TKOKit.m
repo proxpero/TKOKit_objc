@@ -9,14 +9,56 @@
 #define BUFFER 2
 
 #import "NSScrollView+TKOKit.h"
-#import "NSTableView+TKOKit.h"
+#import <objc/runtime.h>
 
-NSLayoutConstraint * heightConstraint = nil;
+static char const * const TKODynamicScrollViewUpdatesHeightKey    = "TKODynamicScrollViewUpdatesHeightKey";
+static char const * const TKODynamicScrollViewMaxVisibleRowsKey   = "TKODynamicScrollViewMaxVisibleRowsKey";
+static char const * const TKODynamicScrollViewHeightConstraintKey = "TKODynamicScrollViewHeightConstraintKey";
 
 @implementation NSScrollView (TKOKit)
 
+- (void)setUpdatesHeight:(BOOL)updatesHeight
+{
+    objc_setAssociatedObject(self, TKODynamicScrollViewUpdatesHeightKey, @(updatesHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)updatesHeight
+{
+    return [objc_getAssociatedObject(self, TKODynamicScrollViewUpdatesHeightKey) boolValue];
+}
+
+- (void)setMaximumVisibleRows:(NSInteger)maximumVisibleRows
+{
+    objc_setAssociatedObject(self, TKODynamicScrollViewMaxVisibleRowsKey, @(maximumVisibleRows), OBJC_ASSOCIATION_RETAIN);
+}
+
+- (NSInteger)maximumVisibleRows
+{
+    NSNumber * max = objc_getAssociatedObject(self, TKODynamicScrollViewMaxVisibleRowsKey);
+    return (max != nil) ? [max integerValue] : NSIntegerMax;
+}
+
+- (void)setHeightConstraint:(NSLayoutConstraint *)heightConstraint
+{
+    objc_setAssociatedObject(self, TKODynamicScrollViewHeightConstraintKey, heightConstraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSLayoutConstraint *)heightConstraint
+{
+    NSLayoutConstraint * heightConstraint = objc_getAssociatedObject(self, TKODynamicScrollViewHeightConstraintKey);
+    if (!heightConstraint) {
+        NSPredicate * findHeightConstraint = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
+        heightConstraint = [[self.constraints filteredArrayUsingPredicate:findHeightConstraint] firstObject];
+        objc_setAssociatedObject(self, TKODynamicScrollViewHeightConstraintKey, heightConstraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return heightConstraint;
+}
+
 - (void)updateHeight
 {
+    if (objc_getAssociatedObject(self, TKODynamicScrollViewMaxVisibleRowsKey) == nil)
+        return;
+    
     if (![self.documentView isKindOfClass:[NSTableView class]])
         return;
     
@@ -26,17 +68,7 @@ NSLayoutConstraint * heightConstraint = nil;
     if (![dataSource respondsToSelector:@selector(numberOfRowsInTableView:)])
         return;
     
-    NSInteger rowsLimit = NSIntegerMax; // Unlimited number of visible rows
-    
-    BOOL responds = [dataSource respondsToSelector:@selector(maximumNumberOfVisibleRowsInTableView:)];
-    BOOL conforms = [dataSource conformsToProtocol:@protocol(TKODynamicHeightTableViewDataSource)];
-    
-    if (responds && conforms) {
-        id <TKODynamicHeightTableViewDataSource> dataSource = (id <TKODynamicHeightTableViewDataSource>)[tableView dataSource];
-        rowsLimit = [dataSource maximumNumberOfVisibleRowsInTableView:tableView];
-        if (rowsLimit < 0)
-            rowsLimit = 0;
-    }
+    NSInteger rowsLimit = self.maximumVisibleRows;
     
     NSInteger rows      = [[tableView dataSource] numberOfRowsInTableView:tableView];
     CGFloat multiplier  = (rows > rowsLimit) ? rowsLimit : rows;
@@ -44,11 +76,8 @@ NSLayoutConstraint * heightConstraint = nil;
     
     CGFloat newHeight   = rowHeight * multiplier + BUFFER;
     
-    if (!heightConstraint) {
-        NSPredicate * findHeightConstraint = [NSPredicate predicateWithFormat:@"firstAttribute = %d", NSLayoutAttributeHeight];
-        heightConstraint = [[self.constraints filteredArrayUsingPredicate:findHeightConstraint] firstObject];
-    }
-    heightConstraint.constant = newHeight;
+    NSLayoutConstraint * heightConstraint = [self heightConstraint];
+    heightConstraint.constant = newHeight;    
 }
 
 @end

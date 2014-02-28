@@ -8,7 +8,6 @@
 
 #import "TKOTableViewDelegate.h"
 #import "NSScrollView+TKOKit.h"
-#import "NSTableView+TKOKit.h"
 
 @implementation TKOTableViewDelegate
 
@@ -19,6 +18,7 @@
 
     _rows = rows;
     [self.tableView reloadData];
+    [[self.tableView enclosingScrollView] setUpdatesHeight:YES]; // -setUpdatesHeight: is an Associated Object on NSScrollView+TKOKit
     [[self.tableView enclosingScrollView] updateHeight]; // -updateHeight is a custom catagory on NSScrollView
     [self updateUI];
 }
@@ -29,6 +29,7 @@
         return;
     
     _visibleRows = visibleRows;
+    [[self.tableView enclosingScrollView] setMaximumVisibleRows:_visibleRows]; // -setMaximumVisibleRows: is an Associated Object on NSScrollView+TKOKit 
     [[self.tableView enclosingScrollView] updateHeight]; // -updateHeight is a custom catagory on NSScrollView
     [self updateUI];
 }
@@ -58,17 +59,6 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     return _rows;
-}
-
-//- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row { return nil; }
-
-# pragma mark - TKODynamicTableViewDataSource Protocol
-
-// in NSTableView+TKOKit: inherits from NSTableViewDataSource
-// If this method is not implemented, the maximum visible rows will be NSIntegerMax. If it returns a negative number, max is 0;
-- (NSInteger)maximumNumberOfVisibleRowsInTableView:(NSTableView *)tableView
-{
-    return self.visibleRows;
 }
 
 # pragma mark - UI Actions
