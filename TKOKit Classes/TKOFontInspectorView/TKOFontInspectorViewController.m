@@ -16,9 +16,7 @@ enum {
     TKOUnderlineSegment = 2,
 };
 
-@interface TKOFontInspectorViewController () // <NSTextViewDelegate>
-
-//@property (unsafe_unretained, nonatomic) TKOTextView * textView;
+@interface TKOFontInspectorViewController ()
 
 @property (strong, nonatomic) NSString * selectedFontFamilyName;
 @property (strong, nonatomic) NSString * selectedFontFaceName;
@@ -88,6 +86,10 @@ enum {
 
 - (void)textViewDidChangeFont:(NSNotification *)notification
 {
+    TKOTextView * tv = [notification object];
+    if (_textView != tv)
+        return;
+    
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
     BOOL isMultiple = [fontManager isMultiple];
     if (isMultiple) {
@@ -178,6 +180,7 @@ enum {
                                           range:[range rangeValue]];
     }
     
+    
 }
 
 - (void)selectFontFamilyAction:(id)sender
@@ -189,6 +192,7 @@ enum {
     _selectedFontFamilyName = proposedNewFamilyName.copy;
     
     NSFontManager * fontManager = [NSFontManager sharedFontManager];
+    
     [self modifyAttribute:NSFontAttributeName
                     value:[fontManager convertFont:[fontManager selectedFont]
                                           toFamily:_selectedFontFamilyName]];

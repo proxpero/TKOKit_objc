@@ -1,14 +1,14 @@
 //
-//  TKOControlCell.m
+//  TKOCell.m
 //  TKOKit
 //
 //  Created by Todd Olsen on 1/29/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
-#import "TKOControlCell.h"
+#import "TKOCell.h"
 
-@implementation TKOControlCell
+@implementation TKOCell
 
 - (id)init
 {
@@ -37,7 +37,8 @@
 {
     if (_backgroundColor != backgroundColor) {
         _backgroundColor = backgroundColor.copy;
-        if (_hasAdaptiveBorderColor) {
+        if (_hasAdaptiveBorderColor)
+        {
             _borderColor = [_backgroundColor blendedColorWithFraction:.30
                                                               ofColor:[NSColor blackColor]];
         }
@@ -46,7 +47,8 @@
 }
 
 - (void)setBackgroundHighlightColor:(NSColor *)backgroundHighlightColor {
-    if (_backgroundHighlightColor != backgroundHighlightColor) {
+    if (_backgroundHighlightColor != backgroundHighlightColor)
+    {
         _backgroundHighlightColor = backgroundHighlightColor.copy;
         [self.controlView setNeedsDisplay:YES];
     }
@@ -61,7 +63,8 @@
 }
 
 - (void)setBorderHighlightColor:(NSColor *)borderHighlightColor {
-    if (_borderHighlightColor != borderHighlightColor) {
+    if (_borderHighlightColor != borderHighlightColor)
+    {
         _borderHighlightColor = borderHighlightColor.copy;
         [self.controlView setNeedsDisplay:YES];
     }
@@ -82,7 +85,8 @@
 {
     NSRect *borderRects;
     NSInteger borderRectCount;
-    if (TKORectArrayWithBorderMask(cellFrame, self.borderMask, &borderRects, &borderRectCount)) {
+    if (TKORectArrayWithBorderMask(cellFrame, self.borderMask, &borderRects, &borderRectCount))
+    {
         [((self.state|self.isHighlighted) ? self.borderHighlightColor : self.borderColor) set];
         NSRectFillList(borderRects, borderRectCount);
     }
@@ -96,16 +100,24 @@ BOOL TKORectArrayWithBorderMask(NSRect sourceRect, TKOBorderMask borderMask, NSR
     static NSRect outputArray[4];
     
     NSRect remainderRect;
-    if (borderMask & TKOBorderMaskTop) {
+    
+    if (borderMask & TKOBorderMaskTop)
+    {
         NSDivideRect(sourceRect, &outputArray[outputCount++], &remainderRect, 1, NSMinYEdge);
     }
-    if (borderMask & TKOBorderMaskLeft) {
+    
+    if (borderMask & TKOBorderMaskLeft)
+    {
         NSDivideRect(sourceRect, &outputArray[outputCount++], &remainderRect, 1, NSMinXEdge);
     }
-    if (borderMask & TKOBorderMaskRight) {
+    
+    if (borderMask & TKOBorderMaskRight)
+    {
         NSDivideRect(sourceRect, &outputArray[outputCount++], &remainderRect, 1, NSMaxXEdge);
     }
-    if (borderMask & TKOBorderMaskBottom) {
+    
+    if (borderMask & TKOBorderMaskBottom)
+    {
         NSDivideRect(sourceRect, &outputArray[outputCount++], &remainderRect, 1, NSMaxYEdge);
     }
     

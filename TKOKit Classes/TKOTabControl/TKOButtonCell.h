@@ -24,6 +24,8 @@ typedef enum {
 @property (nonatomic, copy) NSColor * borderHighlightColor;
 @property (nonatomic) BOOL hasAdaptiveBorderColor;
 
+- (void)setDefaultColors;
+
 @end
 
 extern BOOL TKORectArrayWithBorderMask(NSRect sourceRect, TKOBorderMask borderMask, NSRect **rectArray, NSInteger *rectCount);

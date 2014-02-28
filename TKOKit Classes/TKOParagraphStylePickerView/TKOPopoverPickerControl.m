@@ -127,7 +127,7 @@
     [self setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Picker"]];
     [self setBorderMask:TKOBorderMaskBottom];
     [self setBackgroundColor:[NSColor whiteColor]];
-//    [self setBorderHighlightColor:self.borderColor];
+    [self setBorderHighlightColor:self.borderColor];
     
     return self;
 }

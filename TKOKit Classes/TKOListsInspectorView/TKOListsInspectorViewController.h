@@ -11,8 +11,8 @@
 @class TKOTextView;
 
 @interface TKOListsInspectorViewController : TKODisclosingViewController
-
-- (id)initWithTextView:(TKOTextView *)textView;
-- (void)textViewDidChangeListAttributes:(NSNotification *)notification;
+@property (strong, nonatomic) TKOTextView * textView;
+//- (id)initWithTextView:(TKOTextView *)textView;
+- (void)updateListAttributes:(NSNotification *)notification;
 
 @end

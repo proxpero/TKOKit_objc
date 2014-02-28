@@ -20,7 +20,7 @@ NSString * listViewID = @"TKOListContentViewIdentifier";
 
 # pragma mark - Lifecycle
 
-- (id)initWithTextView:(TKOTextView *)textView
+- (id)init
 {
     self = [super init];
     if (!self)
@@ -38,12 +38,26 @@ NSString * listViewID = @"TKOListContentViewIdentifier";
             [self setContentView:object];
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textViewDidChangeListAttributes:)
-                                                 name:NSTextViewDidChangeSelectionNotification
-                                               object:textView];
-    
     return self;
+}
+
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    
+    [defaultCenter removeObserver:self
+                             name:NSTextViewDidChangeSelectionNotification
+                           object:_textView];
+    
+    _textView = textView;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateListAttributes:)
+                                                 name:NSTextViewDidChangeSelectionNotification
+                                               object:_textView];
 }
 
 - (void)dealloc
@@ -51,9 +65,9 @@ NSString * listViewID = @"TKOListContentViewIdentifier";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)textViewDidChangeListAttributes:(NSNotification *)notification
+- (void)updateListAttributes:(NSNotification *)notification
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
 }
 
 @end

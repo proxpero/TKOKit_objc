@@ -1,5 +1,5 @@
 //
-//  TKOControlCell.h
+//  TKOCell.h
 //  TKOKit
 //
 //  Created by Todd Olsen on 1/29/14.
@@ -17,7 +17,7 @@ typedef enum {
     TKOBorderMaskBottom  = (1<<3)
 } TKOBorderMask;
 
-@interface TKOControlCell : NSButtonCell
+@interface TKOCell : NSButtonCell
 
 @property (nonatomic) TKOBorderMask   borderMask;
 @property (nonatomic, copy) NSColor * backgroundColor;
