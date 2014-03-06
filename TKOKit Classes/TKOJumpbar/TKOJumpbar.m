@@ -12,9 +12,6 @@
 #import "TKOImageTabCell.h"
 #import "NSView+TKOKit.h"
 
-#import "TKOBaseEntity.h"
-#import "TKOProblem.h"
-
 @interface TKOJumpbar ()
 
 @property (nonatomic, strong) NSArray       * items;
@@ -89,7 +86,8 @@
                                                                  options:0
                                                                  metrics:nil
                                                                    views:views]];
-    for (NSView *view in views.allValues) {
+    for (NSView *view in views.allValues)
+    {
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
                                                                      options:0
                                                                      metrics:nil
@@ -177,12 +175,15 @@
     NSUInteger i = 0;
     NSUInteger count = self.items.count;
     
-    for (i = 0; i < count; i++) {
-        id item = self.items[i];
+    for (i = 0; i < count; i++)
+    {
+        id <TKOJumpbarItem> item = self.items[i];
         BOOL isLast = (i == count - 1);
         
         NSString * title = [item name];
         NSImage  * image = [[item class] image];
+        Class clss = [item class];
+        image = [clss valueForKey:@"image"];
         
         NSButton * button = [self tabWithTitle:title
                                          image:image
@@ -197,7 +198,8 @@
     
     self.scrollView.documentView = (self.items.count) ? tabView : nil;
     
-    if (self.scrollView.documentView) {
+    if (self.scrollView.documentView)
+    {
         NSClipView * clipView = self.scrollView.contentView;
         NSView * documentView = self.scrollView.documentView;
         
@@ -222,7 +224,8 @@
     [tabView removeConstraints:tabView.constraints];
     
     NSButton * prev = nil;
-    for (NSButton * button in tabs) {
+    for (NSButton * button in tabs)
+    {
         [tabView addConstraints:
          [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|"
                                                  options:0
@@ -240,7 +243,8 @@
         prev = button;
     }
     
-    if (prev) {
+    if (prev)
+    {
         [tabView addConstraint:
          [NSLayoutConstraint constraintWithItem:prev
                                       attribute:NSLayoutAttributeTrailing
@@ -306,8 +310,10 @@
 {
     NSButton * selectedButton = sender;
     
-    for (NSButton * button in [self.scrollView.documentView subviews]) {
-        if ([button isKindOfClass:[NSButton class]]) {
+    for (NSButton * button in [self.scrollView.documentView subviews])
+    {
+        if ([button isKindOfClass:[NSButton class]])
+        {
             id item = [selectedButton.cell representedObject];
             [self setSelectedItem:item];
         }
@@ -324,7 +330,8 @@
 - (void)resetItemsWithSelectedItem:(id)nomad
 {
     NSMutableArray * items = [NSMutableArray new];
-    while (nomad) {
+    while (nomad)
+    {
         [items addObject:nomad];
         if ([nomad respondsToSelector:@selector(parent)])
             nomad = [nomad parent];
@@ -346,7 +353,8 @@
     if (_selectedItem == selectedItem)
         return;
 
-    if (_selectedItem) {
+    if (_selectedItem)
+    {
         [self.backwardHistory addObject:_selectedItem];
         [self.forwardHistory removeAllObjects];
         [self updateButtons];
@@ -394,16 +402,13 @@
     return [TKOHeaderCell class];
 }
 
-
 - (BOOL)isOpaque {
     return YES;
 }
 
-
 - (BOOL)isFlipped {
     return YES;
 }
-
 
 @end
 

@@ -9,17 +9,24 @@
 #import <Cocoa/Cocoa.h>
 
 @class TKOJumpbar;
+
 @protocol TKOJumpbarDelegate <NSObject>
 
 @optional
 
 - (void)jumpbarDidChangeSelection:(NSNotification *)notification;
-- (void)jumpbar:(TKOJumpbar *)jumpbar
-setSelectedItem:(id)selectedItem;
+- (void)jumpbar:(TKOJumpbar *)jumpbar setSelectedItem:(id)selectedItem;
 
 @end
 
 extern NSString * TKOJumpbarDidChangeSelectionNotification;
+
+@protocol TKOJumpbarItem <NSObject>
+
+- (NSString *)name;
++ (NSImage *)image;
+
+@end
 
 @interface TKOJumpbar : NSControl
 
