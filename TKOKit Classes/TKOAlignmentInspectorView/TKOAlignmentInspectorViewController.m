@@ -71,18 +71,17 @@
 
 - (void)textViewDidChangeAlignment:(NSNotification *)notification
 {
-    [self setTextView:[notification object]];
-    
     // Alignment
     
     NSTextAlignment alignment = 0;
     CGFloat headIndent, firstLineHeadIndent;
-    
     NSArray * ranges = [self.textView selectedRanges];
-    for (NSValue * range in ranges) {
+
+    for (NSValue * range in ranges)
+    {
         NSInteger location = [range rangeValue].location;
-        
-        if (location != NSNotFound && location < self.textView.textStorage.length) {
+        if (location != NSNotFound && location < self.textView.textStorage.length)
+        {
             NSParagraphStyle * paragraphStyle = [self.textView.textStorage attribute:NSParagraphStyleAttributeName
                                                                              atIndex:location
                                                                       effectiveRange:NULL];
