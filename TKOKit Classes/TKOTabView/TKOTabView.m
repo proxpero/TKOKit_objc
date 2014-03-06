@@ -18,6 +18,8 @@
 
 @end
 
+# pragma mark - TKOTabView Implementation
+
 @implementation TKOTabView
 
 - (id)initWithFrame:(NSRect)frame
@@ -31,7 +33,7 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib]; // [super responds].
+    [super awakeFromNib]; // [super responds]...?
     [self configureTabControl];
 }
 
@@ -113,6 +115,8 @@
 }
 
 @end
+
+# pragma mark - TKOTabViewItem Implementation
 
 @implementation TKOTabViewItem
 

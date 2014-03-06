@@ -87,6 +87,7 @@
 		45848EE818C7648A007D3C79 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848E9E18C7648A007D3C79 /* TKOTextView.m */; };
 		45848EE918C7648A007D3C79 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EA118C7648A007D3C79 /* TKOTheme.m */; };
 		45848EEA18C7648A007D3C79 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EA318C7648A007D3C79 /* TKOThemeLoader.m */; };
+		45848EF018C7F4BA007D3C79 /* TKODisclosingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EEF18C7F4BA007D3C79 /* TKODisclosingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +230,8 @@
 		45848EA118C7648A007D3C79 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		45848EA218C7648A007D3C79 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		45848EA318C7648A007D3C79 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		45848EEE18C7F4BA007D3C79 /* TKODisclosingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODisclosingView.h; sourceTree = "<group>"; };
+		45848EEF18C7F4BA007D3C79 /* TKODisclosingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODisclosingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +445,8 @@
 				45848E5218C7648A007D3C79 /* TKODisclosingViewController.h */,
 				45848E5318C7648A007D3C79 /* TKODisclosingViewController.m */,
 				45848E5418C7648A007D3C79 /* TKODisclosingViewController.xib */,
+				45848EEE18C7F4BA007D3C79 /* TKODisclosingView.h */,
+				45848EEF18C7F4BA007D3C79 /* TKODisclosingView.m */,
 			);
 			path = TKODisclosureView;
 			sourceTree = "<group>";
@@ -709,6 +714,7 @@
 				45848EC018C7648A007D3C79 /* TKOColorPickerView.m in Sources */,
 				45848EEA18C7648A007D3C79 /* TKOThemeLoader.m in Sources */,
 				45848EA518C7648A007D3C79 /* NSColor+TKOKit.m in Sources */,
+				45848EF018C7F4BA007D3C79 /* TKODisclosingView.m in Sources */,
 				45848EC818C7648A007D3C79 /* TKOFlippedClipView.m in Sources */,
 				45848EC518C7648A007D3C79 /* TKODisclosingViewController.m in Sources */,
 				45848ED918C7648A007D3C79 /* TKOStore.m in Sources */,

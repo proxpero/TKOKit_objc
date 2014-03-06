@@ -9,8 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface TKOTabView : NSView
+
 @property (strong, nonatomic) NSArray * tabViewItems;
+
 @end
+
+
 
 @interface TKOTabViewItem : NSObject
 

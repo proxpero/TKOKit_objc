@@ -8,11 +8,17 @@
 
 #import "TKODocument.h"
 #import "TKOTextSystem.h"
+#import "TKODisclosingView.h"
 
 @interface TKODocument () <NSTextViewDelegate>
 
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet NSScrollView *textScrollView;
+
+@property (weak) IBOutlet NSStackView *stackView;
+@property (strong, nonatomic) TKODisclosingView *disclosingView;
+
+@property (strong) IBOutlet NSView *testView;
 
 @end
 
@@ -54,7 +60,21 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
-//    [self setupSpacingInspector];
+    self.disclosingView = [[TKODisclosingView alloc] initWithTitle:@"Discloser"
+                                                       contentView:self.testView];
+    [self.disclosingView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.disclosingView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:self.stackView.bounds.size.width]
+     ];
+    
+    [self.stackView addView:self.disclosingView
+                  inGravity:NSStackViewGravityTop];
+
     [self setupTextSystem];
 }
 
