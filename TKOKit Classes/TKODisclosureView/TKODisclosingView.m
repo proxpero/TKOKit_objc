@@ -13,6 +13,7 @@
 
 @interface TKODisclosingView ()
 
+@property (nonatomic) BOOL disclosureIsClosed;
 @property (strong, nonatomic) NSView * headerView;
 @property (strong, nonatomic) NSButton * disclosureButton;
 @property (strong, nonatomic) NSTextField * titleField;
@@ -22,18 +23,28 @@
 @end
 
 @implementation TKODisclosingView
+
+- (id)initWithTitle:(NSString *)title
+        contentView:(NSView *)contentView
 {
-    BOOL _disclosureIsClosed;
+    return [self initWithTitle:title
+                   contentView:contentView
+                 accessoryView:nil];
 }
 
 - (id)initWithTitle:(NSString *)title
         contentView:(NSView *)contentView
+      accessoryView:(NSView *)accessoryView
 {
     self = [super initWithFrame:NSZeroRect];
     if (!self)
         return nil;
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.trimsTopContentHeight = YES;
+    
+    self.accessoryView = accessoryView;
+    self.accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self configureSubviews];
     
@@ -76,6 +87,14 @@
     
     [_contentView removeFromSuperview];
     _contentView = contentView;
+
+    if (self.trimsTopContentHeight) {
+        NSLayoutConstraint * topConstraint;
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"secondItem = %@ AND firstAttribute = %d", _contentView, NSLayoutAttributeTop];
+        topConstraint = [[_contentView.constraints filteredArrayUsingPredicate:predicate] firstObject];
+        topConstraint.constant = 0.0;
+    }
+    
     [self addSubview:_contentView];
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_contentView]|"
@@ -91,13 +110,13 @@
 
 - (void)disclosureButtonAction:(id)sender
 {
-    _disclosureIsClosed = self.disclosureButton.state;
+    self.disclosureIsClosed = self.disclosureButton.state;
     [self toggleContentViewAction];
 }
 
 - (void)toggleContentViewAction
 {
-    if (!_disclosureIsClosed)
+    if (!self.disclosureIsClosed)
     {
         CGFloat distanceFromHeaderToBottom = NSMinY(self.bounds) - NSMinY(self.headerView.frame);
         if (!self.heightConstraint)
@@ -151,24 +170,7 @@
     self.disclosureButton.target = self;
     self.disclosureButton.action = @selector(disclosureButtonAction:);
     self.disclosureButton.state = NSOnState;
-    [self.disclosureButton addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.disclosureButton
-                                  attribute:NSLayoutAttributeWidth
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:27]
-     ];
-    [self.disclosureButton addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.disclosureButton
-                                  attribute:NSLayoutAttributeHeight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:27]
-     ];
+    [self.disclosureButton addConstraintsForWidth:27 height:27];
 
     self.titleField = [NSView viewWithClass:[NSTextField class]];
     self.titleField.editable = NO;
@@ -178,12 +180,19 @@
     self.titleField.font = [NSFont boldSystemFontOfSize:13.0];
     self.titleField.textColor = [NSColor darkGrayColor];
     
+    if (!self.accessoryView)
+    {
+        self.accessoryView = [NSView viewWithClass:[NSView class]];
+        [self.accessoryView addConstraintsForWidth:0 height:0];
+    }
+    
     [self.headerView addSubview:self.disclosureButton];
     [self.headerView addSubview:self.titleField];
+    [self.headerView addSubview:self.accessoryView];
     
-    NSDictionary * views = NSDictionaryOfVariableBindings(_disclosureButton, _titleField);
+    NSDictionary * views = NSDictionaryOfVariableBindings(_disclosureButton, _titleField, _accessoryView);
     [self.headerView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(8)-[_disclosureButton]-(1)-[_titleField]-(15)-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(8)-[_disclosureButton]-(1)-[_titleField]-(1)-[_accessoryView]-(15)-|"
                                              options:0
                                              metrics:nil
                                                views:views]
@@ -207,6 +216,16 @@
                                   attribute:NSLayoutAttributeCenterY
                                  multiplier:1
                                    constant:1]
+     ];
+    
+    [self.headerView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.accessoryView
+                                  attribute:NSLayoutAttributeCenterY
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self.headerView
+                                  attribute:NSLayoutAttributeCenterY
+                                 multiplier:1
+                                   constant:2]
      ];
     
     [self addSubview:self.headerView];

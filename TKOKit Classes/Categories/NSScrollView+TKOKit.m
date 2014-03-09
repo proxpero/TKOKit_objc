@@ -56,8 +56,8 @@ static char const * const TKODynamicScrollViewHeightConstraintKey = "TKODynamicS
 
 - (void)updateHeight
 {
-    if (objc_getAssociatedObject(self, TKODynamicScrollViewMaxVisibleRowsKey) == nil)
-        return;
+    if (!objc_getAssociatedObject(self, TKODynamicScrollViewMaxVisibleRowsKey))
+        [self setMaximumVisibleRows:0];
     
     if (![self.documentView isKindOfClass:[NSTableView class]])
         return;
@@ -70,14 +70,18 @@ static char const * const TKODynamicScrollViewHeightConstraintKey = "TKODynamicS
     
     NSInteger rowsLimit = self.maximumVisibleRows;
     
-    NSInteger rows      = [[tableView dataSource] numberOfRowsInTableView:tableView];
+    NSInteger rows = [[tableView dataSource] numberOfRowsInTableView:tableView];
+    if (rowsLimit == 0)
+        rowsLimit = rows;
+    
     CGFloat multiplier  = (rows > rowsLimit) ? rowsLimit : rows;
     CGFloat rowHeight   = tableView.rowHeight + 2;
     
     CGFloat newHeight   = rowHeight * multiplier + BUFFER;
     
     NSLayoutConstraint * heightConstraint = [self heightConstraint];
-    heightConstraint.constant = newHeight;    
+    heightConstraint.constant = newHeight;
+    NSLog(@"newheight=%f", newHeight);
 }
 
 @end

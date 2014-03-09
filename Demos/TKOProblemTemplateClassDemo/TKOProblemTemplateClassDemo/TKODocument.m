@@ -9,6 +9,7 @@
 #import "TKODocument.h"
 #import "TKOTextSystem.h"
 #import "TKODisclosingView.h"
+#import "NSScrollView+TKOKit.h"
 
 @interface TKODocument () <NSTextViewDelegate>
 
@@ -19,6 +20,9 @@
 @property (strong, nonatomic) TKODisclosingView *disclosingView;
 
 @property (strong) IBOutlet NSView *testView;
+@property (strong) IBOutlet NSButton *addButton;
+@property (strong) IBOutlet NSScrollView *scrollView;
+@property (strong) IBOutlet NSView *testView2;
 
 @end
 
@@ -60,8 +64,12 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
+    
+    self.addButton.imagePosition = NSImageOnly;
+    [self.scrollView setUpdatesHeight:YES];
     self.disclosingView = [[TKODisclosingView alloc] initWithTitle:@"Discloser"
-                                                       contentView:self.testView];
+                                                       contentView:self.testView2
+                                                     accessoryView:self.addButton];
     [self.disclosingView addConstraint:
      [NSLayoutConstraint constraintWithItem:self.disclosingView
                                   attribute:NSLayoutAttributeWidth

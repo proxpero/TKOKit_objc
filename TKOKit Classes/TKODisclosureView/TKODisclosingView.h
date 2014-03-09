@@ -12,8 +12,15 @@
 
 @property (strong, nonatomic) NSString * title;
 @property (strong, nonatomic) NSView * contentView;
+@property (strong, nonatomic) NSView * accessoryView;
+
+@property (nonatomic) BOOL trimsTopContentHeight;
 
 - (id)initWithTitle:(NSString *)title
         contentView:(NSView *)contentView;
+
+- (id)initWithTitle:(NSString *)title
+        contentView:(NSView *)contentView
+      accessoryView:(NSView *)accessoryView;
 
 @end
