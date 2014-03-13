@@ -17,6 +17,21 @@
     if (!self)
         return nil;
     
+    self.bordered = NO;
+    self.title = @"";
+    self.imagePosition = NSNoImage;
+    
+    [self setDefaultColors];
+    self.borderMask = TKOBorderMaskBottom;
+    
+    return self;
+}
+
+- (id)initTextCell:(NSString *)aString
+{
+    self = [super initTextCell:aString];
+    if (!self)
+        return nil;
     [self setBordered:NO];
     [self setDefaultColors];
     self.borderMask = TKOBorderMaskBottom;
@@ -30,8 +45,6 @@
     self.backgroundHighlightColor   = [NSColor colorWithHexString:@"0096f2"];
     self.borderColor                = [NSColor colorWithHexString:@"b3b3b3"];
     self.borderHighlightColor       = [NSColor colorWithHexString:@"0070c4"];
-    
-    [self setBordered:NO];
 }
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor
@@ -71,6 +84,7 @@
 - (void)drawWithFrame:(NSRect)cellFrame
                inView:(NSView *)controlView
 {
+    NSInteger state = self.state;
     [((self.state|self.isHighlighted) ? self.backgroundHighlightColor : self.backgroundColor) set];
     NSRectFill(cellFrame);
     

@@ -60,6 +60,7 @@
     if (!self)
         return nil;
     
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self configureSubviews];
     
     return self;

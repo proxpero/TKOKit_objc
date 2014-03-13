@@ -14,8 +14,6 @@
 
 @interface TKOControl ()
 
-
-
 @end
 
 @implementation TKOControl

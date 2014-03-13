@@ -7,11 +7,17 @@
 //
 
 #import "TKODocument.h"
+#import "NSView+TKOKit.h"
 #import "TKOTextSystem.h"
 #import "TKODisclosingView.h"
 #import "NSScrollView+TKOKit.h"
+#import "TKOProblemTemplatePicker.h"
 
-@interface TKODocument () <NSTextViewDelegate>
+#import "TKOTemplatePicker.h"
+#import "TKOAlignmentInspectorViewController.h"
+#import "TKOFontInspectorViewController.h"
+
+@interface TKODocument () <NSTextViewDelegate, TKOTemplatePickerDataSource>
 
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet NSScrollView *textScrollView;
@@ -23,6 +29,10 @@
 @property (strong) IBOutlet NSButton *addButton;
 @property (strong) IBOutlet NSScrollView *scrollView;
 @property (strong) IBOutlet NSView *testView2;
+
+@property (strong, nonatomic) TKOProblemTemplatePicker * templatePicker;
+@property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentVC;
+@property (strong, nonatomic) TKOFontInspectorViewController * fontVC;
 
 @end
 
@@ -65,25 +75,49 @@
 {
     [super windowControllerDidLoadNib:aController];
     
-    self.addButton.imagePosition = NSImageOnly;
-    [self.scrollView setUpdatesHeight:YES];
-    self.disclosingView = [[TKODisclosingView alloc] initWithTitle:@"Discloser"
-                                                       contentView:self.testView2
-                                                     accessoryView:self.addButton];
-    [self.disclosingView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.disclosingView
-                                  attribute:NSLayoutAttributeWidth
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:self.stackView.bounds.size.width]
+    TKOTemplatePicker * picker = [[TKOTemplatePicker alloc] initWithTitle:@"Template"];
+//    TKODisclosingView * pickerDisclosingView = [NSView viewWithClass:[TKODisclosingView class]];
+//    [pickerDisclosingView setTrimsTopContentHeight:NO];
+//    [pickerDisclosingView setTitle:@"Templates"];
+//    [pickerDisclosingView setContentView:picker];
+
+    [self.stackView addView:picker
+                  inGravity:NSStackViewGravityTop];
+    [self.stackView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[picker]|"
+                                             options:0
+                                             metrics:nil
+                                               views:@{@"picker": picker}]
      ];
     
-    [self.stackView addView:self.disclosingView
+    [picker setDataSource:self];
+    
+    self.alignmentVC = [[TKOAlignmentInspectorViewController alloc] init];
+    [self.stackView addView:self.alignmentVC.view
                   inGravity:NSStackViewGravityTop];
-
+    
+    self.fontVC = [[TKOFontInspectorViewController alloc] init];
+    [self.stackView addView:self.fontVC.view
+                  inGravity:NSStackViewGravityTop];
+    
     [self setupTextSystem];
+}
+
+- (NSUInteger)templatePickerNumberOfItems:(TKOTemplatePicker *)templatePicker
+{
+    return 5;
+}
+
+- (id)templatePicker:(TKOTemplatePicker *)templatePicker
+         itemAtIndex:(NSUInteger)index
+{
+    return [NSString stringWithFormat:@"Template %lu", index];
+}
+
+- (NSString *)templatePicker:(TKOTemplatePicker *)templatePicker
+                titleForItem:(id)item
+{
+    return [NSString stringWithFormat:@"%@ Title", item];
 }
 
 + (BOOL)autosavesInPlace

@@ -10,6 +10,7 @@
 
 @interface TKOProblemTemplatePicker : NSViewController
 
+@property (nonatomic) NSInteger rows;
 @property (strong, nonatomic) NSString * pickerName;
 
 @end
