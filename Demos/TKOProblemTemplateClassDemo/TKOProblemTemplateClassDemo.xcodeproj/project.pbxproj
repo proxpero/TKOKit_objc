@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		453D931918CE69CF00BF30FF /* TKOTemplatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 453D931818CE69CF00BF30FF /* TKOTemplatePicker.m */; };
-		4572B14218CA0EB000F9158A /* TKOProblemTemplatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4572B14118CA0EB000F9158A /* TKOProblemTemplatePicker.xib */; };
 		45848DEA18C76465007D3C79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45848DE918C76465007D3C79 /* Cocoa.framework */; };
 		45848DF418C76465007D3C79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45848DF218C76465007D3C79 /* InfoPlist.strings */; };
 		45848DF618C76465007D3C79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848DF518C76465007D3C79 /* main.m */; };
@@ -90,8 +89,9 @@
 		45848EE918C7648A007D3C79 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EA118C7648A007D3C79 /* TKOTheme.m */; };
 		45848EEA18C7648A007D3C79 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EA318C7648A007D3C79 /* TKOThemeLoader.m */; };
 		45848EF018C7F4BA007D3C79 /* TKODisclosingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848EEF18C7F4BA007D3C79 /* TKODisclosingView.m */; };
-		45848F1218C8DF5E007D3C79 /* TKOProblemTemplatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848F1118C8DF5E007D3C79 /* TKOProblemTemplatePicker.m */; };
 		45848F1518C8F0D3007D3C79 /* TKOTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45848F1318C8F0D3007D3C79 /* TKOTableViewDelegate.m */; };
+		459EFA8618D236DC005E58F5 /* TKOProblemTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFA8518D236DC005E58F5 /* TKOProblemTemplate.m */; };
+		459EFA8918D23901005E58F5 /* TKOProblemTemplateAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFA8818D23901005E58F5 /* TKOProblemTemplateAuthority.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +107,6 @@
 /* Begin PBXFileReference section */
 		453D931718CE69CF00BF30FF /* TKOTemplatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOTemplatePicker.h; path = "../../TKOKit Classes/TKOTemplatePicker/TKOTemplatePicker.h"; sourceTree = "<group>"; };
 		453D931818CE69CF00BF30FF /* TKOTemplatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOTemplatePicker.m; path = "../../TKOKit Classes/TKOTemplatePicker/TKOTemplatePicker.m"; sourceTree = "<group>"; };
-		4572B14118CA0EB000F9158A /* TKOProblemTemplatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOProblemTemplatePicker.xib; sourceTree = "<group>"; };
 		45848DE618C76465007D3C79 /* TKOProblemTemplateClassDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOProblemTemplateClassDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45848DE918C76465007D3C79 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45848DEC18C76465007D3C79 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -239,10 +238,12 @@
 		45848EA318C7648A007D3C79 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
 		45848EEE18C7F4BA007D3C79 /* TKODisclosingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODisclosingView.h; sourceTree = "<group>"; };
 		45848EEF18C7F4BA007D3C79 /* TKODisclosingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODisclosingView.m; sourceTree = "<group>"; };
-		45848F1018C8DF5E007D3C79 /* TKOProblemTemplatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOProblemTemplatePicker.h; path = "../../TKOKit Classes/TKOProblemTemplatePicker/TKOProblemTemplatePicker.h"; sourceTree = "<group>"; };
-		45848F1118C8DF5E007D3C79 /* TKOProblemTemplatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOProblemTemplatePicker.m; path = "../../TKOKit Classes/TKOProblemTemplatePicker/TKOProblemTemplatePicker.m"; sourceTree = "<group>"; };
 		45848F1318C8F0D3007D3C79 /* TKOTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOTableViewDelegate.m; path = ../../TKOResizingScrollViewDemo/TKOResizingScrollViewDemo/TKOTableViewDelegate.m; sourceTree = "<group>"; };
 		45848F1418C8F0D3007D3C79 /* TKOTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOTableViewDelegate.h; path = ../../TKOResizingScrollViewDemo/TKOResizingScrollViewDemo/TKOTableViewDelegate.h; sourceTree = "<group>"; };
+		459EFA8418D236DC005E58F5 /* TKOProblemTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOProblemTemplate.h; sourceTree = "<group>"; };
+		459EFA8518D236DC005E58F5 /* TKOProblemTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOProblemTemplate.m; sourceTree = "<group>"; };
+		459EFA8718D23901005E58F5 /* TKOProblemTemplateAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOProblemTemplateAuthority.h; sourceTree = "<group>"; };
+		459EFA8818D23901005E58F5 /* TKOProblemTemplateAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOProblemTemplateAuthority.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,9 +270,7 @@
 		45848DDD18C76465007D3C79 = {
 			isa = PBXGroup;
 			children = (
-				45848F1018C8DF5E007D3C79 /* TKOProblemTemplatePicker.h */,
-				45848F1118C8DF5E007D3C79 /* TKOProblemTemplatePicker.m */,
-				4572B14118CA0EB000F9158A /* TKOProblemTemplatePicker.xib */,
+				459EFA8318D236DC005E58F5 /* Keystone */,
 				453D931718CE69CF00BF30FF /* TKOTemplatePicker.h */,
 				453D931818CE69CF00BF30FF /* TKOTemplatePicker.m */,
 				45848E2018C76489007D3C79 /* TKOKit Classes */,
@@ -595,6 +594,18 @@
 			path = TKOTheme;
 			sourceTree = "<group>";
 		};
+		459EFA8318D236DC005E58F5 /* Keystone */ = {
+			isa = PBXGroup;
+			children = (
+				459EFA8418D236DC005E58F5 /* TKOProblemTemplate.h */,
+				459EFA8518D236DC005E58F5 /* TKOProblemTemplate.m */,
+				459EFA8718D23901005E58F5 /* TKOProblemTemplateAuthority.h */,
+				459EFA8818D23901005E58F5 /* TKOProblemTemplateAuthority.m */,
+			);
+			name = Keystone;
+			path = ../../Keystone;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -672,7 +683,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4572B14218CA0EB000F9158A /* TKOProblemTemplatePicker.xib in Resources */,
 				45848EB018C7648A007D3C79 /* TKODecreaseIndentImage.pxi in Resources */,
 				45848EB918C7648A007D3C79 /* TKOPositionBottomImage@2x.png in Resources */,
 				45848ED818C7648A007D3C79 /* TKOSpacingInspectorViewController.xib in Resources */,
@@ -735,6 +745,7 @@
 				45848EEA18C7648A007D3C79 /* TKOThemeLoader.m in Sources */,
 				45848EA518C7648A007D3C79 /* NSColor+TKOKit.m in Sources */,
 				45848EF018C7F4BA007D3C79 /* TKODisclosingView.m in Sources */,
+				459EFA8618D236DC005E58F5 /* TKOProblemTemplate.m in Sources */,
 				45848EC818C7648A007D3C79 /* TKOFlippedClipView.m in Sources */,
 				45848EC518C7648A007D3C79 /* TKODisclosingViewController.m in Sources */,
 				45848ED918C7648A007D3C79 /* TKOStore.m in Sources */,
@@ -749,8 +760,8 @@
 				45848ED218C7648A007D3C79 /* TKOParagraphStylePickerViewController.m in Sources */,
 				45848EE718C7648A007D3C79 /* TKOTextStorage.m in Sources */,
 				45848EE618C7648A007D3C79 /* TKOTextContainer.m in Sources */,
-				45848F1218C8DF5E007D3C79 /* TKOProblemTemplatePicker.m in Sources */,
 				45848DFD18C76466007D3C79 /* TKODocument.m in Sources */,
+				459EFA8918D23901005E58F5 /* TKOProblemTemplateAuthority.m in Sources */,
 				45848EDB18C7648A007D3C79 /* TKOHeaderCell.m in Sources */,
 				45848EAA18C7648A007D3C79 /* TKOAlignmentControl.m in Sources */,
 				45848ED718C7648A007D3C79 /* TKOSpacingInspectorViewController.m in Sources */,

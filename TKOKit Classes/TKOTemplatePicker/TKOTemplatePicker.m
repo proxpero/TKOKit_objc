@@ -12,6 +12,8 @@
 #import "TKOTextTabCell.h"
 #import "NSView+TKOKit.h"
 
+#import "TKOProblemTemplate.h"
+
 @interface TKOActionCell : NSActionCell
 @end
 
@@ -76,9 +78,6 @@
     separator2.boxType = NSBoxSeparator;
     
     _buttonContainer = [NSView viewWithClass:[NSView class]];
-//    _buttonContainer.wantsLayer = YES;
-//    _buttonContainer.layer.opaque = YES;
-//    _buttonContainer.layer.backgroundColor = [[NSColor colorWithWhite:.99 alpha:1.0] CGColor];
 
     [self addSubview:separator1];
     [self addSubview:_titleField];
@@ -125,12 +124,34 @@
     
 }
 
+- (void)setDelegate:(id<TKOTemplatePickerDelegate>)delegate
+{
+    if (_delegate == delegate)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    
+    if ([_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
+        [defaultCenter removeObserver:_delegate
+                                 name:TKOTemplatePickerDidChangeSelectionNotification
+                               object:self];
+    
+    _delegate = delegate;
+    
+    if ([_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
+        [defaultCenter addObserver:_delegate
+                          selector:@selector(templatePickerDidChangeSelection:)
+                              name:TKOTemplatePickerDidChangeSelectionNotification
+                            object:self];
+}
+
 - (void)setDataSource:(id<TKOTemplatePickerDataSource>)dataSource
 {
     if (_dataSource == dataSource)
         return;
     
     _dataSource = dataSource;
+        
     [self reloadData];
 }
 
@@ -206,7 +227,7 @@
     control.cell = [[TKOActionCell alloc] init];
     [control sendActionOn:NSLeftMouseDownMask];
     control.target = self;
-    control.action = @selector(selectItem:);
+    control.action = @selector(selectControl:);
     
     NSTextField * textfield = [NSView viewWithClass:[NSTextField class]];
     textfield.font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
@@ -265,18 +286,42 @@
     }
 }
 
-- (void)selectItem:(id)sender
+- (void)selectControl:(id)sender
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
     for (TKOControl * control in self.buttonContainer.subviews)
     {
         [control.cell setState:(control == sender) ? NSOnState : NSOffState];
         [self drawControlInterior:control];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKOTemplatePickerDidChangeSelectionNotification
+                                                        object:self];
+
+}
+
+- (id)selectedItem
+{
+    for (TKOControl * control in self.buttonContainer.subviews)
+        if ([control.cell state] == NSOnState)
+            return [control.cell representedObject];
+
+    return nil;
+}
+
+- (void)setSelectedItem:(id)selectedItem
+{
+    for (TKOControl * control in self.buttonContainer.subviews)
+    {
+        if ([[control.cell representedObject] isEqual:selectedItem])
+            [control.cell setState:1];
+        else
+            [control.cell setState:0];
+        [self drawControlInterior:control];
+    }
 }
 
 @end
+
+NSString * TKOTemplatePickerDidChangeSelectionNotification = @"TKOTemplatePickerDidChangeSelectionNotification";
 
 @implementation TKOActionCell
 

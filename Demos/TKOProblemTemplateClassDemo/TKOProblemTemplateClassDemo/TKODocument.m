@@ -11,32 +11,64 @@
 #import "TKOTextSystem.h"
 #import "TKODisclosingView.h"
 #import "NSScrollView+TKOKit.h"
-#import "TKOProblemTemplatePicker.h"
 
 #import "TKOTemplatePicker.h"
+#import "TKOProblemTemplate.h"
+#import "TKOProblemTemplateAuthority.h"
+
 #import "TKOAlignmentInspectorViewController.h"
 #import "TKOFontInspectorViewController.h"
 
-@interface TKODocument () <NSTextViewDelegate, TKOTemplatePickerDataSource>
+@interface TKODocument () <NSTextViewDelegate, TKOTemplatePickerDelegate>
 
+@property (strong, nonatomic) TKOTextView * textView;
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet NSScrollView *textScrollView;
 
 @property (weak) IBOutlet NSStackView *stackView;
 @property (strong, nonatomic) TKODisclosingView *disclosingView;
 
-@property (strong) IBOutlet NSView *testView;
-@property (strong) IBOutlet NSButton *addButton;
-@property (strong) IBOutlet NSScrollView *scrollView;
-@property (strong) IBOutlet NSView *testView2;
-
-@property (strong, nonatomic) TKOProblemTemplatePicker * templatePicker;
 @property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentVC;
 @property (strong, nonatomic) TKOFontInspectorViewController * fontVC;
+
+@property (strong, nonatomic) TKOTemplatePicker * picker;
+@property (strong, nonatomic) TKOProblemTemplateAuthority * templateAuthority;
 
 @end
 
 @implementation TKODocument
+
+- (void)templatePickerDidChangeSelection:(NSNotification *)notification
+{
+    TKOTemplatePicker * picker = [notification object];
+    
+    NSInteger location = self.textView.selectedRange.location;
+    if (location >= self.textView.textStorage.length || location == NSNotFound)
+        return;
+    
+    TKOProblemTemplate * problemTemplate = picker.selectedItem;
+    
+    NSRange range = self.textView.rangeForUserParagraphAttributeChange;
+    [self.textView.textStorage addAttributes:problemTemplate.attributes
+                                       range:range];
+}
+
+- (void)textViewDidChangeSelection:(NSNotification *)notification
+{
+    NSInteger location = self.textView.selectedRange.location;
+    if (location >= self.textView.textStorage.length || location == NSNotFound)
+    {
+        [self.picker setSelectedItem:nil];
+    }
+    else
+    {
+        NSString * attribute = [self.textView.textStorage attribute:@"TKOProblemTemplateStyleAttributeName"
+                                                            atIndex:location
+                                                     effectiveRange:NULL];
+        TKOProblemTemplate * problemTemplate = [TKOProblemTemplateAuthority templateWithName:attribute];
+        [self.picker setSelectedItem:problemTemplate];
+    }
+}
 
 - (void)setupTextSystem
 {
@@ -45,16 +77,11 @@
     
     TKOTextContainer * textContainer = [[TKOTextContainer alloc] init];
     [layoutManager addTextContainer:textContainer];
-    TKOTextView * textView = [[TKOTextView alloc] initWithFrame:NSZeroRect
-                                                  textContainer:textContainer];
-    
-    [textView setTextContainerInset:NSMakeSize(20, 20)];
-//    [[NSNotificationCenter defaultCenter] addObserver:self.listInspector
-//                                             selector:@selector(updateListAttributes:)
-//                                                 name:NSTextViewDidChangeSelectionNotification
-//                                               object:textView];
-    [self.textScrollView setDocumentView:textView];
-//    [self.listInspector setTextView:textView];
+    self.textView = [[TKOTextView alloc] initWithFrame:NSZeroRect
+                                         textContainer:textContainer];
+    self.textView.delegate = self;
+    [self.textView setTextContainerInset:NSMakeSize(20, 20)];
+    [self.textScrollView setDocumentView:self.textView];
 }
 
 - (id)init
@@ -62,6 +89,7 @@
     self = [super init];
     if (self) {
         _textStorage = [[TKOTextStorage alloc] init];
+        _templateAuthority = [[TKOProblemTemplateAuthority alloc] init];
     }
     return self;
 }
@@ -75,49 +103,20 @@
 {
     [super windowControllerDidLoadNib:aController];
     
-    TKOTemplatePicker * picker = [[TKOTemplatePicker alloc] initWithTitle:@"Template"];
-//    TKODisclosingView * pickerDisclosingView = [NSView viewWithClass:[TKODisclosingView class]];
-//    [pickerDisclosingView setTrimsTopContentHeight:NO];
-//    [pickerDisclosingView setTitle:@"Templates"];
-//    [pickerDisclosingView setContentView:picker];
-
-    [self.stackView addView:picker
+    self.picker = [[TKOTemplatePicker alloc] initWithTitle:@"Template"];
+    [self.stackView addView:self.picker
                   inGravity:NSStackViewGravityTop];
     [self.stackView addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[picker]|"
                                              options:0
                                              metrics:nil
-                                               views:@{@"picker": picker}]
+                                               views:@{@"picker": self.picker}]
      ];
     
-    [picker setDataSource:self];
     
-    self.alignmentVC = [[TKOAlignmentInspectorViewController alloc] init];
-    [self.stackView addView:self.alignmentVC.view
-                  inGravity:NSStackViewGravityTop];
-    
-    self.fontVC = [[TKOFontInspectorViewController alloc] init];
-    [self.stackView addView:self.fontVC.view
-                  inGravity:NSStackViewGravityTop];
-    
+    [self.picker setDelegate:self];
+    [self.picker setDataSource:self.templateAuthority];
     [self setupTextSystem];
-}
-
-- (NSUInteger)templatePickerNumberOfItems:(TKOTemplatePicker *)templatePicker
-{
-    return 5;
-}
-
-- (id)templatePicker:(TKOTemplatePicker *)templatePicker
-         itemAtIndex:(NSUInteger)index
-{
-    return [NSString stringWithFormat:@"Template %lu", index];
-}
-
-- (NSString *)templatePicker:(TKOTemplatePicker *)templatePicker
-                titleForItem:(id)item
-{
-    return [NSString stringWithFormat:@"%@ Title", item];
 }
 
 + (BOOL)autosavesInPlace

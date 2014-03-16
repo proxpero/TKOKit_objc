@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOTextSystem.h"
 
 @class TKOTemplatePicker;
 
@@ -20,11 +21,23 @@
 
 @end
 
+@protocol TKOTemplatePickerDelegate <NSObject>
+@optional
+
+- (void)templatePickerDidChangeSelection:(NSNotification *)notification;
+
+@end
+
+extern NSString * TKOTemplatePickerDidChangeSelectionNotification;
+
 @interface TKOTemplatePicker : NSView
 
+@property (weak, nonatomic) id <TKOTemplatePickerDelegate> delegate;
 @property (weak, nonatomic) id <TKOTemplatePickerDataSource> dataSource;
+@property (nonatomic, weak) id selectedItem;
 
 - (id)initWithTitle:(NSString *)title;
 - (void)reloadData;
+
 
 @end

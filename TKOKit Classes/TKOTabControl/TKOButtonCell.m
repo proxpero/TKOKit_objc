@@ -84,7 +84,6 @@
 - (void)drawWithFrame:(NSRect)cellFrame
                inView:(NSView *)controlView
 {
-    NSInteger state = self.state;
     [((self.state|self.isHighlighted) ? self.backgroundHighlightColor : self.backgroundColor) set];
     NSRectFill(cellFrame);
     

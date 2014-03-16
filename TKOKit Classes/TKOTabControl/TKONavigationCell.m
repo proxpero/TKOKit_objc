@@ -47,7 +47,6 @@
             ofView:(NSView *)controlView
       untilMouseUp:(BOOL)flag
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSRect popupRect = [self popupRectWithFrame:cellFrame];
     NSPoint location = [controlView convertPoint:[theEvent locationInWindow]
                                         fromView:nil];
