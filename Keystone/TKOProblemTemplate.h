@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKOTemplatePicker.h"
 
-@interface TKOProblemTemplate : NSObject
+@interface TKOProblemTemplate : NSObject 
 
 @property (strong, nonatomic) NSString * name;
-@property (strong, nonatomic) NSParagraphStyle * paragraphStyle;
-@property (strong, nonatomic, readonly) NSDictionary * attributes;
+@property (strong, nonatomic) NSDictionary * attributes;
+@property (strong, nonatomic, readonly) NSTextList * choicesList;
+
+- (id)initWithName:(NSString *)name
+        attributes:(NSDictionary *)attributes;
+
 @end

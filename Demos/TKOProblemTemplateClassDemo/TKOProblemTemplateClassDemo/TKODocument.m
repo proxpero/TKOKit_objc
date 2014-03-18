@@ -9,7 +9,6 @@
 #import "TKODocument.h"
 #import "NSView+TKOKit.h"
 #import "TKOTextSystem.h"
-#import "TKODisclosingView.h"
 #import "NSScrollView+TKOKit.h"
 
 #import "TKOTemplatePicker.h"
@@ -19,17 +18,13 @@
 #import "TKOAlignmentInspectorViewController.h"
 #import "TKOFontInspectorViewController.h"
 
-@interface TKODocument () <NSTextViewDelegate, TKOTemplatePickerDelegate>
+@interface TKODocument () <NSTextViewDelegate, NSTextStorageDelegate, TKOTemplatePickerDelegate>
 
 @property (strong, nonatomic) TKOTextView * textView;
 @property (strong, nonatomic) TKOTextStorage * textStorage;
 @property (weak) IBOutlet NSScrollView *textScrollView;
 
 @property (weak) IBOutlet NSStackView *stackView;
-@property (strong, nonatomic) TKODisclosingView *disclosingView;
-
-@property (strong, nonatomic) TKOAlignmentInspectorViewController * alignmentVC;
-@property (strong, nonatomic) TKOFontInspectorViewController * fontVC;
 
 @property (strong, nonatomic) TKOTemplatePicker * picker;
 @property (strong, nonatomic) TKOProblemTemplateAuthority * templateAuthority;
@@ -37,6 +32,55 @@
 @end
 
 @implementation TKODocument
+
+- (void)textStorageWillProcessEditing:(NSNotification *)notification
+{
+    NSInteger location = self.textView.selectedRange.location;
+    if (location >= self.textView.textStorage.length || location == NSNotFound)
+        return;
+    
+    TKOTextStorage * ts = [notification object];
+    
+    [self.textView.string enumerateSubstringsInRange:NSMakeRange(0, self.textView.string.length)
+                                             options:NSStringEnumerationByParagraphs
+                                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                                              
+                                              NSString * name = [self.textStorage attribute:TKOProblemTemplateName
+                                                                                    atIndex:substringRange.location
+                                                                             effectiveRange:NULL];
+                                              TKOProblemTemplate * template = [TKOProblemTemplateAuthority problemTemplateWithName:name];
+                                              
+                                              NSTextList * textList = template.choicesList;
+                                              
+                                              if (textList)
+                                              {
+                                                  NSParagraphStyle * paragraphStyle = [self.textStorage attribute:NSParagraphStyleAttributeName
+                                                                                                          atIndex:substringRange.location
+                                                                                                   effectiveRange:NULL];
+                                                  NSTextList * newTextList = [paragraphStyle textLists][0];
+                                                  
+                                                  if (newTextList != textList)
+                                                  {
+                                                      NSMutableParagraphStyle * mps = [paragraphStyle mutableCopy];
+                                                      [mps setTextLists:@[ textList ]];
+                                                  }
+                                                  
+                                                  NSString * marker = [textList markerForItemNumber:[ts itemNumberInTextList:textList
+                                                                                                                     atIndex:substringRange.location]];
+                                                  if (marker)
+                                                  {
+                                                      if (![substring hasPrefix:marker])
+                                                      {
+                                                          NSAttributedString * attributedMarker = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\t",marker]
+                                                                                                                                  attributes:[self.textStorage attributesAtIndex:substringRange.location
+                                                                                                                                                                  effectiveRange:NULL]];
+                                                          [ts insertAttributedString:attributedMarker
+                                                                             atIndex:substringRange.location];
+                                                      }
+                                                  }
+                                              }
+                                          }];
+}
 
 - (void)templatePickerDidChangeSelection:(NSNotification *)notification
 {
@@ -59,14 +103,14 @@
     if (location >= self.textView.textStorage.length || location == NSNotFound)
     {
         [self.picker setSelectedItem:nil];
-    }
-    else
-    {
-        NSString * attribute = [self.textView.textStorage attribute:@"TKOProblemTemplateStyleAttributeName"
-                                                            atIndex:location
-                                                     effectiveRange:NULL];
-        TKOProblemTemplate * problemTemplate = [TKOProblemTemplateAuthority templateWithName:attribute];
-        [self.picker setSelectedItem:problemTemplate];
+        
+    } else {
+        
+        NSString * attributeName = [self.textView.textStorage attribute:TKOProblemTemplateName
+                                                                atIndex:location
+                                                         effectiveRange:NULL];
+        
+        [self.picker setSelectedItem:[TKOProblemTemplateAuthority problemTemplateWithName:attributeName]];
     }
 }
 
@@ -80,6 +124,7 @@
     self.textView = [[TKOTextView alloc] initWithFrame:NSZeroRect
                                          textContainer:textContainer];
     self.textView.delegate = self;
+    self.textStorage.delegate = self;
     [self.textView setTextContainerInset:NSMakeSize(20, 20)];
     [self.textScrollView setDocumentView:self.textView];
 }
@@ -112,7 +157,6 @@
                                              metrics:nil
                                                views:@{@"picker": self.picker}]
      ];
-    
     
     [self.picker setDelegate:self];
     [self.picker setDataSource:self.templateAuthority];

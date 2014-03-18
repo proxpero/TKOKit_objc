@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOTextSystem.h"
 
 @class TKOTemplatePicker;
 
@@ -18,7 +17,6 @@
          itemAtIndex:(NSUInteger)index;
 - (NSString *)templatePicker:(TKOTemplatePicker *)templatePicker
                 titleForItem:(id)item;
-
 @end
 
 @protocol TKOTemplatePickerDelegate <NSObject>
@@ -38,6 +36,5 @@ extern NSString * TKOTemplatePickerDidChangeSelectionNotification;
 
 - (id)initWithTitle:(NSString *)title;
 - (void)reloadData;
-
 
 @end

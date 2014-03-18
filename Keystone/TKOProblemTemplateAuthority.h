@@ -13,6 +13,9 @@
 
 @interface TKOProblemTemplateAuthority : NSObject <TKOTemplatePickerDataSource>
 
-+ (TKOProblemTemplate *)templateWithName:(NSString *)name;
++ (TKOProblemTemplate *)problemTemplateWithName:(NSString *)name;
 
 @end
+
+extern NSString * TKOProblemTemplateName;
+extern NSString * TKOProblemTemplateAttributes;

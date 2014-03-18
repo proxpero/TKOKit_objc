@@ -12,8 +12,6 @@
 #import "TKOTextTabCell.h"
 #import "NSView+TKOKit.h"
 
-#import "TKOProblemTemplate.h"
-
 @interface TKOActionCell : NSActionCell
 @end
 
@@ -60,6 +58,8 @@
     
     return self;
 }
+
+# pragma mark - UI
 
 - (void)configureSubviews
 {
@@ -123,6 +123,81 @@
     _titleField.stringValue = _title;
     
 }
+
+- (void)drawControlInterior:(TKOControl *)control
+{
+    if ([control.cell state])
+    {
+        control.layer.borderWidth = 1.0;
+        control.layer.cornerRadius = 5.0;
+        control.layer.backgroundColor = [[NSColor whiteColor] CGColor];
+    }
+    else
+    {
+        control.layer.borderWidth = 0.0;
+        control.layer.cornerRadius = 0.0;
+        control.layer.backgroundColor = [[NSColor clearColor] CGColor];
+    }
+}
+
+
+- (TKOControl *)controlWithTitle:(NSString *)title
+{
+    TKOControl * control = [NSView viewWithClass:[NSControl class]];
+    control.wantsLayer = YES;
+    control.layer.opaque = YES;
+    control.layer.borderColor = [[NSColor blueColor] CGColor];
+    //    control.layer.cornerRadius = 5.0;
+    
+    [self drawControlInterior:control];
+    
+    control.cell = [[TKOActionCell alloc] init];
+    [control sendActionOn:NSLeftMouseDownMask];
+    control.target = self;
+    control.action = @selector(selectControl:);
+    
+    NSTextField * textfield = [NSView viewWithClass:[NSTextField class]];
+    textfield.font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
+    textfield.textColor = [NSColor darkGrayColor];
+    textfield.editable = NO;
+    textfield.bordered = NO;
+    textfield.selectable = NO;
+    textfield.drawsBackground = NO;
+    
+    textfield.stringValue = title;
+    
+    [control addConstraint:
+     [NSLayoutConstraint constraintWithItem:control
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:40.0]
+     ];
+    
+    [control addSubview:textfield];
+    
+    [control addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[textField]"
+                                             options:0
+                                             metrics:nil
+                                               views:@{@"textField": textfield}]
+     ];
+    [control addConstraint:
+     [NSLayoutConstraint constraintWithItem:textfield
+                                  attribute:NSLayoutAttributeCenterY
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:control
+                                  attribute:NSLayoutAttributeCenterY
+                                 multiplier:1
+                                   constant:0]
+     ];
+    
+    return control;
+}
+
+# pragma mark - Delegate and Data Source
 
 - (void)setDelegate:(id<TKOTemplatePickerDelegate>)delegate
 {
@@ -214,77 +289,7 @@
     }
 }
 
-- (TKOControl *)controlWithTitle:(NSString *)title
-{
-    TKOControl * control = [NSView viewWithClass:[NSControl class]];
-    control.wantsLayer = YES;
-    control.layer.opaque = YES;
-    control.layer.borderColor = [[NSColor blueColor] CGColor];
-//    control.layer.cornerRadius = 5.0;
-
-    [self drawControlInterior:control];
-    
-    control.cell = [[TKOActionCell alloc] init];
-    [control sendActionOn:NSLeftMouseDownMask];
-    control.target = self;
-    control.action = @selector(selectControl:);
-    
-    NSTextField * textfield = [NSView viewWithClass:[NSTextField class]];
-    textfield.font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
-    textfield.textColor = [NSColor darkGrayColor];
-    textfield.editable = NO;
-    textfield.bordered = NO;
-    textfield.selectable = NO;
-    textfield.drawsBackground = NO;
-    
-    textfield.stringValue = title;
-    
-    [control addConstraint:
-     [NSLayoutConstraint constraintWithItem:control
-                                  attribute:NSLayoutAttributeHeight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:40.0]
-     ];
-    
-    [control addSubview:textfield];
-    
-    [control addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[textField]"
-                                             options:0
-                                             metrics:nil
-                                               views:@{@"textField": textfield}]
-     ];
-    [control addConstraint:
-     [NSLayoutConstraint constraintWithItem:textfield
-                                  attribute:NSLayoutAttributeCenterY
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:control
-                                  attribute:NSLayoutAttributeCenterY
-                                 multiplier:1
-                                   constant:0]
-     ];
-    
-    return control;
-}
-
-- (void)drawControlInterior:(TKOControl *)control
-{
-    if ([control.cell state])
-    {
-        control.layer.borderWidth = 1.0;
-        control.layer.cornerRadius = 5.0;
-        control.layer.backgroundColor = [[NSColor whiteColor] CGColor];
-    }
-    else
-    {
-        control.layer.borderWidth = 0.0;
-        control.layer.cornerRadius = 0.0;
-        control.layer.backgroundColor = [[NSColor clearColor] CGColor];
-    }
-}
+# pragma mark - Selection
 
 - (void)selectControl:(id)sender
 {

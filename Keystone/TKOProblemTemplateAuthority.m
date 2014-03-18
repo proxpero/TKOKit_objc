@@ -18,34 +18,45 @@ static NSArray * _templates = nil;
     static dispatch_once_t oneAuthority;
     
     dispatch_once(&oneAuthority, ^{
-       
-        NSMutableArray * templates = [NSMutableArray new];
-        TKOProblemTemplate * template;
         
-        template = [[TKOProblemTemplate alloc] init];
-        template.name = @"Template 1";
-        template.paragraphStyle = [[NSParagraphStyle alloc] init];
-        [templates addObject:template];
+        NSMutableParagraphStyle * mpStyle;
         
-        NSMutableParagraphStyle * style2 = [[[NSParagraphStyle alloc] init] mutableCopy];
-        [style2 setHeadIndent:30.0];
+        mpStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        mpStyle.paragraphSpacing = 12.0;
+
+        TKOProblemTemplate * question = [[TKOProblemTemplate alloc] initWithName:@"Question"
+                                                                      attributes:@{NSParagraphStyleAttributeName: mpStyle}];
+        mpStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+
+        [mpStyle addTabStop:[[NSTextTab alloc] initWithType:NSLeftTabStopType location:20.0]];
+        [mpStyle setHeadIndent:20.0];
+        mpStyle.paragraphSpacing = 6.0;
         
-        template = [[TKOProblemTemplate alloc] init];
-        template.name = @"Template 2";
-        template.paragraphStyle = style2;
-        [templates addObject:template];
+        NSTextList * choicesList;
+        choicesList = [[NSTextList alloc] initWithMarkerFormat:@"({upper-alpha})"
+                                                       options:0];
+        [choicesList setStartingItemNumber:1];
+        [mpStyle setTextLists:@[choicesList]];
         
-        _templates = templates;
+        TKOProblemTemplate * choices  = [[TKOProblemTemplate alloc] initWithName:@"Choices"
+                                                                      attributes:@{NSParagraphStyleAttributeName: mpStyle}];
+        _templates = @[ question, choices ];
     });
 }
 
-+ (TKOProblemTemplate *)templateWithName:(NSString *)name
++ (TKOProblemTemplate *)problemTemplateWithName:(NSString *)name
 {
-    for (TKOProblemTemplate * item in _templates)
-        if ([item.name isEqualToString:name])
-            return item;
+    if (!name)
+        return nil;
+    
+    for (TKOProblemTemplate * template in _templates)
+        if ([template.name isEqualToString:name])
+            return template;
+    
     return nil;
 }
+
+#pragma mark - TKOTemplatePicker Data Source
 
 - (NSUInteger)templatePickerNumberOfItems:(TKOTemplatePicker *)templatePicker
 {
@@ -55,14 +66,16 @@ static NSArray * _templates = nil;
 - (id)templatePicker:(TKOTemplatePicker *)templatePicker
          itemAtIndex:(NSUInteger)index
 {
-    return (TKOProblemTemplate *)_templates[index];
+    return _templates[index];
 }
 
 - (NSString *)templatePicker:(TKOTemplatePicker *)templatePicker
                 titleForItem:(id)item
 {
-    return ((TKOProblemTemplate *)item).name;
+    return [(TKOProblemTemplate *)item name];
 }
 
-
 @end
+
+NSString * TKOProblemTemplateName = @"TKOProblemTemplateName";
+NSString * TKOProblemTemplateAttributes = @"TKOProblemTemplateAttributes";

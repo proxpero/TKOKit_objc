@@ -75,6 +75,7 @@ NSString * const TKODefaultTokenName = @"TKODefaultTokenName";
 - (void)setAttributes:(NSDictionary *)attrs
                 range:(NSRange)range
 {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self beginEditing];
     [_backingStore setAttributes:attrs
                            range:range];
@@ -99,14 +100,20 @@ NSString * const TKODefaultTokenName = @"TKODefaultTokenName";
 
 - (void)performReplacementsForCharacterChangeInRange:(NSRange)changedRange
 {
-    NSRange extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
+    NSRange extendedRange;
+    extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
     extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(NSMaxRange(changedRange), 0)]);
-    [self applyTokenAttributesToRange:extendedRange];
+//    [self applyTextListMarkersToRange:extendedRange];
+//    [self applyTokenAttributesToRange:extendedRange];
+}
+
+- (void)applyTextListMarkersToRange:(NSRange)searchRange
+{
+
 }
 
 - (void)applyTokenAttributesToRange:(NSRange)searchRange
 {
-    return;
     [[_backingStore string] enumerateSubstringsInRange:searchRange
                                                options:NSStringEnumerationByWords
                                             usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
