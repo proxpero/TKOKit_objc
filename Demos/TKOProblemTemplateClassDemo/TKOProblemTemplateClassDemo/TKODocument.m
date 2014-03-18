@@ -57,9 +57,11 @@
                                                   NSParagraphStyle * paragraphStyle = [self.textStorage attribute:NSParagraphStyleAttributeName
                                                                                                           atIndex:substringRange.location
                                                                                                    effectiveRange:NULL];
-                                                  NSTextList * newTextList = [paragraphStyle textLists][0];
+                                                  NSArray * lists = [paragraphStyle textLists];
+
+                                                  NSTextList * newTextList = lists[0];
                                                   
-                                                  if (newTextList != textList)
+                                                  if ((newTextList != textList) || lists.count > 1)
                                                   {
                                                       NSMutableParagraphStyle * mps = [paragraphStyle mutableCopy];
                                                       [mps setTextLists:@[ textList ]];
