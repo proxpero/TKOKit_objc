@@ -1,65 +1,50 @@
 //
-//  TKOTemplateViewController.m
+//  TKOTemplateInspectorViewController.m
 //  TKOKeystoneProblemEditorDemo
 //
 //  Created by Todd Olsen on 3/19/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
-#import "TKOTemplateViewController.h"
-#import "NSView+TKOKit.h"
-
-#import "TKOTextView.h"
-#import "TKOTextStorage.h"
-
+#import "TKOTemplateInspectorViewController.h"
 #import "TKOTemplatePicker.h"
 #import "TKOProblemTemplate.h"
 #import "TKOProblemTemplateAuthority.h"
 
-#import "TKOSecondViewController.h"
+#import "TKOTextView.h"
+#import "TKOTextStorage.h"
 
-@interface TKOTemplateViewController () <TKOTemplatePickerDelegate>
+@interface TKOTemplateInspectorViewController () <TKOTemplatePickerDelegate>
 
-@property (strong, nonatomic) TKOTemplatePicker * problemTemplatePicker;
-@property (strong, nonatomic) TKOProblemTemplateAuthority * problemTemplateAuthority;
+@property (strong) IBOutlet TKOTemplatePicker *templatePicker;
 
-@property (strong, nonatomic) TKOSecondViewController * secondViewController;
 
 @end
 
-@implementation TKOTemplateViewController
+@implementation TKOTemplateInspectorViewController
 
-- (void)templatePickerDidChangeSelection:(NSNotification *)notification
-{
-    TKOTemplatePicker * picker = [notification object];
-    
-    NSInteger location = self.textView.selectedRange.location;
-    if (location >= self.textView.textStorage.length || location == NSNotFound)
-        return;
-    
-    TKOProblemTemplate * problemTemplate = picker.selectedItem;
-    
-    NSRange range = self.textView.rangeForUserParagraphAttributeChange;
-    [self.textView.textStorage addAttributes:problemTemplate.attributes
-                                       range:range];
-}
+# pragma mark - Text View Notifications
 
 - (void)textViewDidChangeSelection:(NSNotification *)notification
 {
-    NSInteger location = self.textView.selectedRange.location;
-    if (location >= self.textView.textStorage.length || location == NSNotFound)
+    TKOTextView * textView = [notification object];
+    
+    NSInteger location = textView.selectedRange.location;
+    if (location >= textView.textStorage.length || location == NSNotFound)
     {
-        [self.problemTemplatePicker setSelectedItem:nil];
+        [self.templatePicker setSelectedItem:nil];
         
     } else {
         
-        NSString * attributeName = [self.textView.textStorage attribute:TKOProblemTemplateName
+        NSString * attributeName = [textView.textStorage attribute:TKOProblemTemplateName
                                                                 atIndex:location
                                                          effectiveRange:NULL];
         
-        [self.problemTemplatePicker setSelectedItem:[TKOProblemTemplateAuthority problemTemplateWithName:attributeName]];
+        [self.templatePicker setSelectedItem:[TKOProblemTemplateAuthority problemTemplateWithName:attributeName]];
     }
 }
+
+# pragma mark - Text Storage Notifications
 
 - (void)textStorageWillProcessEditing:(NSNotification *)notification
 {
@@ -112,49 +97,36 @@
                                           }];
 }
 
+# pragma mark - Template Picker Delegate
+
+- (void)templatePickerDidChangeSelection:(NSNotification *)notification
+{
+    TKOTemplatePicker * picker = [notification object];
+    
+    NSInteger location = self.textView.selectedRange.location;
+    if (location >= self.textView.textStorage.length || location == NSNotFound)
+        return;
+    
+    TKOProblemTemplate * problemTemplate = picker.selectedItem;
+    
+    NSRange range = self.textView.rangeForUserParagraphAttributeChange;
+    [self.textView.textStorage addAttributes:problemTemplate.attributes
+                                       range:range];
+}
+
 - (id)init
 {
-    self = [super init];
+    self = [super initWithNibName:@"TKOTemplateInspectorViewController"
+                           bundle:nil];
     if (!self)
         return nil;
-
-    self.view = [NSView viewWithClass:[NSView class]];
+    
     self.title = @"Template";
     
-    _problemTemplateAuthority = [[TKOProblemTemplateAuthority alloc] init];
-    _problemTemplatePicker = [[TKOTemplatePicker alloc] initWithTitle:nil];
-    _problemTemplatePicker.dataSource = _problemTemplateAuthority;
-    _problemTemplatePicker.delegate = self;
-    
-    _secondViewController = [[TKOSecondViewController alloc] init];
-    NSView * answerView = _secondViewController.view;
-    
-    NSDictionary * views = NSDictionaryOfVariableBindings(_problemTemplatePicker, answerView);
-    [self.view addSubview:_problemTemplatePicker];
-    [self.view addSubview:answerView];
-    
-    [self.view addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_problemTemplatePicker][answerView]"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
-    
-    [self.view addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_problemTemplatePicker]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
-    
-    [self.view addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[answerView]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
     
     return self;
 }
+
+
 
 @end

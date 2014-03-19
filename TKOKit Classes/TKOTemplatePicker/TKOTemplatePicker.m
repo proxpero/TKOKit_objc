@@ -34,7 +34,6 @@
         return nil;
 
     self.title = title.copy;
-    [self configureSubviews];
     
     return self;
 }
@@ -55,14 +54,25 @@
                                   attribute:NSLayoutAttributeNotAnAttribute
                                  multiplier:1
                                    constant:268.0]];
+    [self configureSubviews];
     
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self configureSubviews];
 }
 
 # pragma mark - UI
 
 - (void)configureSubviews
 {
+    static BOOL configured = NO;
+    if (configured)
+        return;
+    
     NSString * verticalLayoutConstraintFormat;
     NSDictionary * views;
     
@@ -111,7 +121,7 @@
     else
     {
         views = NSDictionaryOfVariableBindings(_buttonContainer, separator2);
-        verticalLayoutConstraintFormat = @"V:|-3-[_buttonContainer]-3-[separator2]|";
+        verticalLayoutConstraintFormat = @"V:|-15-[_buttonContainer]-15-[separator2]|";
     }
     
     [self addConstraints:
@@ -122,7 +132,7 @@
      ];
     
     [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-3-[_buttonContainer]-3-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_buttonContainer]-15-|"
                                              options:0
                                              metrics:nil
                                                views:views]
@@ -134,6 +144,8 @@
                                              metrics:nil
                                                views:views]
      ];
+    
+    configured = YES;
 }
 
 - (void)drawControlInterior:(TKOControl *)control
@@ -217,14 +229,14 @@
     
     NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
     
-    if ([_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
+    if (_delegate && [_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
         [defaultCenter removeObserver:_delegate
                                  name:TKOTemplatePickerDidChangeSelectionNotification
                                object:self];
     
     _delegate = delegate;
     
-    if ([_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
+    if (_delegate && [_delegate respondsToSelector:@selector(templatePickerDidChangeSelection:)])
         [defaultCenter addObserver:_delegate
                           selector:@selector(templatePickerDidChangeSelection:)
                               name:TKOTemplatePickerDidChangeSelectionNotification
@@ -265,6 +277,10 @@
     
     [self.buttonContainer setSubviews:controls];
     NSControl * previous = nil;
+    
+    NSView * view = self;
+    NSView * superview = view.superview;
+    NSView * bc = self.buttonContainer;
     
     for (TKOControl * control in controls)
     {

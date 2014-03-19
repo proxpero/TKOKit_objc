@@ -26,12 +26,12 @@
     
     NSMutableArray *newTabs = [[NSMutableArray alloc] init];
     
-    for (id item in newItems) {
+    [newItems enumerateObjectsUsingBlock:^(id item, NSUInteger index, BOOL *stop) {
         
         NSString * title = [self.dataSource tabControl:self
                                           titleForItem:item];
         NSButton * button = [self tabWithTitle:title];
-
+        
         TKOHeaderCell * cell = [button cell];
         
         if (dataSourceRespondsTo.backgroundColorForTabControl)
@@ -46,14 +46,14 @@
             [cell setTextColor:[self.dataSource textColorForTabControl:self]];
         if (dataSourceRespondsTo.textHighlightColorForTabControl)
             [cell setTextHighlightColor:[self.dataSource textHighlightColorForTabControl:self]];
-        
+        if (dataSourceRespondsTo.borderMaskForItemAtIndex)
+            [cell setBorderMask:[self.dataSource tabControl:self borderMaskForItemAtIndex:index]];
+            
         [cell setRepresentedObject:item];
         [newTabs addObject:button];
-    }
-    
-    TKOHeaderCell * lastCell = [[newTabs lastObject] cell];
-    lastCell.borderMask = TKOBorderMaskBottom;
-    
+        
+    }];
+        
     [self setSubviews:newTabs];
     [self layoutTabs:newTabs];
     
@@ -114,7 +114,6 @@
 {
     TKOTextTabCell * tabCell = [[TKOTextTabCell alloc] initTextCell:title];
     tabCell.imagePosition    = NSNoImage;
-    tabCell.borderMask       = TKOBorderMaskBottom|TKOBorderMaskRight;
     tabCell.font             = dataSourceRespondsTo.fontForTabControl ? [self.dataSource fontForTabControl:self] : nil;
     tabCell.target           = self;
     tabCell.action           = @selector(selectTab:);
@@ -124,13 +123,6 @@
     NSButton * tab = [NSView viewWithClass:[NSButton class]];
     [tab setCell:tabCell];
 
-//    [tab addConstraint:[NSLayoutConstraint constraintWithItem:tab
-//                                                    attribute:NSLayoutAttributeHeight
-//                                                    relatedBy:NSLayoutRelationEqual
-//                                                       toItem:nil
-//                                                    attribute:NSLayoutAttributeNotAnAttribute
-//                                                   multiplier:1.0
-//                                                     constant:self.bounds.size.height]];
     return tab;
 }
 

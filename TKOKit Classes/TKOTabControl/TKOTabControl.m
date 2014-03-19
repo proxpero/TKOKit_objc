@@ -7,8 +7,6 @@
 //
 
 #import "TKOTabControl.h"
-#import "TKOHeaderCell.h"
-
 
 @interface TKOTabControl ()
 @end
@@ -21,6 +19,11 @@
 
 #pragma mark - Properties
 
+- (void)setBorderMask:(TKOBorderMask)borderMask
+{
+    [self.cell setBorderMask:borderMask];
+}
+
 - (void)setBorderColor:(NSColor *)borderColor
 {
     [self.cell setBorderColor:borderColor];
@@ -29,6 +32,7 @@
 - (void)setBackgroundColor:(NSColor *)backgroundColor
 {
     [self.cell setBackgroundColor:backgroundColor];
+    
 }
 
 - (void)setDataSource:(id <TKOTabControlDataSource>)dataSource
@@ -66,6 +70,7 @@
         dataSourceRespondsTo.textHighlightColorForTabControl        = [_dataSource respondsToSelector:@selector(textHighlightColorForTabControl:)];
         dataSourceRespondsTo.imageColorForTabControl                = [_dataSource respondsToSelector:@selector(imageColorForTabControl:)];
         dataSourceRespondsTo.imageHighlightColorForTabControl       = [_dataSource respondsToSelector:@selector(imageHighlightColorForTabControl:)];
+        dataSourceRespondsTo.borderMaskForItemAtIndex               = [_dataSource respondsToSelector:@selector(tabControl:borderMaskForItemAtIndex:)];
         
         [self reloadData];
     }

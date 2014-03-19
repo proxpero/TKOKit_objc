@@ -22,7 +22,7 @@
     self.imagePosition = NSNoImage;
     
     [self setDefaultColors];
-    self.borderMask = TKOBorderMaskBottom;
+//    self.borderMask = TKOBorderMaskBottom;
     
     return self;
 }
@@ -34,7 +34,7 @@
         return nil;
     [self setBordered:NO];
     [self setDefaultColors];
-    self.borderMask = TKOBorderMaskBottom;
+//    self.borderMask = TKOBorderMaskBottom;
     
     return self;
 }
@@ -58,6 +58,12 @@
     copy->_borderHighlightColor = [_borderHighlightColor copyWithZone:zone];
     
     return copy;
+}
+
+- (void)setBorderMask:(TKOBorderMask)borderMask
+{
+    _borderMask = borderMask;
+    [self.controlView setNeedsDisplay:YES];
 }
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor

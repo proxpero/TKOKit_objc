@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKOButtonCell.h"
 
 @class TKOTabControl;
 
@@ -40,6 +41,8 @@
 - (NSColor *)textHighlightColorForTabControl:(TKOTabControl *)tabControl;
 - (NSColor *)imageColorForTabControl:(TKOTabControl *)tabControl;
 - (NSColor *)imageHighlightColorForTabControl:(TKOTabControl *)tabControl;
+- (TKOBorderMask)tabControl:(TKOTabControl *)tabControl
+   borderMaskForItemAtIndex:(NSUInteger)index;
 
 @end
 
@@ -56,4 +59,5 @@ struct {
     unsigned int textHighlightColorForTabControl:1;
     unsigned int imageColorForTabControl:1;
     unsigned int imageHighlightColorForTabControl:1;
+    unsigned int borderMaskForItemAtIndex:1;
 } dataSourceRespondsTo;

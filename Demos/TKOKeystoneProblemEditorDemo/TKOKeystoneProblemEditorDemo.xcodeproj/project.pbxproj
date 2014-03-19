@@ -98,6 +98,8 @@
 		459EFC8118D9509B005E58F5 /* TKOTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC7F18D9509B005E58F5 /* TKOTemplateViewController.m */; };
 		459EFC8818D95294005E58F5 /* TKOProblemTemplateAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8618D95294005E58F5 /* TKOProblemTemplateAuthority.m */; };
 		459EFC8918D95294005E58F5 /* TKOProblemTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8718D95294005E58F5 /* TKOProblemTemplate.m */; };
+		459EFC8D18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */; };
+		459EFC8E18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +262,9 @@
 		459EFC8518D95142005E58F5 /* TKOProblemTemplateAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOProblemTemplateAuthority.h; path = ../../../Keystone/TKOProblemTemplateAuthority.h; sourceTree = "<group>"; };
 		459EFC8618D95294005E58F5 /* TKOProblemTemplateAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOProblemTemplateAuthority.m; path = ../../../Keystone/TKOProblemTemplateAuthority.m; sourceTree = "<group>"; };
 		459EFC8718D95294005E58F5 /* TKOProblemTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOProblemTemplate.m; path = ../../../Keystone/TKOProblemTemplate.m; sourceTree = "<group>"; };
+		459EFC8A18D9E93F005E58F5 /* TKOTemplateInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTemplateInspectorViewController.h; sourceTree = "<group>"; };
+		459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTemplateInspectorViewController.m; sourceTree = "<group>"; };
+		459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTemplateInspectorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +344,9 @@
 				459EFC7918D8DF8C005E58F5 /* TKOSecondViewController.h */,
 				459EFC7A18D8DF8C005E58F5 /* TKOSecondViewController.m */,
 				459EFC7B18D8DF8C005E58F5 /* TKOSecondViewController.xib */,
+				459EFC8A18D9E93F005E58F5 /* TKOTemplateInspectorViewController.h */,
+				459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */,
+				459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */,
 			);
 			path = TKOKeystoneProblemEditorDemo;
 			sourceTree = "<group>";
@@ -731,6 +739,7 @@
 				459EFC4018D8D80F005E58F5 /* TKOPositionBottomImage@2x.png in Resources */,
 				459EFC6018D8D80F005E58F5 /* TKOSpacingInspectorViewController.xib in Resources */,
 				459EFC5218D8D80F005E58F5 /* TKOFontInspectorViewController.xib in Resources */,
+				459EFC8E18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib in Resources */,
 				459EFC3418D8D80F005E58F5 /* TKOCenterAlignmentImage.png in Resources */,
 				459EFC3E18D8D80F005E58F5 /* TKOLeftAlignmentImage@2x.png in Resources */,
 				459EFC3918D8D80F005E58F5 /* TKOIncreaseIndentImage.png in Resources */,
@@ -827,6 +836,7 @@
 				459EFC8818D95294005E58F5 /* TKOProblemTemplateAuthority.m in Sources */,
 				459EFC6318D8D80F005E58F5 /* TKOHeaderCell.m in Sources */,
 				459EFC5D18D8D80F005E58F5 /* TKOPlatform.m in Sources */,
+				459EFC8D18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m in Sources */,
 				459EFC4F18D8D80F005E58F5 /* TKOFlexibleToolbarItem.m in Sources */,
 				459EFC7318D8D80F005E58F5 /* TKOThemeLoader.m in Sources */,
 				459EFC3018D8D80F005E58F5 /* NSView+TKOKit.m in Sources */,

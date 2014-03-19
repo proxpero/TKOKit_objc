@@ -23,7 +23,7 @@
     self.target = nil;
     self.action = NULL;
     self.title = @"";
-    self.borderMask = TKOBorderMaskBottom;
+//    self.borderMask = TKOBorderMaskBottom;
 
     return self;
 }
