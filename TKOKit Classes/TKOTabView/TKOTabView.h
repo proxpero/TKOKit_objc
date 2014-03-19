@@ -8,13 +8,33 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TKOTabView : NSView
+@class TKOTabView;
 
-@property (strong, nonatomic) NSArray * tabViewItems;
+@protocol TKOTabViewDelegate <NSObject>
+
+- (void)tabViewSelectionDidChange:(NSNotification *)notification;
 
 @end
 
+extern NSString * TKOTabViewSelectionDidChangeNotification;
 
+@protocol TKOTabViewItem <NSObject>
+
+- (NSString *)title;
+- (NSView *)view;
+
++ (id)itemWithView:(NSView *)view
+             title:(NSString *)title;
+
+@end
+
+@interface TKOTabView : NSView
+
+@property (strong, nonatomic) NSArray * tabViewItems;
+@property (weak, nonatomic) id <TKOTabViewDelegate> delegate;
+@property (weak, nonatomic) id selectedItem;
+
+@end
 
 @interface TKOTabViewItem : NSObject
 

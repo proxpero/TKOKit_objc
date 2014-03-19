@@ -47,6 +47,19 @@
     self.borderHighlightColor       = [NSColor colorWithHexString:@"0070c4"];
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    TKOButtonCell *copy = [super copyWithZone:zone];
+    
+    copy->_borderMask = _borderMask;
+    copy->_borderColor = [_borderColor copyWithZone:zone];
+    copy->_backgroundColor = [_backgroundColor copyWithZone:zone];
+    copy->_backgroundHighlightColor = [_backgroundHighlightColor copyWithZone:zone];
+    copy->_borderHighlightColor = [_borderHighlightColor copyWithZone:zone];
+    
+    return copy;
+}
+
 - (void)setBackgroundColor:(NSColor *)backgroundColor
 {
     if (_backgroundColor != backgroundColor) {

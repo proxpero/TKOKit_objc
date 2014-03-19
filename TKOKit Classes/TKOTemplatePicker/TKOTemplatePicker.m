@@ -63,37 +63,59 @@
 
 - (void)configureSubviews
 {
-    _titleField = [NSView viewWithClass:[NSTextField class]];
-    _titleField.font = [NSFont boldSystemFontOfSize:13];
-    _titleField.textColor = [NSColor darkGrayColor];
-    _titleField.editable = NO;
-    _titleField.bordered = NO;
-    _titleField.selectable = NO;
-    _titleField.drawsBackground = NO;
-    
-    NSBox * separator1 = [NSView viewWithClass:[NSBox class]];
-    separator1.boxType = NSBoxSeparator;
+    NSString * verticalLayoutConstraintFormat;
+    NSDictionary * views;
     
     NSBox * separator2 = [NSView viewWithClass:[NSBox class]];
     separator2.boxType = NSBoxSeparator;
     
     _buttonContainer = [NSView viewWithClass:[NSView class]];
-
-    [self addSubview:separator1];
-    [self addSubview:_titleField];
+    
     [self addSubview:_buttonContainer];
     [self addSubview:separator2];
     
-    NSDictionary * views = NSDictionaryOfVariableBindings(_titleField, _buttonContainer, separator1, separator2);
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[_titleField(==17)]-(10)-[separator1]-3-[_buttonContainer]-3-[separator2]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
+    if (self.title)
+    {
+        _titleField = [NSView viewWithClass:[NSTextField class]];
+        _titleField.font = [NSFont boldSystemFontOfSize:13];
+        _titleField.textColor = [NSColor darkGrayColor];
+        _titleField.editable = NO;
+        _titleField.bordered = NO;
+        _titleField.selectable = NO;
+        _titleField.drawsBackground = NO;
+        [self addSubview:_titleField];
+        
+        NSBox * separator1 = [NSView viewWithClass:[NSBox class]];
+        separator1.boxType = NSBoxSeparator;
+        [self addSubview:separator1];
+
+        views = NSDictionaryOfVariableBindings(_titleField, _buttonContainer, separator1, separator2);
+        verticalLayoutConstraintFormat = @"V:|-(10)-[_titleField(==17)]-(10)-[separator1]-3-[_buttonContainer]-3-[separator2]|";
+        
+        [self addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_titleField]"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:views]
+         ];
+        
+        [self addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator1]|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:views]
+         ];
+        
+        _titleField.stringValue = _title;
+    }
+    else
+    {
+        views = NSDictionaryOfVariableBindings(_buttonContainer, separator2);
+        verticalLayoutConstraintFormat = @"V:|-3-[_buttonContainer]-3-[separator2]|";
+    }
     
     [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_titleField]"
+     [NSLayoutConstraint constraintsWithVisualFormat:verticalLayoutConstraintFormat
                                              options:0
                                              metrics:nil
                                                views:views]
@@ -105,13 +127,6 @@
                                              metrics:nil
                                                views:views]
      ];
-    
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator1]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
 
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator2]|"
@@ -119,9 +134,6 @@
                                              metrics:nil
                                                views:views]
      ];
-    
-    _titleField.stringValue = _title;
-    
 }
 
 - (void)drawControlInterior:(TKOControl *)control
@@ -139,7 +151,6 @@
         control.layer.backgroundColor = [[NSColor clearColor] CGColor];
     }
 }
-
 
 - (TKOControl *)controlWithTitle:(NSString *)title
 {

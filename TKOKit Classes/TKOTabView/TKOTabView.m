@@ -22,6 +22,38 @@
 
 @implementation TKOTabView
 
+- (void)setDelegate:(id<TKOTabViewDelegate>)delegate
+{
+    if (_delegate == delegate)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    
+    if ([_delegate respondsToSelector:@selector(tabViewSelectionDidChange:)])
+        [defaultCenter removeObserver:_delegate
+                                 name:TKOTabControlSelectionDidChangeNotification
+                               object:self];
+    
+    _delegate = delegate;
+    
+    if ([_delegate respondsToSelector:@selector(tabViewSelectionDidChange:)])
+        [defaultCenter addObserver:_delegate
+                          selector:@selector(tabViewSelectionDidChange:)
+                              name:TKOTabControlSelectionDidChangeNotification
+                            object:self];
+}
+
+- (void)setSelectedItem:(id)selectedItem
+{
+    [self.tabControl setSelectedItem:selectedItem];
+    [self tabControlDidChangeSelection:nil];
+}
+
+- (id)selectedItem
+{
+    return self.currentItem;
+}
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
@@ -112,6 +144,9 @@
                                              options:0
                                              metrics:nil
                                                views:NSDictionaryOfVariableBindings(subview)]];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKOTabControlSelectionDidChangeNotification
+                                                        object:self];
 }
 
 @end
@@ -130,3 +165,5 @@
 }
 
 @end
+
+NSString *TKOTabViewSelectionDidChangeNotification = @"TKOTabViewSelectionDidChangeNotification";

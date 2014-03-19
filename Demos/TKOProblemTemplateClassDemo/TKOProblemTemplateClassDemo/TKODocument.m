@@ -150,7 +150,8 @@
 {
     [super windowControllerDidLoadNib:aController];
     
-    self.picker = [[TKOTemplatePicker alloc] initWithTitle:@"Template"];
+//    self.picker = [[TKOTemplatePicker alloc] initWithTitle:@"Template"];
+    self.picker = [[TKOTemplatePicker alloc] initWithTitle:nil];
     [self.stackView addView:self.picker
                   inGravity:NSStackViewGravityTop];
     [self.stackView addConstraints:

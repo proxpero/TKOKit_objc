@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TKODocument">
+            <connections>
+                <outlet property="tabControl" destination="dwM-gy-5v0" id="gQ3-kW-bo3"/>
+                <outlet property="tabView" destination="dwM-gy-5v0" id="NPm-wJ-FtD"/>
+                <outlet property="textScrollView" destination="3Mq-dD-OAN" id="oD1-PB-wzl"/>
+                <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="133" y="235" width="737" height="502"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
+            <value key="minSize" type="size" width="94" height="86"/>
+            <view key="contentView" id="gIp-Ho-8D9">
+                <rect key="frame" x="0.0" y="0.0" width="737" height="502"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="3Mq-dD-OAN" customClass="TKOScalingScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="468" height="502"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="C6G-KT-P92">
+                            <rect key="frame" x="0.0" y="0.0" width="468" height="502"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vK3-4h-PbP">
+                                    <rect key="frame" x="0.0" y="0.0" width="468" height="502"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Y9L-xE-kO7">
+                            <rect key="frame" x="-100" y="-100" width="453" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="N88-8u-Upo">
+                            <rect key="frame" x="-100" y="-100" width="15" height="502"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="dwM-gy-5v0" customClass="TKOTabView">
+                        <rect key="frame" x="469" y="0.0" width="268" height="502"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="268" id="NwP-wa-HlW"/>
+                        </constraints>
+                    </customView>
+                    <box autoresizesSubviews="NO" horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-N8-uPo">
+                        <rect key="frame" x="466" y="0.0" width="5" height="502"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Mq-dD-OAN" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="47R-sm-tzC"/>
+                    <constraint firstItem="dwM-gy-5v0" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="BCE-y4-XvK"/>
+                    <constraint firstItem="TSK-N8-uPo" firstAttribute="leading" secondItem="3Mq-dD-OAN" secondAttribute="trailing" id="Lds-XR-p2M"/>
+                    <constraint firstAttribute="trailing" secondItem="dwM-gy-5v0" secondAttribute="trailing" id="MRl-cg-zjY"/>
+                    <constraint firstAttribute="bottom" secondItem="3Mq-dD-OAN" secondAttribute="bottom" id="RhK-uT-otz"/>
+                    <constraint firstAttribute="bottom" secondItem="TSK-N8-uPo" secondAttribute="bottom" id="Uwn-bF-Ulf"/>
+                    <constraint firstItem="TSK-N8-uPo" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="ey3-NB-Jki"/>
+                    <constraint firstAttribute="bottom" secondItem="dwM-gy-5v0" secondAttribute="bottom" id="g2e-c8-pnA"/>
+                    <constraint firstItem="3Mq-dD-OAN" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="h4o-uK-QWy"/>
+                    <constraint firstItem="dwM-gy-5v0" firstAttribute="leading" secondItem="TSK-N8-uPo" secondAttribute="trailing" id="z9D-q7-dd9"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="FE579383-9A8A-41FC-98E7-E6EEFE1F5F3E" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="bJ1-dm-tZE">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="8W5-nP-CMq"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="0e1-3N-6qy"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="nSE-IR-KQ4"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Qjj-E8-4ic"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="bVH-8w-sbY"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="8W5-nP-CMq"/>
+                    <toolbarItem reference="0e1-3N-6qy"/>
+                    <toolbarItem reference="bVH-8w-sbY"/>
+                    <toolbarItem reference="nSE-IR-KQ4"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
+            </connections>
+        </window>
+    </objects>
+</document>

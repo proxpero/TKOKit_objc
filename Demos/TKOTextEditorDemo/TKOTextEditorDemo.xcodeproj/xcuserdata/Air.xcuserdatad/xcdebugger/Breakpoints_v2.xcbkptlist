@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TKOTextEditorDemo/TKODocument.m"
-            timestampString = "414264635.442234"
+            filePath = "../../TKOKit Classes/TKOTabControl/TKOButtonCell.m"
+            timestampString = "416852475.325772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-readFromData:ofType:error:"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-copyWithZone:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
