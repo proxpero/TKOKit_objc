@@ -9,6 +9,7 @@
 #import "TKODocument.h"
 #import "TKOTextSystem.h"
 #import "TKOScalingScrollView.h"
+#import "NSView+TKOKit.h"
 
 #import "TKOTabView.h"
 #import "TKOTemplateInspectorViewController.h"
@@ -16,13 +17,14 @@
 #import "TKOFirstViewController.h"
 #import "TKOSecondViewController.h"
 
-@interface TKODocument () <TKOTabViewDelegate>
+@interface TKODocument () // <TKOTabViewDelegate>
 
 @property (strong, nonatomic) TKOTextView        * textView;
 @property (strong, nonatomic) TKOTextStorage     * textStorage;
 @property (strong) IBOutlet TKOScalingScrollView *textScrollView;
 
-@property (strong) IBOutlet TKOTabView *tabView;
+//@property (strong) IBOutlet TKOTabView *tabView;
+@property (strong, nonatomic) IBOutlet NSView * inspectorView;
 @property (strong, nonatomic) TKOTemplateInspectorViewController * templateViewController;
 @property (strong) TKOFirstViewController * vc1;
 @property (strong) TKOSecondViewController * vc2;
@@ -30,38 +32,38 @@
 @end
 
 @implementation TKODocument
-{
-    id <NSTextViewDelegate, NSTextStorageDelegate> _selection;
-}
+//{
+//    id <NSTextViewDelegate, NSTextStorageDelegate> _selection;
+//}
 
-- (void)tabViewSelectionDidChange:(NSNotification *)notification
-{
-    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
-    
-    if (_selection && [_selection respondsToSelector:@selector(textViewDidChangeSelection:)])
-        [defaultCenter removeObserver:_selection
-                                 name:NSTextViewDidChangeSelectionNotification
-                               object:self.textView];
-    
-    if (_selection && [_selection respondsToSelector:@selector(textStorageDidProcessEditing:)])
-        [defaultCenter removeObserver:_selection
-                                 name:NSTextStorageDidProcessEditingNotification
-                               object:self.textStorage];
-    
-    _selection = self.tabView.selectedItem;
-    
-    if (_selection && [_selection respondsToSelector:@selector(textViewDidChangeSelection:)])
-        [defaultCenter addObserver:_selection
-                          selector:@selector(textViewDidChangeSelection:)
-                              name:NSTextViewDidChangeSelectionNotification
-                            object:self.textView];
-    
-    if (_selection && [_selection respondsToSelector:@selector(textStorageDidProcessEditing:)])
-        [defaultCenter addObserver:_selection
-                          selector:@selector(textStorageDidProcessEditing:)
-                              name:NSTextStorageDidProcessEditingNotification
-                            object:self.textStorage];
-}
+//- (void)tabViewSelectionDidChange:(NSNotification *)notification
+//{
+//    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+//    
+//    if (_selection && [_selection respondsToSelector:@selector(textViewDidChangeSelection:)])
+//        [defaultCenter removeObserver:_selection
+//                                 name:NSTextViewDidChangeSelectionNotification
+//                               object:self.textView];
+//    
+//    if (_selection && [_selection respondsToSelector:@selector(textStorageDidProcessEditing:)])
+//        [defaultCenter removeObserver:_selection
+//                                 name:NSTextStorageDidProcessEditingNotification
+//                               object:self.textStorage];
+//    
+//    _selection = self.tabView.selectedItem;
+//    
+//    if (_selection && [_selection respondsToSelector:@selector(textViewDidChangeSelection:)])
+//        [defaultCenter addObserver:_selection
+//                          selector:@selector(textViewDidChangeSelection:)
+//                              name:NSTextViewDidChangeSelectionNotification
+//                            object:self.textView];
+//    
+//    if (_selection && [_selection respondsToSelector:@selector(textStorageDidProcessEditing:)])
+//        [defaultCenter addObserver:_selection
+//                          selector:@selector(textStorageDidProcessEditing:)
+//                              name:NSTextStorageDidProcessEditingNotification
+//                            object:self.textStorage];
+//}
 
 - (void)setupTextSystem
 {
@@ -104,9 +106,11 @@
     self.vc1 = [[TKOFirstViewController alloc] init];
     self.vc2 = [[TKOSecondViewController alloc] init];
 
-    [self.tabView setDelegate:self];
-    [self.tabView setTabViewItems:@[self.templateViewController, self.vc1, self.vc2]];
-    [self.tabView setSelectedItem:self.templateViewController];
+    [self.inspectorView addSubviewWithFullSizeConstraints:self.templateViewController.view];
+    
+//    [self.tabView setDelegate:self];
+//    [self.tabView setTabViewItems:@[self.templateViewController, self.vc1, self.vc2]];
+//    [self.tabView setSelectedItem:self.templateViewController];
 }
 
 - (id)init

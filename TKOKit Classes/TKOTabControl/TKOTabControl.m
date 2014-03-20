@@ -103,6 +103,29 @@
     }
 }
 
+- (NSUInteger)selectedIndex
+{
+    __block NSUInteger index = NSNotFound;
+    [self.subviews enumerateObjectsUsingBlock:^(NSButton * button, NSUInteger idx, BOOL *stop) {
+        if ([button state] == NSOnState)
+        {
+            index = idx;
+            *stop = YES;
+        }
+    }];
+    return index;
+}
+
+- (void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    [self.subviews enumerateObjectsUsingBlock:^(NSButton * button, NSUInteger idx, BOOL *stop) {
+        if (idx == selectedIndex)
+            [button setState:NSOnState];
+        else
+            [button setState:NSOffState];
+    }];
+}
+
 - (void)selectTab:(id)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:TKOTabControlSelectionWillChangeNotification

@@ -11,13 +11,17 @@
 #import "TKOProblemTemplate.h"
 #import "TKOProblemTemplateAuthority.h"
 
+#import "TKOMultipleChoiceAnswerViewController.h"
+
 #import "TKOTextView.h"
 #import "TKOTextStorage.h"
 
 @interface TKOTemplateInspectorViewController () <TKOTemplatePickerDelegate>
+@property (strong) IBOutlet NSScrollView *inspectorScrollView;
+@property (strong) IBOutlet NSStackView *inspectorStackView;
 
+@property (strong, nonatomic) TKOMultipleChoiceAnswerViewController * mcvc;
 @property (strong) IBOutlet TKOTemplatePicker *templatePicker;
-
 
 @end
 
@@ -114,6 +118,38 @@
                                        range:range];
 }
 
+- (void)setTextView:(TKOTextView *)textView
+{
+    if (_textView == textView)
+        return;
+    
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+
+    if ([self respondsToSelector:@selector(textViewDidChangeSelection:)])
+        [defaultCenter removeObserver:self
+                                 name:NSTextViewDidChangeSelectionNotification
+                               object:_textView];
+
+    if ([self respondsToSelector:@selector(textStorageDidProcessEditing:)])
+        [defaultCenter removeObserver:self
+                                 name:NSTextStorageDidProcessEditingNotification
+                               object:_textView.textStorage];
+
+    _textView = textView;
+
+    if ([self respondsToSelector:@selector(textViewDidChangeSelection:)])
+        [defaultCenter addObserver:self
+                          selector:@selector(textViewDidChangeSelection:)
+                              name:NSTextViewDidChangeSelectionNotification
+                            object:_textView];
+
+    if ([self respondsToSelector:@selector(textStorageDidProcessEditing:)])
+        [defaultCenter addObserver:self
+                          selector:@selector(textStorageDidProcessEditing:)
+                              name:NSTextStorageDidProcessEditingNotification
+                            object:_textView.textStorage];
+}
+
 - (id)init
 {
     self = [super initWithNibName:@"TKOTemplateInspectorViewController"
@@ -122,11 +158,19 @@
         return nil;
     
     self.title = @"Template";
-    
+    self.mcvc = [[TKOMultipleChoiceAnswerViewController alloc] init];
     
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [self.inspectorStackView addView:self.templatePicker
+                           inGravity:NSStackViewGravityTop];
+    [self.inspectorStackView addView:self.mcvc.view
+                           inGravity:NSStackViewGravityTop];
+    [self.inspectorScrollView setDocumentView:self.inspectorStackView];
+}
 
 
 @end

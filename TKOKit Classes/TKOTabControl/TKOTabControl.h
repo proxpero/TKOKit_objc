@@ -19,6 +19,7 @@
 @property (strong, nonatomic) VSTheme * theme;
 @property (nonatomic, strong) NSArray * items;
 @property (nonatomic, weak) id selectedItem;
+@property (nonatomic) NSUInteger selectedIndex;
 @property (nonatomic, weak) id <TKOTabControlDataSource> dataSource;
 
 - (void)reloadData;

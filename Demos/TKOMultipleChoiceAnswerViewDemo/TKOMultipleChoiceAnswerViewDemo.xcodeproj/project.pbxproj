@@ -92,6 +92,7 @@
 		459EFDEF18DA1567005E58F5 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFDA118DA1567005E58F5 /* TKOTextView.m */; };
 		459EFDF018DA1567005E58F5 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFDA418DA1567005E58F5 /* TKOTheme.m */; };
 		459EFDF118DA1567005E58F5 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFDA618DA1567005E58F5 /* TKOThemeLoader.m */; };
+		459EFDFA18DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFDF918DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +245,8 @@
 		459EFDA418DA1567005E58F5 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		459EFDA518DA1567005E58F5 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		459EFDA618DA1567005E58F5 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		459EFDF818DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOMultipleChoiceAnswerView.h; sourceTree = "<group>"; };
+		459EFDF918DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOMultipleChoiceAnswerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +359,8 @@
 				459EFD1518DA121D005E58F5 /* TKOMultipleChoiceAnswerViewController.h */,
 				459EFD1618DA121D005E58F5 /* TKOMultipleChoiceAnswerViewController.m */,
 				459EFD1718DA121D005E58F5 /* TKOMultipleChoiceAnswerViewController.xib */,
+				459EFDF818DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.h */,
+				459EFDF918DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.m */,
 			);
 			name = TKOMultipleChoiceAnswerView;
 			path = "../../TKOKit Classes/TKOMultipleChoiceAnswerView";
@@ -771,6 +776,7 @@
 				459EFCE818DA1189005E58F5 /* main.m in Sources */,
 				459EFDC718DA1567005E58F5 /* TKOControl.m in Sources */,
 				459EFDD618DA1567005E58F5 /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */,
+				459EFDFA18DA27CA005E58F5 /* TKOMultipleChoiceAnswerView.m in Sources */,
 				459EFDE918DA1567005E58F5 /* TKOTextTabControl.m in Sources */,
 				459EFD1818DA121D005E58F5 /* TKOMultipleChoiceAnswerViewController.m in Sources */,
 				459EFDD118DA1567005E58F5 /* TKOKeyValueObserver.m in Sources */,

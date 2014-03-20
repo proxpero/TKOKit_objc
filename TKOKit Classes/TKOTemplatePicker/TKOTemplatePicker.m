@@ -278,10 +278,6 @@
     [self.buttonContainer setSubviews:controls];
     NSControl * previous = nil;
     
-    NSView * view = self;
-    NSView * superview = view.superview;
-    NSView * bc = self.buttonContainer;
-    
     for (TKOControl * control in controls)
     {
         [self.buttonContainer addConstraints:

@@ -100,6 +100,8 @@
 		459EFC8918D95294005E58F5 /* TKOProblemTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8718D95294005E58F5 /* TKOProblemTemplate.m */; };
 		459EFC8D18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */; };
 		459EFC8E18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */; };
+		459EFDF618DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFDF418DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m */; };
+		459EFDF718DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459EFDF518DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +267,9 @@
 		459EFC8A18D9E93F005E58F5 /* TKOTemplateInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTemplateInspectorViewController.h; sourceTree = "<group>"; };
 		459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTemplateInspectorViewController.m; sourceTree = "<group>"; };
 		459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTemplateInspectorViewController.xib; sourceTree = "<group>"; };
+		459EFDF318DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOMultipleChoiceAnswerViewController.h; sourceTree = "<group>"; };
+		459EFDF418DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOMultipleChoiceAnswerViewController.m; sourceTree = "<group>"; };
+		459EFDF518DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOMultipleChoiceAnswerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +389,7 @@
 		459EFBA218D8D80F005E58F5 /* TKOKit Classes */ = {
 			isa = PBXGroup;
 			children = (
+				459EFDF218DA24D4005E58F5 /* TKOMultipleChoiceAnswerView */,
 				459EFBA318D8D80F005E58F5 /* Categories */,
 				459EFBB018D8D80F005E58F5 /* TKOAlignmentInspectorView */,
 				459EFBC918D8D80F005E58F5 /* TKOColorPicker */,
@@ -655,6 +661,16 @@
 			name = "Template View Controller";
 			sourceTree = "<group>";
 		};
+		459EFDF218DA24D4005E58F5 /* TKOMultipleChoiceAnswerView */ = {
+			isa = PBXGroup;
+			children = (
+				459EFDF318DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.h */,
+				459EFDF418DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m */,
+				459EFDF518DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib */,
+			);
+			path = TKOMultipleChoiceAnswerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -741,6 +757,7 @@
 				459EFC5218D8D80F005E58F5 /* TKOFontInspectorViewController.xib in Resources */,
 				459EFC8E18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib in Resources */,
 				459EFC3418D8D80F005E58F5 /* TKOCenterAlignmentImage.png in Resources */,
+				459EFDF718DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib in Resources */,
 				459EFC3E18D8D80F005E58F5 /* TKOLeftAlignmentImage@2x.png in Resources */,
 				459EFC3918D8D80F005E58F5 /* TKOIncreaseIndentImage.png in Resources */,
 				459EFB7618D8D7A3005E58F5 /* InfoPlist.strings in Resources */,
@@ -840,6 +857,7 @@
 				459EFC4F18D8D80F005E58F5 /* TKOFlexibleToolbarItem.m in Sources */,
 				459EFC7318D8D80F005E58F5 /* TKOThemeLoader.m in Sources */,
 				459EFC3018D8D80F005E58F5 /* NSView+TKOKit.m in Sources */,
+				459EFDF618DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m in Sources */,
 				459EFC6B18D8D80F005E58F5 /* TKOTextTabControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

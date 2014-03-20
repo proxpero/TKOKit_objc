@@ -6,8 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TKODocument">
             <connections>
-                <outlet property="tabControl" destination="dwM-gy-5v0" id="gQ3-kW-bo3"/>
-                <outlet property="tabView" destination="dwM-gy-5v0" id="NPm-wJ-FtD"/>
+                <outlet property="inspectorView" destination="dwM-gy-5v0" id="3P3-w4-Z0T"/>
                 <outlet property="textScrollView" destination="3Mq-dD-OAN" id="oD1-PB-wzl"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
@@ -46,7 +45,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="dwM-gy-5v0" customClass="TKOTabView">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="dwM-gy-5v0">
                         <rect key="frame" x="469" y="0.0" width="268" height="502"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
