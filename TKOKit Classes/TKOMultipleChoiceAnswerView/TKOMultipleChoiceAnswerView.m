@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSTextField * titleField;
 @property (strong, nonatomic) TKOTextTabControl * tabControl;
 
+@property (strong, nonatomic) NSArray * buttons; // redo without tabControl
+
 @end
 
 @implementation TKOMultipleChoiceAnswerView
@@ -24,7 +26,6 @@
     self = [super initWithFrame:frame];
     if (!self)
         return nil;
-    
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self configureSubviews];
@@ -45,24 +46,69 @@
     _titleField.bordered = NO;
     _titleField.selectable = NO;
     _titleField.drawsBackground = NO;
+    _titleField.stringValue = @"Answer"; // Localize!!
     
-    [self addSubview:_titleField];
+    
+    
     
     _tabControl = [NSView viewWithClass:[TKOTextTabControl class]];
+
+    [self setSubviews:@[ _titleField, _tabControl ]];
+
+    NSString * horizontalConstrainFormat = @"V:|-(13)-[_titleField(==17)]-(11)-[_tabControl(==36)]-(15)-|";
+    NSDictionary * views = NSDictionaryOfVariableBindings(_titleField, _tabControl);
+    
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:horizontalConstrainFormat
+                                             options:0
+                                             metrics:nil
+                                               views:views]
+     ];
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_titleField
+                                  attribute:NSLayoutAttributeLeading
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeLeading
+                                 multiplier:1
+                                   constant:15.0]
+     ];
+    
+    [self addConstraint: // Align Leading Edge
+     [NSLayoutConstraint constraintWithItem:_tabControl
+                                  attribute:NSLayoutAttributeLeading
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:_titleField
+                                  attribute:NSLayoutAttributeLeading
+                                 multiplier:1
+                                   constant:0]
+     ];
+    
+    [self addConstraint: // Trailing Edge
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeTrailing
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:_tabControl
+                                  attribute:NSLayoutAttributeTrailing
+                                 multiplier:1
+                                   constant:15]
+     ];
+    
     _tabControl.dataSource = self;
-    
-    [self addSubview:_tabControl];
-    
-    // Constraints...
-    
+    configured = YES;
 }
 
 - (void)setDataSource:(id<TKOMultipleChoiceAnswerDataSource>)dataSource
 {
     if (_dataSource == dataSource)
         return;
-
     _dataSource = dataSource;
+    [self reloadData];
+}
+
+- (void)reloadData
+{
     [self.tabControl reloadData];
 }
 

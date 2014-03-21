@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4577951A18DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577951818DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m */; };
 		459EFB6C18D8D7A3005E58F5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459EFB6B18D8D7A3005E58F5 /* Cocoa.framework */; };
 		459EFB7618D8D7A3005E58F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459EFB7418D8D7A3005E58F5 /* InfoPlist.strings */; };
 		459EFB7818D8D7A3005E58F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFB7718D8D7A3005E58F5 /* main.m */; };
@@ -115,6 +116,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4577951818DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOMultipleChoiceAnswerView.m; sourceTree = "<group>"; };
+		4577951918DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOMultipleChoiceAnswerView.h; sourceTree = "<group>"; };
 		459EFB6818D8D7A3005E58F5 /* TKOKeystoneProblemEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOKeystoneProblemEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459EFB6B18D8D7A3005E58F5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		459EFB6E18D8D7A3005E58F5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -664,6 +667,8 @@
 		459EFDF218DA24D4005E58F5 /* TKOMultipleChoiceAnswerView */ = {
 			isa = PBXGroup;
 			children = (
+				4577951918DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.h */,
+				4577951818DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m */,
 				459EFDF318DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.h */,
 				459EFDF418DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.m */,
 				459EFDF518DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib */,
@@ -843,6 +848,7 @@
 				459EFC2E18D8D80F005E58F5 /* NSScrollView+TKOKit.m in Sources */,
 				459EFC7118D8D80F005E58F5 /* TKOTextView.m in Sources */,
 				459EFC4B18D8D80F005E58F5 /* TKOControl.m in Sources */,
+				4577951A18DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m in Sources */,
 				459EFC6918D8D80F005E58F5 /* TKOTabControl.m in Sources */,
 				459EFC6D18D8D80F005E58F5 /* TKOTemplatePicker.m in Sources */,
 				459EFC2D18D8D80F005E58F5 /* NSImage+TKOKit.m in Sources */,
@@ -1081,6 +1087,7 @@
 				459EFB9E18D8D7A4005E58F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		459EFB9F18D8D7A4005E58F5 /* Build configuration list for PBXNativeTarget "TKOKeystoneProblemEditorDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -1089,6 +1096,7 @@
 				459EFBA118D8D7A4005E58F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,20 +12,25 @@
 #import "TKOProblemTemplateAuthority.h"
 
 #import "TKOMultipleChoiceAnswerViewController.h"
+#import "TKOMultipleChoiceAnswerView.h"
 
 #import "TKOTextView.h"
 #import "TKOTextStorage.h"
 
-@interface TKOTemplateInspectorViewController () <TKOTemplatePickerDelegate>
+@interface TKOTemplateInspectorViewController () <TKOTemplatePickerDelegate, TKOMultipleChoiceAnswerDataSource>
 @property (strong) IBOutlet NSScrollView *inspectorScrollView;
 @property (strong) IBOutlet NSStackView *inspectorStackView;
 
+@property (strong, nonatomic) TKOMultipleChoiceAnswerView * answerView;
 @property (strong, nonatomic) TKOMultipleChoiceAnswerViewController * mcvc;
-@property (strong) IBOutlet TKOTemplatePicker *templatePicker;
+@property (strong) IBOutlet TKOTemplatePicker * templatePicker;
 
 @end
 
 @implementation TKOTemplateInspectorViewController
+{
+    NSArray * _multipleChoiceTitles;
+}
 
 # pragma mark - Text View Notifications
 
@@ -156,9 +161,21 @@
                            bundle:nil];
     if (!self)
         return nil;
+
+    _multipleChoiceTitles = @[ @"A", @"B", @"C", @"D", @"E" ];
     
     self.title = @"Template";
-    self.mcvc = [[TKOMultipleChoiceAnswerViewController alloc] init];
+    self.answerView = [[TKOMultipleChoiceAnswerView alloc] init];
+    [self.answerView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.answerView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:NSWidth(self.view.bounds)]
+     ];
+    self.answerView.dataSource = self;
     
     return self;
 }
@@ -167,10 +184,22 @@
 {
     [self.inspectorStackView addView:self.templatePicker
                            inGravity:NSStackViewGravityTop];
-    [self.inspectorStackView addView:self.mcvc.view
+    [self.inspectorStackView addView:self.answerView
                            inGravity:NSStackViewGravityTop];
     [self.inspectorScrollView setDocumentView:self.inspectorStackView];
 }
 
+# pragma mark - TKOMultipleChoiceAnswerView
+
+- (NSUInteger)multipleChoiceViewNumberOfChoices:(TKOMultipleChoiceAnswerView *)multipleChoiceView
+{
+    return _multipleChoiceTitles.count;
+}
+
+- (NSString *)multipleChoiceView:(TKOMultipleChoiceAnswerView *)multipleChoiceView
+                    titleAtIndex:(NSUInteger)index
+{
+    return _multipleChoiceTitles[index];
+}
 
 @end

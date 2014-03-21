@@ -10,10 +10,7 @@
 #import "TKOTextTabCell.h"
 #import "NSView+TKOKit.h"
 
-
-
 @implementation TKOTextTabControl
-
 
 - (void)reloadData
 {
@@ -83,7 +80,8 @@
                                          toItem:(prev != nil ? prev : self)
                                       attribute:(prev != nil ? NSLayoutAttributeTrailing : NSLayoutAttributeLeading)
                                      multiplier:1
-                                       constant:0]];
+                                       constant:(prev != nil ? 1 : 0)]
+         ];
         if (prev != nil) {
             [self addConstraint:
              [NSLayoutConstraint constraintWithItem:button
@@ -121,6 +119,15 @@
     [tabCell sendActionOn:NSLeftMouseDownMask];
 
     NSButton * tab = [NSView viewWithClass:[NSButton class]];
+    
+    // Answer Choice Only
+    
+    tab.wantsLayer = YES;
+    tab.layer.borderWidth = 1.0;
+    tab.layer.cornerRadius = 5.0;
+    
+    //
+    
     [tab setCell:tabCell];
 
     return tab;

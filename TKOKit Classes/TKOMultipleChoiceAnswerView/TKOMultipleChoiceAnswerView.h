@@ -24,5 +24,6 @@
 @property (nonatomic) NSUInteger selectedIndex;
 
 - (void)reloadData;
+- (void)configureSubviews;
 
 @end
