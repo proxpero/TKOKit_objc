@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4577951A18DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577951818DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m */; };
+		4577951F18DD209D0042BEF9 /* TKODifficultyInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577951D18DD209D0042BEF9 /* TKODifficultyInspectorViewController.m */; };
+		4577952018DD209D0042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4577951E18DD209D0042BEF9 /* TKODifficultyInspectorViewController.xib */; };
+		4577965118DDC58F0042BEF9 /* TKOTagsInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577964F18DDC58F0042BEF9 /* TKOTagsInspectorViewController.m */; };
+		4577965218DDC58F0042BEF9 /* TKOTagsInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4577965018DDC58F0042BEF9 /* TKOTagsInspectorViewController.xib */; };
 		459EFB6C18D8D7A3005E58F5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459EFB6B18D8D7A3005E58F5 /* Cocoa.framework */; };
 		459EFB7618D8D7A3005E58F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459EFB7418D8D7A3005E58F5 /* InfoPlist.strings */; };
 		459EFB7818D8D7A3005E58F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFB7718D8D7A3005E58F5 /* main.m */; };
@@ -92,11 +96,6 @@
 		459EFC7118D8D80F005E58F5 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC2518D8D80F005E58F5 /* TKOTextView.m */; };
 		459EFC7218D8D80F005E58F5 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC2818D8D80F005E58F5 /* TKOTheme.m */; };
 		459EFC7318D8D80F005E58F5 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC2A18D8D80F005E58F5 /* TKOThemeLoader.m */; };
-		459EFC7718D8DF17005E58F5 /* TKOFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC7518D8DF17005E58F5 /* TKOFirstViewController.m */; };
-		459EFC7818D8DF17005E58F5 /* TKOFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459EFC7618D8DF17005E58F5 /* TKOFirstViewController.xib */; };
-		459EFC7C18D8DF8C005E58F5 /* TKOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC7A18D8DF8C005E58F5 /* TKOSecondViewController.m */; };
-		459EFC7D18D8DF8C005E58F5 /* TKOSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459EFC7B18D8DF8C005E58F5 /* TKOSecondViewController.xib */; };
-		459EFC8118D9509B005E58F5 /* TKOTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC7F18D9509B005E58F5 /* TKOTemplateViewController.m */; };
 		459EFC8818D95294005E58F5 /* TKOProblemTemplateAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8618D95294005E58F5 /* TKOProblemTemplateAuthority.m */; };
 		459EFC8918D95294005E58F5 /* TKOProblemTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8718D95294005E58F5 /* TKOProblemTemplate.m */; };
 		459EFC8D18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */; };
@@ -118,6 +117,12 @@
 /* Begin PBXFileReference section */
 		4577951818DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOMultipleChoiceAnswerView.m; sourceTree = "<group>"; };
 		4577951918DBB6A40042BEF9 /* TKOMultipleChoiceAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOMultipleChoiceAnswerView.h; sourceTree = "<group>"; };
+		4577951C18DD209D0042BEF9 /* TKODifficultyInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODifficultyInspectorViewController.h; sourceTree = "<group>"; };
+		4577951D18DD209D0042BEF9 /* TKODifficultyInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODifficultyInspectorViewController.m; sourceTree = "<group>"; };
+		4577951E18DD209D0042BEF9 /* TKODifficultyInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKODifficultyInspectorViewController.xib; sourceTree = "<group>"; };
+		4577964E18DDC58F0042BEF9 /* TKOTagsInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTagsInspectorViewController.h; sourceTree = "<group>"; };
+		4577964F18DDC58F0042BEF9 /* TKOTagsInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTagsInspectorViewController.m; sourceTree = "<group>"; };
+		4577965018DDC58F0042BEF9 /* TKOTagsInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTagsInspectorViewController.xib; sourceTree = "<group>"; };
 		459EFB6818D8D7A3005E58F5 /* TKOKeystoneProblemEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOKeystoneProblemEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459EFB6B18D8D7A3005E58F5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		459EFB6E18D8D7A3005E58F5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -255,14 +260,6 @@
 		459EFC2818D8D80F005E58F5 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		459EFC2918D8D80F005E58F5 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		459EFC2A18D8D80F005E58F5 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
-		459EFC7418D8DF17005E58F5 /* TKOFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFirstViewController.h; sourceTree = "<group>"; };
-		459EFC7518D8DF17005E58F5 /* TKOFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFirstViewController.m; sourceTree = "<group>"; };
-		459EFC7618D8DF17005E58F5 /* TKOFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOFirstViewController.xib; sourceTree = "<group>"; };
-		459EFC7918D8DF8C005E58F5 /* TKOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSecondViewController.h; sourceTree = "<group>"; };
-		459EFC7A18D8DF8C005E58F5 /* TKOSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSecondViewController.m; sourceTree = "<group>"; };
-		459EFC7B18D8DF8C005E58F5 /* TKOSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOSecondViewController.xib; sourceTree = "<group>"; };
-		459EFC7E18D9509B005E58F5 /* TKOTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTemplateViewController.h; sourceTree = "<group>"; };
-		459EFC7F18D9509B005E58F5 /* TKOTemplateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTemplateViewController.m; sourceTree = "<group>"; };
 		459EFC8418D95142005E58F5 /* TKOProblemTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOProblemTemplate.h; path = ../../../Keystone/TKOProblemTemplate.h; sourceTree = "<group>"; };
 		459EFC8518D95142005E58F5 /* TKOProblemTemplateAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOProblemTemplateAuthority.h; path = ../../../Keystone/TKOProblemTemplateAuthority.h; sourceTree = "<group>"; };
 		459EFC8618D95294005E58F5 /* TKOProblemTemplateAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOProblemTemplateAuthority.m; path = ../../../Keystone/TKOProblemTemplateAuthority.m; sourceTree = "<group>"; };
@@ -296,6 +293,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4577951B18DD209D0042BEF9 /* TKODifficultyInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				4577951C18DD209D0042BEF9 /* TKODifficultyInspectorViewController.h */,
+				4577951D18DD209D0042BEF9 /* TKODifficultyInspectorViewController.m */,
+				4577951E18DD209D0042BEF9 /* TKODifficultyInspectorViewController.xib */,
+			);
+			path = TKODifficultyInspectorView;
+			sourceTree = "<group>";
+		};
+		4577964D18DDC58F0042BEF9 /* TKOTagsInspector */ = {
+			isa = PBXGroup;
+			children = (
+				4577964E18DDC58F0042BEF9 /* TKOTagsInspectorViewController.h */,
+				4577964F18DDC58F0042BEF9 /* TKOTagsInspectorViewController.m */,
+				4577965018DDC58F0042BEF9 /* TKOTagsInspectorViewController.xib */,
+			);
+			path = TKOTagsInspector;
+			sourceTree = "<group>";
+		};
 		459EFB5F18D8D7A3005E58F5 = {
 			isa = PBXGroup;
 			children = (
@@ -346,12 +363,6 @@
 				459EFB8618D8D7A3005E58F5 /* Images.xcassets */,
 				459EFB7218D8D7A3005E58F5 /* Supporting Files */,
 				459EFC8318D950F4005E58F5 /* Template View Controller */,
-				459EFC7418D8DF17005E58F5 /* TKOFirstViewController.h */,
-				459EFC7518D8DF17005E58F5 /* TKOFirstViewController.m */,
-				459EFC7618D8DF17005E58F5 /* TKOFirstViewController.xib */,
-				459EFC7918D8DF8C005E58F5 /* TKOSecondViewController.h */,
-				459EFC7A18D8DF8C005E58F5 /* TKOSecondViewController.m */,
-				459EFC7B18D8DF8C005E58F5 /* TKOSecondViewController.xib */,
 				459EFC8A18D9E93F005E58F5 /* TKOTemplateInspectorViewController.h */,
 				459EFC8B18D9E93F005E58F5 /* TKOTemplateInspectorViewController.m */,
 				459EFC8C18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib */,
@@ -392,6 +403,8 @@
 		459EFBA218D8D80F005E58F5 /* TKOKit Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4577964D18DDC58F0042BEF9 /* TKOTagsInspector */,
+				4577951B18DD209D0042BEF9 /* TKODifficultyInspectorView */,
 				459EFDF218DA24D4005E58F5 /* TKOMultipleChoiceAnswerView */,
 				459EFBA318D8D80F005E58F5 /* Categories */,
 				459EFBB018D8D80F005E58F5 /* TKOAlignmentInspectorView */,
@@ -654,8 +667,6 @@
 		459EFC8318D950F4005E58F5 /* Template View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				459EFC7E18D9509B005E58F5 /* TKOTemplateViewController.h */,
-				459EFC7F18D9509B005E58F5 /* TKOTemplateViewController.m */,
 				459EFC8418D95142005E58F5 /* TKOProblemTemplate.h */,
 				459EFC8718D95294005E58F5 /* TKOProblemTemplate.m */,
 				459EFC8518D95142005E58F5 /* TKOProblemTemplateAuthority.h */,
@@ -762,7 +773,9 @@
 				459EFC5218D8D80F005E58F5 /* TKOFontInspectorViewController.xib in Resources */,
 				459EFC8E18D9E93F005E58F5 /* TKOTemplateInspectorViewController.xib in Resources */,
 				459EFC3418D8D80F005E58F5 /* TKOCenterAlignmentImage.png in Resources */,
+				4577965218DDC58F0042BEF9 /* TKOTagsInspectorViewController.xib in Resources */,
 				459EFDF718DA24D4005E58F5 /* TKOMultipleChoiceAnswerViewController.xib in Resources */,
+				4577952018DD209D0042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */,
 				459EFC3E18D8D80F005E58F5 /* TKOLeftAlignmentImage@2x.png in Resources */,
 				459EFC3918D8D80F005E58F5 /* TKOIncreaseIndentImage.png in Resources */,
 				459EFB7618D8D7A3005E58F5 /* InfoPlist.strings in Resources */,
@@ -783,7 +796,6 @@
 				459EFC6818D8D80F005E58F5 /* TKOPullDownTemplate.pdf in Resources */,
 				459EFC4618D8D80F005E58F5 /* TKORightAlignmentImage@2x.png in Resources */,
 				459EFC3F18D8D80F005E58F5 /* TKOPositionBottomImage.png in Resources */,
-				459EFC7818D8DF17005E58F5 /* TKOFirstViewController.xib in Resources */,
 				459EFC5718D8D80F005E58F5 /* TKOListsInspectorViewController.xib in Resources */,
 				459EFC3518D8D80F005E58F5 /* TKOCenterAlignmentImage@2x.png in Resources */,
 				459EFC4218D8D80F005E58F5 /* TKOPositionCenterImage@2x.png in Resources */,
@@ -791,7 +803,6 @@
 				459EFC3318D8D80F005E58F5 /* TKOAlignmentInspectorViewController.xib in Resources */,
 				459EFC3818D8D80F005E58F5 /* TKODecreaseIndentImage@2x.png in Resources */,
 				459EFB8218D8D7A3005E58F5 /* TKODocument.xib in Resources */,
-				459EFC7D18D8DF8C005E58F5 /* TKOSecondViewController.xib in Resources */,
 				459EFB8518D8D7A3005E58F5 /* MainMenu.xib in Resources */,
 				459EFC4818D8D80F005E58F5 /* TKOPullDownImage.png in Resources */,
 			);
@@ -825,22 +836,20 @@
 				459EFC4718D8D80F005E58F5 /* TKOColorPickerView.m in Sources */,
 				459EFC6618D8D80F005E58F5 /* TKONavigationCell.m in Sources */,
 				459EFC6718D8D80F005E58F5 /* TKONavigationControl.m in Sources */,
-				459EFC7C18D8DF8C005E58F5 /* TKOSecondViewController.m in Sources */,
 				459EFC4D18D8D80F005E58F5 /* TKODisclosingViewController.m in Sources */,
-				459EFC8118D9509B005E58F5 /* TKOTemplateViewController.m in Sources */,
 				459EFC7218D8D80F005E58F5 /* TKOTheme.m in Sources */,
 				459EFC6118D8D80F005E58F5 /* TKOStore.m in Sources */,
 				459EFC2C18D8D80F005E58F5 /* NSColor+TKOKit.m in Sources */,
 				459EFC5E18D8D80F005E58F5 /* TKOScalingScrollView.m in Sources */,
 				459EFC2B18D8D80F005E58F5 /* NSAttributedString+TKOKit.m in Sources */,
 				459EFB7818D8D7A3005E58F5 /* main.m in Sources */,
+				4577951F18DD209D0042BEF9 /* TKODifficultyInspectorViewController.m in Sources */,
 				459EFC5818D8D80F005E58F5 /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */,
 				459EFC4C18D8D80F005E58F5 /* TKODisclosingView.m in Sources */,
 				459EFC5018D8D80F005E58F5 /* TKOFlippedClipView.m in Sources */,
 				459EFC6518D8D80F005E58F5 /* TKOImageTabControl.m in Sources */,
 				459EFC6F18D8D80F005E58F5 /* TKOTextContainer.m in Sources */,
 				459EFB7F18D8D7A3005E58F5 /* TKODocument.m in Sources */,
-				459EFC7718D8DF17005E58F5 /* TKOFirstViewController.m in Sources */,
 				459EFC6E18D8D80F005E58F5 /* TKOLayoutManager.m in Sources */,
 				459EFC6418D8D80F005E58F5 /* TKOImageTabCell.m in Sources */,
 				459EFC3118D8D80F005E58F5 /* TKOAlignmentControl.m in Sources */,
@@ -852,6 +861,7 @@
 				459EFC6918D8D80F005E58F5 /* TKOTabControl.m in Sources */,
 				459EFC6D18D8D80F005E58F5 /* TKOTemplatePicker.m in Sources */,
 				459EFC2D18D8D80F005E58F5 /* NSImage+TKOKit.m in Sources */,
+				4577965118DDC58F0042BEF9 /* TKOTagsInspectorViewController.m in Sources */,
 				459EFC5A18D8D80F005E58F5 /* TKOParagraphStylePickerViewController.m in Sources */,
 				459EFC8918D95294005E58F5 /* TKOProblemTemplate.m in Sources */,
 				459EFC6A18D8D80F005E58F5 /* TKOTextTabCell.m in Sources */,

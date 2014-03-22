@@ -80,7 +80,7 @@
                                          toItem:(prev != nil ? prev : self)
                                       attribute:(prev != nil ? NSLayoutAttributeTrailing : NSLayoutAttributeLeading)
                                      multiplier:1
-                                       constant:(prev != nil ? 1 : 0)]
+                                       constant:0]
          ];
         if (prev != nil) {
             [self addConstraint:

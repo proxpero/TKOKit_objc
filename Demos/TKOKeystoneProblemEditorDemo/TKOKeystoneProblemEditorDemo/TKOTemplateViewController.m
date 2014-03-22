@@ -16,8 +16,6 @@
 #import "TKOProblemTemplate.h"
 #import "TKOProblemTemplateAuthority.h"
 
-#import "TKOSecondViewController.h"
-
 @interface TKOTemplateViewController () <TKOTemplatePickerDelegate>
 
 @property (strong, nonatomic) TKOTemplatePicker * problemTemplatePicker;

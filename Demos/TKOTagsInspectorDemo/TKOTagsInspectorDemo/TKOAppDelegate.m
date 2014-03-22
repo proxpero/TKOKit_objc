@@ -1,8 +1,8 @@
 //
 //  TKOAppDelegate.m
-//  TKOProblemTemplateDemo
+//  TKOTagsInspectorDemo
 //
-//  Created by Todd Olsen on 3/13/14.
+//  Created by Todd Olsen on 3/22/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 

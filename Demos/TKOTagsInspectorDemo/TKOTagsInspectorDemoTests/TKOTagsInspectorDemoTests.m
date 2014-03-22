@@ -1,18 +1,18 @@
 //
-//  TKOProblemTemplateDemoTests.m
-//  TKOProblemTemplateDemoTests
+//  TKOTagsInspectorDemoTests.m
+//  TKOTagsInspectorDemoTests
 //
-//  Created by Todd Olsen on 3/13/14.
+//  Created by Todd Olsen on 3/22/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface TKOProblemTemplateDemoTests : XCTestCase
+@interface TKOTagsInspectorDemoTests : XCTestCase
 
 @end
 
-@implementation TKOProblemTemplateDemoTests
+@implementation TKOTagsInspectorDemoTests
 
 - (void)setUp
 {

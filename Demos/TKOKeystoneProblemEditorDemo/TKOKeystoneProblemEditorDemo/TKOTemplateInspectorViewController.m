@@ -7,12 +7,17 @@
 //
 
 #import "TKOTemplateInspectorViewController.h"
+#import "NSView+TKOKit.h"
+
 #import "TKOTemplatePicker.h"
 #import "TKOProblemTemplate.h"
 #import "TKOProblemTemplateAuthority.h"
 
 #import "TKOMultipleChoiceAnswerViewController.h"
 #import "TKOMultipleChoiceAnswerView.h"
+
+#import "TKODifficultyInspectorViewController.h"
+#import "TKOTagsInspectorViewController.h"
 
 #import "TKOTextView.h"
 #import "TKOTextStorage.h"
@@ -23,6 +28,8 @@
 
 @property (strong, nonatomic) TKOMultipleChoiceAnswerView * answerView;
 @property (strong, nonatomic) TKOMultipleChoiceAnswerViewController * mcvc;
+@property (strong, nonatomic) TKODifficultyInspectorViewController * difficultyInspector;
+@property (strong, nonatomic) TKOTagsInspectorViewController * tagsInspector;
 @property (strong) IBOutlet TKOTemplatePicker * templatePicker;
 
 @end
@@ -163,19 +170,14 @@
         return nil;
 
     _multipleChoiceTitles = @[ @"A", @"B", @"C", @"D", @"E" ];
-    
     self.title = @"Template";
-    self.answerView = [[TKOMultipleChoiceAnswerView alloc] init];
-    [self.answerView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.answerView
-                                  attribute:NSLayoutAttributeWidth
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:NSWidth(self.view.bounds)]
-     ];
-    self.answerView.dataSource = self;
+    
+    _templatePicker = [NSView viewWithClass:[TKOTemplatePicker class]];
+    
+    _answerView = [[TKOMultipleChoiceAnswerView alloc] init];
+    _answerView.dataSource = self;
+    
+    _difficultyInspector = [[TKODifficultyInspectorViewController alloc] init];
     
     return self;
 }
@@ -185,6 +187,16 @@
     [self.inspectorStackView addView:self.templatePicker
                            inGravity:NSStackViewGravityTop];
     [self.inspectorStackView addView:self.answerView
+                           inGravity:NSStackViewGravityTop];
+    NSBox * separator = [NSView viewWithClass:[NSBox class]];
+    separator.boxType = NSBoxSeparator;
+    [self.inspectorStackView addView:separator
+                           inGravity:NSStackViewGravityTop];
+    [self.inspectorStackView addView:self.difficultyInspector.view
+                           inGravity:NSStackViewGravityTop];
+    NSBox * separator1 = [NSView viewWithClass:[NSBox class]];
+    separator1.boxType = NSBoxSeparator;
+    [self.inspectorStackView addView:separator1
                            inGravity:NSStackViewGravityTop];
     [self.inspectorScrollView setDocumentView:self.inspectorStackView];
 }

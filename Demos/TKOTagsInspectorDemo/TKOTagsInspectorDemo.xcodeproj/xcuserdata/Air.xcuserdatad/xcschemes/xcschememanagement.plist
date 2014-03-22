@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TKOProblemTemplateDemo.xcscheme</key>
+		<key>TKOTagsInspectorDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>459EF97218D1C256005E58F5</key>
+		<key>4577952918DDC1390042BEF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>459EF99318D1C257005E58F5</key>
+		<key>4577954A18DDC13A0042BEF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

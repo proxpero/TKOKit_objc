@@ -14,8 +14,6 @@
 #import "TKOTabView.h"
 #import "TKOTemplateInspectorViewController.h"
 #import "TKOTemplateViewController.h"
-#import "TKOFirstViewController.h"
-#import "TKOSecondViewController.h"
 
 @interface TKODocument () // <TKOTabViewDelegate>
 
@@ -26,8 +24,6 @@
 //@property (strong) IBOutlet TKOTabView *tabView;
 @property (strong, nonatomic) IBOutlet NSView * inspectorView;
 @property (strong, nonatomic) TKOTemplateInspectorViewController * templateViewController;
-@property (strong) TKOFirstViewController * vc1;
-@property (strong) TKOSecondViewController * vc2;
 
 @end
 
@@ -103,9 +99,6 @@
     self.templateViewController = [[TKOTemplateInspectorViewController alloc] init];
     self.templateViewController.textView = self.textView;
     
-    self.vc1 = [[TKOFirstViewController alloc] init];
-    self.vc2 = [[TKOSecondViewController alloc] init];
-
     [self.inspectorView addSubviewWithFullSizeConstraints:self.templateViewController.view];
     
 //    [self.tabView setDelegate:self];

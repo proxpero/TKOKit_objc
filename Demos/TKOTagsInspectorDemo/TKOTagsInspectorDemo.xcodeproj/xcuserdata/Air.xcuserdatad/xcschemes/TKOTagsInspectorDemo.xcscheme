@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "459EF97218D1C256005E58F5"
-               BuildableName = "TKOProblemTemplateDemo.app"
-               BlueprintName = "TKOProblemTemplateDemo"
-               ReferencedContainer = "container:TKOProblemTemplateDemo.xcodeproj">
+               BlueprintIdentifier = "4577952918DDC1390042BEF9"
+               BuildableName = "TKOTagsInspectorDemo.app"
+               BlueprintName = "TKOTagsInspectorDemo"
+               ReferencedContainer = "container:TKOTagsInspectorDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "459EF99318D1C257005E58F5"
-               BuildableName = "TKOProblemTemplateDemoTests.xctest"
-               BlueprintName = "TKOProblemTemplateDemoTests"
-               ReferencedContainer = "container:TKOProblemTemplateDemo.xcodeproj">
+               BlueprintIdentifier = "4577954A18DDC13A0042BEF9"
+               BuildableName = "TKOTagsInspectorDemoTests.xctest"
+               BlueprintName = "TKOTagsInspectorDemoTests"
+               ReferencedContainer = "container:TKOTagsInspectorDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "459EF97218D1C256005E58F5"
-            BuildableName = "TKOProblemTemplateDemo.app"
-            BlueprintName = "TKOProblemTemplateDemo"
-            ReferencedContainer = "container:TKOProblemTemplateDemo.xcodeproj">
+            BlueprintIdentifier = "4577952918DDC1390042BEF9"
+            BuildableName = "TKOTagsInspectorDemo.app"
+            BlueprintName = "TKOTagsInspectorDemo"
+            ReferencedContainer = "container:TKOTagsInspectorDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "459EF97218D1C256005E58F5"
-            BuildableName = "TKOProblemTemplateDemo.app"
-            BlueprintName = "TKOProblemTemplateDemo"
-            ReferencedContainer = "container:TKOProblemTemplateDemo.xcodeproj">
+            BlueprintIdentifier = "4577952918DDC1390042BEF9"
+            BuildableName = "TKOTagsInspectorDemo.app"
+            BlueprintName = "TKOTagsInspectorDemo"
+            ReferencedContainer = "container:TKOTagsInspectorDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "459EF97218D1C256005E58F5"
-            BuildableName = "TKOProblemTemplateDemo.app"
-            BlueprintName = "TKOProblemTemplateDemo"
-            ReferencedContainer = "container:TKOProblemTemplateDemo.xcodeproj">
+            BlueprintIdentifier = "4577952918DDC1390042BEF9"
+            BuildableName = "TKOTagsInspectorDemo.app"
+            BlueprintName = "TKOTagsInspectorDemo"
+            ReferencedContainer = "container:TKOTagsInspectorDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

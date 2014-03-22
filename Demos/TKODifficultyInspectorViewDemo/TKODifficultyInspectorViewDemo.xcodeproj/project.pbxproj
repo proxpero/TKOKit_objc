@@ -18,8 +18,6 @@
 		4577941A18DA42E30042BEF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457793F918DA42E30042BEF9 /* Cocoa.framework */; };
 		4577942218DA42E30042BEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4577942018DA42E30042BEF9 /* InfoPlist.strings */; };
 		4577942418DA42E40042BEF9 /* TKODifficultyInspectorViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577942318DA42E40042BEF9 /* TKODifficultyInspectorViewDemoTests.m */; };
-		4577943018DA430B0042BEF9 /* TKODifficultyInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577942E18DA430B0042BEF9 /* TKODifficultyInspectorViewController.m */; };
-		4577943118DA430B0042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4577942F18DA430B0042BEF9 /* TKODifficultyInspectorViewController.xib */; };
 		457794C418DA699C0042BEF9 /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577943518DA699B0042BEF9 /* NSAttributedString+TKOKit.m */; };
 		457794C518DA699C0042BEF9 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577943718DA699B0042BEF9 /* NSColor+TKOKit.m */; };
 		457794C618DA699C0042BEF9 /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577943918DA699B0042BEF9 /* NSImage+TKOKit.m */; };
@@ -95,6 +93,8 @@
 		4577950F18DA699C0042BEF9 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457794BE18DA699C0042BEF9 /* TKOTextView.m */; };
 		4577951018DA699C0042BEF9 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 457794C118DA699C0042BEF9 /* TKOTheme.m */; };
 		4577951118DA699C0042BEF9 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 457794C318DA699C0042BEF9 /* TKOThemeLoader.m */; };
+		4577965718DDC9B90042BEF9 /* TKODifficultyInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577965518DDC9B90042BEF9 /* TKODifficultyInspectorViewController.m */; };
+		4577965818DDC9B90042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4577965618DDC9B90042BEF9 /* TKODifficultyInspectorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,9 +127,6 @@
 		4577941F18DA42E30042BEF9 /* TKODifficultyInspectorViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKODifficultyInspectorViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		4577942118DA42E30042BEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4577942318DA42E40042BEF9 /* TKODifficultyInspectorViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKODifficultyInspectorViewDemoTests.m; sourceTree = "<group>"; };
-		4577942D18DA430B0042BEF9 /* TKODifficultyInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKODifficultyInspectorViewController.h; path = "../../TKOKit Classes/TKODifficultyInspectorViewController.h"; sourceTree = "<group>"; };
-		4577942E18DA430B0042BEF9 /* TKODifficultyInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKODifficultyInspectorViewController.m; path = "../../TKOKit Classes/TKODifficultyInspectorViewController.m"; sourceTree = "<group>"; };
-		4577942F18DA430B0042BEF9 /* TKODifficultyInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TKODifficultyInspectorViewController.xib; path = "../../TKOKit Classes/TKODifficultyInspectorViewController.xib"; sourceTree = "<group>"; };
 		4577943418DA699B0042BEF9 /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
 		4577943518DA699B0042BEF9 /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
 		4577943618DA699B0042BEF9 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+TKOKit.h"; sourceTree = "<group>"; };
@@ -252,6 +249,9 @@
 		457794C118DA699C0042BEF9 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		457794C218DA699C0042BEF9 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		457794C318DA699C0042BEF9 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		4577965418DDC9B90042BEF9 /* TKODifficultyInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODifficultyInspectorViewController.h; sourceTree = "<group>"; };
+		4577965518DDC9B90042BEF9 /* TKODifficultyInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODifficultyInspectorViewController.m; sourceTree = "<group>"; };
+		4577965618DDC9B90042BEF9 /* TKODifficultyInspectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKODifficultyInspectorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,10 +278,8 @@
 		457793ED18DA42E30042BEF9 = {
 			isa = PBXGroup;
 			children = (
+				4577965318DDC9B90042BEF9 /* TKODifficultyInspectorView */,
 				4577943218DA699B0042BEF9 /* TKOKit Classes */,
-				4577942D18DA430B0042BEF9 /* TKODifficultyInspectorViewController.h */,
-				4577942E18DA430B0042BEF9 /* TKODifficultyInspectorViewController.m */,
-				4577942F18DA430B0042BEF9 /* TKODifficultyInspectorViewController.xib */,
 				457793FF18DA42E30042BEF9 /* TKODifficultyInspectorViewDemo */,
 				4577941D18DA42E30042BEF9 /* TKODifficultyInspectorViewDemoTests */,
 				457793F818DA42E30042BEF9 /* Frameworks */,
@@ -634,6 +632,17 @@
 			path = TKOTheme;
 			sourceTree = "<group>";
 		};
+		4577965318DDC9B90042BEF9 /* TKODifficultyInspectorView */ = {
+			isa = PBXGroup;
+			children = (
+				4577965418DDC9B90042BEF9 /* TKODifficultyInspectorViewController.h */,
+				4577965518DDC9B90042BEF9 /* TKODifficultyInspectorViewController.m */,
+				4577965618DDC9B90042BEF9 /* TKODifficultyInspectorViewController.xib */,
+			);
+			name = TKODifficultyInspectorView;
+			path = "../../TKOKit Classes/TKODifficultyInspectorView";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,7 +739,6 @@
 				457794FE18DA699C0042BEF9 /* TKOSpacingInspectorViewController.xib in Resources */,
 				457794D618DA699C0042BEF9 /* TKOLeftAlignmentImage.png in Resources */,
 				457794D518DA699C0042BEF9 /* TKOJustifiedAlignmentImage@2x.png in Resources */,
-				4577943118DA430B0042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */,
 				457794DA18DA699C0042BEF9 /* TKOPositionCenterImage.png in Resources */,
 				457794ED18DA699C0042BEF9 /* TKOFontInspectorViewController.xib in Resources */,
 				457794D418DA699C0042BEF9 /* TKOJustifiedAlignmentImage.png in Resources */,
@@ -744,6 +752,7 @@
 				457794D118DA699C0042BEF9 /* TKODecreaseIndentImage@2x.png in Resources */,
 				4577940A18DA42E30042BEF9 /* Credits.rtf in Resources */,
 				4577941018DA42E30042BEF9 /* MainMenu.xib in Resources */,
+				4577965818DDC9B90042BEF9 /* TKODifficultyInspectorViewController.xib in Resources */,
 				4577950618DA699C0042BEF9 /* TKOPullDownTemplate.pdf in Resources */,
 				457794E118DA699C0042BEF9 /* TKOPullDownImage.png in Resources */,
 			);
@@ -789,7 +798,6 @@
 				457794EB18DA699C0042BEF9 /* TKOFlippedClipView.m in Sources */,
 				4577950F18DA699C0042BEF9 /* TKOTextView.m in Sources */,
 				457794FF18DA699C0042BEF9 /* TKOStore.m in Sources */,
-				4577943018DA430B0042BEF9 /* TKODifficultyInspectorViewController.m in Sources */,
 				4577950E18DA699C0042BEF9 /* TKOTextStorage.m in Sources */,
 				457794F618DA699C0042BEF9 /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */,
 				4577950018DA699C0042BEF9 /* TKOButtonCell.m in Sources */,
@@ -805,6 +813,7 @@
 				4577950418DA699C0042BEF9 /* TKONavigationCell.m in Sources */,
 				457794EA18DA699C0042BEF9 /* TKOFlexibleToolbarItem.m in Sources */,
 				457794EE18DA699C0042BEF9 /* TKOJumpbar.m in Sources */,
+				4577965718DDC9B90042BEF9 /* TKODifficultyInspectorViewController.m in Sources */,
 				4577940D18DA42E30042BEF9 /* TKOAppDelegate.m in Sources */,
 				457794F318DA699C0042BEF9 /* TKOMultipleChoiceAnswerView.m in Sources */,
 				457794FA18DA699C0042BEF9 /* TKOPopoverPickerControl.m in Sources */,
