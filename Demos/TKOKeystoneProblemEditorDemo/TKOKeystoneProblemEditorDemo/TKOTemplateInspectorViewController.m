@@ -11,11 +11,7 @@
 
 #import "TKOTemplatePicker.h"
 #import "TKOProblemTemplate.h"
-#import "TKOProblemTemplateAuthority.h"
-
-#import "TKOMultipleChoiceAnswerViewController.h"
 #import "TKOMultipleChoiceAnswerView.h"
-
 #import "TKODifficultyInspectorViewController.h"
 #import "TKOTagsInspectorViewController.h"
 
@@ -23,14 +19,13 @@
 #import "TKOTextStorage.h"
 
 @interface TKOTemplateInspectorViewController () <TKOTemplatePickerDelegate, TKOMultipleChoiceAnswerDataSource>
-@property (strong) IBOutlet NSScrollView *inspectorScrollView;
-@property (strong) IBOutlet NSStackView *inspectorStackView;
+@property (nonatomic) IBOutlet NSScrollView *inspectorScrollView;
+@property (nonatomic) IBOutlet NSStackView *inspectorStackView;
 
-@property (strong, nonatomic) TKOMultipleChoiceAnswerView * answerView;
-@property (strong, nonatomic) TKOMultipleChoiceAnswerViewController * mcvc;
-@property (strong, nonatomic) TKODifficultyInspectorViewController * difficultyInspector;
-@property (strong, nonatomic) TKOTagsInspectorViewController * tagsInspector;
-@property (strong) IBOutlet TKOTemplatePicker * templatePicker;
+@property (nonatomic) TKOMultipleChoiceAnswerView * answerInspector;
+@property (nonatomic) TKODifficultyInspectorViewController * difficultyInspector;
+@property (nonatomic) TKOTagsInspectorViewController * tagsInspector;
+@property (nonatomic) TKOTemplatePicker * templatePicker;
 
 @end
 
@@ -173,11 +168,14 @@
     self.title = @"Template";
     
     _templatePicker = [NSView viewWithClass:[TKOTemplatePicker class]];
+    _templatePicker.delegate = self;
     
-    _answerView = [[TKOMultipleChoiceAnswerView alloc] init];
-    _answerView.dataSource = self;
+    _answerInspector = [[TKOMultipleChoiceAnswerView alloc] init];
+    _answerInspector.dataSource = self;
     
     _difficultyInspector = [[TKODifficultyInspectorViewController alloc] init];
+    
+    _tagsInspector = [[TKOTagsInspectorViewController alloc] init];
     
     return self;
 }
@@ -186,18 +184,30 @@
 {
     [self.inspectorStackView addView:self.templatePicker
                            inGravity:NSStackViewGravityTop];
-    [self.inspectorStackView addView:self.answerView
+    
+    [self.inspectorStackView addView:[NSView separator]
                            inGravity:NSStackViewGravityTop];
-    NSBox * separator = [NSView viewWithClass:[NSBox class]];
-    separator.boxType = NSBoxSeparator;
-    [self.inspectorStackView addView:separator
+    
+    [self.inspectorStackView addView:self.answerInspector
                            inGravity:NSStackViewGravityTop];
+    
+    [self.inspectorStackView addView:[NSView separator]
+                           inGravity:NSStackViewGravityTop];
+    
+    NSView * di = self.difficultyInspector.view;
+    
     [self.inspectorStackView addView:self.difficultyInspector.view
                            inGravity:NSStackViewGravityTop];
-    NSBox * separator1 = [NSView viewWithClass:[NSBox class]];
-    separator1.boxType = NSBoxSeparator;
-    [self.inspectorStackView addView:separator1
+    
+    [self.inspectorStackView addView:[NSView separator]
                            inGravity:NSStackViewGravityTop];
+    
+    [self.inspectorStackView addView:self.tagsInspector.view
+                           inGravity:NSStackViewGravityTop];
+    
+    [self.inspectorStackView addView:[NSView separator]
+                           inGravity:NSStackViewGravityTop];
+    
     [self.inspectorScrollView setDocumentView:self.inspectorStackView];
 }
 

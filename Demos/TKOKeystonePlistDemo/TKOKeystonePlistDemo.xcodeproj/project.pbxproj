@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4577985718DF40A40042BEF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577985618DF40A40042BEF9 /* Cocoa.framework */; };
+		4577986118DF40A40042BEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4577985F18DF40A40042BEF9 /* InfoPlist.strings */; };
+		4577986318DF40A40042BEF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577986218DF40A40042BEF9 /* main.m */; };
+		4577986718DF40A40042BEF9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4577986518DF40A40042BEF9 /* Credits.rtf */; };
+		4577986A18DF40A40042BEF9 /* TKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577986918DF40A40042BEF9 /* TKOAppDelegate.m */; };
+		4577986D18DF40A50042BEF9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4577986B18DF40A50042BEF9 /* MainMenu.xib */; };
+		4577986F18DF40A50042BEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4577986E18DF40A50042BEF9 /* Images.xcassets */; };
+		4577987618DF40A50042BEF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577987518DF40A50042BEF9 /* XCTest.framework */; };
+		4577987718DF40A50042BEF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577985618DF40A40042BEF9 /* Cocoa.framework */; };
+		4577987F18DF40A50042BEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4577987D18DF40A50042BEF9 /* InfoPlist.strings */; };
+		4577988118DF40A50042BEF9 /* TKOKeystonePlistDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577988018DF40A50042BEF9 /* TKOKeystonePlistDemoTests.m */; };
+		4577988C18DF40F80042BEF9 /* TKOProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577988B18DF40F80042BEF9 /* TKOProblem.m */; };
+		4577989718DF5B570042BEF9 /* TKOFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577989418DF5B570042BEF9 /* TKOFormat.m */; };
+		4577989818DF5B570042BEF9 /* TKOBaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577989618DF5B570042BEF9 /* TKOBaseEntity.m */; };
+		4577989B18DF5C5A0042BEF9 /* TKOTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577989A18DF5C5A0042BEF9 /* TKOTag.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4577987818DF40A50042BEF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4577984B18DF40A40042BEF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4577985218DF40A40042BEF9;
+			remoteInfo = TKOKeystonePlistDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4577985318DF40A40042BEF9 /* TKOKeystonePlistDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOKeystonePlistDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4577985618DF40A40042BEF9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4577985918DF40A40042BEF9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4577985A18DF40A40042BEF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4577985B18DF40A40042BEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4577985E18DF40A40042BEF9 /* TKOKeystonePlistDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOKeystonePlistDemo-Info.plist"; sourceTree = "<group>"; };
+		4577986018DF40A40042BEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4577986218DF40A40042BEF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4577986418DF40A40042BEF9 /* TKOKeystonePlistDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKOKeystonePlistDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4577986618DF40A40042BEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4577986818DF40A40042BEF9 /* TKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKOAppDelegate.h; sourceTree = "<group>"; };
+		4577986918DF40A40042BEF9 /* TKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOAppDelegate.m; sourceTree = "<group>"; };
+		4577986C18DF40A50042BEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4577986E18DF40A50042BEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4577987418DF40A50042BEF9 /* TKOKeystonePlistDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKOKeystonePlistDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4577987518DF40A50042BEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4577987C18DF40A50042BEF9 /* TKOKeystonePlistDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOKeystonePlistDemoTests-Info.plist"; sourceTree = "<group>"; };
+		4577987E18DF40A50042BEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4577988018DF40A50042BEF9 /* TKOKeystonePlistDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOKeystonePlistDemoTests.m; sourceTree = "<group>"; };
+		4577988A18DF40F70042BEF9 /* TKOProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOProblem.h; path = ../../KeystoneKit/TKOProblem.h; sourceTree = "<group>"; };
+		4577988B18DF40F80042BEF9 /* TKOProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOProblem.m; path = ../../KeystoneKit/TKOProblem.m; sourceTree = "<group>"; };
+		4577989318DF5B560042BEF9 /* TKOFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOFormat.h; path = ../../KeystoneKit/TKOFormat.h; sourceTree = "<group>"; };
+		4577989418DF5B570042BEF9 /* TKOFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOFormat.m; path = ../../KeystoneKit/TKOFormat.m; sourceTree = "<group>"; };
+		4577989518DF5B570042BEF9 /* TKOBaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOBaseEntity.h; path = ../../KeystoneKit/TKOBaseEntity.h; sourceTree = "<group>"; };
+		4577989618DF5B570042BEF9 /* TKOBaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOBaseEntity.m; path = ../../KeystoneKit/TKOBaseEntity.m; sourceTree = "<group>"; };
+		4577989918DF5C5A0042BEF9 /* TKOTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOTag.h; path = ../../KeystoneKit/TKOTag.h; sourceTree = "<group>"; };
+		4577989A18DF5C5A0042BEF9 /* TKOTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOTag.m; path = ../../KeystoneKit/TKOTag.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4577985018DF40A40042BEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577985718DF40A40042BEF9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4577987118DF40A50042BEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577987718DF40A50042BEF9 /* Cocoa.framework in Frameworks */,
+				4577987618DF40A50042BEF9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4577984A18DF40A40042BEF9 = {
+			isa = PBXGroup;
+			children = (
+				4577989518DF5B570042BEF9 /* TKOBaseEntity.h */,
+				4577989618DF5B570042BEF9 /* TKOBaseEntity.m */,
+				4577989318DF5B560042BEF9 /* TKOFormat.h */,
+				4577989418DF5B570042BEF9 /* TKOFormat.m */,
+				4577988A18DF40F70042BEF9 /* TKOProblem.h */,
+				4577988B18DF40F80042BEF9 /* TKOProblem.m */,
+				4577989918DF5C5A0042BEF9 /* TKOTag.h */,
+				4577989A18DF5C5A0042BEF9 /* TKOTag.m */,
+				4577985C18DF40A40042BEF9 /* TKOKeystonePlistDemo */,
+				4577987A18DF40A50042BEF9 /* TKOKeystonePlistDemoTests */,
+				4577985518DF40A40042BEF9 /* Frameworks */,
+				4577985418DF40A40042BEF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4577985418DF40A40042BEF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4577985318DF40A40042BEF9 /* TKOKeystonePlistDemo.app */,
+				4577987418DF40A50042BEF9 /* TKOKeystonePlistDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4577985518DF40A40042BEF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4577985618DF40A40042BEF9 /* Cocoa.framework */,
+				4577987518DF40A50042BEF9 /* XCTest.framework */,
+				4577985818DF40A40042BEF9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4577985818DF40A40042BEF9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4577985918DF40A40042BEF9 /* AppKit.framework */,
+				4577985A18DF40A40042BEF9 /* CoreData.framework */,
+				4577985B18DF40A40042BEF9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4577985C18DF40A40042BEF9 /* TKOKeystonePlistDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4577986818DF40A40042BEF9 /* TKOAppDelegate.h */,
+				4577986918DF40A40042BEF9 /* TKOAppDelegate.m */,
+				4577986B18DF40A50042BEF9 /* MainMenu.xib */,
+				4577986E18DF40A50042BEF9 /* Images.xcassets */,
+				4577985D18DF40A40042BEF9 /* Supporting Files */,
+			);
+			path = TKOKeystonePlistDemo;
+			sourceTree = "<group>";
+		};
+		4577985D18DF40A40042BEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4577985E18DF40A40042BEF9 /* TKOKeystonePlistDemo-Info.plist */,
+				4577985F18DF40A40042BEF9 /* InfoPlist.strings */,
+				4577986218DF40A40042BEF9 /* main.m */,
+				4577986418DF40A40042BEF9 /* TKOKeystonePlistDemo-Prefix.pch */,
+				4577986518DF40A40042BEF9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4577987A18DF40A50042BEF9 /* TKOKeystonePlistDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4577988018DF40A50042BEF9 /* TKOKeystonePlistDemoTests.m */,
+				4577987B18DF40A50042BEF9 /* Supporting Files */,
+			);
+			path = TKOKeystonePlistDemoTests;
+			sourceTree = "<group>";
+		};
+		4577987B18DF40A50042BEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4577987C18DF40A50042BEF9 /* TKOKeystonePlistDemoTests-Info.plist */,
+				4577987D18DF40A50042BEF9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4577985218DF40A40042BEF9 /* TKOKeystonePlistDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4577988418DF40A50042BEF9 /* Build configuration list for PBXNativeTarget "TKOKeystonePlistDemo" */;
+			buildPhases = (
+				4577984F18DF40A40042BEF9 /* Sources */,
+				4577985018DF40A40042BEF9 /* Frameworks */,
+				4577985118DF40A40042BEF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKOKeystonePlistDemo;
+			productName = TKOKeystonePlistDemo;
+			productReference = 4577985318DF40A40042BEF9 /* TKOKeystonePlistDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4577987318DF40A50042BEF9 /* TKOKeystonePlistDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4577988718DF40A50042BEF9 /* Build configuration list for PBXNativeTarget "TKOKeystonePlistDemoTests" */;
+			buildPhases = (
+				4577987018DF40A50042BEF9 /* Sources */,
+				4577987118DF40A50042BEF9 /* Frameworks */,
+				4577987218DF40A50042BEF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4577987918DF40A50042BEF9 /* PBXTargetDependency */,
+			);
+			name = TKOKeystonePlistDemoTests;
+			productName = TKOKeystonePlistDemoTests;
+			productReference = 4577987418DF40A50042BEF9 /* TKOKeystonePlistDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4577984B18DF40A40042BEF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKO;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					4577987318DF40A50042BEF9 = {
+						TestTargetID = 4577985218DF40A40042BEF9;
+					};
+				};
+			};
+			buildConfigurationList = 4577984E18DF40A40042BEF9 /* Build configuration list for PBXProject "TKOKeystonePlistDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4577984A18DF40A40042BEF9;
+			productRefGroup = 4577985418DF40A40042BEF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4577985218DF40A40042BEF9 /* TKOKeystonePlistDemo */,
+				4577987318DF40A50042BEF9 /* TKOKeystonePlistDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4577985118DF40A40042BEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577986118DF40A40042BEF9 /* InfoPlist.strings in Resources */,
+				4577986F18DF40A50042BEF9 /* Images.xcassets in Resources */,
+				4577986718DF40A40042BEF9 /* Credits.rtf in Resources */,
+				4577986D18DF40A50042BEF9 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4577987218DF40A50042BEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577987F18DF40A50042BEF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4577984F18DF40A40042BEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577989718DF5B570042BEF9 /* TKOFormat.m in Sources */,
+				4577988C18DF40F80042BEF9 /* TKOProblem.m in Sources */,
+				4577989818DF5B570042BEF9 /* TKOBaseEntity.m in Sources */,
+				4577986318DF40A40042BEF9 /* main.m in Sources */,
+				4577986A18DF40A40042BEF9 /* TKOAppDelegate.m in Sources */,
+				4577989B18DF5C5A0042BEF9 /* TKOTag.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4577987018DF40A50042BEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4577988118DF40A50042BEF9 /* TKOKeystonePlistDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4577987918DF40A50042BEF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4577985218DF40A40042BEF9 /* TKOKeystonePlistDemo */;
+			targetProxy = 4577987818DF40A50042BEF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4577985F18DF40A40042BEF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4577986018DF40A40042BEF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4577986518DF40A40042BEF9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4577986618DF40A40042BEF9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4577986B18DF40A50042BEF9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4577986C18DF40A50042BEF9 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4577987D18DF40A50042BEF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4577987E18DF40A50042BEF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4577988218DF40A50042BEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4577988318DF40A50042BEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4577988518DF40A50042BEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4577988618DF40A50042BEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4577988818DF40A50042BEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOKeystonePlistDemo.app/Contents/MacOS/TKOKeystonePlistDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TKOKeystonePlistDemoTests/TKOKeystonePlistDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4577988918DF40A50042BEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOKeystonePlistDemo.app/Contents/MacOS/TKOKeystonePlistDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOKeystonePlistDemo/TKOKeystonePlistDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOKeystonePlistDemoTests/TKOKeystonePlistDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4577984E18DF40A40042BEF9 /* Build configuration list for PBXProject "TKOKeystonePlistDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4577988218DF40A50042BEF9 /* Debug */,
+				4577988318DF40A50042BEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4577988418DF40A50042BEF9 /* Build configuration list for PBXNativeTarget "TKOKeystonePlistDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4577988518DF40A50042BEF9 /* Debug */,
+				4577988618DF40A50042BEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4577988718DF40A50042BEF9 /* Build configuration list for PBXNativeTarget "TKOKeystonePlistDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4577988818DF40A50042BEF9 /* Debug */,
+				4577988918DF40A50042BEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4577984B18DF40A40042BEF9 /* Project object */;
+}

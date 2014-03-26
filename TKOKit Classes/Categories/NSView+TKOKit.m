@@ -63,4 +63,10 @@
      ];
 }
 
++ (NSBox *)separator
+{
+    NSBox * separator = [NSView viewWithClass:[NSBox class]];
+    separator.boxType = NSBoxSeparator;
+    return separator;
+}
 @end

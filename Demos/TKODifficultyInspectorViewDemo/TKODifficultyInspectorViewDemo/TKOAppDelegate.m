@@ -8,6 +8,7 @@
 
 #import "TKOAppDelegate.h"
 #import "TKODifficultyInspectorViewController.h"
+#import "NSView+TKOKit.h"
 
 @implementation TKOAppDelegate
 
@@ -16,6 +17,9 @@
     self.difficultyInspector = [[TKODifficultyInspectorViewController alloc] init];
     [self.stackview addView:self.difficultyInspector.view
                   inGravity:NSStackViewGravityTop];
+    [self.stackview addView:[NSView separator]
+                  inGravity:NSStackViewGravityTop];
+    
 //    [self.window setContentView:self.difficultyInspector.view];
 }
 

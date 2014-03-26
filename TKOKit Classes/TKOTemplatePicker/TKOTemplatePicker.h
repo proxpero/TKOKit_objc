@@ -33,6 +33,7 @@ extern NSString * TKOTemplatePickerDidChangeSelectionNotification;
 @property (weak, nonatomic) IBOutlet id <TKOTemplatePickerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet id <TKOTemplatePickerDataSource> dataSource;
 @property (nonatomic, weak) id selectedItem;
+@property (nonatomic, copy) NSString * selectedTemplateKey;
 
 - (id)initWithTitle:(NSString *)title;
 - (void)reloadData;

@@ -7,6 +7,7 @@
 //
 
 #import "TKOTemplatePicker.h"
+#import "TKOProblemTemplateAuthority.h"
 #import "TKOButtonCell.h"
 #import "TKOControl.h"
 #import "TKOTextTabCell.h"
@@ -17,6 +18,7 @@
 
 @interface TKOTemplatePicker ()
 
+@property (nonatomic) TKOProblemTemplateAuthority * templateAuthority;
 @property (strong, nonatomic) NSTextField * titleField;
 @property (strong, nonatomic) NSView * buttonContainer;
 
@@ -55,6 +57,9 @@
                                  multiplier:1
                                    constant:268.0]];
     [self configureSubviews];
+    if (!_templateAuthority)
+        _templateAuthority = [[TKOProblemTemplateAuthority alloc] init];
+    self.dataSource = _templateAuthority;
     
     return self;
 }
@@ -76,13 +81,9 @@
     NSString * verticalLayoutConstraintFormat;
     NSDictionary * views;
     
-    NSBox * separator2 = [NSView viewWithClass:[NSBox class]];
-    separator2.boxType = NSBoxSeparator;
-    
     _buttonContainer = [NSView viewWithClass:[NSView class]];
     
     [self addSubview:_buttonContainer];
-    [self addSubview:separator2];
     
     if (self.title)
     {
@@ -95,11 +96,9 @@
         _titleField.drawsBackground = NO;
         [self addSubview:_titleField];
         
-        NSBox * separator1 = [NSView viewWithClass:[NSBox class]];
-        separator1.boxType = NSBoxSeparator;
-        [self addSubview:separator1];
+        NSBox * separator1 = [NSView separator];
 
-        views = NSDictionaryOfVariableBindings(_titleField, _buttonContainer, separator1, separator2);
+        views = NSDictionaryOfVariableBindings(_titleField, _buttonContainer, separator1);
         verticalLayoutConstraintFormat = @"V:|-(10)-[_titleField(==17)]-(10)-[separator1]-3-[_buttonContainer]-3-[separator2]|";
         
         [self addConstraints:
@@ -120,8 +119,8 @@
     }
     else
     {
-        views = NSDictionaryOfVariableBindings(_buttonContainer, separator2);
-        verticalLayoutConstraintFormat = @"V:|-15-[_buttonContainer]-15-[separator2]|";
+        views = NSDictionaryOfVariableBindings(_buttonContainer);
+        verticalLayoutConstraintFormat = @"V:|-15-[_buttonContainer]-15-|";
     }
     
     [self addConstraints:
@@ -133,13 +132,6 @@
     
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_buttonContainer]-15-|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
-
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator2]|"
                                              options:0
                                              metrics:nil
                                                views:views]
@@ -344,6 +336,13 @@
         else
             [control.cell setState:0];
         [self drawControlInterior:control];
+    }
+}
+
+- (NSString *)selectedTemplateKey
+{
+    for (TKOControl * control in self.buttonContainer.subviews) {
+        if (
     }
 }
 

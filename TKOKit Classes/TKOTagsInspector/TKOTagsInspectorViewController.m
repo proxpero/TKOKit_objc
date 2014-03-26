@@ -14,12 +14,15 @@
 
 @implementation TKOTagsInspectorViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
+    self = [super initWithNibName:@"TKOTagsInspectorViewController"
+                           bundle:nil];
+    if (!self)
+        return nil;
+    
+    
+    
     return self;
 }
 

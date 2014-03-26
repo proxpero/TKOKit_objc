@@ -204,26 +204,15 @@
                         <constraint firstAttribute="bottom" secondItem="lRp-gS-bwX" secondAttribute="bottom" constant="15" id="yvM-4p-JxM"/>
                     </constraints>
                 </customView>
-                <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-Jd-eBc">
-                    <rect key="frame" x="0.0" y="-2" width="268" height="5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
             </subviews>
             <constraints>
                 <constraint firstItem="F73-3X-R78" firstAttribute="top" secondItem="pwa-7g-LNs" secondAttribute="top" id="1b2-jp-WMv"/>
-                <constraint firstAttribute="trailing" secondItem="SJT-Jd-eBc" secondAttribute="trailing" id="2D1-zt-lTI"/>
                 <constraint firstItem="1yA-to-KTs" firstAttribute="top" secondItem="F73-3X-R78" secondAttribute="bottom" id="K2r-Ku-Qph"/>
                 <constraint firstAttribute="trailing" secondItem="F73-3X-R78" secondAttribute="trailing" id="SY5-G6-KRA"/>
-                <constraint firstAttribute="bottom" secondItem="SJT-Jd-eBc" secondAttribute="bottom" id="Srd-jF-0XL"/>
-                <constraint firstItem="SJT-Jd-eBc" firstAttribute="top" secondItem="1yA-to-KTs" secondAttribute="bottom" priority="600" id="Z39-yN-0DJ"/>
                 <constraint firstItem="F73-3X-R78" firstAttribute="leading" secondItem="pwa-7g-LNs" secondAttribute="leading" id="ZFz-Mw-Ya7"/>
                 <constraint firstAttribute="width" constant="268" id="h7k-vW-Wiz"/>
                 <constraint firstItem="1yA-to-KTs" firstAttribute="leading" secondItem="pwa-7g-LNs" secondAttribute="leading" id="pdU-OQ-4qg"/>
                 <constraint firstAttribute="trailing" secondItem="1yA-to-KTs" secondAttribute="trailing" id="veu-c0-g11"/>
-                <constraint firstItem="SJT-Jd-eBc" firstAttribute="leading" secondItem="pwa-7g-LNs" secondAttribute="leading" id="xqe-1A-qZN"/>
             </constraints>
             <connections>
                 <outlet property="disclosureButton" destination="Km6-5I-Lqr" id="GUm-ro-rGN"/>

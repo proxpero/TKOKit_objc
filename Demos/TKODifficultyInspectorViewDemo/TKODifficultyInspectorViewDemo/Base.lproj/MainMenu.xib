@@ -676,7 +676,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="268" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-Ri-bnG">
+                    <stackView orientation="vertical" alignment="centerX" spacing="0.0" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-Ri-bnG">
                         <rect key="frame" x="0.0" y="0.0" width="268" height="360"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
