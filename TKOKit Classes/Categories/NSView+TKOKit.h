@@ -18,6 +18,6 @@
 - (void)addConstraintsForWidth:(CGFloat)width
                         height:(CGFloat)height;
 
-+ (NSBox *)separator;
++ (NSBox *)horizontalSeparator;
 
 @end

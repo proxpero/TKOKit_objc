@@ -24,6 +24,7 @@ typedef enum {
 @property (nonatomic, copy) NSColor * borderHighlightColor;
 @property (nonatomic) BOOL hasAdaptiveBorderColor;
 
+- (void)drawBordersInCellFrame:(NSRect)cellFrame;
 - (void)setDefaultColors;
 
 @end

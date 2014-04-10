@@ -23,6 +23,5 @@
 
 + (NSImage *)popupImage;
 - (NSRect)popupRectWithFrame:(NSRect)cellFrame;
-- (void)drawBordersInCellFrame:(NSRect)cellFrame;
 
 @end

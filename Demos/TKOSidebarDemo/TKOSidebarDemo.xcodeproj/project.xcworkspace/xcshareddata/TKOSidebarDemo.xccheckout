@@ -5,20 +5,24 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1D493933-E0BE-47AC-BAF3-A9B0A99E48CE</string>
+	<string>43DB5943-C9C5-4E92-82C7-2406FE46FC9D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TKOInspectorViewControllerDemo</string>
+	<string>TKOSidebarDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9F893FAA-47BA-4918-B477-360E3B858AB6</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
+		<key>F0249BD6-7D29-4B34-B69B-D50711B07639</key>
+		<string>https://github.com/proxpero/Keystone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Demos/TKOInspectorViewControllerDemo/TKOInspectorViewControllerDemo.xcodeproj/project.xcworkspace</string>
+	<string>Demos/TKOSidebarDemo/TKOSidebarDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9F893FAA-47BA-4918-B477-360E3B858AB6</key>
 		<string>../../../..</string>
+		<key>F0249BD6-7D29-4B34-B69B-D50711B07639</key>
+		<string>../../../../../Keystone</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/proxpero/TKOKit.git</string>
@@ -28,6 +32,14 @@
 	<string>9F893FAA-47BA-4918-B477-360E3B858AB6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0249BD6-7D29-4B34-B69B-D50711B07639</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Keystone</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

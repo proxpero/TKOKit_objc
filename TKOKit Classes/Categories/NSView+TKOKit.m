@@ -63,10 +63,19 @@
      ];
 }
 
-+ (NSBox *)separator
++ (NSBox *)horizontalSeparator
 {
     NSBox * separator = [NSView viewWithClass:[NSBox class]];
     separator.boxType = NSBoxSeparator;
+//    [separator addConstraint:
+//     [NSLayoutConstraint constraintWithItem:separator
+//                                  attribute:NSLayoutAttributeHeight
+//                                  relatedBy:NSLayoutRelationEqual
+//                                     toItem:nil
+//                                  attribute:NSLayoutAttributeNotAnAttribute
+//                                 multiplier:1
+//                                   constant:1]
+//     ];
     return separator;
 }
 @end

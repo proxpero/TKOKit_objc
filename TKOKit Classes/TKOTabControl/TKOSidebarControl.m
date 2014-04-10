@@ -1,35 +1,32 @@
 //
-//  TKOTextTabControl.m
-//  Keystone
+//  TKOSidebarControl.m
+//  TKOFormatInspectorDemo
 //
-//  Created by Todd Olsen on 12/12/13.
-//  Copyright (c) 2013 Todd Olsen. All rights reserved.
+//  Created by Todd Olsen on 4/7/14.
+//  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
-#import "TKOTextTabControl.h"
-#import "TKOTextTabCell.h"
-#import "NSView+TKOKit.h"
+#import "TKOSidebarControl.h"
+#import "TKOControl.h"
 
-@implementation TKOTextTabControl
+@implementation TKOSidebarControl
 
 - (void)reloadData
 {
     NSMutableArray *newItems = [[NSMutableArray alloc] init];
     
     for (NSUInteger i = 0, count = [self.dataSource tabControlNumberOfTabs:self]; i < count; i++) {
-        [newItems addObject:[self.dataSource tabControl:self
-                                            itemAtIndex:i]];
+        [newItems addObject:[self.dataSource tabControl:self itemAtIndex:i]];
     }
     
     NSMutableArray *newTabs = [[NSMutableArray alloc] init];
     
-    [newItems enumerateObjectsUsingBlock:^(id item, NSUInteger index, BOOL *stop) {
+    [newItems enumerateObjectsUsingBlock:^(id item, NSUInteger index, BOOL *stop)
+    {
+        NSImage * image = [self.dataSource tabControl:self imageForItem:item];
+        TKOControl * tab = [self tabWithImage:image];
         
-        NSString * title = [self.dataSource tabControl:self
-                                          titleForItem:item];
-        NSButton * button = [self tabWithTitle:title];
-        
-        TKOHeaderCell * cell = [button cell];
+        TKOHeaderCell * cell = [tab cell];
         
         if (dataSourceRespondsTo.backgroundColorForTabControl)
             [cell setBackgroundColor:[self.dataSource backgroundColorForTabControl:self]];
@@ -45,12 +42,12 @@
             [cell setTextHighlightColor:[self.dataSource textHighlightColorForTabControl:self]];
         if (dataSourceRespondsTo.borderMaskForItemAtIndex)
             [cell setBorderMask:[self.dataSource tabControl:self borderMaskForItemAtIndex:index]];
-            
+        
         [cell setRepresentedObject:item];
-        [newTabs addObject:button];
+        [newTabs addObject:tab];
         
     }];
-        
+    
     [self setSubviews:newTabs];
     [self layoutTabs:newTabs];
     
@@ -60,7 +57,7 @@
 - (void)layoutTabs:(NSArray *)tabs
 {
     // remove old constraints, if any...
-//    [self removeConstraints:self.constraints];
+    //    [self removeConstraints:self.constraints];
     
     // constrain passed tabs into a horizontal list...
     NSButton * prev = nil;
@@ -68,27 +65,27 @@
     for (NSButton * button in tabs) {
         
         [self addConstraints:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|"
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]|"
                                                  options:0
                                                  metrics:nil
                                                    views:@{@"button": button}]];
         
         [self addConstraint:
          [NSLayoutConstraint constraintWithItem:button
-                                      attribute:NSLayoutAttributeLeading
+                                      attribute:NSLayoutAttributeTop
                                       relatedBy:NSLayoutRelationEqual
                                          toItem:(prev != nil ? prev : self)
-                                      attribute:(prev != nil ? NSLayoutAttributeTrailing : NSLayoutAttributeLeading)
+                                      attribute:(prev != nil ? NSLayoutAttributeBottom : NSLayoutAttributeTop)
                                      multiplier:1
                                        constant:0]
          ];
         if (prev != nil) {
             [self addConstraint:
              [NSLayoutConstraint constraintWithItem:button
-                                          attribute:NSLayoutAttributeWidth
+                                          attribute:NSLayoutAttributeHeight
                                           relatedBy:NSLayoutRelationEqual
                                              toItem:prev
-                                          attribute:NSLayoutAttributeWidth
+                                          attribute:NSLayoutAttributeHeight
                                          multiplier:1
                                            constant:0]];
         }
@@ -99,40 +96,24 @@
     if (prev) {
         [self addConstraint:
          [NSLayoutConstraint constraintWithItem:prev
-                                      attribute:NSLayoutAttributeTrailing
+                                      attribute:NSLayoutAttributeBottom
                                       relatedBy:NSLayoutRelationEqual
                                          toItem:self
-                                      attribute:NSLayoutAttributeTrailing
+                                      attribute:NSLayoutAttributeBottom
                                      multiplier:1
                                        constant:0]];
     }
 }
 
-- (NSButton *)tabWithTitle:(NSString *)title
+- (TKOControl *)tabWithImage:(NSImage *)image
 {
-    TKOTextTabCell * tabCell = [[TKOTextTabCell alloc] initTextCell:title];
-    tabCell.imagePosition    = NSNoImage;
-    tabCell.font             = dataSourceRespondsTo.fontForTabControl ? [self.dataSource fontForTabControl:self] : nil;
-    tabCell.target           = self;
-    tabCell.action           = @selector(selectTab:);
-    tabCell.menu             = nil;
-    [tabCell sendActionOn:NSLeftMouseDownMask];
-
-    NSButton * tab = [NSView viewWithClass:[NSButton class]];
+    TKOControl * tab = [NSView viewWithClass:[TKOControl class]];
     
-    // Answer Choice Only
     
-//    tab.wantsLayer = YES;
-//    tab.layer.borderWidth = 1.0;
-//    tab.layer.cornerRadius = 5.0;
     
-    //
     
-    [tab setCell:tabCell];
-
+    
     return tab;
 }
 
 @end
-
-

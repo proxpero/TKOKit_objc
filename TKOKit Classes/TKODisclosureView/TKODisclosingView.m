@@ -245,18 +245,7 @@
                                                views:views]
      ];
     
-    NSBox * separator = [NSView viewWithClass:[NSBox class]];
-    [separator addConstraint:
-     [NSLayoutConstraint constraintWithItem:separator
-                                  attribute:NSLayoutAttributeHeight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:1]
-     ];
-    separator.boxType = NSBoxSeparator;
-    
+    NSBox * separator = [NSView horizontalSeparator];    
     [self addSubview:separator];
     
     views = @{@"separator": separator};
