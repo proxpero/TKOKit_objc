@@ -100,21 +100,23 @@
 		4510BAAC18F32FC00000182A /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BA5518F32FC00000182A /* TKOTextView.m */; };
 		4510BAAD18F32FC00000182A /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BA5818F32FC00000182A /* TKOTheme.m */; };
 		4510BAAE18F32FC00000182A /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BA5A18F32FC00000182A /* TKOThemeLoader.m */; };
-		4510BB0418F376FD0000182A /* Students-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0018F376FD0000182A /* Students-Off.png */; };
-		4510BB0518F376FD0000182A /* Students-Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0118F376FD0000182A /* Students-Off@2x.png */; };
-		4510BB0618F376FD0000182A /* Students-On.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0218F376FD0000182A /* Students-On.png */; };
-		4510BB0718F376FD0000182A /* Students-On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0318F376FD0000182A /* Students-On@2x.png */; };
-		4510BB1018F392A20000182A /* Assignments-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0818F392A20000182A /* Assignments-Off.png */; };
-		4510BB1118F392A20000182A /* Assignments-Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0918F392A20000182A /* Assignments-Off@2x.png */; };
-		4510BB1218F392A20000182A /* Assignments-On.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0A18F392A20000182A /* Assignments-On.png */; };
-		4510BB1318F392A20000182A /* Assignments-On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0B18F392A20000182A /* Assignments-On@2x.png */; };
-		4510BB1418F392A20000182A /* Problems-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0C18F392A20000182A /* Problems-Off.png */; };
-		4510BB1518F392A20000182A /* Problems-Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0D18F392A20000182A /* Problems-Off@2x.png */; };
-		4510BB1618F392A20000182A /* Problems-On.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0E18F392A20000182A /* Problems-On.png */; };
-		4510BB1718F392A20000182A /* Problems-On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB0F18F392A20000182A /* Problems-On@2x.png */; };
-		4510BB1A18F393560000182A /* Formats-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB1818F393560000182A /* Formats-Off.png */; };
-		4510BB1B18F393560000182A /* Formats-Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4510BB1918F393560000182A /* Formats-Off@2x.png */; };
 		4510BB1E18F3B3610000182A /* TKOSidebarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BB1D18F3B3610000182A /* TKOSidebarCell.m */; };
+		45DD4D6318F7177B0078C75F /* TKOAssignmentsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5518F7177B0078C75F /* TKOAssignmentsTemplate.png */; };
+		45DD4D6418F7177B0078C75F /* TKOAssignmentsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5618F7177B0078C75F /* TKOAssignmentsTemplate@2x.png */; };
+		45DD4D6518F7177B0078C75F /* TKOFormatsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5718F7177B0078C75F /* TKOFormatsTemplate.png */; };
+		45DD4D6618F7177B0078C75F /* TKOFormatsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5818F7177B0078C75F /* TKOFormatsTemplate@2x.png */; };
+		45DD4D6718F7177B0078C75F /* TKOListsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5918F7177B0078C75F /* TKOListsTemplate.png */; };
+		45DD4D6818F7177B0078C75F /* TKOListsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5A18F7177B0078C75F /* TKOListsTemplate@2x.png */; };
+		45DD4D6918F7177B0078C75F /* TKOProblemsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5B18F7177B0078C75F /* TKOProblemsTemplate.png */; };
+		45DD4D6A18F7177B0078C75F /* TKOProblemsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5C18F7177B0078C75F /* TKOProblemsTemplate@2x.png */; };
+		45DD4D6B18F7177B0078C75F /* TKOStudentsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5D18F7177B0078C75F /* TKOStudentsTemplate.png */; };
+		45DD4D6C18F7177B0078C75F /* TKOStudentsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5E18F7177B0078C75F /* TKOStudentsTemplate@2x.png */; };
+		45DD4D6D18F7177B0078C75F /* TKOTagsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5F18F7177B0078C75F /* TKOTagsTemplate.png */; };
+		45DD4D6E18F7177B0078C75F /* TKOTagsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D6018F7177B0078C75F /* TKOTagsTemplate@2x.png */; };
+		45DD4D6F18F7177B0078C75F /* TKOTrashTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D6118F7177B0078C75F /* TKOTrashTemplate.png */; };
+		45DD4D7018F7177B0078C75F /* TKOTrashTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D6218F7177B0078C75F /* TKOTrashTemplate@2x.png */; };
+		45DD4D7318F817B30078C75F /* TKOSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD4D7218F817B30078C75F /* TKOSidebarView.m */; };
+		45DD4D7618F83A090078C75F /* TKOSidebarViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD4D7518F83A090078C75F /* TKOSidebarViewItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,22 +282,26 @@
 		4510BA5818F32FC00000182A /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
 		4510BA5918F32FC00000182A /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
 		4510BA5A18F32FC00000182A /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
-		4510BB0018F376FD0000182A /* Students-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Students-Off.png"; sourceTree = "<group>"; };
-		4510BB0118F376FD0000182A /* Students-Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Students-Off@2x.png"; sourceTree = "<group>"; };
-		4510BB0218F376FD0000182A /* Students-On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Students-On.png"; sourceTree = "<group>"; };
-		4510BB0318F376FD0000182A /* Students-On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Students-On@2x.png"; sourceTree = "<group>"; };
-		4510BB0818F392A20000182A /* Assignments-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assignments-Off.png"; sourceTree = "<group>"; };
-		4510BB0918F392A20000182A /* Assignments-Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assignments-Off@2x.png"; sourceTree = "<group>"; };
-		4510BB0A18F392A20000182A /* Assignments-On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assignments-On.png"; sourceTree = "<group>"; };
-		4510BB0B18F392A20000182A /* Assignments-On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assignments-On@2x.png"; sourceTree = "<group>"; };
-		4510BB0C18F392A20000182A /* Problems-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Problems-Off.png"; sourceTree = "<group>"; };
-		4510BB0D18F392A20000182A /* Problems-Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Problems-Off@2x.png"; sourceTree = "<group>"; };
-		4510BB0E18F392A20000182A /* Problems-On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Problems-On.png"; sourceTree = "<group>"; };
-		4510BB0F18F392A20000182A /* Problems-On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Problems-On@2x.png"; sourceTree = "<group>"; };
-		4510BB1818F393560000182A /* Formats-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Formats-Off.png"; sourceTree = "<group>"; };
-		4510BB1918F393560000182A /* Formats-Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Formats-Off@2x.png"; sourceTree = "<group>"; };
 		4510BB1C18F3B3610000182A /* TKOSidebarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSidebarCell.h; sourceTree = "<group>"; };
 		4510BB1D18F3B3610000182A /* TKOSidebarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSidebarCell.m; sourceTree = "<group>"; };
+		45DD4D5518F7177B0078C75F /* TKOAssignmentsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOAssignmentsTemplate.png; sourceTree = "<group>"; };
+		45DD4D5618F7177B0078C75F /* TKOAssignmentsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOAssignmentsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D5718F7177B0078C75F /* TKOFormatsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOFormatsTemplate.png; sourceTree = "<group>"; };
+		45DD4D5818F7177B0078C75F /* TKOFormatsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOFormatsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D5918F7177B0078C75F /* TKOListsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOListsTemplate.png; sourceTree = "<group>"; };
+		45DD4D5A18F7177B0078C75F /* TKOListsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOListsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D5B18F7177B0078C75F /* TKOProblemsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOProblemsTemplate.png; sourceTree = "<group>"; };
+		45DD4D5C18F7177B0078C75F /* TKOProblemsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOProblemsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D5D18F7177B0078C75F /* TKOStudentsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOStudentsTemplate.png; sourceTree = "<group>"; };
+		45DD4D5E18F7177B0078C75F /* TKOStudentsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOStudentsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D5F18F7177B0078C75F /* TKOTagsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOTagsTemplate.png; sourceTree = "<group>"; };
+		45DD4D6018F7177B0078C75F /* TKOTagsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOTagsTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D6118F7177B0078C75F /* TKOTrashTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOTrashTemplate.png; sourceTree = "<group>"; };
+		45DD4D6218F7177B0078C75F /* TKOTrashTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOTrashTemplate@2x.png"; sourceTree = "<group>"; };
+		45DD4D7118F817B30078C75F /* TKOSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSidebarView.h; sourceTree = "<group>"; };
+		45DD4D7218F817B30078C75F /* TKOSidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSidebarView.m; sourceTree = "<group>"; };
+		45DD4D7418F83A090078C75F /* TKOSidebarViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSidebarViewItem.h; sourceTree = "<group>"; };
+		45DD4D7518F83A090078C75F /* TKOSidebarViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSidebarViewItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +415,10 @@
 				4510B9B118F2F8EC0000182A /* TKOSidebarViewController.h */,
 				4510B9B218F2F8EC0000182A /* TKOSidebarViewController.m */,
 				4510B9B318F2F8EC0000182A /* TKOSidebarViewController.xib */,
+				45DD4D7118F817B30078C75F /* TKOSidebarView.h */,
+				45DD4D7218F817B30078C75F /* TKOSidebarView.m */,
+				45DD4D7418F83A090078C75F /* TKOSidebarViewItem.h */,
+				45DD4D7518F83A090078C75F /* TKOSidebarViewItem.m */,
 				4510B9B618F3011E0000182A /* TKOSidebar.h */,
 				4510B9B718F3011E0000182A /* TKOSidebar.m */,
 			);
@@ -709,20 +719,20 @@
 		4510BAAF18F346C20000182A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4510BB1818F393560000182A /* Formats-Off.png */,
-				4510BB1918F393560000182A /* Formats-Off@2x.png */,
-				4510BB0818F392A20000182A /* Assignments-Off.png */,
-				4510BB0918F392A20000182A /* Assignments-Off@2x.png */,
-				4510BB0A18F392A20000182A /* Assignments-On.png */,
-				4510BB0B18F392A20000182A /* Assignments-On@2x.png */,
-				4510BB0C18F392A20000182A /* Problems-Off.png */,
-				4510BB0D18F392A20000182A /* Problems-Off@2x.png */,
-				4510BB0E18F392A20000182A /* Problems-On.png */,
-				4510BB0F18F392A20000182A /* Problems-On@2x.png */,
-				4510BB0018F376FD0000182A /* Students-Off.png */,
-				4510BB0118F376FD0000182A /* Students-Off@2x.png */,
-				4510BB0218F376FD0000182A /* Students-On.png */,
-				4510BB0318F376FD0000182A /* Students-On@2x.png */,
+				45DD4D5518F7177B0078C75F /* TKOAssignmentsTemplate.png */,
+				45DD4D5618F7177B0078C75F /* TKOAssignmentsTemplate@2x.png */,
+				45DD4D5718F7177B0078C75F /* TKOFormatsTemplate.png */,
+				45DD4D5818F7177B0078C75F /* TKOFormatsTemplate@2x.png */,
+				45DD4D5918F7177B0078C75F /* TKOListsTemplate.png */,
+				45DD4D5A18F7177B0078C75F /* TKOListsTemplate@2x.png */,
+				45DD4D5B18F7177B0078C75F /* TKOProblemsTemplate.png */,
+				45DD4D5C18F7177B0078C75F /* TKOProblemsTemplate@2x.png */,
+				45DD4D5D18F7177B0078C75F /* TKOStudentsTemplate.png */,
+				45DD4D5E18F7177B0078C75F /* TKOStudentsTemplate@2x.png */,
+				45DD4D5F18F7177B0078C75F /* TKOTagsTemplate.png */,
+				45DD4D6018F7177B0078C75F /* TKOTagsTemplate@2x.png */,
+				45DD4D6118F7177B0078C75F /* TKOTrashTemplate.png */,
+				45DD4D6218F7177B0078C75F /* TKOTrashTemplate@2x.png */,
 			);
 			name = Assets;
 			path = ../../../../Keystone/KeystoneKit/Assets;
@@ -805,57 +815,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4510BB1618F392A20000182A /* Problems-On.png in Resources */,
+				45DD4D6E18F7177B0078C75F /* TKOTagsTemplate@2x.png in Resources */,
 				4510BA6718F32FC00000182A /* TKODecreaseIndentImage.pxi in Resources */,
-				4510BB1518F392A20000182A /* Problems-Off@2x.png in Resources */,
 				4510BA7018F32FC00000182A /* TKOPositionBottomImage@2x.png in Resources */,
 				4510BA6418F32FC00000182A /* TKOCenterAlignmentImage.png in Resources */,
 				4510BA6E18F32FC00000182A /* TKOLeftAlignmentImage@2x.png in Resources */,
+				45DD4D6918F7177B0078C75F /* TKOProblemsTemplate.png in Resources */,
 				4510BA7D18F32FC00000182A /* TKODifficultyInspectorViewController.xib in Resources */,
-				4510BB1318F392A20000182A /* Assignments-On@2x.png in Resources */,
 				4510BAA018F32FC00000182A /* TKOPullDownTemplate.pdf in Resources */,
 				4510BA6918F32FC00000182A /* TKOIncreaseIndentImage.png in Resources */,
 				4510B98218F2F8090000182A /* InfoPlist.strings in Resources */,
+				45DD4D6718F7177B0078C75F /* TKOListsTemplate.png in Resources */,
 				4510B9B518F2F8EC0000182A /* TKOSidebarViewController.xib in Resources */,
-				4510BB0718F376FD0000182A /* Students-On@2x.png in Resources */,
-				4510BB1B18F393560000182A /* Formats-Off@2x.png in Resources */,
+				45DD4D6318F7177B0078C75F /* TKOAssignmentsTemplate.png in Resources */,
+				45DD4D6618F7177B0078C75F /* TKOFormatsTemplate@2x.png in Resources */,
 				4510BA8E18F32FC00000182A /* TKOParagraphStylePickerPopoverContentViewController.xib in Resources */,
+				45DD4D7018F7177B0078C75F /* TKOTrashTemplate@2x.png in Resources */,
 				4510BA6618F32FC00000182A /* TKODecreaseIndentImage.png in Resources */,
 				4510BA8018F32FC00000182A /* TKODisclosingViewController.xib in Resources */,
 				4510BA9818F32FC00000182A /* TKOSpacingInspectorViewController.xib in Resources */,
-				4510BB1718F392A20000182A /* Problems-On@2x.png in Resources */,
 				4510BA7418F32FC00000182A /* TKOPositionTopImage@2x.png in Resources */,
-				4510BB1118F392A20000182A /* Assignments-Off@2x.png in Resources */,
 				4510BA7918F32FC00000182A /* TKOPullDownImage@2x.png in Resources */,
 				4510BA6A18F32FC00000182A /* TKOIncreaseIndentImage@2x.png in Resources */,
+				45DD4D6B18F7177B0078C75F /* TKOStudentsTemplate.png in Resources */,
 				4510BAA718F32FC00000182A /* TKOTagsInspectorViewController.xib in Resources */,
 				4510BA8918F32FC00000182A /* TKOListsInspectorViewController.xib in Resources */,
+				45DD4D6A18F7177B0078C75F /* TKOProblemsTemplate@2x.png in Resources */,
 				4510BA8C18F32FC00000182A /* TKOMultipleChoiceAnswerViewController.xib in Resources */,
 				4510BA7318F32FC00000182A /* TKOPositionTopImage.png in Resources */,
-				4510BB1A18F393560000182A /* Formats-Off.png in Resources */,
 				4510BA6D18F32FC00000182A /* TKOLeftAlignmentImage.png in Resources */,
-				4510BB1218F392A20000182A /* Assignments-On.png in Resources */,
-				4510BB1418F392A20000182A /* Problems-Off.png in Resources */,
+				45DD4D6818F7177B0078C75F /* TKOListsTemplate@2x.png in Resources */,
 				4510BA6C18F32FC00000182A /* TKOJustifiedAlignmentImage@2x.png in Resources */,
-				4510BB0618F376FD0000182A /* Students-On.png in Resources */,
 				4510B99018F2F8090000182A /* Images.xcassets in Resources */,
+				45DD4D6C18F7177B0078C75F /* TKOStudentsTemplate@2x.png in Resources */,
+				45DD4D6D18F7177B0078C75F /* TKOTagsTemplate.png in Resources */,
 				4510BA7118F32FC00000182A /* TKOPositionCenterImage.png in Resources */,
 				4510BA8418F32FC00000182A /* TKOFontInspectorViewController.xib in Resources */,
 				4510BA6B18F32FC00000182A /* TKOJustifiedAlignmentImage.png in Resources */,
 				4510BA7618F32FC00000182A /* TKORightAlignmentImage@2x.png in Resources */,
 				4510BA9018F32FC00000182A /* TKOParagraphStylePickerViewController.xib in Resources */,
 				4510BA6F18F32FC00000182A /* TKOPositionBottomImage.png in Resources */,
+				45DD4D6F18F7177B0078C75F /* TKOTrashTemplate.png in Resources */,
 				4510BA6518F32FC00000182A /* TKOCenterAlignmentImage@2x.png in Resources */,
 				4510BA7218F32FC00000182A /* TKOPositionCenterImage@2x.png in Resources */,
-				4510BB0418F376FD0000182A /* Students-Off.png in Resources */,
 				4510BA7518F32FC00000182A /* TKORightAlignmentImage.png in Resources */,
 				4510BA6318F32FC00000182A /* TKOAlignmentInspectorViewController.xib in Resources */,
 				4510BA6818F32FC00000182A /* TKODecreaseIndentImage@2x.png in Resources */,
-				4510BB0518F376FD0000182A /* Students-Off@2x.png in Resources */,
+				45DD4D6418F7177B0078C75F /* TKOAssignmentsTemplate@2x.png in Resources */,
 				4510B98818F2F8090000182A /* Credits.rtf in Resources */,
 				4510B98E18F2F8090000182A /* MainMenu.xib in Resources */,
-				4510BB1018F392A20000182A /* Assignments-Off.png in Resources */,
 				4510BA7818F32FC00000182A /* TKOPullDownImage.png in Resources */,
+				45DD4D6518F7177B0078C75F /* TKOFormatsTemplate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +889,7 @@
 				4510BA8118F32FC00000182A /* TKOFlexibleToolbarItem.m in Sources */,
 				4510BAAB18F32FC00000182A /* TKOTextStorage.m in Sources */,
 				4510BA6018F32FC00000182A /* NSView+TKOKit.m in Sources */,
+				45DD4D7318F817B30078C75F /* TKOSidebarView.m in Sources */,
 				4510BA8F18F32FC00000182A /* TKOParagraphStylePickerViewController.m in Sources */,
 				4510BA9B18F32FC00000182A /* TKOHeaderCell.m in Sources */,
 				4510BA9C18F32FC00000182A /* TKOImageTabCell.m in Sources */,
@@ -921,6 +932,7 @@
 				4510BA8D18F32FC00000182A /* TKOParagraphStylePickerPopoverContentViewController.m in Sources */,
 				4510B98B18F2F8090000182A /* TKOAppDelegate.m in Sources */,
 				4510BA9218F32FC00000182A /* TKOPlatform.m in Sources */,
+				45DD4D7618F83A090078C75F /* TKOSidebarViewItem.m in Sources */,
 				4510BAAA18F32FC00000182A /* TKOTextContainer.m in Sources */,
 				4510BAAE18F32FC00000182A /* TKOThemeLoader.m in Sources */,
 				4510BAA518F32FC00000182A /* TKOTabView.m in Sources */,
@@ -1138,6 +1150,7 @@
 				4510B9A718F2F80A0000182A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4510B9A818F2F80A0000182A /* Build configuration list for PBXNativeTarget "TKOSidebarDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -1146,6 +1159,7 @@
 				4510B9AA18F2F80A0000182A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

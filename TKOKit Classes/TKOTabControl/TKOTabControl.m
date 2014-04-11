@@ -134,7 +134,7 @@
     
     for (NSButton * button in self.subviews) {
         if ([button isKindOfClass:[NSButton class]])
-        [button setState:(button == selectedButton) ? 1 : 0];
+            [button setState:(button == selectedButton) ? 1 : 0];
     }
     
     [[NSApplication sharedApplication] sendAction:self.action

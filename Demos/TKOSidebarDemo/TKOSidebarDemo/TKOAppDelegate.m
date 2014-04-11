@@ -8,11 +8,18 @@
 
 #import "TKOAppDelegate.h"
 #import "TKOSidebar.h"
+#import "TKOSidebarView.h"
 
 @interface TKOAppDelegate ()
-@property (weak) IBOutlet TKOSidebar *sidebar;
+@property (nonatomic) TKOSidebarView * sidebarView;
 
-
+@property (weak) IBOutlet NSBox *studentsView;
+@property (weak) IBOutlet NSBox *assignementsView;
+@property (weak) IBOutlet NSBox *problemsView;
+@property (weak) IBOutlet NSBox *listsView;
+@property (weak) IBOutlet NSBox *formatsView;
+@property (weak) IBOutlet NSBox *tagsView;
+@property (weak) IBOutlet NSBox *trashView;
 
 @end
 
@@ -20,20 +27,25 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [self.sidebar setTarget:self];
-    [self.sidebar setAction:@selector(buttonPressedAction)];
-    [self.sidebar addItemWithImage:[NSImage imageNamed:@"Students-Off"] alternateImage:[NSImage imageNamed:@"Students-On"] title:@"Students" inGravity:NSStackViewGravityTop];
-    [self.sidebar addItemWithImage:[NSImage imageNamed:@"Assignments-Off"] alternateImage:nil title:@"Assignments" inGravity:NSStackViewGravityTop];
-    [self.sidebar addItemWithImage:[NSImage imageNamed:@"Problems-Off"] alternateImage:nil title:@"Problems" inGravity:NSStackViewGravityTop];
-    [self.sidebar addItemWithImage:[NSImage imageNamed:@"Lists-Off"] alternateImage:nil title:@"Lists" inGravity:NSStackViewGravityTop];
-    [self.sidebar addItemWithImage:[NSImage imageNamed:@"Formats-Off"] alternateImage:nil title:@"Formats" inGravity:NSStackViewGravityTop];
+    self.sidebarView = [[TKOSidebarView alloc] initWithFrame:[self.window.contentView bounds]];
+    [self.window setContentView:self.sidebarView];
 
-    [self.sidebar addItemWithImage:[NSImage imageNamed:NSImageNameTrashEmpty] alternateImage:[NSImage imageNamed:NSImageNameTrashFull] title:@"Trash" inGravity:NSStackViewGravityBottom];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Students" icon:[NSImage imageNamed:@"TKOStudentsTemplate"] view:self.studentsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Assignments" icon:[NSImage imageNamed:@"TKOAssignmentsTemplate"] view:self.assignementsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Problems" icon:[NSImage imageNamed:@"TKOProblemsTemplate"] view:self.problemsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Lists" icon:[NSImage imageNamed:@"TKOListsTemplate"] view:self.listsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Formats" icon:[NSImage imageNamed:@"TKOFormatsTemplate"] view:self.formatsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Tags" icon:[NSImage imageNamed:@"TKOTagsTemplate"] view:self.tagsView gravity:NSStackViewGravityTop]];
+    [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Trash" icon:[NSImage imageNamed:@"TKOTrashTemplate"] view:self.trashView gravity:NSStackViewGravityBottom]];
+
+    [self.sidebarView selectFirstTabViewItem:nil];
 }
 
-- (void)buttonPressedAction
+- (void)buttonPressedAction:(id)sender
 {
-    NSLog(@"Button pressed");
+    NSLog(@"sender class %@", NSStringFromClass([sender class]));
 }
+
+
 
 @end

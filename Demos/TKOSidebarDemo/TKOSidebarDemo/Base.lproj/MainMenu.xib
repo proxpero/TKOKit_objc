@@ -13,8 +13,14 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="TKOAppDelegate">
             <connections>
-                <outlet property="sidebar" destination="Kxk-g3-9TF" id="pJ0-ik-gII"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="assignementsView" destination="NYL-IE-y8p" id="66j-RB-Uwj"/>
+                <outlet property="formatsView" destination="ClR-gc-SVE" id="PSq-LM-D2L"/>
+                <outlet property="listsView" destination="RHX-mu-Uo0" id="Bpx-Mq-Awe"/>
+                <outlet property="problemsView" destination="BwI-8q-KkW" id="mPs-Xd-60X"/>
+                <outlet property="studentsView" destination="uOZ-J7-rXW" id="9lk-GQ-mKi"/>
+                <outlet property="tagsView" destination="hPo-OV-EI2" id="bht-7f-5FE"/>
+                <outlet property="trashView" destination="cQG-eq-lgy" id="VtL-ZX-m6R"/>
+                <outlet property="window" destination="Rrc-WD-Q90" id="5Jj-v1-7uA"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -667,44 +673,100 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="TKOSidebarDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="Rrc-WD-Q90">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="504" height="501"/>
+            <rect key="contentRect" x="121" y="129" width="587" height="485"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="504" height="501"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Kxk-g3-9TF" customClass="TKOSidebar">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="501"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="LcM-c4-SQK"/>
-                        </constraints>
-                    </customView>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="Kxk-g3-9TF" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="3pj-iT-UTS"/>
-                    <constraint firstItem="Kxk-g3-9TF" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="FaK-Vv-gpb"/>
-                    <constraint firstAttribute="bottom" secondItem="Kxk-g3-9TF" secondAttribute="bottom" id="yfL-nQ-vk0"/>
-                </constraints>
+            <view key="contentView" id="aYg-Bm-at0">
+                <rect key="frame" x="0.0" y="0.0" width="587" height="485"/>
+                <autoresizingMask key="autoresizingMask"/>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="F9179CA5-BAB0-4D37-B4E0-0804E8FF545A" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="wkG-UM-ZSn">
+            <toolbar key="toolbar" implicitIdentifier="5E0C7490-3B5D-4CF8-AED3-66A2D119E598" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="small" id="lfa-Mi-Jdg">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Wuk-Cm-5WH"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="emo-Jl-Boq"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Kn9-um-Kir"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="n5J-GL-gCl"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="5R2-xj-myr"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Oe7-Og-cUa"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="h2C-C9-q64"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Xmb-9h-O3e"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="RNm-c3-CL9"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="bjW-bn-bJD"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
-                    <toolbarItem reference="Wuk-Cm-5WH"/>
-                    <toolbarItem reference="emo-Jl-Boq"/>
-                    <toolbarItem reference="5R2-xj-myr"/>
-                    <toolbarItem reference="Kn9-um-Kir"/>
+                    <toolbarItem reference="Oe7-Og-cUa"/>
+                    <toolbarItem reference="h2C-C9-q64"/>
+                    <toolbarItem reference="bjW-bn-bJD"/>
+                    <toolbarItem reference="Xmb-9h-O3e"/>
                 </defaultToolbarItems>
             </toolbar>
         </window>
+        <box autoresizesSubviews="NO" title="Students" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-J7-rXW">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="163"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="242" height="147"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Assignments" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-IE-y8p">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Problems" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="BwI-8q-KkW">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Lists" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-mu-Uo0">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Formats" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-gc-SVE">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Tags" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="hPo-OV-EI2">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
+        <box autoresizesSubviews="NO" title="Trash" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="cQG-eq-lgy">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="1" y="1" width="175" height="98"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </box>
     </objects>
 </document>

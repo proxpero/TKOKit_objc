@@ -35,6 +35,7 @@
     [self setBordered:NO];
     [self setDefaultColors];
 //    self.borderMask = TKOBorderMaskBottom;
+    self.borderHighlightMask = self.borderMask;
     
     return self;
 }
@@ -63,6 +64,12 @@
 - (void)setBorderMask:(TKOBorderMask)borderMask
 {
     _borderMask = borderMask;
+    [self.controlView setNeedsDisplay:YES];
+}
+
+- (void)setBorderHighlightMask:(TKOBorderMask)borderHighlightMask
+{
+    _borderHighlightMask = borderHighlightMask;
     [self.controlView setNeedsDisplay:YES];
 }
 
@@ -115,7 +122,8 @@
 {
     NSRect *borderRects;
     NSInteger borderRectCount;
-    if (TKORectArrayWithBorderMask(cellFrame, self.borderMask, &borderRects, &borderRectCount)) {
+    TKOBorderMask bm = (self.state|self.isHighlighted) ? self.borderHighlightMask : self.borderMask;
+    if (TKORectArrayWithBorderMask(cellFrame, bm, &borderRects, &borderRectCount)) {
         [((self.state|self.isHighlighted) ? self.borderHighlightColor : self.borderColor) set];
         NSRectFillList(borderRects, borderRectCount);
     }

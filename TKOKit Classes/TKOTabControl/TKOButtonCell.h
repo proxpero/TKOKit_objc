@@ -18,6 +18,7 @@ typedef enum {
 @interface TKOButtonCell : NSButtonCell
 
 @property (nonatomic) TKOBorderMask borderMask;
+@property (nonatomic) TKOBorderMask borderHighlightMask;
 @property (nonatomic, copy) NSColor * backgroundColor;
 @property (nonatomic, copy) NSColor * backgroundHighlightColor;
 @property (nonatomic, copy) NSColor * borderColor;

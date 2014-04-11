@@ -9,6 +9,7 @@
 #import "TKOSidebar.h"
 #import "TKOSidebarCell.h"
 #import "TKOControl.h"
+#import "NSColor+TKOKit.h"
 
 @interface TKOSidebar ()
 
@@ -25,7 +26,7 @@
     
     self.orientation = NSUserInterfaceLayoutOrientationVertical;
     self.alignment = NSLayoutAttributeCenterX;
-    self.spacing = 1.0;
+    self.spacing = 0.0;
     
     self.wantsLayer = YES;
     self.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
@@ -35,8 +36,8 @@
 }
 
 - (void)addItemWithImage:(NSImage *)image
-          alternateImage:(NSImage *)alternateImage
                    title:(NSString *)title
+       representedObject:(id)representedObject
                inGravity:(NSStackViewGravity)gravity
 {
     NSButton * button = [[NSButton alloc] initWithFrame:NSZeroRect];
@@ -49,19 +50,24 @@
     
     cell.backgroundColor = [NSColor lightGrayColor];
     cell.backgroundHighlightColor = [NSColor controlColor];
+    cell.imageColor = [NSColor darkGrayColor];
+    cell.imageHighlightColor = [NSColor colorWithHexString:@"AC1326"];
     cell.textColor      = [NSColor darkGrayColor];
     cell.textHighlightColor = [NSColor darkGrayColor];
+    cell.borderColor = [NSColor colorWithHexString:@"C2BFC3"];
+    cell.borderHighlightColor = [NSColor colorWithHexString:@"AC1326"];
+    cell.borderMask = (gravity == NSStackViewGravityTop) ? TKOBorderMaskBottom : TKOBorderMaskTop;
+    cell.borderHighlightMask = TKOBorderMaskTop|TKOBorderMaskBottom;
     cell.showsStateBy   = NSChangeBackgroundCellMask;
-    cell.highlightsBy   = NSChangeBackgroundCellMask;
+    cell.highlightsBy   = 0;
     cell.image          = image;
-    cell.alternateImage = alternateImage;
     cell.buttonType     = NSOnOffButton;
     cell.target         = self;
     cell.action         = @selector(selectTabAction:);
     cell.title          = title;
-    cell.font           = [NSFont fontWithName:@"Helvetica" size:10];
+    cell.font           = [NSFont fontWithName:@"HelveticaNeue-Light" size:11];
     cell.imagePosition  = NSImageAbove;
-    
+    cell.representedObject = representedObject;
     button.cell = cell;
 
     [self addView:button inGravity:gravity];
@@ -70,34 +76,12 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]|" options:0 metrics:nil views:@{@"button": button}]];
 }
 
-//- (TKOControl *)newTab
-//{
-//    TKOControl * button = [[TKOControl alloc] initWithFrame:NSZeroRect];
-//    button.translatesAutoresizingMaskIntoConstraints = NO;
-//    button.wantsLayer = YES;
-//    button.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
-//    button.target = self;
-//    button.action = @selector(selectTabAction:);
-//
-//    [button addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:62]];
-//    [button addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:62]];
-//    TKOSidebarCell * cell = [[TKOSidebarCell alloc] init];
-//    cell.showsStateBy = NSChangeBackgroundCellMask;
-//    cell.highlightsBy = NSChangeBackgroundCellMask;
-//    button.cell = cell;
-//    
-//    return button;
-//}
-
 - (void)selectTabAction:(id)sender
 {
+    id representedObject = [[sender cell] representedObject];
     for (NSButton * button in self.views)
-        if (button == sender)
-            button.state = 1;
-        else
-            button.state = 0;
-
-    [sender sendAction:self.action to:self.target];
+        button.state = (button == sender) ? 1 : 0;    
+    [representedObject sendAction:self.action to:self.target];
 }
 
 @end
