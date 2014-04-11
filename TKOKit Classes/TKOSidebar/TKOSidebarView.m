@@ -34,6 +34,8 @@
     
     _sidebarViewItems = [NSMutableArray new];
     
+    // Set Defaults
+    
     _backgroundColor = [NSColor lightGrayColor];
     _backgroundHighlightColor = [NSColor controlColor];
     _imageColor = [NSColor darkGrayColor];
@@ -42,6 +44,7 @@
     _textHighlightColor = [NSColor darkGrayColor];
     _borderColor = [NSColor colorWithHexString:@"C2BFC3"];
     _borderHighlightColor = [NSColor colorWithHexString:@"AC1326"];
+    _font = [NSFont fontWithName:@"HelveticaNeue-Light" size:11];
     
     return self;
 }
@@ -117,10 +120,7 @@
         cell.textHighlightColor = self.textHighlightColor;
         cell.borderColor = self.borderColor;
         cell.borderHighlightColor = self.borderHighlightColor;
-        cell.borderMask = self.borderMask;
-        cell.borderHighlightMask = self.borderHighlightMask;
-        
-        cell.font = [NSFont fontWithName:@"HelveticaNeue-Light" size:11];
+        cell.font = self.font;
         
         cell.showsStateBy = NSChangeBackgroundCellMask;
         cell.highlightsBy = NSChangeBackgroundCellMask;
@@ -149,11 +149,7 @@
          ];
         
         cell.borderMask = (sidebarViewItem.gravity == NSStackViewGravityTop) ? TKOBorderMaskBottom : TKOBorderMaskTop;
-        
-        if (!previous)
-            cell.borderHighlightMask = TKOBorderMaskBottom;
-        else
-            cell.borderHighlightMask = TKOBorderMaskBottom|TKOBorderMaskTop;
+        cell.borderHighlightMask = previous ? TKOBorderMaskBottom|TKOBorderMaskTop : TKOBorderMaskBottom;
         
         previous = button;
     }

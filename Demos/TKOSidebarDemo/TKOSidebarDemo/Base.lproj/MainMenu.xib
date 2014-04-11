@@ -13,13 +13,6 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="TKOAppDelegate">
             <connections>
-                <outlet property="assignementsView" destination="NYL-IE-y8p" id="66j-RB-Uwj"/>
-                <outlet property="formatsView" destination="ClR-gc-SVE" id="PSq-LM-D2L"/>
-                <outlet property="listsView" destination="RHX-mu-Uo0" id="Bpx-Mq-Awe"/>
-                <outlet property="problemsView" destination="BwI-8q-KkW" id="mPs-Xd-60X"/>
-                <outlet property="studentsView" destination="uOZ-J7-rXW" id="9lk-GQ-mKi"/>
-                <outlet property="tagsView" destination="hPo-OV-EI2" id="bht-7f-5FE"/>
-                <outlet property="trashView" destination="cQG-eq-lgy" id="VtL-ZX-m6R"/>
                 <outlet property="window" destination="Rrc-WD-Q90" id="5Jj-v1-7uA"/>
             </connections>
         </customObject>
@@ -698,75 +691,5 @@
                 </defaultToolbarItems>
             </toolbar>
         </window>
-        <box autoresizesSubviews="NO" title="Students" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-J7-rXW">
-            <rect key="frame" x="0.0" y="0.0" width="244" height="163"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="242" height="147"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Assignments" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-IE-y8p">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Problems" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="BwI-8q-KkW">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Lists" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-mu-Uo0">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Formats" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-gc-SVE">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Tags" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="hPo-OV-EI2">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
-        <box autoresizesSubviews="NO" title="Trash" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="cQG-eq-lgy">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <view key="contentView">
-                <rect key="frame" x="1" y="1" width="175" height="98"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            </view>
-            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-        </box>
     </objects>
 </document>
