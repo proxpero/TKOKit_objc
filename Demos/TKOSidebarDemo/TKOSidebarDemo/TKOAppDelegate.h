@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOSidebarView.h"
 
-@interface TKOAppDelegate : NSObject <NSApplicationDelegate>
+@interface TKOAppDelegate : NSObject <NSApplicationDelegate, TKOSidebarViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 

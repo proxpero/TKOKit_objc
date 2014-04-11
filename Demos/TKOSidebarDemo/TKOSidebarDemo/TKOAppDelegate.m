@@ -7,7 +7,6 @@
 //
 
 #import "TKOAppDelegate.h"
-#import "TKOSidebar.h"
 #import "TKOSidebarView.h"
 
 @interface TKOAppDelegate ()
@@ -28,6 +27,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.sidebarView = [[TKOSidebarView alloc] initWithFrame:[self.window.contentView bounds]];
+    [self.sidebarView setDelegate:self];
     [self.window setContentView:self.sidebarView];
 
     [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Students" icon:[NSImage imageNamed:@"TKOStudentsTemplate"] view:self.studentsView gravity:NSStackViewGravityTop]];
@@ -41,11 +41,15 @@
     [self.sidebarView selectFirstTabViewItem:nil];
 }
 
-- (void)buttonPressedAction:(id)sender
+- (void)sidebarViewWillChangeSelection:(NSNotification *)notification
 {
-    NSLog(@"sender class %@", NSStringFromClass([sender class]));
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (void)sidebarViewDidChangeSelection:(NSNotification *)notification
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);    
+}
 
 
 @end

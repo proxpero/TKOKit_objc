@@ -58,7 +58,7 @@
 {
     if (_sidebar)
         return;
-    
+
     _sidebar = [NSView viewWithClass:[NSStackView class]];
     _sidebar.orientation = NSUserInterfaceLayoutOrientationVertical;
     _sidebar.alignment = NSLayoutAttributeCenterX;
@@ -185,6 +185,32 @@
                                              metrics:nil
                                                views:views]
      ];
+}
+
+- (void)setDelegate:(id<TKOSidebarViewDelegate>)delegate
+{
+    if (_delegate == delegate) return;
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
+    if ([_delegate respondsToSelector:@selector(sidebarViewWillChangeSelection:)])
+        [defaultCenter removeObserver:_delegate
+                                 name:TKOSidebarViewWillChangeSelectionNotification
+                               object:self];
+    if ([_delegate respondsToSelector:@selector(sidebarViewDidChangeSelection:)])
+        [defaultCenter removeObserver:_delegate
+                                 name:TKOSidebarViewDidChangeSelectionNotification
+                               object:self];
+    _delegate = delegate;
+    if ([_delegate respondsToSelector:@selector(sidebarViewWillChangeSelection:)])
+        [defaultCenter addObserver:_delegate
+                          selector:@selector(sidebarViewWillChangeSelection:)
+                              name:TKOSidebarViewWillChangeSelectionNotification
+                            object:self];
+    if ([_delegate respondsToSelector:@selector(sidebarViewDidChangeSelection:)])
+        [defaultCenter addObserver:_delegate
+                          selector:@selector(sidebarViewDidChangeSelection:)
+                              name:TKOSidebarViewDidChangeSelectionNotification
+                            object:self];
+    [self layoutItems];
 }
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor
