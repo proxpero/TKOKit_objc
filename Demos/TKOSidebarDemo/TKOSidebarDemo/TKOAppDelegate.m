@@ -27,8 +27,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.sidebarView = [[TKOSidebarView alloc] initWithFrame:[self.window.contentView bounds]];
-    [self.sidebarView setDelegate:self];
-    [self.window setContentView:self.sidebarView];
 
     [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Students" icon:[NSImage imageNamed:@"TKOStudentsTemplate"] view:self.studentsView gravity:NSStackViewGravityTop]];
     [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Assignments" icon:[NSImage imageNamed:@"TKOAssignmentsTemplate"] view:self.assignementsView gravity:NSStackViewGravityTop]];
@@ -39,6 +37,8 @@
     [self.sidebarView addSidebarViewItem:[[TKOSidebarViewItem alloc] initWithTitle:@"Trash" icon:[NSImage imageNamed:@"TKOTrashTemplate"] view:self.trashView gravity:NSStackViewGravityBottom]];
 
     [self.sidebarView selectFirstTabViewItem:nil];
+    [self.sidebarView setDelegate:self];
+    [self.window setContentView:self.sidebarView];
 }
 
 - (void)sidebarViewWillChangeSelection:(NSNotification *)notification
