@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
+@import QuartzCore;
+
 #import "TKOSidebarView.h"
 #import "TKOSidebarViewItem.h"
 #import "TKOSidebarCell.h"
@@ -36,7 +38,12 @@
     
     // Set Defaults
     
-    _backgroundColor = [NSColor lightGrayColor];
+    NSColor * start = [NSColor colorWithCalibratedWhite:.9 alpha:1.0];
+    NSColor * end = [NSColor colorWithCalibratedWhite:.81 alpha:1.0];
+    
+
+    
+    _backgroundColor = [NSColor clearColor];
     _backgroundHighlightColor = [NSColor controlColor];
     _imageColor = [NSColor darkGrayColor];
     _imageHighlightColor = [NSColor colorWithHexString:@"AC1326"];
@@ -63,8 +70,16 @@
     _sidebar.orientation = NSUserInterfaceLayoutOrientationVertical;
     _sidebar.alignment = NSLayoutAttributeCenterX;
     _sidebar.spacing = 0.0;
+//    _sidebar.wantsLayer = YES;
+
+    CAGradientLayer * layer = [CAGradientLayer layer];
+    CGColorRef start  = CGColorCreateGenericGray(0.725, 1.0);
+    CGColorRef end    = CGColorCreateGenericGray(0.85, 1.0);
+    layer.colors = @[ CFBridgingRelease(start), CFBridgingRelease(end) ];
+    
+    _sidebar.layer = layer;
     _sidebar.wantsLayer = YES;
-    _sidebar.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
+//    _sidebar.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
     
     [self addSubview:_sidebar];
     
