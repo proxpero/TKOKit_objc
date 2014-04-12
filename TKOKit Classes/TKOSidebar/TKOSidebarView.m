@@ -154,9 +154,12 @@
         previous = button;
     }
     
-    NSButton * lastBottomButton = self.sidebar.views.lastObject;
-    TKOSidebarCell * cell = lastBottomButton.cell;
-    cell.borderHighlightMask = TKOBorderMaskTop;
+    if ((self.sidebar.views.count > 1) && ([self.sidebarViewItems.lastObject gravity] == NSStackViewGravityBottom))
+    {
+        NSButton * lastBottomButton = self.sidebar.views.lastObject;
+        TKOSidebarCell * cell = lastBottomButton.cell;
+        cell.borderHighlightMask = TKOBorderMaskTop;
+    }
 }
 
 # pragma mark - Properties
@@ -253,7 +256,6 @@
         if ([button isKindOfClass:[NSButton class]])
             [button setState:(button == selectedButton) ? 1 : 0];
     
-    [self.sidebar.views indexOfObject:sender];
     self.selectedIndex = [self.sidebar.views indexOfObject:sender];
     TKOSidebarViewItem * sidebarItem = self.sidebarViewItems[self.selectedIndex];
     self.contentView = sidebarItem.view;
