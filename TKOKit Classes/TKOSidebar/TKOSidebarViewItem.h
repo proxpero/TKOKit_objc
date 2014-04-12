@@ -10,10 +10,10 @@
 
 @interface TKOSidebarViewItem : NSObject
 
-@property (nonatomic, readonly) NSString * title;
-@property (nonatomic, readonly) NSImage * icon;
-@property (nonatomic, readonly) NSView * view;
-@property (nonatomic, readonly) NSStackViewGravity gravity;
+@property (nonatomic) NSString * title;
+@property (nonatomic) NSImage * icon;
+@property (nonatomic) NSView * view;
+@property (nonatomic) NSStackViewGravity gravity;
 
 - (id)initWithTitle:(NSString *)title
                icon:(NSImage *)icon
