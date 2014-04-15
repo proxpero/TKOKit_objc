@@ -38,11 +38,6 @@
     
     // Set Defaults
     
-    NSColor * start = [NSColor colorWithCalibratedWhite:.9 alpha:1.0];
-    NSColor * end = [NSColor colorWithCalibratedWhite:.81 alpha:1.0];
-    
-
-    
     _backgroundColor = [NSColor clearColor];
     _backgroundHighlightColor = [NSColor controlColor];
     _imageColor = [NSColor darkGrayColor];
@@ -70,7 +65,6 @@
     _sidebar.orientation = NSUserInterfaceLayoutOrientationVertical;
     _sidebar.alignment = NSLayoutAttributeCenterX;
     _sidebar.spacing = 0.0;
-//    _sidebar.wantsLayer = YES;
 
     CAGradientLayer * layer = [CAGradientLayer layer];
     CGColorRef start  = CGColorCreateGenericGray(0.725, 1.0);
@@ -79,7 +73,6 @@
     
     _sidebar.layer = layer;
     _sidebar.wantsLayer = YES;
-//    _sidebar.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
     
     [self addSubview:_sidebar];
     
