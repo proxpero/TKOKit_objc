@@ -21,6 +21,7 @@
 @property (nonatomic) NSMutableArray * sidebarViewItems;
 @property (nonatomic) NSView * contentView;
 @property (nonatomic) NSUInteger selectedIndex;
+@property (nonatomic) NSView * border;
 
 @end
 
@@ -75,32 +76,54 @@
     _sidebar.wantsLayer = YES;
     
     [self addSubview:_sidebar];
+    [_sidebar addConstraintForWidth:80.0];
+//    [_sidebar addConstraint:
+//     [NSLayoutConstraint constraintWithItem:_sidebar
+//                                  attribute:NSLayoutAttributeWidth
+//                                  relatedBy:NSLayoutRelationEqual
+//                                     toItem:nil
+//                                  attribute:NSLayoutAttributeNotAnAttribute
+//                                 multiplier:1
+//                                   constant:80.0]
+//     ];
     
-    [_sidebar addConstraint:
-     [NSLayoutConstraint constraintWithItem:_sidebar
-                                  attribute:NSLayoutAttributeWidth
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:80.0]
+    _border = [NSView viewWithClass:[NSView class]];
+    _border.wantsLayer = YES;
+    _border.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
+    [_border addConstraintForWidth:1.0];
+    [self addSubview:_border];
+    
+    NSDictionary * views = @{@"sidebar": _sidebar, @"border": _border};
+    
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[sidebar][border]"
+                                             options:0
+                                             metrics:nil
+                                               views:views]
      ];
     
-    [self addConstraint:
-     [NSLayoutConstraint constraintWithItem:_sidebar
-                                  attribute:NSLayoutAttributeLeading
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeLeading
-                                 multiplier:1
-                                   constant:0]
-     ];
+//    [self addConstraint:
+//     [NSLayoutConstraint constraintWithItem:_sidebar
+//                                  attribute:NSLayoutAttributeLeading
+//                                  relatedBy:NSLayoutRelationEqual
+//                                     toItem:self
+//                                  attribute:NSLayoutAttributeLeading
+//                                 multiplier:1
+//                                   constant:0]
+//     ];
     
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[sidebar]|"
                                              options:0
                                              metrics:nil
                                                views:@{@"sidebar": _sidebar}]
+     ];
+    
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[border]|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]
      ];
 }
 
@@ -156,7 +179,7 @@
                                                    views:@{@"button": button}]
          ];
         
-        cell.borderMask = (sidebarViewItem.gravity == NSStackViewGravityTop) ? TKOBorderMaskBottom : TKOBorderMaskTop;
+        cell.borderMask = (sidebarViewItem.gravity == NSStackViewGravityTop) ? TKOBorderMaskBottom: TKOBorderMaskTop;
         cell.borderHighlightMask = previous ? TKOBorderMaskBottom|TKOBorderMaskTop : TKOBorderMaskBottom;
         
         previous = button;
@@ -181,7 +204,7 @@
     _contentView.translatesAutoresizingMaskIntoConstraints = NO;
     _contentView = contentView;
     [self addSubview:_contentView];
-    NSDictionary * views = NSDictionaryOfVariableBindings(_contentView, _sidebar);
+    NSDictionary * views = NSDictionaryOfVariableBindings(_contentView, _sidebar, _border);
     
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_contentView]|"
@@ -191,7 +214,7 @@
      ];
     
     [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_sidebar][_contentView]|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_sidebar][_border][_contentView]|"
                                              options:0
                                              metrics:nil
                                                views:views]

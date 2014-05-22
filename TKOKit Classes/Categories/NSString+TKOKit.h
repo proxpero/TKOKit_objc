@@ -17,11 +17,15 @@ NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSS
 
 @interface NSString (TKOKit)
 
+- (BOOL)containsString:(NSString *)substring;
 - (NSString *)stringWithCollapsedWhitespace;
 - (NSString *)stringByTrimmingWhitespace;
 - (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters;
 - (NSString *)stringByStrippingPrefix:(NSString *)prefix
                         caseSensitive:(BOOL)caseSensitive;
+
+- (NSArray*)csvComponents;
+
 //- (NSString *)hexWithColor:(NSColor *)color;
 
 /*0.0f to 1.0f for each.*/

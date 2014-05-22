@@ -56,6 +56,12 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
 @implementation NSString (TKOKit)
 
 
+- (BOOL)containsString:(NSString *)substring
+{
+    return ([self rangeOfString:substring].location != NSNotFound);
+}
+
+
 - (NSString *)stringWithCollapsedWhitespace
 {
 	NSMutableString *dest = [self mutableCopy];
@@ -122,6 +128,29 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
 	}
     
     return [self substringFromIndex:[prefix length]];
+}
+
+- (NSArray*)csvComponents
+{
+    NSMutableArray* components = [NSMutableArray array];
+    NSScanner* scanner = [NSScanner scannerWithString:self];
+    NSString* quote = @"\"";
+    NSString* separator = @",";
+    NSString* result;
+    while(![scanner isAtEnd]) {
+        if([scanner scanString:quote intoString:NULL]) {
+            [scanner scanUpToString:quote intoString:&result];
+            [scanner scanString:quote intoString:NULL];
+        } else {
+            [scanner scanUpToString:separator intoString:&result];
+        }
+        [scanner scanString:separator intoString:NULL];
+        if (result)
+            [components addObject:result];
+        else
+            [components addObject:[NSNull null]];
+    }
+    return components;
 }
 
 - (TKORGBAComponents)rgbaComponents

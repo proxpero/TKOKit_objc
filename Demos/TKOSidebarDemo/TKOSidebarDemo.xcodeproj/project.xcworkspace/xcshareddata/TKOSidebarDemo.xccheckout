@@ -5,14 +5,14 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6D6A80F3-411E-499B-BBB6-AA05CDC93ABC</string>
+	<string>2989C299-ED4E-47BE-BF6E-FF166D43331C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TKOSidebarDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9F893FAA-47BA-4918-B477-360E3B858AB6</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
-		<key>F0249BD6-7D29-4B34-B69B-D50711B07639</key>
+		<key>CFF80D92-F59D-4C1D-A642-165DC0DFC71D</key>
 		<string>https://github.com/proxpero/Keystone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
@@ -21,7 +21,7 @@
 	<dict>
 		<key>9F893FAA-47BA-4918-B477-360E3B858AB6</key>
 		<string>../../../..</string>
-		<key>F0249BD6-7D29-4B34-B69B-D50711B07639</key>
+		<key>CFF80D92-F59D-4C1D-A642-165DC0DFC71D</key>
 		<string>../../../../../Keystone</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -36,7 +36,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F0249BD6-7D29-4B34-B69B-D50711B07639</string>
+			<string>CFF80D92-F59D-4C1D-A642-165DC0DFC71D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Keystone</string>
 		</dict>

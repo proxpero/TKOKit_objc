@@ -15,6 +15,8 @@
 - (void)addSubviewWithFullSizeConstraints:(NSView *)view;
 - (void)addFullSizeConstraintsForSubview:(NSView *)view;
 
+- (void)addConstraintForWidth:(CGFloat)width;
+- (void)addConstraintForHeight:(CGFloat)height;
 - (void)addConstraintsForWidth:(CGFloat)width
                         height:(CGFloat)height;
 

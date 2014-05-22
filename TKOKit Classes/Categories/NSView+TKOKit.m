@@ -40,8 +40,7 @@
     [self addConstraints:constraints];
 }
 
-- (void)addConstraintsForWidth:(CGFloat)width
-                        height:(CGFloat)height
+- (void)addConstraintForWidth:(CGFloat)width
 {
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self
@@ -52,6 +51,10 @@
                                  multiplier:1
                                    constant:width]
      ];
+}
+
+- (void)addConstraintForHeight:(CGFloat)height
+{
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self
                                   attribute:NSLayoutAttributeHeight
@@ -61,6 +64,13 @@
                                  multiplier:1
                                    constant:height]
      ];
+}
+
+- (void)addConstraintsForWidth:(CGFloat)width
+                        height:(CGFloat)height
+{
+    [self addConstraintForWidth:width];
+    [self addConstraintForHeight:height];
 }
 
 + (NSBox *)horizontalSeparator

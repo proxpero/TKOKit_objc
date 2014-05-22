@@ -27,7 +27,7 @@
 	if (self == nil)
 		return nil;
 	
-	NSString *themesFilePath = [[NSBundle mainBundle] pathForResource:@"DB5" ofType:@"plist"];
+	NSString *themesFilePath = [[NSBundle mainBundle] pathForResource:@"TKOThemes" ofType:@"plist"];
 	NSDictionary *themesDictionary = [NSDictionary dictionaryWithContentsOfFile:themesFilePath];
 	
 	NSMutableArray *themes = [NSMutableArray array];
