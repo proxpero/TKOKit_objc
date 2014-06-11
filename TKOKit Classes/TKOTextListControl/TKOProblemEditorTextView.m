@@ -111,79 +111,32 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent
-{
-    // new idea: use the window's nextkey methods to handle selection. set them up when adding components
-    
-    
+{    
     unsigned short left     = 123;
     unsigned short right    = 124;
     unsigned short up       = 126;
     unsigned short down     = 125;
     unsigned short tab      = 48;
     unsigned short enter    = 36;
-    unsigned short delete   = 51;
     
     unsigned short keyCode = theEvent.keyCode;
     NSRange selectedRange = self.selectedRange;
     BOOL isAtFirstPosition = NSEqualRanges(selectedRange, NSMakeRange(0, 0));
     BOOL isAtLastPosition = NSEqualRanges(selectedRange, NSMakeRange(self.string.length, 0));
     
-    BOOL forward = YES;
-    
     if (((keyCode == left) && isAtFirstPosition) ||
-        ((keyCode == up) && isAtFirstPosition)) {
-        
-        forward = [self.flowDelegate componentShouldGoUp:self];
-        
+        ((keyCode == up) && isAtFirstPosition))
+    {
+        [self.window selectKeyViewPrecedingView:self];
     }
     else if (((keyCode == right) && isAtLastPosition) ||
              ((keyCode == down) && isAtLastPosition)  ||
-             (keyCode == tab)                        ||
+             (keyCode == tab)                         ||
              (keyCode == enter))
     {
-        
-        forward = [self.flowDelegate componentShouldGoDown:self];
-        
+        [self.window selectKeyViewFollowingView:self];
     }
-    
-    if (forward) [super keyDown:theEvent];
+    else [super keyDown:theEvent];
 }
 
-//- (void)keyDown:(NSEvent *)theEvent
-//{
-//
-//    NSUInteger keyCode = theEvent.keyCode;
-//    NSRange selectedRange = self.selectedRange;
-//    BOOL isAtFirstPosition = NSEqualRanges(selectedRange, NSMakeRange(0, 0));
-//    BOOL isAtLastPosition = NSEqualRanges(selectedRange, NSMakeRange(self.string.length, 0));
-//
-//    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
-//    
-//    if ((keyCode == 124 && isAtLastPosition) || (keyCode == 125 && isAtLastPosition))
-//    {
-////        [center postNotificationName:TKOTextGoForwardKeyNotification object:self];
-//        id <TKOProblemEditorTextKeyInterceptionDelegate> d = (id <TKOProblemEditorTextKeyInterceptionDelegate>)self.delegate;
-//        [d textViewDidForward:nil];
-//    }
-//    else if ((keyCode == 123 && isAtFirstPosition) || (keyCode == 126 && isAtFirstPosition))
-//        [center postNotificationName:TKOTextGoBackwardKeyNotification object:self];
-//    else if (keyCode == 48)
-//        [center postNotificationName:TKOTextTabKeyNotification object:self];
-//    else if (keyCode == 36)
-//        [center postNotificationName:TKOTextNewlineKeyNotification object:self];
-//    else if (keyCode == 51 && self.string.length == 0)
-//        [center postNotificationName:TKOTextDeleteKeyNotification object:self];
-//    else
-//        [[self nextResponder] keyDown:theEvent];
-//    
-//    // Idea: look into 'interpret key events' or make controller 'text component view' next responder
-//    
-//}
-
 @end
-
-NSString * TKOTextGoForwardKeyNotification = @"TKOTextGoForwardKeyNotification";
-NSString * TKOTextGoBackwardKeyNotification = @"TKOTextGoBackwardKeyNotification";
-NSString * TKOTextNewlineKeyNotification = @"TKOTextNewlineKeyNotification";
-NSString * TKOTextTabKeyNotification = @"TKOTextTabKeyNotification";
-NSString * TKOTextDeleteKeyNotification = @"TKOTextDeleteKeyNotification";

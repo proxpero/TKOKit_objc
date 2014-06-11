@@ -11,11 +11,18 @@
 
 #import "NSView+TKOKit.h"
 
+@interface TKOQuestionEditorView () <NSTextViewDelegate>
+
+@property (nonatomic) TKOProblemEditorTextView * textView;
+@property (nonatomic) NSString * html;
+
+@end
+
 @implementation TKOQuestionEditorView
 
-- (instancetype)initWithFrame:(NSRect)frameRect
+- (instancetype)init
 {
-    self = [super initWithFrame:frameRect];
+    self = [super initWithFrame:NSZeroRect];
     if (!self) return nil;
     
     self.wantsLayer = YES;
@@ -27,7 +34,7 @@
                                                                               size:20.0]
                                                    placeholder:@"Enter Question"
                                                      textInset:NSMakeSize(7, 7)];
-    _textView.flowDelegate = self;
+    _textView.delegate = self;
     [self setSubviews:@[_textView]];
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-13-[_textView]-13-|"
@@ -45,17 +52,19 @@
     return self;
 }
 
-- (BOOL)componentShouldGoUp:(id)componentView
+#pragma mark - Text View Delegate
+
+- (void)textDidChange:(NSNotification *)notification
 {
-    return [self.flowDelegate componentShouldGoUp:self];
+    NSMutableString * html = [NSMutableString new];
+    
+    [html appendFormat:@"<p class='question'>%@</p>", self.textView.string];
+    self.html = html;
 }
 
-- (BOOL)componentShouldGoDown:(id)componentView
-{
-    return [self.flowDelegate componentShouldGoDown:self];
-}
+#pragma mark - Component Delegate
 
-- (NSResponder *)topResponder       { return self.textView; }
-- (NSResponder *)bottomResponder    { return self.textView; }
+- (NSView *)firstKeyView { return self.textView; }
+- (NSView *)lastKeyView  { return self.textView; }
 
 @end

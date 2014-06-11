@@ -12,17 +12,23 @@
 
 #import "NSView+TKOKit.h"
 
-@interface TKOChoicesEditorView ()
-@property (nonatomic) NSMutableArray * items;
+@interface TKOChoicesEditorView () <NSTextViewDelegate>
 
+@property (nonatomic) NSMutableArray * items;
+@property (nonatomic) NSString * html;
 
 @end
 
 @implementation TKOChoicesEditorView
-
-- (instancetype)initWithFrame:(NSRect)frameRect
 {
-    self = [super initWithFrame:frameRect];
+    NSView * firstKeyView;
+    NSView * lastKeyView;
+}
+
+
+- (instancetype)init
+{
+    self = [super initWithFrame:NSZeroRect];
     if (!self) return nil;
     
     self.wantsLayer = YES;
@@ -32,12 +38,14 @@
     self.items = [NSMutableArray new];
     
     NSFont * font = [NSFont fontWithName:@"Baskerville" size:20];
-    TKOListItemMetricsHelper * choiceMetrics = [[TKOListItemMetricsHelper alloc] initWithPlaceholder:@"New Choice Item" font:font widthOffset:7 heightOffset:7 itemIndent:40];
+    TKOListItemMetricsHelper * choiceMetrics = [[TKOListItemMetricsHelper alloc] initWithPlaceholder:@"New Choice Item" font:font widthOffset:7 heightOffset:7 itemIndent:54];
     [self.items addObject:[TKOListItemView itemWithMetrics:choiceMetrics]];
     [self.items addObject:[TKOListItemView itemWithMetrics:choiceMetrics]];
     [self.items addObject:[TKOListItemView itemWithMetrics:choiceMetrics]];
     [self.items addObject:[TKOListItemView itemWithMetrics:choiceMetrics]];
     [self.items addObject:[TKOListItemView itemWithMetrics:choiceMetrics]];
+    
+    firstKeyView = [self.items.firstObject textView];
     
     [self layoutItems];
     
@@ -70,13 +78,12 @@
                                        constant:(prev ? 0 : 13)]
          ];
         
-        if (prev) [prev setNextKeyView:oneItem];
+        oneItem.textView.delegate = self;
+        if (prev) [prev.textView setNextKeyView:oneItem.textView];
         prev = oneItem;
         
         NSString * itemLabel = [NSString stringWithFormat:@"(%c)", 'A' + (char)idx];
-        oneItem.label.stringValue = itemLabel;
-        oneItem.flowDelegate = self; // this should go in elsewhere
-        
+        oneItem.label.stringValue = itemLabel;        
     }];
     
     if (prev)
@@ -90,45 +97,27 @@
                                      multiplier:1
                                        constant:13]
          ];
+        lastKeyView = prev.textView;
     }
 }
 
-- (BOOL)becomeFirstResponder
+
+#pragma mark - Text View Delegate
+
+- (void)textDidChange:(NSNotification *)notification
 {
-    [self.window makeFirstResponder:[self.items.firstObject textView]];
-    return NO;
+    NSMutableString * html = [NSMutableString new];
+    [html appendString:@"<ol class='choices'>\n"];
+    for (TKOListItemView * liv in self.items) {
+        [html appendFormat:@"\t<li>%@</li>\n", liv.textView.string];
+    }
+    [html appendString:@"</ol><!-- choices -->\n"];
+    self.html = html.copy;
 }
 
-- (BOOL)componentShouldGoUp:(id)componentView
-{
-    NSUInteger index = [self.items indexOfObject:componentView];
-    if (index == 0) return [self.flowDelegate componentShouldGoUp:self];
-    
-    TKOListItemView * upItem = self.items[index - 1];
-    [self.window makeFirstResponder:upItem.textView];
-    
-    return NO;
-}
+#pragma mark - Component Delegate
 
-- (BOOL)componentShouldGoDown:(id)componentView
-{
-    NSUInteger index = [self.items indexOfObject:componentView];
-    if (index == self.items.count - 1) return [self.flowDelegate componentShouldGoDown:self];
-    
-    TKOListItemView * nextItem = self.items[index + 1];
-    [self.window makeFirstResponder:nextItem.textView];
-    
-    return NO;
-}
-
-- (NSResponder *)topResponder
-{
-    return self.items.firstObject;
-}
-- (NSResponder *)bottomResponder
-{
-    return self.items.lastObject;
-}
-
+- (NSView *)firstKeyView { return firstKeyView; }
+- (NSView *)lastKeyView  { return lastKeyView; }
 
 @end

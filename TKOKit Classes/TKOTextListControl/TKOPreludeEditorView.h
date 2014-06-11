@@ -7,12 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentFlowDelegate.h"
+#import "TKOComponentView.h"
 
 @class TKOProblemEditorTextView;
 
-@interface TKOPreludeEditorView : NSView
-
-@property (nonatomic) TKOProblemEditorTextView * textView;
+@interface TKOPreludeEditorView : NSView <TKOComponentView>
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOComponentView.h"
 
-@interface TKORomanEditorView : NSView
+@interface TKORomanEditorView : NSView <TKOComponentView>
 
 
 

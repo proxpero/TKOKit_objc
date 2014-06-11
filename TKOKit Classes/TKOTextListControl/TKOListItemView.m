@@ -10,6 +10,10 @@
 #import "TKOProblemEditorTextView.h"
 #import "NSView+TKOKit.h"
 
+@interface TKOListItemView ()
+
+@end
+
 @implementation TKOListItemView
 
 + (instancetype)itemWithMetrics:(TKOListItemMetricsHelper *)metrics
@@ -45,7 +49,6 @@
     item.textView = [[TKOProblemEditorTextView alloc] initWithFont:font
                                                        placeholder:placeholder
                                                          textInset:NSMakeSize(widthOffset, heightOffset)];
-    item.textView.flowDelegate = item;
     
     [item.label addConstraintsForWidth:itemIndent
                             height:(item.textView.singleLineHeight + heightOffset + heightOffset)];
@@ -81,22 +84,6 @@
     return item;
 }
 
-- (BOOL)becomeFirstResponder
-{
-    [self.window makeFirstResponder:self.textView];
-    return NO;
-}
-
-- (BOOL)componentShouldGoUp:(id)componentView
-{
-    return [self.flowDelegate componentShouldGoUp:self];
-}
-
-- (BOOL)componentShouldGoDown:(id)componentView
-{
-    return [self.flowDelegate componentShouldGoDown:self];
-}
-
 @end
 
 @implementation TKOListItemMetricsHelper
@@ -110,11 +97,11 @@
     self = [super init];
     if (!self) return nil;
     
-    _placeholder = placeholder;
-    _font = font;
-    _widthOffset = widthOffset;
-    _heightOffset = heightOffset;
-    _itemIndent = itemIndent;
+    _placeholder    = placeholder;
+    _font           = font;
+    _widthOffset    = widthOffset;
+    _heightOffset   = heightOffset;
+    _itemIndent     = itemIndent;
     
     return self;
 }

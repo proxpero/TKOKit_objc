@@ -7,14 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentFlowDelegate.h"
 
 @class TKOProblemEditorTextView;
 @class TKOListItemMetricsHelper;
 
-@interface TKOListItemView : NSView <TKOComponentFlowDelegate>
-
-@property (nonatomic, weak) id <TKOComponentFlowDelegate> flowDelegate;
+@interface TKOListItemView : NSView
 
 @property (nonatomic) NSTextField * label;
 @property (nonatomic) TKOProblemEditorTextView * textView;

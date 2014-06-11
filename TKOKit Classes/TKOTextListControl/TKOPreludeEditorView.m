@@ -11,11 +11,18 @@
 
 #import "NSView+TKOKit.h"
 
+@interface TKOPreludeEditorView () <NSTextViewDelegate>
+
+@property (nonatomic) TKOProblemEditorTextView * textView;
+@property (nonatomic) NSString * html;
+
+@end
+
 @implementation TKOPreludeEditorView
 
-- (instancetype)initWithFrame:(NSRect)frameRect
+- (instancetype)init
 {
-    self = [super initWithFrame:frameRect];
+    self = [super initWithFrame:NSZeroRect];
     if (!self) return nil;
     
     self.wantsLayer = YES;
@@ -27,6 +34,7 @@
                                                                                size:20.0]
                                                    placeholder:@"Enter Prelude"
                                                      textInset:NSMakeSize(7, 7)];
+    _textView.delegate = self;
     [self setSubviews:@[_textView]];
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-13-[_textView]-13-|"
@@ -43,5 +51,20 @@
     
     return self;
 }
+
+#pragma mark - Text View Delegate
+
+- (void)textDidChange:(NSNotification *)notification
+{
+    NSMutableString * html = [NSMutableString new];
+    
+    [html appendFormat:@"<p class='prelude'>%@</p>", self.textView.string];
+    self.html = html;
+}
+
+#pragma mark - Component Delegate
+
+- (NSView *)firstKeyView { return self.textView; }
+- (NSView *)lastKeyView  { return self.textView; }
 
 @end

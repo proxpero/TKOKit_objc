@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentFlowDelegate.h"
 
-@interface TKOProblemComponentsEditorView : NSStackView <TKOComponentFlowDelegate>
+@interface TKOProblemComponentsEditorView : NSView
+
+- (NSView *)initialResponder;
 
 @end

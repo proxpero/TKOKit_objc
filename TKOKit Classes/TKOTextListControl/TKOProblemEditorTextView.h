@@ -7,21 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentFlowDelegate.h"
 
 @class TKOProblemEditorTextView;
-
-extern NSString * TKOTextGoForwardKeyNotification;
-extern NSString * TKOTextGoBackwardKeyNotification;
-extern NSString * TKOTextNewlineKeyNotification;
-extern NSString * TKOTextTabKeyNotification;
-extern NSString * TKOTextDeleteKeyNotification;
 
 @interface TKOProblemEditorTextView : NSTextView
 
 @property (nonatomic) NSSize textInset;
 @property (nonatomic) CGFloat singleLineHeight;
-@property (nonatomic) id <TKOComponentFlowDelegate> flowDelegate;
 
 - (instancetype)initWithFont:(NSFont *)font
                  placeholder:(NSString *)placeholder

@@ -7,10 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentFlowDelegate.h"
+#import "TKOComponentView.h"
 
-@interface TKOChoicesEditorView : NSView <TKOComponentFlowDelegate>
+@interface TKOChoicesEditorView : NSView <TKOComponentView>
 
-@property (nonatomic, weak) id <TKOComponentFlowDelegate> flowDelegate;
 
 @end
