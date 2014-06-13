@@ -7,17 +7,18 @@
 //
 
 #import "TKOProblemComponentsEditorView.h"
+#import "TKOComponentsHeaderView.h"
 #import "TKOProblemEditorTextView.h"
+#import "TKOComponentEditorView.h"
 
 #import "NSView+TKOKit.h"
 #import "TKOFlippedClipView.h"
-#import "TKOComponentView.h"
+#import "TKOComponentView.h" // protocol
+
 #import "TKOPreludeEditorView.h"
 #import "TKOQuestionEditorView.h"
 #import "TKORomanEditorView.h"
 #import "TKOChoicesEditorView.h"
-
-static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
 
 @interface TKOProblemComponentsEditorView () <NSTextViewDelegate>
 
@@ -40,19 +41,8 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
     if (!self) return nil;
     self.translatesAutoresizingMaskIntoConstraints = NO;
 
-    NSView * header = [NSView viewWithClass:[NSView class]];
-    [header addConstraint:
-     [NSLayoutConstraint constraintWithItem:header
-                                  attribute:NSLayoutAttributeHeight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:28]
-     ];
-    header.wantsLayer = YES;
-    header.layer.backgroundColor = [[NSColor blueColor] CGColor];
-    
+    TKOComponentsHeaderView * header = [[TKOComponentsHeaderView alloc] init];
+
     TKOFlippedClipView * clipView = [[TKOFlippedClipView alloc] init];
     clipView.backgroundColor = [NSColor darkGrayColor];
     
@@ -83,8 +73,6 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
                                                views:NSDictionaryOfVariableBindings(header, _scrollView)]
      ];
     
-//    [self addSubviewWithFullSizeConstraints:_scrollView];
-    
     _stackView = [[NSStackView alloc] initWithFrame:NSZeroRect];
     _stackView.translatesAutoresizingMaskIntoConstraints = NO;
     _stackView.orientation = NSUserInterfaceLayoutOrientationVertical;
@@ -95,18 +83,11 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
 
     _scrollView.documentView = _stackView;
     
-    TKOPreludeEditorView  * prelude  = [[TKOPreludeEditorView alloc] init];
-    [prelude addObserver:self forKeyPath:@"html" options:0 context:TKOPrivateKVOContext];
-    
-    TKOQuestionEditorView * question = [[TKOQuestionEditorView alloc] init];
-    [prelude addObserver:self forKeyPath:@"html" options:0 context:TKOPrivateKVOContext];
+    TKOPreludeEditorView   * prelude  = [[TKOPreludeEditorView alloc] init];
+    TKOQuestionEditorView  * question = [[TKOQuestionEditorView alloc] init];
+    TKORomanEditorView     * roman    = [[TKORomanEditorView alloc] initWithCount:3];
+    TKOChoicesEditorView   * choices  = [[TKOChoicesEditorView alloc] initWithCount:5];
 
-    TKORomanEditorView    * roman    = [[TKORomanEditorView alloc] init];
-    [roman addObserver:self forKeyPath:@"html" options:0 context:TKOPrivateKVOContext];
-    
-    TKOChoicesEditorView  * choices  = [[TKOChoicesEditorView alloc] init];
-    [choices addObserver:self forKeyPath:@"html" options:0 context:TKOPrivateKVOContext];
-    
     [self setComponents:@[prelude, question, roman, choices]];
     
     _scrollView.documentView = _stackView;
@@ -116,9 +97,7 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
                                              metrics:nil
                                                views:NSDictionaryOfVariableBindings(_stackView)]
      ];
-    
-    
-    
+
     return self;
 }
 
@@ -127,17 +106,6 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
     for (NSView * component in components)
     {
         [self addComponent:component];
-    }
-    [self resetKeyViewFlow];
-}
-
-- (void)resetKeyViewFlow
-{
-    id <TKOComponentView> prev = nil;
-    for (id <TKOComponentView> component in self.stackView.views)
-    {
-        [[prev lastKeyView] setNextKeyView:[component firstKeyView]];
-        prev = component;
     }
 }
 
@@ -150,43 +118,58 @@ static void * TKOPrivateKVOContext = &TKOPrivateKVOContext;
                                              metrics:nil
                                                views:NSDictionaryOfVariableBindings(component)]
      ];
+    [self resetKeyViewFlow];
+}
+
+- (void)insertComponent:(NSView *)component atIndex:(NSUInteger)index
+{
+    [self.stackView insertView:component atIndex:index inGravity:NSStackViewGravityTop];
+    [self.stackView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[component]|"
+                                             options:0
+                                             metrics:nil
+                                               views:NSDictionaryOfVariableBindings(component)]
+     ];
+    [self resetKeyViewFlow];
 }
 
 - (void)removeComponent:(NSView *)component
 {
     [self.stackView removeView:component];
+    [self resetKeyViewFlow];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (context != TKOPrivateKVOContext)
-    {
-        [super observeValueForKeyPath:keyPath
-                             ofObject:object
-                               change:change
-                              context:context];
-        return;
-    }
-    
-    [self updateHtml];
-}
-
-- (void)updateHtml
+- (void)componentDidUpdateHtmlNotification:(NSNotification *)notification
 {
     NSMutableString * html = [NSMutableString new];
     [html appendString:@"<div class='problem'>\n"];
     for (id <TKOComponentView> item in self.stackView.views)
     {
-        [html appendFormat:@"%@\n", [item html]];
+        NSString * s = [item html];
+        if (s && s.length > 0) [html appendFormat:@"%@\n", s];
     }
     [html appendString:@"</div> <!--problem-->\n"];
-    NSLog(@"%@", html);
+    self.html = html.copy;
 }
 
+- (void)resetKeyViewFlow
+{
+    id <TKOComponentView> prev = nil;
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self];
+    
+    for (id <TKOComponentView> component in self.stackView.views)
+    {
+        [center addObserver:self
+                   selector:@selector(componentDidUpdateHtmlNotification:)
+                       name:TKOComponentDidUpdateHtmlNotification
+                     object:nil];
+        [[prev lastKeyView] setNextKeyView:[component firstKeyView]];
+        prev = component;
+    }
+}
 
 @end
 
+NSString * const TKOComponentDidUpdateHtmlNotification = @"TKOComponentDidUpdateHtmlNotification";
 

@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentView.h"
+#import "TKOComponentEditorListView.h"
 
-@interface TKORomanEditorView : NSView <TKOComponentView>
+@interface TKORomanEditorView : TKOComponentEditorListView
 
-
+- (instancetype)initWithCount:(NSUInteger)count;
 
 @end

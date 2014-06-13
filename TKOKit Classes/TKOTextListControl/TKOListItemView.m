@@ -16,20 +16,9 @@
 
 @implementation TKOListItemView
 
-+ (instancetype)itemWithMetrics:(TKOListItemMetricsHelper *)metrics
-{
-    return [self itemWithPlaceholder:metrics.placeholder
-                                font:metrics.font
-                         widthOffset:metrics.widthOffset
-                        heightOffset:metrics.heightOffset
-                          itemIndent:metrics.itemIndent];
-}
-
 + (instancetype)itemWithPlaceholder:(NSString *)placeholder
                                font:(NSFont *)font
-                 widthOffset:(CGFloat)widthOffset
-                heightOffset:(CGFloat)heightOffset
-                  itemIndent:(CGFloat)itemIndent
+                         itemIndent:(CGFloat)itemIndent
 {
     TKOListItemView * item = [[self alloc] initWithFrame:NSZeroRect];
     if (!item) return nil;
@@ -37,26 +26,25 @@
     
     NSTextField * label = [[NSTextField alloc] initWithFrame:NSZeroRect];
     label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.editable = NO;
-    label.selectable = NO;
-    label.font = font;
-    label.alignment = NSRightTextAlignment;
-    label.bordered = NO;
-    label.textColor = [NSColor darkGrayColor];
     
-    item.label = label;
+    label.editable      = NO;
+    label.selectable    = NO;
+    label.font          = font;
+    label.alignment     = NSRightTextAlignment;
+    label.bordered      = NO;
+    label.textColor     = [NSColor darkGrayColor];
+    item.label          = label;
     
-    item.textView = [[TKOProblemEditorTextView alloc] initWithFont:font
-                                                       placeholder:placeholder
-                                                         textInset:NSMakeSize(widthOffset, heightOffset)];
+    item.textView       = [[TKOProblemEditorTextView alloc] initWithPlaceholder:placeholder];
+    
+    CGFloat singleLineHeight = ceilf(font.ascender + fabsf(font.descender));
+    NSSize inset             = item.textView.textContainerInset;
     
     [item.label addConstraintsForWidth:itemIndent
-                            height:(item.textView.singleLineHeight + heightOffset + heightOffset)];
+                                height:(singleLineHeight + inset.height + inset.height)];
     
     [item setSubviews:@[item.label, item.textView]];
-    
     NSDictionary * views = @{@"textView": item.textView, @"label": item.label};
-    
     [item addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[label][textView]-13-|"
                                              options:0
@@ -82,28 +70,6 @@
      ];
     
     return item;
-}
-
-@end
-
-@implementation TKOListItemMetricsHelper
-
-- (instancetype)initWithPlaceholder:(NSString *)placeholder
-                               font:(NSFont *)font
-                        widthOffset:(CGFloat)widthOffset
-                       heightOffset:(CGFloat)heightOffset
-                         itemIndent:(CGFloat)itemIndent
-{
-    self = [super init];
-    if (!self) return nil;
-    
-    _placeholder    = placeholder;
-    _font           = font;
-    _widthOffset    = widthOffset;
-    _heightOffset   = heightOffset;
-    _itemIndent     = itemIndent;
-    
-    return self;
 }
 
 @end

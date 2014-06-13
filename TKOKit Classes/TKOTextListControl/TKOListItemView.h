@@ -16,22 +16,24 @@
 @property (nonatomic) NSTextField * label;
 @property (nonatomic) TKOProblemEditorTextView * textView;
 
-+ (instancetype)itemWithMetrics:(TKOListItemMetricsHelper *)metrics;
-
-@end
-
-@interface TKOListItemMetricsHelper : NSObject
-
-@property (nonatomic) NSString * placeholder;
-@property (nonatomic) NSFont * font;
-@property (nonatomic) CGFloat widthOffset;
-@property (nonatomic) CGFloat heightOffset;
-@property (nonatomic) CGFloat itemIndent;
-
-- (instancetype)initWithPlaceholder:(NSString *)placeholder
++ (instancetype)itemWithPlaceholder:(NSString *)placeholder
                                font:(NSFont *)font
-                        widthOffset:(CGFloat)widthOffset
-                       heightOffset:(CGFloat)heightOffset
                          itemIndent:(CGFloat)itemIndent;
 
 @end
+
+//@interface TKOListItemMetricsHelper : NSObject
+//
+//@property (nonatomic) NSString * placeholder;
+//@property (nonatomic) NSFont * font;
+//@property (nonatomic) CGFloat widthOffset;
+//@property (nonatomic) CGFloat heightOffset;
+//@property (nonatomic) CGFloat itemIndent;
+//
+//- (instancetype)initWithPlaceholder:(NSString *)placeholder
+//                               font:(NSFont *)font
+//                        widthOffset:(CGFloat)widthOffset
+//                       heightOffset:(CGFloat)heightOffset
+//                         itemIndent:(CGFloat)itemIndent;
+//
+//@end

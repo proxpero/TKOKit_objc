@@ -7,10 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TKOComponentView.h"
+#import "TKOComponentEditorView.h"
 
-@class TKOProblemEditorTextView;
-
-@interface TKOQuestionEditorView : NSView <TKOComponentView>
-
+@interface TKOQuestionEditorView : TKOComponentEditorView
 @end

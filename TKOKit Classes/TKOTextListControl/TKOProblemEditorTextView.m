@@ -11,33 +11,55 @@
 #import "TKOProblemComponentsEditorView.h"
 #import "NSColor+TKOKit.h"
 
+#import "TKOThemeLoader.h"
+#import "TKOTheme.h"
+
+static TKOTheme * theme = nil;
+
 @interface TKOProblemEditorTextView ()
 
 @property (nonatomic) NSAttributedString * placeholder;
 @property (strong) NSLayoutConstraint * heightConstraint;
-@property (nonatomic) CGFloat heightInset;
+@property (nonatomic) CGFloat minHeight;
+@property (nonatomic) CGFloat doubleInset;
 
 @end
 
 @implementation TKOProblemEditorTextView
 
-- (instancetype)initWithFont:(NSFont *)font
-                 placeholder:(NSString *)placeholder
-                   textInset:(NSSize)textInset
+- (instancetype)init
+{
+    return [self initWithPlaceholder:@""];
+}
+
+- (instancetype)initWithPlaceholder:(NSString *)placeholder
 {
     self = [super initWithFrame:NSZeroRect];
     if (!self) return nil;
     
-    self.font = font ? font : [NSFont systemFontOfSize:[NSFont systemFontSize]];
-    [self setTypingAttributes:@{NSForegroundColorAttributeName: [NSColor colorWithHexString:@"2e393e"],
+    if (!theme)
+    {
+        TKOThemeLoader * themeLoader = [[TKOThemeLoader alloc] init];
+        theme = [themeLoader defaultTheme];
+    }
+    
+    NSFont  * font      = [theme fontForKey:@"TKOProblemEditorFont"];
+    NSSize    textInset = [theme sizeForKey:@"TKOProblemEditorTextInset"];
+    NSColor * textColor = [theme colorForKey:@"TKOProblemEditorTextColor"];
+    
+    self.font = font;
+    CGFloat singleLineHeight = ceilf(font.ascender + fabsf(font.descender));
+    CGFloat heightInset      = NSEqualSizes(textInset, NSZeroSize) ? singleLineHeight : textInset.height;
+    _minHeight               = singleLineHeight + heightInset + heightInset;
+    _doubleInset             = heightInset + heightInset;
+    
+    [self setTypingAttributes:@{NSForegroundColorAttributeName: textColor,
                                 NSFontAttributeName: self.font}];
-    _singleLineHeight = ceilf(font.ascender + (font.descender * -1));
-    _heightInset = NSEqualSizes(textInset, NSZeroSize) ? _singleLineHeight : textInset.height;
-
+    
     if (!placeholder) placeholder = @""; // Make sure 'placeholder' (plaintext) is not-nil
     
     _placeholder = [[NSAttributedString alloc] initWithString:placeholder
-                                                   attributes:@{NSForegroundColorAttributeName: [NSColor grayColor],
+                                                   attributes:@{NSForegroundColorAttributeName: [NSColor lightGrayColor],
                                                                 NSFontAttributeName: font}];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.allowsUndo = YES;
@@ -49,24 +71,10 @@
                                                         toItem:nil
                                                      attribute:NSLayoutAttributeNotAnAttribute
                                                     multiplier:1
-                                                      constant:_singleLineHeight + _heightInset + _heightInset];
+                                                      constant:_minHeight];
     [self addConstraint:_heightConstraint];
     
     return self;
-}
-
-- (void)setTextContainerInset:(NSSize)inset
-{
-    [super setTextContainerInset:inset];
-    _heightInset = inset.height;
-    [self resizeTextView];
-}
-
-- (void)setFont:(NSFont *)font
-{
-    [super setFont:font];
-    _singleLineHeight = ceilf(font.ascender + (font.descender * -1));
-    [self resizeTextView];
 }
 
 - (BOOL)becomeFirstResponder
@@ -85,8 +93,14 @@
 {
     [super drawRect:dirtyRect];
     
+    static CGFloat margin = 0.0;
+    if (margin == 0.0)
+    {
+        margin = [theme floatForKey:@"TKOProblemEditorFontSize"] - [theme floatForKey:@"TKOProblemEditorTextInsetWidth"];
+    }
+    
     if ([[self string] isEqualToString:@""] && self != [[self window] firstResponder])
-        [self.placeholder drawAtPoint:NSMakePoint(13 - 1, 1)]; // 13 is leading constraint constant
+        [self.placeholder drawAtPoint:NSMakePoint(margin - 1, 1)];
 }
 
 - (void)didChangeText
@@ -103,10 +117,9 @@
 
 - (void)resizeTextView
 {
-    CGFloat minHeight = _singleLineHeight + _heightInset + _heightInset;
-    CGFloat height = [self.attributedString heightForWidth:self.bounds.size.width - (_heightInset + _heightInset)];
-    height = height + _heightInset + _heightInset; // Why add then subtract??
-    if (height < minHeight) height = minHeight;
+    CGFloat height = [self.attributedString heightForWidth:self.bounds.size.width - _doubleInset]; // text width without padding
+    height += _doubleInset; // vertical padding
+    if (height < _minHeight) height = _minHeight;
     self.heightConstraint.constant = height;
 }
 

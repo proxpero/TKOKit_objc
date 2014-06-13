@@ -10,6 +10,7 @@
 
 @interface TKOProblemComponentsEditorView : NSView
 
+@property (nonatomic) NSString * html;
 - (NSView *)initialResponder;
 
 @end

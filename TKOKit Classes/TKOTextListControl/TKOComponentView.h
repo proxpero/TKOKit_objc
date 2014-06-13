@@ -15,3 +15,5 @@
 - (NSString *)html;
 
 @end
+
+extern NSString * const TKOComponentDidUpdateHtmlNotification;

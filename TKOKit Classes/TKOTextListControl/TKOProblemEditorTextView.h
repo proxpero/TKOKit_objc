@@ -12,11 +12,6 @@
 
 @interface TKOProblemEditorTextView : NSTextView
 
-@property (nonatomic) NSSize textInset;
-@property (nonatomic) CGFloat singleLineHeight;
-
-- (instancetype)initWithFont:(NSFont *)font
-                 placeholder:(NSString *)placeholder
-                   textInset:(NSSize)textInset;
+- (instancetype)initWithPlaceholder:(NSString *)placeholder;
 
 @end

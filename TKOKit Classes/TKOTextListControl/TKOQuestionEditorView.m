@@ -7,64 +7,17 @@
 //
 
 #import "TKOQuestionEditorView.h"
-#import "TKOProblemEditorTextView.h"
-
-#import "NSView+TKOKit.h"
-
-@interface TKOQuestionEditorView () <NSTextViewDelegate>
-
-@property (nonatomic) TKOProblemEditorTextView * textView;
-@property (nonatomic) NSString * html;
-
-@end
 
 @implementation TKOQuestionEditorView
 
 - (instancetype)init
 {
-    self = [super initWithFrame:NSZeroRect];
-    if (!self) return nil;
-    
-    self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor whiteColor] CGColor];
-    
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    _textView = [[TKOProblemEditorTextView alloc] initWithFont:[NSFont fontWithName:@"Baskerville"
-                                                                              size:20.0]
-                                                   placeholder:@"Enter Question"
-                                                     textInset:NSMakeSize(7, 7)];
-    _textView.delegate = self;
-    [self setSubviews:@[_textView]];
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-13-[_textView]-13-|"
-                                             options:0
-                                             metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_textView)]
-     ];
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[_textView]-13-|"
-                                             options:0
-                                             metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_textView)]
-     ];
-    
-    return self;
+    return [super initWithPlaceholder:@"Enter Question"];
 }
 
-#pragma mark - Text View Delegate
-
-- (void)textDidChange:(NSNotification *)notification
+- (void)updateHtmlWithString:(NSString *)string
 {
-    NSMutableString * html = [NSMutableString new];
-    
-    [html appendFormat:@"<p class='question'>%@</p>", self.textView.string];
-    self.html = html;
+    self.html = [NSString stringWithFormat:@"<p class='question'>%@</p>", string];
 }
-
-#pragma mark - Component Delegate
-
-- (NSView *)firstKeyView { return self.textView; }
-- (NSView *)lastKeyView  { return self.textView; }
 
 @end

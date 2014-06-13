@@ -7,64 +7,17 @@
 //
 
 #import "TKOPreludeEditorView.h"
-#import "TKOProblemEditorTextView.h"
-
-#import "NSView+TKOKit.h"
-
-@interface TKOPreludeEditorView () <NSTextViewDelegate>
-
-@property (nonatomic) TKOProblemEditorTextView * textView;
-@property (nonatomic) NSString * html;
-
-@end
 
 @implementation TKOPreludeEditorView
 
 - (instancetype)init
 {
-    self = [super initWithFrame:NSZeroRect];
-    if (!self) return nil;
-    
-    self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor whiteColor] CGColor];
-    
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    _textView = [[TKOProblemEditorTextView alloc] initWithFont:[NSFont fontWithName:@"Baskerville"
-                                                                               size:20.0]
-                                                   placeholder:@"Enter Prelude"
-                                                     textInset:NSMakeSize(7, 7)];
-    _textView.delegate = self;
-    [self setSubviews:@[_textView]];
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-13-[_textView]-13-|"
-                                             options:0
-                                             metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_textView)]
-     ];
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[_textView]-13-|"
-                                             options:0
-                                             metrics:nil
-                                               views:NSDictionaryOfVariableBindings(_textView)]
-     ];
-    
-    return self;
+    return [super initWithPlaceholder:@"Enter Prelude"];
 }
 
-#pragma mark - Text View Delegate
-
-- (void)textDidChange:(NSNotification *)notification
+- (void)updateHtmlWithString:(NSString *)string
 {
-    NSMutableString * html = [NSMutableString new];
-    
-    [html appendFormat:@"<p class='prelude'>%@</p>", self.textView.string];
-    self.html = html;
+    self.html = [NSString stringWithFormat:@"<p class='prelude'>%@</p>", string];
 }
-
-#pragma mark - Component Delegate
-
-- (NSView *)firstKeyView { return self.textView; }
-- (NSView *)lastKeyView  { return self.textView; }
 
 @end
