@@ -1,5 +1,5 @@
 //
-//  TKOComponentsHeaderView.h
+//  TKOProblemEditorHeaderView.h
 //  ProblemEditor
 //
 //  Created by Todd Olsen on 6/13/14.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TKOComponentsHeaderView : NSView
+@interface TKOProblemEditorHeaderView : NSView
 
 @property (nonatomic) NSArray * components;
 

@@ -1,22 +1,22 @@
 //
-//  TKOComponentsHeaderView.m
+//  TKOProblemEditorHeaderView.m
 //  ProblemEditor
 //
 //  Created by Todd Olsen on 6/13/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
-#import "TKOComponentsHeaderView.h"
+#import "TKOProblemEditorHeaderView.h"
 #import "NSView+TKOKit.h"
 
-@interface TKOComponentsHeaderView ()
+@interface TKOProblemEditorHeaderView ()
 
 @property (nonatomic) NSStackView * header;
 @property (nonatomic) NSMutableArray * items;
 
 @end
 
-@implementation TKOComponentsHeaderView
+@implementation TKOProblemEditorHeaderView
 
 - (id)init
 {

@@ -7,7 +7,7 @@
 //
 
 #import "TKOProblemComponentsEditorView.h"
-#import "TKOComponentsHeaderView.h"
+#import "TKOProblemEditorHeaderView.h"
 #import "TKOProblemEditorTextView.h"
 #import "TKOComponentEditorView.h"
 
@@ -41,7 +41,7 @@
     if (!self) return nil;
     self.translatesAutoresizingMaskIntoConstraints = NO;
 
-    TKOComponentsHeaderView * header = [[TKOComponentsHeaderView alloc] init];
+    TKOProblemEditorHeaderView * header = [[TKOProblemEditorHeaderView alloc] init];
 
     TKOFlippedClipView * clipView = [[TKOFlippedClipView alloc] init];
     clipView.backgroundColor = [NSColor darkGrayColor];
