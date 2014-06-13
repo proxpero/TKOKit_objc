@@ -12,7 +12,7 @@
 @interface TKOComponentEditorListView : NSView <TKOComponentView>
 
 @property (nonatomic) NSString * html;
-@property (nonatomic) NSArray * bullets;
+@property (nonatomic) NSArray  * bullets;
 @property (nonatomic) NSString * formatMarker;
 
 - (instancetype)initWithPlaceholder:(NSString *)placeholder
@@ -20,5 +20,17 @@
                        markerFormat:(NSString *)markerFormat
                        markerIndent:(CGFloat)markerIndent;
 - (void)layoutItems;
+
+@end
+
+@class TKOProblemEditorTextView;
+@interface TKOListItemView : NSView
+
+@property (nonatomic) NSTextField * label;
+@property (nonatomic) TKOProblemEditorTextView * textView;
+
++ (instancetype)itemWithPlaceholder:(NSString *)placeholder
+                               font:(NSFont *)font
+                         itemIndent:(CGFloat)itemIndent;
 
 @end
