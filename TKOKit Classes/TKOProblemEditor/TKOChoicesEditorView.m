@@ -27,7 +27,10 @@
 
 - (void)updateHtmlWithString:(NSString *)string
 {
-    self.html = [NSString stringWithFormat:@"<ol class='choices'>\n%@</ol><!-- choices -->\n", string];
+    if (string.length > 0)
+        self.html = [NSString stringWithFormat:@"<ol class='choices'>\n%@</ol><!-- choices -->\n", string];
+    else
+        self.html = @"";
 }
 
 @end

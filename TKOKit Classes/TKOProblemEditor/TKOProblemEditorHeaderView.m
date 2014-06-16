@@ -9,10 +9,14 @@
 #import "TKOProblemEditorHeaderView.h"
 #import "NSView+TKOKit.h"
 
+#import "TKOProblemEditorPreviewWindowController.h"
+
 @interface TKOProblemEditorHeaderView ()
 
 @property (nonatomic) NSStackView * header;
 @property (nonatomic) NSMutableArray * items;
+
+@property (nonatomic) TKOProblemEditorPreviewWindowController * previewController;
 
 @end
 
@@ -52,6 +56,10 @@
          ];
     }
     
+    if (!self.previewController) {
+        self.previewController = [[TKOProblemEditorPreviewWindowController alloc] init];
+    }
+    
     self.items = [NSMutableArray arrayWithArray:@[[NSImage imageNamed:NSImageNameAddTemplate]]];
     [self layoutButtons];
     
@@ -60,28 +68,19 @@
 
 - (void)layoutButtons
 {
+    NSButton * button;
+    
     // Leading
-    [self.header addView:[self buttonForImage:[NSImage imageNamed:NSImageNameActionTemplate]]
-               inGravity:NSStackViewGravityLeading];
-    [self.header addView:[self buttonForImage:[NSImage imageNamed:NSImageNameQuickLookTemplate]]
-               inGravity:NSStackViewGravityLeading];
     
     // Center
     
-    for (NSImage * image in self.items)
-    {
-        NSButton * button = [self buttonForImage:image];
-        [self.header addView:button inGravity:NSStackViewGravityCenter];
-    }
-
     // Trailing
-    [self.header addView:[self buttonForImage:[NSImage imageNamed:@"TKOTagsTemplate"]]
-               inGravity:NSStackViewGravityTrailing];
-    [self.header addView:[self buttonForImage:[NSImage imageNamed:@"TKOStandardsTemplate"]]
-               inGravity:NSStackViewGravityTrailing];
     
-
-
+    button = [self buttonForImage:[NSImage imageNamed:NSImageNameQuickLookTemplate]];
+    button.target = self;
+    button.action = @selector(showPreviewAction:);
+    
+    [self.header addView:button inGravity:NSStackViewGravityTrailing];
 }
 
 - (NSButton *)buttonForImage:(NSImage *)image
@@ -92,6 +91,25 @@
     button.imagePosition = NSImageOnly;
     [button addConstraintsForWidth:32 height:28];
     return button;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"html"])
+    {
+        NSString * html = [object valueForKey:@"html"];
+        [self.previewController setHtml:html];
+    }
+}
+
+# pragma mark - Button Actions
+
+- (void)showPreviewAction:(id)sender
+{
+    [self.previewController showWindow:nil];
 }
 
 # pragma mark - Components Data Source

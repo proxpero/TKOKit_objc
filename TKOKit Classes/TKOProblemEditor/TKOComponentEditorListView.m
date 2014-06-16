@@ -119,7 +119,8 @@
 {
     NSMutableString * html = [NSMutableString new];
     for (TKOListItemView * liv in self.items) {
-        [html appendFormat:@"\t<li>%@</li>\n", liv.textView.string];
+        if (liv.textView.string.length > 0)
+            [html appendFormat:@"\t<li>%@</li>\n", liv.textView.string];
     }
     [self updateHtmlWithString:html.copy];
     [[NSNotificationCenter defaultCenter] postNotificationName:TKOComponentDidUpdateHtmlNotification object:self];

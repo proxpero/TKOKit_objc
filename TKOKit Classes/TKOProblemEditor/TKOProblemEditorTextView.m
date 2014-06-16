@@ -1,5 +1,5 @@
 //
-//  TKOProblemEditorTextView.m
+//  TKOProblemEditorComponentsView.m
 //  ProblemEditor
 //
 //  Created by Todd Olsen on 6/6/14.
@@ -8,7 +8,7 @@
 
 #import "TKOProblemEditorTextView.h"
 #import "NSString+Geometrics.h"
-#import "TKOProblemComponentsEditorView.h"
+#import "TKOProblemEditorComponentsView.h"
 #import "NSColor+TKOKit.h"
 
 #import "TKOThemeLoader.h"

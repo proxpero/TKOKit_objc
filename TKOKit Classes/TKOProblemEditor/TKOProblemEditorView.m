@@ -1,6 +1,6 @@
 //
 //  TKOProblemEditorView.m
-//  TKOProblemEditorDemo
+//  Keystone
 //
 //  Created by Todd Olsen on 6/13/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
@@ -8,12 +8,20 @@
 
 #import "TKOProblemEditorView.h"
 #import "TKOProblemEditorHeaderView.h"
-#import "TKOProblemComponentsEditorView.h"
+#import "TKOProblemEditorComponentsView.h"
+
+#import "NSView+TKOKit.h"
+#import "TKOFlippedClipView.h"
+
+#import "TKOPreludeEditorView.h"
+#import "TKOQuestionEditorView.h"
+#import "TKORomanEditorView.h"
+#import "TKOChoicesEditorView.h"
 
 @interface TKOProblemEditorView ()
 
 @property (nonatomic) TKOProblemEditorHeaderView * header;
-@property (nonatomic) TKOProblemComponentsEditorView * editor;
+@property (nonatomic) TKOProblemEditorComponentsView * components;
 
 @end
 
@@ -27,7 +35,57 @@
     
     _header = [[TKOProblemEditorHeaderView alloc] init];
     
+    NSScrollView * scrollView = [NSView viewWithClass:[NSScrollView class]];
+    TKOFlippedClipView * clipView = [TKOFlippedClipView new];
+    clipView.backgroundColor = [NSColor darkGrayColor];
+    scrollView.contentView = clipView;
     
+    scrollView.borderType              = NSNoBorder;
+    scrollView.hasHorizontalScroller   = NO;
+    scrollView.hasVerticalScroller     = YES;
+    scrollView.autohidesScrollers      = YES;
+    scrollView.contentView             = clipView;
+    
+    [self setSubviews:@[_header, scrollView]];
+    
+    for (NSView * view in self.subviews)
+    {
+        [self addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(view)]
+         ];
+
+    }
+
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_header][scrollView]|"
+                                             options:0
+                                             metrics:nil
+                                               views:NSDictionaryOfVariableBindings(_header, scrollView)]
+     ];
+    
+    _components = [[TKOProblemEditorComponentsView alloc] init];
+    [_components addObserver:_header
+                  forKeyPath:@"html"
+                     options:0
+                     context:NULL];
+    scrollView.documentView = _components;
+    [clipView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_components]|"
+                                             options:0
+                                             metrics:nil
+                                               views:NSDictionaryOfVariableBindings(_components)]
+     ];
+    
+    TKOPreludeEditorView   * prelude  = [[TKOPreludeEditorView alloc] init];
+    TKOQuestionEditorView  * question = [[TKOQuestionEditorView alloc] init];
+    TKORomanEditorView     * roman    = [[TKORomanEditorView alloc] initWithCount:3];
+    TKOChoicesEditorView   * choices  = [[TKOChoicesEditorView alloc] initWithCount:5];
+
+    [_components setComponents:@[prelude, question, roman, choices]];
+
     return self;
 }
 

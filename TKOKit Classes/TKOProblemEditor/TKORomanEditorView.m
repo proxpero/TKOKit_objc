@@ -28,6 +28,9 @@
 
 - (void)updateHtmlWithString:(NSString *)string
 {
-    self.html = [NSString stringWithFormat:@"<ol class='roman'>\n%@</ol><!-- roman -->\n", string];
+    if (string.length > 0)
+        self.html = [NSString stringWithFormat:@"<ol class='roman'>\n%@</ol><!-- roman -->\n", string];
+    else
+        self.html = @"";
 }
 @end
