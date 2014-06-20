@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45A33BC018B2FE220029423E"
+               BlueprintIdentifier = "45B3F8CD1953C8D4006FB43F"
                BuildableName = "TKOTabViewDemo.app"
                BlueprintName = "TKOTabViewDemo"
                ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45A33BE118B2FE220029423E"
+               BlueprintIdentifier = "45B3F8EE1953C8D4006FB43F"
                BuildableName = "TKOTabViewDemoTests.xctest"
                BlueprintName = "TKOTabViewDemoTests"
                ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BlueprintIdentifier = "45B3F8CD1953C8D4006FB43F"
             BuildableName = "TKOTabViewDemo.app"
             BlueprintName = "TKOTabViewDemo"
             ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BlueprintIdentifier = "45B3F8CD1953C8D4006FB43F"
             BuildableName = "TKOTabViewDemo.app"
             BlueprintName = "TKOTabViewDemo"
             ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A33BC018B2FE220029423E"
+            BlueprintIdentifier = "45B3F8CD1953C8D4006FB43F"
             BuildableName = "TKOTabViewDemo.app"
             BlueprintName = "TKOTabViewDemo"
             ReferencedContainer = "container:TKOTabViewDemo.xcodeproj">

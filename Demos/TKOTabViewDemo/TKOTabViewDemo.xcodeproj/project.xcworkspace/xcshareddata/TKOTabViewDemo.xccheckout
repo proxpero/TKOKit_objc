@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>524AC20E-C8D5-4C9D-A393-D6219E1E7B19</string>
+	<string>BD662417-A339-48FA-8E77-A50067E0FB39</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TKOTabViewDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1A185577-F939-4D05-9F4C-B16797B27C41</key>
+		<key>B769DD97-B11E-4C10-AFC6-110A98A64254</key>
 		<string>https://github.com/proxpero/TKOKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Demos/Tab View/TKOTabViewDemo.xcodeproj/project.xcworkspace</string>
+	<string>Demos/TKOTabViewDemo/TKOTabViewDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1A185577-F939-4D05-9F4C-B16797B27C41</key>
+		<key>B769DD97-B11E-4C10-AFC6-110A98A64254</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1A185577-F939-4D05-9F4C-B16797B27C41</string>
+	<string>B769DD97-B11E-4C10-AFC6-110A98A64254</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1A185577-F939-4D05-9F4C-B16797B27C41</string>
+			<string>B769DD97-B11E-4C10-AFC6-110A98A64254</string>
 			<key>IDESourceControlWCCName</key>
 			<string>TKOKit</string>
 		</dict>
