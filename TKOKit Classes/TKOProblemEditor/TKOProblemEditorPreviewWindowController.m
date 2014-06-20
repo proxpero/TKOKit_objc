@@ -10,16 +10,13 @@
 #import "TKOProblemEditorPreviewWindowController.h"
 #import "NSView+TKOKit.h"
 
-static const CGFloat phi = 1.618033988749894848204586834;
-
 @interface TKOProblemEditorPreviewWindowController ()
+
 @property (strong) IBOutlet NSView *documentView;
 @property (strong) IBOutlet WebView *webView;
-
 @property (nonatomic) NSString * htmlTemplate;
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * heightConstraint;
-//@property (nonatomic) CGFloat currentHeight;
 
 @end
 
@@ -78,18 +75,9 @@ static const CGFloat phi = 1.618033988749894848204586834;
 {
     static const CGFloat necessaryOffset = 2; // required for descenders
     static const CGFloat aestheticOffset = 2; // for balancing top margin
-    CGFloat compensationOffset = 0;
-    
-    NSRange range = [self.html rangeOfString:@"$$"];
-    if (range.location != NSNotFound)
-    {
-        compensationOffset = 36;
-    }
     
     CGFloat newHeight = [[sender stringByEvaluatingJavaScriptFromString:@"document.body.clientHeight;"] floatValue];
-//    CGFloat newHeight = [[sender stringByEvaluatingJavaScriptFromString:@"window.innerHeight;"] floatValue];
-
-    self.heightConstraint.constant = newHeight + necessaryOffset + aestheticOffset + compensationOffset;
+    self.heightConstraint.constant = newHeight + necessaryOffset + aestheticOffset;
 }
 
 @end

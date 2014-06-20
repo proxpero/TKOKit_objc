@@ -20,4 +20,17 @@
     self.html = [NSString stringWithFormat:@"<p class='prelude'>%@</p>", string];
 }
 
+- (NSImage *)image
+{
+    static NSImage * image = nil;
+    if (!image) image = [NSImage imageNamed:NSImageNameHomeTemplate];
+    
+    return image;
+}
+
+- (NSString *)title
+{
+    return @"Foreword";
+}
+
 @end

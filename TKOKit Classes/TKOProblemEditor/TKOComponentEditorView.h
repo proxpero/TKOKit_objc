@@ -14,4 +14,7 @@
 
 - (instancetype)initWithPlaceholder:(NSString *)placeholder;
 
+- (NSString *)title;
+- (NSImage *)image;
+
 @end

@@ -20,4 +20,17 @@
     self.html = [NSString stringWithFormat:@"<p class='question'>%@</p>", string];
 }
 
+- (NSImage *)image
+{
+    static NSImage * image = nil;
+    if (!image) image = [NSImage imageNamed:NSImageNameActionTemplate];
+    
+    return image;
+}
+
+- (NSString *)title
+{
+    return @"Question";
+}
+
 @end

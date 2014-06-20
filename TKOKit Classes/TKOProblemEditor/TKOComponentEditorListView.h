@@ -20,6 +20,8 @@
                        markerFormat:(NSString *)markerFormat
                        markerIndent:(CGFloat)markerIndent;
 - (void)layoutItems;
+- (NSImage *)image;
+- (NSString *)title;
 
 @end
 

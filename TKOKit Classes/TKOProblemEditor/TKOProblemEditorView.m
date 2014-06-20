@@ -67,10 +67,9 @@
      ];
     
     _components = [[TKOProblemEditorComponentsView alloc] init];
-    [_components addObserver:_header
-                  forKeyPath:@"html"
-                     options:0
-                     context:NULL];
+    
+
+    
     scrollView.documentView = _components;
     [clipView addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_components]|"
@@ -79,14 +78,35 @@
                                                views:NSDictionaryOfVariableBindings(_components)]
      ];
     
-    TKOPreludeEditorView   * prelude  = [[TKOPreludeEditorView alloc] init];
-    TKOQuestionEditorView  * question = [[TKOQuestionEditorView alloc] init];
-    TKORomanEditorView     * roman    = [[TKORomanEditorView alloc] initWithCount:3];
-    TKOChoicesEditorView   * choices  = [[TKOChoicesEditorView alloc] initWithCount:5];
+    [self startObserving];
+    
+//    TKOPreludeEditorView   * prelude  = [[TKOPreludeEditorView alloc] init];
+//    TKOQuestionEditorView  * question = [[TKOQuestionEditorView alloc] init];
+//    TKORomanEditorView     * roman    = [[TKORomanEditorView alloc] initWithCount:3];
+//    TKOChoicesEditorView   * choices  = [[TKOChoicesEditorView alloc] initWithCount:5];
 
-    [_components setComponents:@[prelude, question, roman, choices]];
+//    [_components setComponents:@[prelude, question, roman, choices]];
 
     return self;
+}
+
+- (void)startObserving
+{
+    [_components addObserver:_header
+                  forKeyPath:@"html"
+                     options:0
+                     context:NULL];
+    
+    [_header addObserver:_components
+              forKeyPath:@"components"
+                 options:0
+                 context:NULL];
+}
+
+- (void)stopObserving
+{
+    [_components removeObserver:_header forKeyPath:@"html"];
+    [_header removeObserver:_components forKeyPath:@"components"];
 }
 
 @end

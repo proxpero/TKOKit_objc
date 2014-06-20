@@ -45,6 +45,7 @@
     {
         [self addComponent:component];
     }
+    [self componentDidUpdateHtmlNotification:nil];
 }
 
 - (void)addComponent:(NSView *)component
@@ -104,6 +105,22 @@
                      object:nil];
         [[prev lastKeyView] setNextKeyView:[component firstKeyView]];
         prev = component;
+    }
+}
+
+# pragma mark - Notifications
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"components"])
+    {
+        NSArray * components = (NSArray *)[object components];
+        for (id component in self.views)
+            [self removeComponent:component];
+        [self setComponents:components];
     }
 }
 

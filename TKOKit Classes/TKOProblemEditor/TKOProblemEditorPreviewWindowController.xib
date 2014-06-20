@@ -35,7 +35,9 @@
                                     <constraint firstAttribute="height" constant="307" id="2gU-Av-XzH"/>
                                     <constraint firstAttribute="width" constant="395" id="PLW-mJ-G9N"/>
                                 </constraints>
-                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
                             </webView>
                         </subviews>
                         <constraints>

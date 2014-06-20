@@ -33,4 +33,17 @@
         self.html = @"";
 }
 
+- (NSImage *)image
+{
+    static NSImage * image = nil;
+    if (!image) image = [NSImage imageNamed:NSImageNameActionTemplate];
+    
+    return image;
+}
+
+- (NSString *)title
+{
+    return @"Choices";
+}
+
 @end

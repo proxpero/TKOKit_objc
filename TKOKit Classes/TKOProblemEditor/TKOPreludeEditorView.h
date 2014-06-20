@@ -10,4 +10,7 @@
 #import "TKOComponentEditorView.h"
 
 @interface TKOPreludeEditorView : TKOComponentEditorView
+
+
+
 @end

@@ -8,13 +8,19 @@
 
 #import "TKOProblemEditorHeaderView.h"
 #import "NSView+TKOKit.h"
+#import "NSImage+TKOKit.h"
+
+#import "TKOPreludeEditorView.h"
+#import "TKOQuestionEditorView.h"
+#import "TKORomanEditorView.h"
+#import "TKOChoicesEditorView.h"
 
 #import "TKOProblemEditorPreviewWindowController.h"
 
 @interface TKOProblemEditorHeaderView ()
 
 @property (nonatomic) NSStackView * header;
-@property (nonatomic) NSMutableArray * items;
+@property (nonatomic) NSMutableArray * buttons;
 
 @property (nonatomic) TKOProblemEditorPreviewWindowController * previewController;
 
@@ -36,6 +42,16 @@
     NSView * border = [NSView viewWithClass:[NSView class]];
     border.wantsLayer = YES;
     border.layer.backgroundColor = [[NSColor darkGrayColor] CGColor];
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:350]
+     ];
     
     [self setSubviews:@[_header, border]];
     NSDictionary * views = NSDictionaryOfVariableBindings(_header, border);
@@ -60,7 +76,6 @@
         self.previewController = [[TKOProblemEditorPreviewWindowController alloc] init];
     }
     
-    self.items = [NSMutableArray arrayWithArray:@[[NSImage imageNamed:NSImageNameAddTemplate]]];
     [self layoutButtons];
     
     return self;
@@ -74,22 +89,50 @@
     
     // Center
     
+    if (!self.buttons) {
+        self.buttons = [NSMutableArray new];
+        [self.buttons addObject:[self buttonForComponent:[[TKOPreludeEditorView alloc] init]]];
+        [self.buttons addObject:[self buttonForComponent:[[TKOQuestionEditorView alloc] init]]];
+        [self.buttons addObject:[self buttonForComponent:[[TKORomanEditorView alloc] initWithCount:3]]];
+        [self.buttons addObject:[self buttonForComponent:[[TKOChoicesEditorView alloc] initWithCount:5]]];
+    }
+    
+    for (NSButton * button in self.buttons)
+        [self.header addView:button inGravity:NSStackViewGravityCenter];
+    
     // Trailing
     
-    button = [self buttonForImage:[NSImage imageNamed:NSImageNameQuickLookTemplate]];
+    button = [NSView viewWithClass:[NSButton class]];
+    button.bordered = NO;
+    button.image = [NSImage imageNamed:NSImageNameQuickLookTemplate];
+    button.imagePosition = NSImageOnly;
+    button.buttonType = NSOnOffButton;
+    [button.cell setImageScaling:NSImageScaleProportionallyDown];
+    [button addConstraintsForWidth:32 height:28];
     button.target = self;
     button.action = @selector(showPreviewAction:);
     
     [self.header addView:button inGravity:NSStackViewGravityTrailing];
 }
 
-- (NSButton *)buttonForImage:(NSImage *)image
+- (NSButton *)buttonForComponent:(id)component
 {
     NSButton * button = [NSView viewWithClass:[NSButton class]];
     button.bordered = NO;
-    button.image = image;
-    button.imagePosition = NSImageOnly;
-    [button addConstraintsForWidth:32 height:28];
+//    button.image = [component image];
+    button.attributedTitle = [[NSAttributedString alloc] initWithString:[component title]];
+//    button.imagePosition = NSImageOnly;
+    button.imagePosition = NSNoImage;
+    button.buttonType = NSOnOffButton;
+
+    button.target = self;
+    button.action = @selector(componentButtonAction:);
+
+    [button.cell setImageScaling:NSImageScaleProportionallyDown];
+    [button.cell setRepresentedObject:component];
+
+    [button addConstraintsForWidth:60 height:28];
+    
     return button;
 }
 
@@ -112,16 +155,28 @@
     [self.previewController showWindow:nil];
 }
 
-# pragma mark - Components Data Source
-
-- (NSUInteger)numberOfComponents
+- (void)componentButtonAction:(id)sender
 {
-    return self.items.count;
-}
-
-- (NSView *)viewForComponentAtIndex:(NSUInteger)index
-{
-    return self.items[index];
+    NSButton * button = (NSButton *)sender;
+//    id component = [button.cell representedObject];
+//    NSImage * image = [component image];
+//    button.image = button.state ? [image imageWithTint:[NSColor blueColor]] : image;
+    
+    NSMutableAttributedString * attributedTitle = button.attributedTitle.mutableCopy;
+    [attributedTitle addAttributes:@{ NSForegroundColorAttributeName : (button.state ? [NSColor blueColor] : [NSColor controlTextColor]) }
+                             range:NSMakeRange(0, attributedTitle.length)];
+    button.attributedTitle = attributedTitle.copy;
+    
+    NSMutableArray * components = [NSMutableArray new];
+    
+    for (NSButton * button in self.buttons) {
+        if (button.state) {
+            [components addObject:[button.cell representedObject]];
+        }
+    }
+    
+    self.components = components.copy;
 }
 
 @end
+

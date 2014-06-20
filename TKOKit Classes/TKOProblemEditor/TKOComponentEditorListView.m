@@ -112,7 +112,19 @@
 
 - (void)updateHtmlWithString:(NSString *)string
 {
-    NSAssert(1, @"Subclasses must override");
+    NSAssert(0, @"Subclasses must override: %s", __PRETTY_FUNCTION__);
+}
+
+- (NSImage *)image
+{
+    NSAssert(0, @"Subclasses must override: %s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
+- (NSString *)title
+{
+    NSAssert(0, @"Subclasses must override: %s", __PRETTY_FUNCTION__);
+    return nil;
 }
 
 - (void)textDidChange:(NSNotification *)notification
