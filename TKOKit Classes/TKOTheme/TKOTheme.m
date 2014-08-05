@@ -8,7 +8,7 @@
 //
 
 #import "TKOTheme.h"
-
+#import "NSString+TKOKit.h"
 
 static BOOL stringIsEmpty(NSString *s);
 static TKO_COLOR *colorWithHexString(NSString *hexString);
@@ -19,6 +19,7 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
 @property (nonatomic, strong) NSDictionary *themeDictionary;
 @property (nonatomic, strong) NSCache *colorCache;
 @property (nonatomic, strong) NSCache *fontCache;
+@property (nonatomic) NSCache * gradientCache;
 
 @end
 
@@ -43,11 +44,12 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
 }
 
 
-- (id)objectForKey:(NSString *)key {
-
+- (id)objectForKey:(NSString *)key
+{
 	id obj = [self.themeDictionary valueForKeyPath:key];
-	if (obj == nil && self.parentTheme != nil)
+	if (!obj && self.parentTheme) {
 		obj = [self.parentTheme objectForKey:key];
+    }
 	return obj;
 }
 
@@ -118,7 +120,25 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
 		return cachedColor;
     
 	NSString *colorString = [self stringForKey:key];
-	TKO_COLOR *color = colorWithHexString(colorString);
+    
+    TKO_COLOR *color;
+    
+    if ([colorString isEqualToString:@"textColor"])
+        color = [TKO_COLOR textColor];
+    else if ([colorString isEqualToString:@"controlColor"])
+        color = [TKO_COLOR controlColor];
+    else if ([colorString isEqualToString:@"grayColor"])
+        color = [TKO_COLOR grayColor];
+    else if ([colorString isEqualToString:@"darkGrayColor"])
+        color = [TKO_COLOR darkGrayColor];
+    else if ([colorString isEqualToString:@"lightGrayColor"])
+        color = [TKO_COLOR lightGrayColor];
+    else
+        color = colorWithHexString(colorString);
+    
+//    if (color == nil)
+//        color = colorWithHexString(key);
+    
 	if (color == nil)
 		color = [TKO_COLOR blackColor];
 
@@ -126,6 +146,35 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
                         forKey:key];
 
 	return color;
+}
+
+
+- (NSGradient *)colorGradientForKey:(NSString *)key
+{
+    NSGradient * cachedGradient = [self.gradientCache objectForKey:key];
+    if (cachedGradient != nil) return cachedGradient;
+    
+//    NSString * startColorKey   = [self stringForKey:[key stringByAppendingString:@"Start"]];
+//    NSString * endColorKey     = [self stringForKey:[key stringByAppendingString:@"End"]];
+    
+    NSColor * startColor = [self colorForKey:[key stringByAppendingString:@"Start"]];
+    NSColor * endColor = [self colorForKey:[key stringByAppendingString:@"End"]];
+    
+//    NSGradient * gradient = [[NSGradient alloc] initWithStartingColor:[self colorForKey:startColorKey]
+//                                                          endingColor:[self colorForKey:endColorKey]];
+
+    NSGradient * gradient = [[NSGradient alloc] initWithStartingColor:startColor
+                                                          endingColor:endColor];
+
+    [self.gradientCache setObject:gradient forKey:key];
+    return gradient;
+//    TKORGBAComponents start = [startColorKey rgbaComponents];
+//    TKORGBAComponents end = [endColorKey rgbaComponents];
+//    CGColorRef startRef = CGColorCreateGenericRGB(start.red, start.green, start.blue, start.alpha);
+//    CGColorRef endRef   = CGColorCreateGenericRGB(end.red, end.green, end.blue, end.alpha);
+    
+//    return @[ CFBridgingRelease(startRef), CFBridgingRelease(endRef) ];
+//    return @[colorWithHexString(startColorKey), colorWithHexString(endColorKey)];
 }
 
 
@@ -151,7 +200,7 @@ static TKO_COLOR *colorWithHexString(NSString *hexString);
 	CGFloat fontSize = [self floatForKey:[key stringByAppendingString:@"Size"]];
 
 	if (fontSize < 1.0f)
-		fontSize = 15.0f;
+		fontSize = [TKO_FONT systemFontSizeForControlSize:NSRegularControlSize]; // Cross-platform?
 
 	TKO_FONT *font = nil;
     

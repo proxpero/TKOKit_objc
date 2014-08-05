@@ -12,12 +12,14 @@
 
 @property (nonatomic,strong,readonly) NSManagedObjectContext * mainManagedObjectContext;
 
-- (id)initWithStoreURL:(NSURL*)storeURL
-              modelURL:(NSURL*)modelURL;
+- (instancetype)initWithStoreURL:(NSURL*)storeURL
+                        modelURL:(NSURL*)modelURL;
 
-- (id)initWithStoreURL:(NSURL*)storeURL
-              modelURL:(NSURL*)modelURL
-           deleteStore:(BOOL)deleteStore;
+- (instancetype)initWithStoreURL:(NSURL*)storeURL
+                        modelURL:(NSURL*)modelURL
+                     deleteStore:(BOOL)deleteStore;
+
+- (instancetype)initWithTemporaryStoreType;
 
 - (void)saveContext;
 - (NSManagedObjectContext*)newPrivateContext;

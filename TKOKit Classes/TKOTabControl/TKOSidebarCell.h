@@ -10,9 +10,9 @@
 
 @interface TKOSidebarCell : TKOButtonCell
 
-@property (nonatomic, copy) NSColor * textColor;
-@property (nonatomic, copy) NSColor * textHighlightColor;
-@property (nonatomic, copy) NSColor * imageColor;
-@property (nonatomic, copy) NSColor * imageHighlightColor;
+//@property (nonatomic, copy) NSColor * textColor;
+//@property (nonatomic, copy) NSColor * textHighlightColor;
+//@property (nonatomic, copy) NSColor * imageColor;
+//@property (nonatomic, copy) NSColor * imageHighlightColor;
 
 @end

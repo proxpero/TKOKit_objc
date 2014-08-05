@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TKOPlatform.h"
+#import "TKOThemeConstants.h"
 
 typedef NS_ENUM(NSUInteger, TKOTextCaseTransform) {
     TKOTextCaseTransformNone,
@@ -24,7 +25,7 @@ typedef NS_ENUM(NSUInteger, TKOTextCaseTransform) {
 - (id)initWithDictionary:(NSDictionary *)themeDictionary;
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, weak) TKOTheme *parentTheme; /*can inherit*/
+@property (nonatomic) TKOTheme *parentTheme; /*can inherit*/
 
 - (BOOL)boolForKey:(NSString *)key;
 - (NSString *)stringForKey:(NSString *)key;
@@ -32,6 +33,7 @@ typedef NS_ENUM(NSUInteger, TKOTextCaseTransform) {
 - (CGFloat)floatForKey:(NSString *)key;
 - (TKO_IMAGE *)imageForKey:(NSString *)key; /*Via UIImage imageNamed:*/
 - (TKO_COLOR *)colorForKey:(NSString *)key; /*123ABC or #123ABC: 6 digits, leading # allowed but not required*/
+- (NSGradient *)colorGradientForKey:(NSString *)key;
 - (TKO_EDGE_INSETS)edgeInsetsForKey:(NSString *)key; /*xTop, xLeft, xRight, xBottom keys*/
 - (TKO_FONT *)fontForKey:(NSString *)key; /*x and xSize keys*/
 - (CGPoint)pointForKey:(NSString *)key; /*xX and xY keys*/

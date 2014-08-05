@@ -10,6 +10,7 @@
 #import "NSView+TKOKit.h"
 #import "NSImage+TKOKit.h"
 
+#import "TKOImageEditorComponentView.h"
 #import "TKOPreludeEditorView.h"
 #import "TKOQuestionEditorView.h"
 #import "TKORomanEditorView.h"
@@ -91,6 +92,8 @@
     
     if (!self.buttons) {
         self.buttons = [NSMutableArray new];
+        
+        [self.buttons addObject:[self buttonForComponent:[[TKOImageEditorComponentView alloc] init]]];
         [self.buttons addObject:[self buttonForComponent:[[TKOPreludeEditorView alloc] init]]];
         [self.buttons addObject:[self buttonForComponent:[[TKOQuestionEditorView alloc] init]]];
         [self.buttons addObject:[self buttonForComponent:[[TKORomanEditorView alloc] initWithCount:3]]];
@@ -158,9 +161,6 @@
 - (void)componentButtonAction:(id)sender
 {
     NSButton * button = (NSButton *)sender;
-//    id component = [button.cell representedObject];
-//    NSImage * image = [component image];
-//    button.image = button.state ? [image imageWithTint:[NSColor blueColor]] : image;
     
     NSMutableAttributedString * attributedTitle = button.attributedTitle.mutableCopy;
     [attributedTitle addAttributes:@{ NSForegroundColorAttributeName : (button.state ? [NSColor blueColor] : [NSColor controlTextColor]) }

@@ -44,6 +44,9 @@ extern NSString * TKOSidebarViewDidChangeSelectionNotification;
 @property (nonatomic, weak) id selectedItem;
 @property (nonatomic, weak) id <TKOSidebarViewDelegate> delegate;
 
+@property (nonatomic) id target;
+@property (nonatomic) SEL action;
+
 // Add/Remove Tabs
 
 - (void)addSidebarViewItem:(TKOSidebarViewItem *)sidebarViewItem;

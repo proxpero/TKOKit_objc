@@ -16,10 +16,10 @@
 @property(nonatomic) BOOL showsMenu;
 @property(readonly, nonatomic) BOOL isShowingMenu;
 
-@property (nonatomic, copy) NSColor * textColor;
-@property (nonatomic, copy) NSColor * textHighlightColor;
-@property (nonatomic, copy) NSColor * imageColor;
-@property (nonatomic, copy) NSColor * imageHighlightColor;
+//@property (nonatomic, copy) NSColor * textColor;
+//@property (nonatomic, copy) NSColor * textHighlightColor;
+//@property (nonatomic, copy) NSColor * imageColor;
+//@property (nonatomic, copy) NSColor * imageHighlightColor;
 
 + (NSImage *)popupImage;
 - (NSRect)popupRectWithFrame:(NSRect)cellFrame;

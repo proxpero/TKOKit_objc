@@ -1,0 +1,878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		459650481966E7C100437A55 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459650471966E7C100437A55 /* Cocoa.framework */; };
+		459650521966E7C100437A55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459650501966E7C100437A55 /* InfoPlist.strings */; };
+		459650541966E7C100437A55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650531966E7C100437A55 /* main.m */; };
+		459650581966E7C100437A55 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 459650561966E7C100437A55 /* Credits.rtf */; };
+		4596505B1966E7C100437A55 /* TKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596505A1966E7C100437A55 /* TKOAppDelegate.m */; };
+		4596505E1966E7C100437A55 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4596505C1966E7C100437A55 /* MainMenu.xib */; };
+		459650601966E7C100437A55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4596505F1966E7C100437A55 /* Images.xcassets */; };
+		459650671966E7C100437A55 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459650661966E7C100437A55 /* XCTest.framework */; };
+		459650681966E7C100437A55 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459650471966E7C100437A55 /* Cocoa.framework */; };
+		459650701966E7C100437A55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4596506E1966E7C100437A55 /* InfoPlist.strings */; };
+		459650721966E7C100437A55 /* TKOStackingSidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650711966E7C100437A55 /* TKOStackingSidebarDemoTests.m */; };
+		4596509B1966E80C00437A55 /* NSAttributedString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596507D1966E80C00437A55 /* NSAttributedString+TKOKit.m */; };
+		4596509C1966E80C00437A55 /* NSColor+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596507F1966E80C00437A55 /* NSColor+TKOKit.m */; };
+		4596509D1966E80C00437A55 /* NSImage+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650811966E80C00437A55 /* NSImage+TKOKit.m */; };
+		4596509E1966E80C00437A55 /* NSScrollView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650831966E80C00437A55 /* NSScrollView+TKOKit.m */; };
+		4596509F1966E80C00437A55 /* NSString+Geometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650851966E80C00437A55 /* NSString+Geometrics.m */; };
+		459650A01966E80C00437A55 /* NSString+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650871966E80C00437A55 /* NSString+TKOKit.m */; };
+		459650A11966E80C00437A55 /* NSView+TKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650891966E80C00437A55 /* NSView+TKOKit.m */; };
+		459650A21966E80C00437A55 /* TKOPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596508B1966E80C00437A55 /* TKOPlatform.m */; };
+		459650A31966E80C00437A55 /* TKOSegmentedControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596508E1966E80C00437A55 /* TKOSegmentedControlView.m */; };
+		459650A51966E80C00437A55 /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650941966E80C00437A55 /* TKOTheme.m */; };
+		459650A61966E80C00437A55 /* TKOThemeConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650961966E80C00437A55 /* TKOThemeConstants.m */; };
+		459650A71966E80C00437A55 /* TKOThemedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650981966E80C00437A55 /* TKOThemedViewController.m */; };
+		459650A81966E80C00437A55 /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4596509A1966E80C00437A55 /* TKOThemeLoader.m */; };
+		459650AB1966E83100437A55 /* TKOButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650AA1966E83100437A55 /* TKOButtonCell.m */; };
+		459650B31966EF9B00437A55 /* TKOSidebarControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650B21966EF9B00437A55 /* TKOSidebarControlView.m */; };
+		459650B51967038400437A55 /* KeystoneThemes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459650B41967038400437A55 /* KeystoneThemes.plist */; };
+		459650C91967040D00437A55 /* Lists-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650B71967040D00437A55 /* Lists-Off.png */; };
+		459650CA1967040D00437A55 /* Lists-Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650B81967040D00437A55 /* Lists-Off@2x.png */; };
+		459650CB1967040D00437A55 /* TKOAssignmentsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650B91967040D00437A55 /* TKOAssignmentsTemplate.png */; };
+		459650CC1967040D00437A55 /* TKOAssignmentsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BA1967040D00437A55 /* TKOAssignmentsTemplate@2x.png */; };
+		459650CD1967040D00437A55 /* TKOFormatsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BB1967040D00437A55 /* TKOFormatsTemplate.png */; };
+		459650CE1967040D00437A55 /* TKOFormatsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BC1967040D00437A55 /* TKOFormatsTemplate@2x.png */; };
+		459650CF1967040D00437A55 /* TKOListsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BD1967040D00437A55 /* TKOListsTemplate.png */; };
+		459650D01967040D00437A55 /* TKOListsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BE1967040D00437A55 /* TKOListsTemplate@2x.png */; };
+		459650D11967040D00437A55 /* TKOProblemsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650BF1967040D00437A55 /* TKOProblemsTemplate.png */; };
+		459650D21967040D00437A55 /* TKOProblemsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C01967040D00437A55 /* TKOProblemsTemplate@2x.png */; };
+		459650D31967040D00437A55 /* TKOStandardsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C11967040D00437A55 /* TKOStandardsTemplate.png */; };
+		459650D41967040D00437A55 /* TKOStandardsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C21967040D00437A55 /* TKOStandardsTemplate@2x.png */; };
+		459650D51967040D00437A55 /* TKOStudentsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C31967040D00437A55 /* TKOStudentsTemplate.png */; };
+		459650D61967040D00437A55 /* TKOStudentsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C41967040D00437A55 /* TKOStudentsTemplate@2x.png */; };
+		459650D71967040D00437A55 /* TKOTagsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C51967040D00437A55 /* TKOTagsTemplate.png */; };
+		459650D81967040D00437A55 /* TKOTagsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C61967040D00437A55 /* TKOTagsTemplate@2x.png */; };
+		459650D91967040D00437A55 /* TKOTrashTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C71967040D00437A55 /* TKOTrashTemplate.png */; };
+		459650DA1967040D00437A55 /* TKOTrashTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459650C81967040D00437A55 /* TKOTrashTemplate@2x.png */; };
+		459650DD19671A8D00437A55 /* TKOStackingSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459650DC19671A8D00437A55 /* TKOStackingSidebarView.m */; };
+		45C8BEC51968813A0023D119 /* TKOSegmentedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BEC41968813A0023D119 /* TKOSegmentedItem.m */; };
+		45C8BEED196989410023D119 /* grabber.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BEEB196989410023D119 /* grabber.pdf */; };
+		45C8BEEE196989410023D119 /* grabber@2x.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BEEC196989410023D119 /* grabber@2x.pdf */; };
+		45C8BEF119698A4E0023D119 /* TKOBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BEF019698A4E0023D119 /* TKOBackgroundView.m */; };
+		45C8BF0A1969956B0023D119 /* TKOTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BEF41969956B0023D119 /* TKOTagsViewController.m */; };
+		45C8BF0B1969956B0023D119 /* TKOTagsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BEF51969956B0023D119 /* TKOTagsViewController.xib */; };
+		45C8BF0C1969956B0023D119 /* TKOStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BEF81969956B0023D119 /* TKOStudentsViewController.m */; };
+		45C8BF0D1969956B0023D119 /* TKOStudentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BEF91969956B0023D119 /* TKOStudentsViewController.xib */; };
+		45C8BF0E1969956B0023D119 /* TKOStandardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BEFC1969956B0023D119 /* TKOStandardsViewController.m */; };
+		45C8BF0F1969956B0023D119 /* TKOStandardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BEFD1969956B0023D119 /* TKOStandardsViewController.xib */; };
+		45C8BF101969956B0023D119 /* TKOProblemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF001969956B0023D119 /* TKOProblemsViewController.m */; };
+		45C8BF111969956B0023D119 /* TKOProblemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BF011969956B0023D119 /* TKOProblemsViewController.xib */; };
+		45C8BF121969956B0023D119 /* TKOFormatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF041969956B0023D119 /* TKOFormatsViewController.m */; };
+		45C8BF131969956B0023D119 /* TKOFormatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BF051969956B0023D119 /* TKOFormatsViewController.xib */; };
+		45C8BF141969956B0023D119 /* TKOAssignmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF081969956B0023D119 /* TKOAssignmentsViewController.m */; };
+		45C8BF151969956B0023D119 /* TKOAssignmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BF091969956B0023D119 /* TKOAssignmentsViewController.xib */; };
+		45C8BF221969A1C90023D119 /* TKOFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF201969A1C90023D119 /* TKOFormatTableViewController.m */; };
+		45C8BF231969A1C90023D119 /* TKOFormatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BF211969A1C90023D119 /* TKOFormatTableViewController.xib */; };
+		45C8BF271969A1ED0023D119 /* TKOFormatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF241969A1ED0023D119 /* TKOFormatCellView.m */; };
+		45C8BF281969A1ED0023D119 /* TKOFormatCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8BF261969A1ED0023D119 /* TKOFormatCellView.xib */; };
+		45C8BF2C1969A2F70023D119 /* TKODraggingTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8BF2B1969A2F70023D119 /* TKODraggingTableViewDataSource.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		459650691966E7C100437A55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4596503C1966E7C100437A55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 459650431966E7C100437A55;
+			remoteInfo = TKOStackingSidebarDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		459650441966E7C100437A55 /* TKOStackingSidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOStackingSidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		459650471966E7C100437A55 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4596504A1966E7C100437A55 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4596504B1966E7C100437A55 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4596504C1966E7C100437A55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4596504F1966E7C100437A55 /* TKOStackingSidebarDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOStackingSidebarDemo-Info.plist"; sourceTree = "<group>"; };
+		459650511966E7C100437A55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		459650531966E7C100437A55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		459650551966E7C100437A55 /* TKOStackingSidebarDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKOStackingSidebarDemo-Prefix.pch"; sourceTree = "<group>"; };
+		459650571966E7C100437A55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		459650591966E7C100437A55 /* TKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKOAppDelegate.h; sourceTree = "<group>"; };
+		4596505A1966E7C100437A55 /* TKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOAppDelegate.m; sourceTree = "<group>"; };
+		4596505D1966E7C100437A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4596505F1966E7C100437A55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		459650651966E7C100437A55 /* TKOStackingSidebarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKOStackingSidebarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		459650661966E7C100437A55 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4596506D1966E7C100437A55 /* TKOStackingSidebarDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKOStackingSidebarDemoTests-Info.plist"; sourceTree = "<group>"; };
+		4596506F1966E7C100437A55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		459650711966E7C100437A55 /* TKOStackingSidebarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOStackingSidebarDemoTests.m; sourceTree = "<group>"; };
+		4596507C1966E80C00437A55 /* NSAttributedString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+TKOKit.h"; sourceTree = "<group>"; };
+		4596507D1966E80C00437A55 /* NSAttributedString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+TKOKit.m"; sourceTree = "<group>"; };
+		4596507E1966E80C00437A55 /* NSColor+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+TKOKit.h"; sourceTree = "<group>"; };
+		4596507F1966E80C00437A55 /* NSColor+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+TKOKit.m"; sourceTree = "<group>"; };
+		459650801966E80C00437A55 /* NSImage+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+TKOKit.h"; sourceTree = "<group>"; };
+		459650811966E80C00437A55 /* NSImage+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+TKOKit.m"; sourceTree = "<group>"; };
+		459650821966E80C00437A55 /* NSScrollView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScrollView+TKOKit.h"; sourceTree = "<group>"; };
+		459650831966E80C00437A55 /* NSScrollView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScrollView+TKOKit.m"; sourceTree = "<group>"; };
+		459650841966E80C00437A55 /* NSString+Geometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Geometrics.h"; sourceTree = "<group>"; };
+		459650851966E80C00437A55 /* NSString+Geometrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Geometrics.m"; sourceTree = "<group>"; };
+		459650861966E80C00437A55 /* NSString+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKOKit.h"; sourceTree = "<group>"; };
+		459650871966E80C00437A55 /* NSString+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKOKit.m"; sourceTree = "<group>"; };
+		459650881966E80C00437A55 /* NSView+TKOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+TKOKit.h"; sourceTree = "<group>"; };
+		459650891966E80C00437A55 /* NSView+TKOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+TKOKit.m"; sourceTree = "<group>"; };
+		4596508A1966E80C00437A55 /* TKOPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOPlatform.h; path = "../../TKOKit Classes/TKOPlatform.h"; sourceTree = "<group>"; };
+		4596508B1966E80C00437A55 /* TKOPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOPlatform.m; path = "../../TKOKit Classes/TKOPlatform.m"; sourceTree = "<group>"; };
+		4596508D1966E80C00437A55 /* TKOSegmentedControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSegmentedControlView.h; sourceTree = "<group>"; };
+		4596508E1966E80C00437A55 /* TKOSegmentedControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSegmentedControlView.m; sourceTree = "<group>"; };
+		459650931966E80C00437A55 /* TKOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTheme.h; sourceTree = "<group>"; };
+		459650941966E80C00437A55 /* TKOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTheme.m; sourceTree = "<group>"; };
+		459650951966E80C00437A55 /* TKOThemeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeConstants.h; sourceTree = "<group>"; };
+		459650961966E80C00437A55 /* TKOThemeConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeConstants.m; sourceTree = "<group>"; };
+		459650971966E80C00437A55 /* TKOThemedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemedViewController.h; sourceTree = "<group>"; };
+		459650981966E80C00437A55 /* TKOThemedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemedViewController.m; sourceTree = "<group>"; };
+		459650991966E80C00437A55 /* TKOThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOThemeLoader.h; sourceTree = "<group>"; };
+		4596509A1966E80C00437A55 /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
+		459650A91966E83100437A55 /* TKOButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOButtonCell.h; path = "../../TKOKit Classes/TKOTabControl/TKOButtonCell.h"; sourceTree = "<group>"; };
+		459650AA1966E83100437A55 /* TKOButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOButtonCell.m; path = "../../TKOKit Classes/TKOTabControl/TKOButtonCell.m"; sourceTree = "<group>"; };
+		459650B11966EF9B00437A55 /* TKOSidebarControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSidebarControlView.h; sourceTree = "<group>"; };
+		459650B21966EF9B00437A55 /* TKOSidebarControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSidebarControlView.m; sourceTree = "<group>"; };
+		459650B41967038400437A55 /* KeystoneThemes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = KeystoneThemes.plist; path = ../../../../Keystone/Demos/TKOProblemEditorDemo/TKOProblemEditorDemo/KeystoneThemes.plist; sourceTree = "<group>"; };
+		459650B71967040D00437A55 /* Lists-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lists-Off.png"; sourceTree = "<group>"; };
+		459650B81967040D00437A55 /* Lists-Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lists-Off@2x.png"; sourceTree = "<group>"; };
+		459650B91967040D00437A55 /* TKOAssignmentsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOAssignmentsTemplate.png; sourceTree = "<group>"; };
+		459650BA1967040D00437A55 /* TKOAssignmentsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOAssignmentsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650BB1967040D00437A55 /* TKOFormatsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOFormatsTemplate.png; sourceTree = "<group>"; };
+		459650BC1967040D00437A55 /* TKOFormatsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOFormatsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650BD1967040D00437A55 /* TKOListsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOListsTemplate.png; sourceTree = "<group>"; };
+		459650BE1967040D00437A55 /* TKOListsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOListsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650BF1967040D00437A55 /* TKOProblemsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOProblemsTemplate.png; sourceTree = "<group>"; };
+		459650C01967040D00437A55 /* TKOProblemsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOProblemsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650C11967040D00437A55 /* TKOStandardsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOStandardsTemplate.png; sourceTree = "<group>"; };
+		459650C21967040D00437A55 /* TKOStandardsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOStandardsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650C31967040D00437A55 /* TKOStudentsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOStudentsTemplate.png; sourceTree = "<group>"; };
+		459650C41967040D00437A55 /* TKOStudentsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOStudentsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650C51967040D00437A55 /* TKOTagsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOTagsTemplate.png; sourceTree = "<group>"; };
+		459650C61967040D00437A55 /* TKOTagsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOTagsTemplate@2x.png"; sourceTree = "<group>"; };
+		459650C71967040D00437A55 /* TKOTrashTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOTrashTemplate.png; sourceTree = "<group>"; };
+		459650C81967040D00437A55 /* TKOTrashTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOTrashTemplate@2x.png"; sourceTree = "<group>"; };
+		459650DB19671A8D00437A55 /* TKOStackingSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOStackingSidebarView.h; path = "../../TKOKit Classes/TKOStackingSidebarView/TKOStackingSidebarView.h"; sourceTree = "<group>"; };
+		459650DC19671A8D00437A55 /* TKOStackingSidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOStackingSidebarView.m; path = "../../TKOKit Classes/TKOStackingSidebarView/TKOStackingSidebarView.m"; sourceTree = "<group>"; };
+		45C8BEC31968813A0023D119 /* TKOSegmentedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOSegmentedItem.h; path = "../../TKOKit Classes/TKOSegmentedItem/TKOSegmentedItem.h"; sourceTree = "<group>"; };
+		45C8BEC41968813A0023D119 /* TKOSegmentedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOSegmentedItem.m; path = "../../TKOKit Classes/TKOSegmentedItem/TKOSegmentedItem.m"; sourceTree = "<group>"; };
+		45C8BEEB196989410023D119 /* grabber.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grabber.pdf; sourceTree = "<group>"; };
+		45C8BEEC196989410023D119 /* grabber@2x.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "grabber@2x.pdf"; sourceTree = "<group>"; };
+		45C8BEEF19698A4E0023D119 /* TKOBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOBackgroundView.h; path = "../../TKOKit Classes/TKOControlBackgroundView/TKOBackgroundView.h"; sourceTree = "<group>"; };
+		45C8BEF019698A4E0023D119 /* TKOBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOBackgroundView.m; path = "../../TKOKit Classes/TKOControlBackgroundView/TKOBackgroundView.m"; sourceTree = "<group>"; };
+		45C8BEF31969956B0023D119 /* TKOTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTagsViewController.h; sourceTree = "<group>"; };
+		45C8BEF41969956B0023D119 /* TKOTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTagsViewController.m; sourceTree = "<group>"; };
+		45C8BEF51969956B0023D119 /* TKOTagsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOTagsViewController.xib; sourceTree = "<group>"; };
+		45C8BEF71969956B0023D119 /* TKOStudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOStudentsViewController.h; sourceTree = "<group>"; };
+		45C8BEF81969956B0023D119 /* TKOStudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOStudentsViewController.m; sourceTree = "<group>"; };
+		45C8BEF91969956B0023D119 /* TKOStudentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOStudentsViewController.xib; sourceTree = "<group>"; };
+		45C8BEFB1969956B0023D119 /* TKOStandardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOStandardsViewController.h; sourceTree = "<group>"; };
+		45C8BEFC1969956B0023D119 /* TKOStandardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOStandardsViewController.m; sourceTree = "<group>"; };
+		45C8BEFD1969956B0023D119 /* TKOStandardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOStandardsViewController.xib; sourceTree = "<group>"; };
+		45C8BEFF1969956B0023D119 /* TKOProblemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOProblemsViewController.h; sourceTree = "<group>"; };
+		45C8BF001969956B0023D119 /* TKOProblemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOProblemsViewController.m; sourceTree = "<group>"; };
+		45C8BF011969956B0023D119 /* TKOProblemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOProblemsViewController.xib; sourceTree = "<group>"; };
+		45C8BF031969956B0023D119 /* TKOFormatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFormatsViewController.h; sourceTree = "<group>"; };
+		45C8BF041969956B0023D119 /* TKOFormatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFormatsViewController.m; sourceTree = "<group>"; };
+		45C8BF051969956B0023D119 /* TKOFormatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOFormatsViewController.xib; sourceTree = "<group>"; };
+		45C8BF071969956B0023D119 /* TKOAssignmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOAssignmentsViewController.h; sourceTree = "<group>"; };
+		45C8BF081969956B0023D119 /* TKOAssignmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOAssignmentsViewController.m; sourceTree = "<group>"; };
+		45C8BF091969956B0023D119 /* TKOAssignmentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOAssignmentsViewController.xib; sourceTree = "<group>"; };
+		45C8BF1F1969A1C90023D119 /* TKOFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFormatTableViewController.h; sourceTree = "<group>"; };
+		45C8BF201969A1C90023D119 /* TKOFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFormatTableViewController.m; sourceTree = "<group>"; };
+		45C8BF211969A1C90023D119 /* TKOFormatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOFormatTableViewController.xib; sourceTree = "<group>"; };
+		45C8BF241969A1ED0023D119 /* TKOFormatCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOFormatCellView.m; sourceTree = "<group>"; };
+		45C8BF251969A1ED0023D119 /* TKOFormatCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOFormatCellView.h; sourceTree = "<group>"; };
+		45C8BF261969A1ED0023D119 /* TKOFormatCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKOFormatCellView.xib; sourceTree = "<group>"; };
+		45C8BF2A1969A2F70023D119 /* TKODraggingTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKODraggingTableViewDataSource.h; sourceTree = "<group>"; };
+		45C8BF2B1969A2F70023D119 /* TKODraggingTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKODraggingTableViewDataSource.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		459650411966E7C100437A55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459650481966E7C100437A55 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459650621966E7C100437A55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459650681966E7C100437A55 /* Cocoa.framework in Frameworks */,
+				459650671966E7C100437A55 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4596503B1966E7C100437A55 = {
+			isa = PBXGroup;
+			children = (
+				45C8BF291969A2F70023D119 /* TKOTableDragDropDataSource */,
+				45C8BEF61969956B0023D119 /* Students */,
+				45C8BF061969956B0023D119 /* Assignments */,
+				45C8BEFE1969956B0023D119 /* Problems */,
+				45C8BF021969956B0023D119 /* Formats */,
+				45C8BEF21969956B0023D119 /* Tags */,
+				45C8BEFA1969956B0023D119 /* Standards */,
+				45C8BEEF19698A4E0023D119 /* TKOBackgroundView.h */,
+				45C8BEF019698A4E0023D119 /* TKOBackgroundView.m */,
+				45C8BEC31968813A0023D119 /* TKOSegmentedItem.h */,
+				45C8BEC41968813A0023D119 /* TKOSegmentedItem.m */,
+				45C8BEC619688D1B0023D119 /* TKOStackingSidebarView */,
+				459650A91966E83100437A55 /* TKOButtonCell.h */,
+				459650AA1966E83100437A55 /* TKOButtonCell.m */,
+				4596507B1966E80C00437A55 /* Categories */,
+				4596508A1966E80C00437A55 /* TKOPlatform.h */,
+				4596508B1966E80C00437A55 /* TKOPlatform.m */,
+				4596508C1966E80C00437A55 /* TKOSegmentedControl */,
+				459650B01966EF9B00437A55 /* TKOSidebarControlView */,
+				459650921966E80C00437A55 /* TKOTheme */,
+				4596504D1966E7C100437A55 /* TKOStackingSidebarDemo */,
+				4596506B1966E7C100437A55 /* TKOStackingSidebarDemoTests */,
+				459650461966E7C100437A55 /* Frameworks */,
+				459650451966E7C100437A55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		459650451966E7C100437A55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				459650441966E7C100437A55 /* TKOStackingSidebarDemo.app */,
+				459650651966E7C100437A55 /* TKOStackingSidebarDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		459650461966E7C100437A55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				459650471966E7C100437A55 /* Cocoa.framework */,
+				459650661966E7C100437A55 /* XCTest.framework */,
+				459650491966E7C100437A55 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		459650491966E7C100437A55 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4596504A1966E7C100437A55 /* AppKit.framework */,
+				4596504B1966E7C100437A55 /* CoreData.framework */,
+				4596504C1966E7C100437A55 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4596504D1966E7C100437A55 /* TKOStackingSidebarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				459650B61967040D00437A55 /* Assets */,
+				459650B41967038400437A55 /* KeystoneThemes.plist */,
+				459650591966E7C100437A55 /* TKOAppDelegate.h */,
+				4596505A1966E7C100437A55 /* TKOAppDelegate.m */,
+				4596505C1966E7C100437A55 /* MainMenu.xib */,
+				4596505F1966E7C100437A55 /* Images.xcassets */,
+				4596504E1966E7C100437A55 /* Supporting Files */,
+			);
+			path = TKOStackingSidebarDemo;
+			sourceTree = "<group>";
+		};
+		4596504E1966E7C100437A55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4596504F1966E7C100437A55 /* TKOStackingSidebarDemo-Info.plist */,
+				459650501966E7C100437A55 /* InfoPlist.strings */,
+				459650531966E7C100437A55 /* main.m */,
+				459650551966E7C100437A55 /* TKOStackingSidebarDemo-Prefix.pch */,
+				459650561966E7C100437A55 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4596506B1966E7C100437A55 /* TKOStackingSidebarDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				459650711966E7C100437A55 /* TKOStackingSidebarDemoTests.m */,
+				4596506C1966E7C100437A55 /* Supporting Files */,
+			);
+			path = TKOStackingSidebarDemoTests;
+			sourceTree = "<group>";
+		};
+		4596506C1966E7C100437A55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4596506D1966E7C100437A55 /* TKOStackingSidebarDemoTests-Info.plist */,
+				4596506E1966E7C100437A55 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4596507B1966E80C00437A55 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4596507C1966E80C00437A55 /* NSAttributedString+TKOKit.h */,
+				4596507D1966E80C00437A55 /* NSAttributedString+TKOKit.m */,
+				4596507E1966E80C00437A55 /* NSColor+TKOKit.h */,
+				4596507F1966E80C00437A55 /* NSColor+TKOKit.m */,
+				459650801966E80C00437A55 /* NSImage+TKOKit.h */,
+				459650811966E80C00437A55 /* NSImage+TKOKit.m */,
+				459650821966E80C00437A55 /* NSScrollView+TKOKit.h */,
+				459650831966E80C00437A55 /* NSScrollView+TKOKit.m */,
+				459650841966E80C00437A55 /* NSString+Geometrics.h */,
+				459650851966E80C00437A55 /* NSString+Geometrics.m */,
+				459650861966E80C00437A55 /* NSString+TKOKit.h */,
+				459650871966E80C00437A55 /* NSString+TKOKit.m */,
+				459650881966E80C00437A55 /* NSView+TKOKit.h */,
+				459650891966E80C00437A55 /* NSView+TKOKit.m */,
+			);
+			name = Categories;
+			path = "../../TKOKit Classes/Categories";
+			sourceTree = "<group>";
+		};
+		4596508C1966E80C00437A55 /* TKOSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				4596508D1966E80C00437A55 /* TKOSegmentedControlView.h */,
+				4596508E1966E80C00437A55 /* TKOSegmentedControlView.m */,
+			);
+			name = TKOSegmentedControl;
+			path = "../../TKOKit Classes/TKOSegmentedControl";
+			sourceTree = "<group>";
+		};
+		459650921966E80C00437A55 /* TKOTheme */ = {
+			isa = PBXGroup;
+			children = (
+				459650931966E80C00437A55 /* TKOTheme.h */,
+				459650941966E80C00437A55 /* TKOTheme.m */,
+				459650951966E80C00437A55 /* TKOThemeConstants.h */,
+				459650961966E80C00437A55 /* TKOThemeConstants.m */,
+				459650971966E80C00437A55 /* TKOThemedViewController.h */,
+				459650981966E80C00437A55 /* TKOThemedViewController.m */,
+				459650991966E80C00437A55 /* TKOThemeLoader.h */,
+				4596509A1966E80C00437A55 /* TKOThemeLoader.m */,
+			);
+			name = TKOTheme;
+			path = "../../TKOKit Classes/TKOTheme";
+			sourceTree = "<group>";
+		};
+		459650B01966EF9B00437A55 /* TKOSidebarControlView */ = {
+			isa = PBXGroup;
+			children = (
+				459650B11966EF9B00437A55 /* TKOSidebarControlView.h */,
+				459650B21966EF9B00437A55 /* TKOSidebarControlView.m */,
+			);
+			name = TKOSidebarControlView;
+			path = "../../TKOKit Classes/TKOSidebarControlView";
+			sourceTree = "<group>";
+		};
+		459650B61967040D00437A55 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BEEB196989410023D119 /* grabber.pdf */,
+				45C8BEEC196989410023D119 /* grabber@2x.pdf */,
+				459650B71967040D00437A55 /* Lists-Off.png */,
+				459650B81967040D00437A55 /* Lists-Off@2x.png */,
+				459650B91967040D00437A55 /* TKOAssignmentsTemplate.png */,
+				459650BA1967040D00437A55 /* TKOAssignmentsTemplate@2x.png */,
+				459650BB1967040D00437A55 /* TKOFormatsTemplate.png */,
+				459650BC1967040D00437A55 /* TKOFormatsTemplate@2x.png */,
+				459650BD1967040D00437A55 /* TKOListsTemplate.png */,
+				459650BE1967040D00437A55 /* TKOListsTemplate@2x.png */,
+				459650BF1967040D00437A55 /* TKOProblemsTemplate.png */,
+				459650C01967040D00437A55 /* TKOProblemsTemplate@2x.png */,
+				459650C11967040D00437A55 /* TKOStandardsTemplate.png */,
+				459650C21967040D00437A55 /* TKOStandardsTemplate@2x.png */,
+				459650C31967040D00437A55 /* TKOStudentsTemplate.png */,
+				459650C41967040D00437A55 /* TKOStudentsTemplate@2x.png */,
+				459650C51967040D00437A55 /* TKOTagsTemplate.png */,
+				459650C61967040D00437A55 /* TKOTagsTemplate@2x.png */,
+				459650C71967040D00437A55 /* TKOTrashTemplate.png */,
+				459650C81967040D00437A55 /* TKOTrashTemplate@2x.png */,
+			);
+			name = Assets;
+			path = ../../../../Keystone/Demos/ProblemEditor/ProblemEditor/Assets;
+			sourceTree = "<group>";
+		};
+		45C8BEC619688D1B0023D119 /* TKOStackingSidebarView */ = {
+			isa = PBXGroup;
+			children = (
+				459650DB19671A8D00437A55 /* TKOStackingSidebarView.h */,
+				459650DC19671A8D00437A55 /* TKOStackingSidebarView.m */,
+			);
+			name = TKOStackingSidebarView;
+			sourceTree = "<group>";
+		};
+		45C8BEF21969956B0023D119 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BEF31969956B0023D119 /* TKOTagsViewController.h */,
+				45C8BEF41969956B0023D119 /* TKOTagsViewController.m */,
+				45C8BEF51969956B0023D119 /* TKOTagsViewController.xib */,
+			);
+			name = Tags;
+			path = "../../../Keystone/Mac/Main Navigation/Tags";
+			sourceTree = "<group>";
+		};
+		45C8BEF61969956B0023D119 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BEF71969956B0023D119 /* TKOStudentsViewController.h */,
+				45C8BEF81969956B0023D119 /* TKOStudentsViewController.m */,
+				45C8BEF91969956B0023D119 /* TKOStudentsViewController.xib */,
+			);
+			name = Students;
+			path = "../../../Keystone/Mac/Main Navigation/Students";
+			sourceTree = "<group>";
+		};
+		45C8BEFA1969956B0023D119 /* Standards */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BEFB1969956B0023D119 /* TKOStandardsViewController.h */,
+				45C8BEFC1969956B0023D119 /* TKOStandardsViewController.m */,
+				45C8BEFD1969956B0023D119 /* TKOStandardsViewController.xib */,
+			);
+			name = Standards;
+			path = "../../../Keystone/Mac/Main Navigation/Standards";
+			sourceTree = "<group>";
+		};
+		45C8BEFE1969956B0023D119 /* Problems */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BEFF1969956B0023D119 /* TKOProblemsViewController.h */,
+				45C8BF001969956B0023D119 /* TKOProblemsViewController.m */,
+				45C8BF011969956B0023D119 /* TKOProblemsViewController.xib */,
+			);
+			name = Problems;
+			path = "../../../Keystone/Mac/Main Navigation/Problems";
+			sourceTree = "<group>";
+		};
+		45C8BF021969956B0023D119 /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BF031969956B0023D119 /* TKOFormatsViewController.h */,
+				45C8BF041969956B0023D119 /* TKOFormatsViewController.m */,
+				45C8BF051969956B0023D119 /* TKOFormatsViewController.xib */,
+				45C8BF1F1969A1C90023D119 /* TKOFormatTableViewController.h */,
+				45C8BF201969A1C90023D119 /* TKOFormatTableViewController.m */,
+				45C8BF211969A1C90023D119 /* TKOFormatTableViewController.xib */,
+				45C8BF251969A1ED0023D119 /* TKOFormatCellView.h */,
+				45C8BF241969A1ED0023D119 /* TKOFormatCellView.m */,
+				45C8BF261969A1ED0023D119 /* TKOFormatCellView.xib */,
+			);
+			name = Formats;
+			path = "../../../Keystone/Mac/Main Navigation/Formats";
+			sourceTree = "<group>";
+		};
+		45C8BF061969956B0023D119 /* Assignments */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BF071969956B0023D119 /* TKOAssignmentsViewController.h */,
+				45C8BF081969956B0023D119 /* TKOAssignmentsViewController.m */,
+				45C8BF091969956B0023D119 /* TKOAssignmentsViewController.xib */,
+			);
+			name = Assignments;
+			path = "../../../Keystone/Mac/Main Navigation/Assignments";
+			sourceTree = "<group>";
+		};
+		45C8BF291969A2F70023D119 /* TKOTableDragDropDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				45C8BF2A1969A2F70023D119 /* TKODraggingTableViewDataSource.h */,
+				45C8BF2B1969A2F70023D119 /* TKODraggingTableViewDataSource.m */,
+			);
+			name = TKOTableDragDropDataSource;
+			path = "../../TKOKit Classes/TKOTableDragDropDataSource";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		459650431966E7C100437A55 /* TKOStackingSidebarDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459650751966E7C100437A55 /* Build configuration list for PBXNativeTarget "TKOStackingSidebarDemo" */;
+			buildPhases = (
+				459650401966E7C100437A55 /* Sources */,
+				459650411966E7C100437A55 /* Frameworks */,
+				459650421966E7C100437A55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKOStackingSidebarDemo;
+			productName = TKOStackingSidebarDemo;
+			productReference = 459650441966E7C100437A55 /* TKOStackingSidebarDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		459650641966E7C100437A55 /* TKOStackingSidebarDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459650781966E7C100437A55 /* Build configuration list for PBXNativeTarget "TKOStackingSidebarDemoTests" */;
+			buildPhases = (
+				459650611966E7C100437A55 /* Sources */,
+				459650621966E7C100437A55 /* Frameworks */,
+				459650631966E7C100437A55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4596506A1966E7C100437A55 /* PBXTargetDependency */,
+			);
+			name = TKOStackingSidebarDemoTests;
+			productName = TKOStackingSidebarDemoTests;
+			productReference = 459650651966E7C100437A55 /* TKOStackingSidebarDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4596503C1966E7C100437A55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKO;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					459650641966E7C100437A55 = {
+						TestTargetID = 459650431966E7C100437A55;
+					};
+				};
+			};
+			buildConfigurationList = 4596503F1966E7C100437A55 /* Build configuration list for PBXProject "TKOStackingSidebarDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4596503B1966E7C100437A55;
+			productRefGroup = 459650451966E7C100437A55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				459650431966E7C100437A55 /* TKOStackingSidebarDemo */,
+				459650641966E7C100437A55 /* TKOStackingSidebarDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		459650421966E7C100437A55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C8BF131969956B0023D119 /* TKOFormatsViewController.xib in Resources */,
+				459650D41967040D00437A55 /* TKOStandardsTemplate@2x.png in Resources */,
+				45C8BEED196989410023D119 /* grabber.pdf in Resources */,
+				45C8BF281969A1ED0023D119 /* TKOFormatCellView.xib in Resources */,
+				459650521966E7C100437A55 /* InfoPlist.strings in Resources */,
+				459650D51967040D00437A55 /* TKOStudentsTemplate.png in Resources */,
+				459650CA1967040D00437A55 /* Lists-Off@2x.png in Resources */,
+				459650D11967040D00437A55 /* TKOProblemsTemplate.png in Resources */,
+				459650C91967040D00437A55 /* Lists-Off.png in Resources */,
+				45C8BEEE196989410023D119 /* grabber@2x.pdf in Resources */,
+				459650CB1967040D00437A55 /* TKOAssignmentsTemplate.png in Resources */,
+				459650D81967040D00437A55 /* TKOTagsTemplate@2x.png in Resources */,
+				459650D71967040D00437A55 /* TKOTagsTemplate.png in Resources */,
+				459650601966E7C100437A55 /* Images.xcassets in Resources */,
+				45C8BF0F1969956B0023D119 /* TKOStandardsViewController.xib in Resources */,
+				45C8BF0B1969956B0023D119 /* TKOTagsViewController.xib in Resources */,
+				459650CC1967040D00437A55 /* TKOAssignmentsTemplate@2x.png in Resources */,
+				459650D21967040D00437A55 /* TKOProblemsTemplate@2x.png in Resources */,
+				459650D01967040D00437A55 /* TKOListsTemplate@2x.png in Resources */,
+				45C8BF151969956B0023D119 /* TKOAssignmentsViewController.xib in Resources */,
+				459650DA1967040D00437A55 /* TKOTrashTemplate@2x.png in Resources */,
+				459650D31967040D00437A55 /* TKOStandardsTemplate.png in Resources */,
+				459650B51967038400437A55 /* KeystoneThemes.plist in Resources */,
+				459650581966E7C100437A55 /* Credits.rtf in Resources */,
+				459650CF1967040D00437A55 /* TKOListsTemplate.png in Resources */,
+				45C8BF231969A1C90023D119 /* TKOFormatTableViewController.xib in Resources */,
+				459650CE1967040D00437A55 /* TKOFormatsTemplate@2x.png in Resources */,
+				4596505E1966E7C100437A55 /* MainMenu.xib in Resources */,
+				45C8BF111969956B0023D119 /* TKOProblemsViewController.xib in Resources */,
+				459650D91967040D00437A55 /* TKOTrashTemplate.png in Resources */,
+				459650D61967040D00437A55 /* TKOStudentsTemplate@2x.png in Resources */,
+				45C8BF0D1969956B0023D119 /* TKOStudentsViewController.xib in Resources */,
+				459650CD1967040D00437A55 /* TKOFormatsTemplate.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459650631966E7C100437A55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459650701966E7C100437A55 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		459650401966E7C100437A55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4596509C1966E80C00437A55 /* NSColor+TKOKit.m in Sources */,
+				45C8BF0C1969956B0023D119 /* TKOStudentsViewController.m in Sources */,
+				459650AB1966E83100437A55 /* TKOButtonCell.m in Sources */,
+				459650A71966E80C00437A55 /* TKOThemedViewController.m in Sources */,
+				45C8BF0A1969956B0023D119 /* TKOTagsViewController.m in Sources */,
+				45C8BF2C1969A2F70023D119 /* TKODraggingTableViewDataSource.m in Sources */,
+				4596509B1966E80C00437A55 /* NSAttributedString+TKOKit.m in Sources */,
+				459650A81966E80C00437A55 /* TKOThemeLoader.m in Sources */,
+				459650541966E7C100437A55 /* main.m in Sources */,
+				4596505B1966E7C100437A55 /* TKOAppDelegate.m in Sources */,
+				459650B31966EF9B00437A55 /* TKOSidebarControlView.m in Sources */,
+				459650A11966E80C00437A55 /* NSView+TKOKit.m in Sources */,
+				459650A51966E80C00437A55 /* TKOTheme.m in Sources */,
+				459650A31966E80C00437A55 /* TKOSegmentedControlView.m in Sources */,
+				4596509E1966E80C00437A55 /* NSScrollView+TKOKit.m in Sources */,
+				45C8BF0E1969956B0023D119 /* TKOStandardsViewController.m in Sources */,
+				45C8BF101969956B0023D119 /* TKOProblemsViewController.m in Sources */,
+				459650A61966E80C00437A55 /* TKOThemeConstants.m in Sources */,
+				459650A01966E80C00437A55 /* NSString+TKOKit.m in Sources */,
+				459650A21966E80C00437A55 /* TKOPlatform.m in Sources */,
+				4596509F1966E80C00437A55 /* NSString+Geometrics.m in Sources */,
+				45C8BF141969956B0023D119 /* TKOAssignmentsViewController.m in Sources */,
+				45C8BF121969956B0023D119 /* TKOFormatsViewController.m in Sources */,
+				459650DD19671A8D00437A55 /* TKOStackingSidebarView.m in Sources */,
+				45C8BEF119698A4E0023D119 /* TKOBackgroundView.m in Sources */,
+				45C8BF271969A1ED0023D119 /* TKOFormatCellView.m in Sources */,
+				4596509D1966E80C00437A55 /* NSImage+TKOKit.m in Sources */,
+				45C8BF221969A1C90023D119 /* TKOFormatTableViewController.m in Sources */,
+				45C8BEC51968813A0023D119 /* TKOSegmentedItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459650611966E7C100437A55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459650721966E7C100437A55 /* TKOStackingSidebarDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4596506A1966E7C100437A55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 459650431966E7C100437A55 /* TKOStackingSidebarDemo */;
+			targetProxy = 459650691966E7C100437A55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		459650501966E7C100437A55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				459650511966E7C100437A55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		459650561966E7C100437A55 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				459650571966E7C100437A55 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4596505C1966E7C100437A55 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4596505D1966E7C100437A55 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4596506E1966E7C100437A55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4596506F1966E7C100437A55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		459650731966E7C100437A55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		459650741966E7C100437A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		459650761966E7C100437A55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		459650771966E7C100437A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		459650791966E7C100437A55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOStackingSidebarDemo.app/Contents/MacOS/TKOStackingSidebarDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TKOStackingSidebarDemoTests/TKOStackingSidebarDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4596507A1966E7C100437A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TKOStackingSidebarDemo.app/Contents/MacOS/TKOStackingSidebarDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TKOStackingSidebarDemo/TKOStackingSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "TKOStackingSidebarDemoTests/TKOStackingSidebarDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4596503F1966E7C100437A55 /* Build configuration list for PBXProject "TKOStackingSidebarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459650731966E7C100437A55 /* Debug */,
+				459650741966E7C100437A55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		459650751966E7C100437A55 /* Build configuration list for PBXNativeTarget "TKOStackingSidebarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459650761966E7C100437A55 /* Debug */,
+				459650771966E7C100437A55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		459650781966E7C100437A55 /* Build configuration list for PBXNativeTarget "TKOStackingSidebarDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459650791966E7C100437A55 /* Debug */,
+				4596507A1966E7C100437A55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4596503C1966E7C100437A55 /* Project object */;
+}

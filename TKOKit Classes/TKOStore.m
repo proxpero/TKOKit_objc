@@ -24,6 +24,24 @@
     BOOL _deleteStore;
 }
 
+- (instancetype)initWithTemporaryStoreType
+{
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
+    id store = [_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
+                                                         configuration:nil
+                                                                   URL:nil
+                                                               options:nil
+                                                                 error:NULL];
+
+    NSAssert(store, @"No store");
+    
+    _mainManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    _mainManagedObjectContext.persistentStoreCoordinator = _persistentStoreCoordinator;
+    
+    return self;
+}
+
 - (id)initWithStoreURL:(NSURL *)storeURL
               modelURL:(NSURL *)modelURL
 {

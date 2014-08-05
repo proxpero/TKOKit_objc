@@ -7,46 +7,67 @@
 //
 
 #import "TKOButtonCell.h"
-#import "NSColor+TKOKit.h"
 
 @implementation TKOButtonCell
+
 
 - (id)init
 {
     self = [super init];
-    if (!self)
-        return nil;
-    
-    self.bordered = NO;
-    self.title = @"";
-    self.imagePosition = NSNoImage;
-    
-    [self setDefaultColors];
-//    self.borderMask = TKOBorderMaskBottom;
-    
+    if (!self) return nil;
+
+    [self configure];
+
     return self;
 }
+
 
 - (id)initTextCell:(NSString *)aString
 {
     self = [super initTextCell:aString];
-    if (!self)
-        return nil;
-    [self setBordered:NO];
-    [self setDefaultColors];
-//    self.borderMask = TKOBorderMaskBottom;
-    self.borderHighlightMask = self.borderMask;
+    if (!self) return nil;
+    
+    [self configure];
     
     return self;
 }
 
-- (void)setDefaultColors
+
+- (instancetype)initImageCell:(NSImage *)image
 {
+    self = [super initImageCell:image];
+    if (!self) return nil;
+    
+    [self configure];
+    
+    return self;
+}
+
+
+- (void)configure
+{
+    static BOOL configured = NO; if (configured) return; configured = YES;
+    
+    self.bordered = NO;
+    self.buttonType = NSMomentaryLightButton;
+    self.title = @"";
+    self.image = nil;
+    self.imagePosition = NSNoImage;
+
     self.backgroundColor            = [NSColor colorWithHexString:@"ededed"];
     self.backgroundHighlightColor   = [NSColor colorWithHexString:@"0096f2"];
     self.borderColor                = [NSColor colorWithHexString:@"b3b3b3"];
     self.borderHighlightColor       = [NSColor colorWithHexString:@"0070c4"];
+    self.textColor                  = [NSColor textColor];
+    self.textHighlightColor         = [NSColor whiteColor];
+    self.imageColor                 = [NSColor darkGrayColor];
+    self.imageHighlightColor        = [NSColor whiteColor];
+    
+    self.borderMask = TKOBorderMaskBottom;
+    self.borderHighlightMask = TKOBorderMaskBottom;
+    
 }
+
 
 - (id)copyWithZone:(NSZone *)zone
 {
@@ -61,17 +82,20 @@
     return copy;
 }
 
+
 - (void)setBorderMask:(TKOBorderMask)borderMask
 {
     _borderMask = borderMask;
     [self.controlView setNeedsDisplay:YES];
 }
 
+
 - (void)setBorderHighlightMask:(TKOBorderMask)borderHighlightMask
 {
     _borderHighlightMask = borderHighlightMask;
     [self.controlView setNeedsDisplay:YES];
 }
+
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor
 {
@@ -85,6 +109,7 @@
     }
 }
 
+
 - (void)setBackgroundHighlightColor:(NSColor *)backgroundHighlightColor {
     if (_backgroundHighlightColor != backgroundHighlightColor) {
         _backgroundHighlightColor = backgroundHighlightColor.copy;
@@ -92,31 +117,56 @@
     }
 }
 
+
 - (void)setBorderColor:(NSColor *)borderColor
 {
     if (_borderColor != borderColor) {
         _borderColor = borderColor.copy;
+        
         [self.controlView setNeedsDisplay:YES];
     }
 }
 
-- (void)setBorderHighlightColor:(NSColor *)borderHighlightColor {
-    if (_borderHighlightColor != borderHighlightColor) {
-        _borderHighlightColor = borderHighlightColor.copy;
-        [self.controlView setNeedsDisplay:YES];
-    }
+
+- (void)setBorderHighlightColor:(NSColor *)borderHighlightColor
+{
+    if (_borderHighlightColor == borderHighlightColor) return;
+    _borderHighlightColor = borderHighlightColor.copy;
+    [self.controlView setNeedsDisplay:YES];
 }
+
 
 - (void)drawWithFrame:(NSRect)cellFrame
                inView:(NSView *)controlView
 {
-    [((self.state|self.isHighlighted) ? self.backgroundHighlightColor : self.backgroundColor) set];
-    NSRectFill(cellFrame);
+    NSGradient * gradient = (self.state|self.isHighlighted) ? self.backgroundHighlightGradient : self.backgroundGradient;
+    [gradient drawInRect:cellFrame angle:self.gradientAngle];
+    
+    [self drawInteriorWithFrame:cellFrame inView:controlView];
     
     [self drawBordersInCellFrame:cellFrame];
-    [self drawInteriorWithFrame:cellFrame
-                         inView:controlView];
+
 }
+
+
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
+{
+    if (self.title.length && self.imagePosition != NSImageOnly) {
+
+        NSMutableAttributedString * attrStr = self.attributedTitle.mutableCopy;
+        NSColor * color = (self.state|self.isHighlighted) ? self.textHighlightColor : self.textColor;
+        [attrStr addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, attrStr.length)];
+        [self drawTitle:attrStr withFrame:NSOffsetRect(cellFrame, 0, self.verticalTextOffset) inView:controlView];
+        
+    }
+    
+    if (self.image && self.imagePosition != NSNoImage) {
+        
+        [self drawImage:[self.image imageWithTint:(self.isHighlighted|self.state) ? self.imageHighlightColor : self.imageColor] withFrame:NSOffsetRect(cellFrame, 0, self.verticalImageOffset) inView:controlView];
+        
+    }
+}
+
 
 - (void)drawBordersInCellFrame:(NSRect)cellFrame
 {
@@ -128,6 +178,7 @@
         NSRectFillList(borderRects, borderRectCount);
     }
 }
+
 
 @end
 
@@ -155,3 +206,9 @@ BOOL TKORectArrayWithBorderMask(NSRect sourceRect, TKOBorderMask borderMask, NSR
     
     return (outputCount > 0);
 }
+
+NSString * const TKOSidebarItemLabelKey     = @"TKOSidebarItemLabelKey";
+NSString * const TKOSidebarItemImageKey     = @"TKOSidebarItemImageKey";
+NSString * const TKOSidebarItemTagKey       = @"TKOSidebarItemTagKey";
+NSString * const TKOSidebarItemGravityKey   = @"TKOSidebarItemGravityKey";
+

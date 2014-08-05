@@ -24,8 +24,7 @@
 - (id)init {
 	
 	self = [super init];
-	if (self == nil)
-		return nil;
+	if (self == nil) return nil;
 	
 	NSString *themesFilePath = [[NSBundle mainBundle] pathForResource:@"KeystoneThemes" ofType:@"plist"];
 	NSDictionary *themesDictionary = [NSDictionary dictionaryWithContentsOfFile:themesFilePath];
@@ -54,8 +53,9 @@
 - (TKOTheme *)themeNamed:(NSString *)themeName {
 
 	for (TKOTheme *oneTheme in self.themes) {
-		if ([themeName isEqualToString:oneTheme.name])
+		if ([themeName isEqualToString:oneTheme.name]) {
 			return oneTheme;
+        }
 	}
 
 	return nil;

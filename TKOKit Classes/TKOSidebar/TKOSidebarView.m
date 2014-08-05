@@ -39,15 +39,15 @@
     
     // Set Defaults
     
-    _backgroundColor = [NSColor clearColor];
-    _backgroundHighlightColor = [NSColor controlColor];
-    _imageColor = [NSColor darkGrayColor];
-    _imageHighlightColor = [NSColor colorWithHexString:@"AC1326"];
-    _textColor      = [NSColor darkGrayColor];
-    _textHighlightColor = [NSColor darkGrayColor];
-    _borderColor = [NSColor colorWithHexString:@"C2BFC3"];
-    _borderHighlightColor = [NSColor colorWithHexString:@"AC1326"];
-    _font = [NSFont fontWithName:@"HelveticaNeue-Light" size:11];
+    _backgroundColor            = [NSColor clearColor];
+    _backgroundHighlightColor   = [NSColor controlColor];
+    _imageColor                 = [NSColor darkGrayColor];
+    _imageHighlightColor        = [NSColor colorWithHexString:@"AC1326"];
+    _textColor                  = [NSColor darkGrayColor];
+    _textHighlightColor         = [NSColor darkGrayColor];
+    _borderColor                = [NSColor colorWithHexString:@"C2BFC3"];
+    _borderHighlightColor       = [NSColor colorWithHexString:@"AC1326"];
+    _font                       = [NSFont fontWithName:@"HelveticaNeue-Light" size:11];
     
     return self;
 }
@@ -77,16 +77,7 @@
     
     [self addSubview:_sidebar];
     [_sidebar addConstraintForWidth:80.0];
-//    [_sidebar addConstraint:
-//     [NSLayoutConstraint constraintWithItem:_sidebar
-//                                  attribute:NSLayoutAttributeWidth
-//                                  relatedBy:NSLayoutRelationEqual
-//                                     toItem:nil
-//                                  attribute:NSLayoutAttributeNotAnAttribute
-//                                 multiplier:1
-//                                   constant:80.0]
-//     ];
-    
+
     _border = [NSView viewWithClass:[NSView class]];
     _border.wantsLayer = YES;
     _border.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
@@ -101,16 +92,6 @@
                                              metrics:nil
                                                views:views]
      ];
-    
-//    [self addConstraint:
-//     [NSLayoutConstraint constraintWithItem:_sidebar
-//                                  attribute:NSLayoutAttributeLeading
-//                                  relatedBy:NSLayoutRelationEqual
-//                                     toItem:self
-//                                  attribute:NSLayoutAttributeLeading
-//                                 multiplier:1
-//                                   constant:0]
-//     ];
     
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[sidebar]|"

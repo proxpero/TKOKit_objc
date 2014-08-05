@@ -12,6 +12,7 @@
 
 @implementation TKOTextTabControl
 
+
 - (void)reloadData
 {
     NSMutableArray *newItems = [[NSMutableArray alloc] init];
@@ -56,6 +57,7 @@
     
     self.items = newItems;
 }
+
 
 - (void)layoutTabs:(NSArray *)tabs
 {
@@ -108,6 +110,7 @@
     }
 }
 
+
 - (NSButton *)tabWithTitle:(NSString *)title
 {
     TKOTextTabCell * tabCell = [[TKOTextTabCell alloc] initTextCell:title];
@@ -132,6 +135,7 @@
 
     return tab;
 }
+
 
 @end
 

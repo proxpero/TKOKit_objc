@@ -12,44 +12,44 @@
 
 @implementation TKOSidebarCell
 
-- (void)setDefaultColors
-{
-    [super setDefaultColors];
-    self.textColor                  = [NSColor colorWithHexString:@"444444"];
-    self.textHighlightColor         = [NSColor colorWithHexString:@"ffffff"];
-    self.imageColor                 = [NSColor colorWithHexString:@"5e5e5e"];
-    self.imageHighlightColor        = [NSColor colorWithHexString:@"0096f2"];
-    
-    self.highlightsBy = NSNoCellMask;
-}
-
-- (void)setTextColor:(NSColor *)textColor {
-    if (_textColor != textColor) {
-        _textColor = textColor.copy;
-        [self.controlView setNeedsDisplay:YES];
-    }
-}
-
-- (void)setTextHighlightColor:(NSColor *)textHighlightColor {
-    if (_textHighlightColor != textHighlightColor) {
-        _textHighlightColor = textHighlightColor.copy;
-        [self.controlView setNeedsDisplay:YES];
-    }
-}
-
-- (void)setImageColor:(NSColor *)imageColor {
-    if (_imageColor != imageColor) {
-        _imageColor = imageColor.copy;
-        [self.controlView setNeedsDisplay:YES];
-    }
-}
-
-- (void)setImageHighlightColor:(NSColor *)imageHighlightColor {
-    if (_imageHighlightColor != imageHighlightColor) {
-        _imageHighlightColor = imageHighlightColor.copy;
-        [self.controlView setNeedsDisplay:YES];
-    }
-}
+//- (void)setDefaultColors
+//{
+//    [super setDefaultColors];
+//    self.textColor                  = [NSColor colorWithHexString:@"444444"];
+//    self.textHighlightColor         = [NSColor colorWithHexString:@"ffffff"];
+//    self.imageColor                 = [NSColor colorWithHexString:@"5e5e5e"];
+//    self.imageHighlightColor        = [NSColor colorWithHexString:@"0096f2"];
+//    
+//    self.highlightsBy = NSNoCellMask;
+//}
+//
+//- (void)setTextColor:(NSColor *)textColor {
+//    if (_textColor != textColor) {
+//        _textColor = textColor.copy;
+//        [self.controlView setNeedsDisplay:YES];
+//    }
+//}
+//
+//- (void)setTextHighlightColor:(NSColor *)textHighlightColor {
+//    if (_textHighlightColor != textHighlightColor) {
+//        _textHighlightColor = textHighlightColor.copy;
+//        [self.controlView setNeedsDisplay:YES];
+//    }
+//}
+//
+//- (void)setImageColor:(NSColor *)imageColor {
+//    if (_imageColor != imageColor) {
+//        _imageColor = imageColor.copy;
+//        [self.controlView setNeedsDisplay:YES];
+//    }
+//}
+//
+//- (void)setImageHighlightColor:(NSColor *)imageHighlightColor {
+//    if (_imageHighlightColor != imageHighlightColor) {
+//        _imageHighlightColor = imageHighlightColor.copy;
+//        [self.controlView setNeedsDisplay:YES];
+//    }
+//}
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {

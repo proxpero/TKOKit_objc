@@ -7,6 +7,7 @@
 //
 
 @import WebKit;
+@import Quartz;
 #import "TKOProblemEditorPreviewWindowController.h"
 #import "NSView+TKOKit.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic) NSString * htmlTemplate;
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * heightConstraint;
+@property (strong) IBOutlet PDFView *pdfView;
+
+@property (nonatomic) NSURL * htmlUrl;
 
 @end
 
@@ -48,8 +52,13 @@
 
 - (void)loadWebView
 {
+    NSURL * baseURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDesktopDirectory inDomains:NSUserDomainMask] firstObject];
     NSString * htmlString = [self.htmlTemplate stringByReplacingOccurrencesOfString:@"{{HTML}}" withString:self.html];
-    [self.webView.mainFrame loadHTMLString:htmlString baseURL:nil];
+    [self.webView.mainFrame loadHTMLString:htmlString baseURL:baseURL];
+    
+    NSURL * url = [[[NSFileManager defaultManager] URLsForDirectory:NSDesktopDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Test.html"];
+    [htmlString writeToURL:url atomically:YES encoding:NSUTF8StringEncoding error:NULL];
 }
 
 - (void)windowDidLoad
@@ -73,11 +82,33 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)webFrame
 {
+    NSLog(@"first height %f", [[sender stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue]);
+    [self performSelector:@selector(waitForMathjax:) withObject:sender afterDelay:1.0];
+    NSLog(@"second height %f", [[sender stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue]);
+}
+
+- (void)waitForMathjax:(WebView *)webView
+{
     static const CGFloat necessaryOffset = 2; // required for descenders
     static const CGFloat aestheticOffset = 2; // for balancing top margin
     
-    CGFloat newHeight = [[sender stringByEvaluatingJavaScriptFromString:@"document.body.clientHeight;"] floatValue];
+    CGFloat newHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue];
+    NSLog(@"third height %f", newHeight);
     self.heightConstraint.constant = newHeight + necessaryOffset + aestheticOffset;
+    [self performSelector:@selector(makePdf) withObject:nil afterDelay:1.0];
+}
+
+- (void)makePdf
+{
+    PDFDocument * pdfDoc = [[PDFDocument alloc] initWithData:[self.webView dataWithPDFInsideRect:self.webView.bounds]];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL * pdfURL = [[fileManager URLsForDirectory:NSDesktopDirectory inDomains:NSUserDomainMask] lastObject];
+    pdfURL = [pdfURL URLByAppendingPathComponent:@"Test.pdf"];
+    
+    [self.pdfView  setDocument:pdfDoc];
+    [pdfDoc writeToURL:pdfURL];
+    
+//    NSLog(@"%@", self.html);
 }
 
 @end

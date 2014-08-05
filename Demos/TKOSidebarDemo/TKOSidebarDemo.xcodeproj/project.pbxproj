@@ -98,6 +98,7 @@
 		4510BAAD18F32FC00000182A /* TKOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BA5818F32FC00000182A /* TKOTheme.m */; };
 		4510BAAE18F32FC00000182A /* TKOThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BA5A18F32FC00000182A /* TKOThemeLoader.m */; };
 		4510BB1E18F3B3610000182A /* TKOSidebarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4510BB1D18F3B3610000182A /* TKOSidebarCell.m */; };
+		45B3FA5B195BEF61006FB43F /* TKONewSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B3FA5A195BEF61006FB43F /* TKONewSidebarView.m */; };
 		45DD4D6318F7177B0078C75F /* TKOAssignmentsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5518F7177B0078C75F /* TKOAssignmentsTemplate.png */; };
 		45DD4D6418F7177B0078C75F /* TKOAssignmentsTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5618F7177B0078C75F /* TKOAssignmentsTemplate@2x.png */; };
 		45DD4D6518F7177B0078C75F /* TKOFormatsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DD4D5718F7177B0078C75F /* TKOFormatsTemplate.png */; };
@@ -276,6 +277,8 @@
 		4510BA5A18F32FC00000182A /* TKOThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOThemeLoader.m; sourceTree = "<group>"; };
 		4510BB1C18F3B3610000182A /* TKOSidebarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOSidebarCell.h; sourceTree = "<group>"; };
 		4510BB1D18F3B3610000182A /* TKOSidebarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOSidebarCell.m; sourceTree = "<group>"; };
+		45B3FA59195BEF61006FB43F /* TKONewSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKONewSidebarView.h; sourceTree = "<group>"; };
+		45B3FA5A195BEF61006FB43F /* TKONewSidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKONewSidebarView.m; sourceTree = "<group>"; };
 		45DD4D5518F7177B0078C75F /* TKOAssignmentsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOAssignmentsTemplate.png; sourceTree = "<group>"; };
 		45DD4D5618F7177B0078C75F /* TKOAssignmentsTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TKOAssignmentsTemplate@2x.png"; sourceTree = "<group>"; };
 		45DD4D5718F7177B0078C75F /* TKOFormatsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKOFormatsTemplate.png; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 				45DD4D7218F817B30078C75F /* TKOSidebarView.m */,
 				45DD4D7418F83A090078C75F /* TKOSidebarViewItem.h */,
 				45DD4D7518F83A090078C75F /* TKOSidebarViewItem.m */,
+				45B3FA59195BEF61006FB43F /* TKONewSidebarView.h */,
+				45B3FA5A195BEF61006FB43F /* TKONewSidebarView.m */,
 			);
 			name = TKOSidebar;
 			path = "../../TKOKit Classes/TKOSidebar";
@@ -897,6 +902,7 @@
 				4510BA9F18F32FC00000182A /* TKONavigationControl.m in Sources */,
 				4510BA5B18F32FC00000182A /* NSAttributedString+TKOKit.m in Sources */,
 				4510BAAC18F32FC00000182A /* TKOTextView.m in Sources */,
+				45B3FA5B195BEF61006FB43F /* TKONewSidebarView.m in Sources */,
 				4510BA8618F32FC00000182A /* TKOJumpbarCell.m in Sources */,
 				4510BB1E18F3B3610000182A /* TKOSidebarCell.m in Sources */,
 				4510BA9E18F32FC00000182A /* TKONavigationCell.m in Sources */,

@@ -3,12 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
         <plugIn identifier="com.apple.WebKitIBPlugin" version="5056"/>
+        <plugIn identifier="com.apple.pdfkit.ibplugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TKOProblemEditorPreviewWindowController">
             <connections>
                 <outlet property="documentView" destination="KwG-40-8Xe" id="vCX-HW-4qj"/>
                 <outlet property="heightConstraint" destination="2gU-Av-XzH" id="FNr-qT-ydb"/>
+                <outlet property="pdfView" destination="SP8-C0-ntd" id="7qA-nD-bPb"/>
                 <outlet property="webView" destination="9rB-sN-O1j" id="OOq-21-0mo"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -61,6 +63,28 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+        </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="ovk-4f-UXq" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" resizable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="130" y="63" width="448" height="378"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
+            <view key="contentView" id="nzL-NH-wD5">
+                <rect key="frame" x="0.0" y="0.0" width="448" height="378"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pdfView autoresizesSubviews="NO" wantsLayer="YES" displaysPageBreaks="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP8-C0-ntd">
+                        <rect key="frame" x="0.0" y="0.0" width="448" height="378"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </pdfView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SP8-C0-ntd" secondAttribute="trailing" id="6gs-t3-ekY"/>
+                    <constraint firstItem="SP8-C0-ntd" firstAttribute="top" secondItem="nzL-NH-wD5" secondAttribute="top" id="EFl-ne-d73"/>
+                    <constraint firstAttribute="bottom" secondItem="SP8-C0-ntd" secondAttribute="bottom" id="XSV-DJ-BFS"/>
+                    <constraint firstItem="SP8-C0-ntd" firstAttribute="leading" secondItem="nzL-NH-wD5" secondAttribute="leading" id="mgv-wh-QBJ"/>
+                </constraints>
+            </view>
         </window>
     </objects>
 </document>
