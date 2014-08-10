@@ -1,6 +1,6 @@
 //
 //  TKOStore.m
-//  Anthology
+//  TKOKit
 //
 //  Created by Todd Olsen on 10/5/13.
 //  Copyright (c) 2013 Todd Olsen. All rights reserved.

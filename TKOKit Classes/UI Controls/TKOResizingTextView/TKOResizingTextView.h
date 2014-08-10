@@ -14,6 +14,6 @@
 
 @property (nonatomic) TKOTheme * theme;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * heightConstraint;
-@property (nonatomic, weak) NSAttributedString * directions;
+//@property (nonatomic, weak) NSAttributedString * directions;
 
 @end

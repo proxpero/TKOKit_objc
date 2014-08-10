@@ -65,14 +65,7 @@ static TKOTheme * theme = nil;
     self.allowsUndo = YES;
     self.textContainerInset = textInset;
     
-    _heightConstraint = [NSLayoutConstraint constraintWithItem:self
-                                                     attribute:NSLayoutAttributeHeight
-                                                     relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                        toItem:nil
-                                                     attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1
-                                                      constant:_minHeight];
-    [self addConstraint:_heightConstraint];
+    NSLog(@"text view size: %@", NSStringFromSize(self.bounds.size));
     
     return self;
 }
@@ -120,7 +113,7 @@ static TKOTheme * theme = nil;
     CGFloat height = [self.attributedString heightForWidth:self.bounds.size.width - _doubleInset]; // text width without padding
     height += _doubleInset; // vertical padding
     if (height < _minHeight) height = _minHeight;
-    self.heightConstraint.constant = height;
+    self.heightConstraint.constant = height * 3;
 }
 
 - (void)keyDown:(NSEvent *)theEvent

@@ -118,6 +118,19 @@
                                              from:self];
 }
 
+- (void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    if (selectedIndex == -1) {
+        
+    } else if (selectedIndex <= self.views.count) {
+        
+        NSButton * selection = self.views[selectedIndex];
+        [self selectItem:selection];
+        
+    } else {
+        
+    }
+}
 
 @end
 

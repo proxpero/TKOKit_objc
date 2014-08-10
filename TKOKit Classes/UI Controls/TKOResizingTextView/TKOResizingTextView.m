@@ -83,13 +83,13 @@
                                                                        attributes:@{NSForegroundColorAttributeName: placeholderColor ?: [NSColor lightGrayColor],
                                                                                     NSFontAttributeName: font}];
     
-    _singleLineHeight        = ceilf(font.ascender + fabsf(font.descender));
-    _heightInset      = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.height;
-    _verticalPadding         = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.height;
-    _widthInset       = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.width;
-    _horizontalPadding       = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.width;
+    _singleLineHeight   = ceilf(font.ascender + fabsf(font.descender));
+    _heightInset        = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.height;
+    _verticalPadding    = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.height;
+    _widthInset         = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.width;
+    _horizontalPadding  = NSEqualSizes(inset, NSZeroSize) ? _singleLineHeight : inset.width;
     
-    _minimumHeight           = _singleLineHeight + _verticalPadding + _verticalPadding;
+    _minimumHeight      = _singleLineHeight + _verticalPadding + _verticalPadding;
     
     if (!_heightConstraint) {
         _heightConstraint = [NSLayoutConstraint constraintWithItem:self

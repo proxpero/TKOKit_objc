@@ -30,4 +30,15 @@
     return self;
 }
 
+//- (instancetype)initWithContainerSize:(NSSize)size
+//{
+//    self = [super initWithContainerSize:size]; if (!self) return nil;
+//
+//    [self setContainerSize:NSMakeSize(size.width, CONTAINER_HEIGHT)];
+//    [self setWidthTracksTextView:WIDTH_TRACKS];
+//    [self setHeightTracksTextView:HEIGHT_TRACKS];
+//    
+//    return self;
+//}
+
 @end

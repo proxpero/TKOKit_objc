@@ -130,6 +130,13 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
     return [self substringFromIndex:[prefix length]];
 }
 
+- (NSRange)rangeofSubstringWithinDelimitersOpen:(NSString *)open close:(NSString *)close
+{
+    NSRange openRange = [self rangeOfString:open options:NSLiteralSearch];
+    NSRange closeRange = [self rangeOfString:close options:NSLiteralSearch];
+    return NSMakeRange(openRange.location + openRange.length + 1, closeRange.location - (openRange.location + openRange.length));
+}
+
 - (NSArray*)csvComponents
 {
     NSMutableArray* components = [NSMutableArray array];

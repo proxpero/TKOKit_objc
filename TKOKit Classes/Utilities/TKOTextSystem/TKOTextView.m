@@ -35,7 +35,18 @@
     if (!self)
         return nil;
     
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
     [self configureTextView];    
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    NSLog(@"Error: %s", __PRETTY_FUNCTION__);
+    
     return self;
 }
 
