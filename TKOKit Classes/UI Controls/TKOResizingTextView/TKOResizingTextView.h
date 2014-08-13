@@ -13,7 +13,9 @@
 @interface TKOResizingTextView : NSTextView
 
 @property (nonatomic) TKOTheme * theme;
-@property (nonatomic, strong) IBOutlet NSLayoutConstraint * heightConstraint;
-//@property (nonatomic, weak) NSAttributedString * directions;
+@property (nonatomic, strong) NSLayoutConstraint * heightConstraint;
+@property (nonatomic, copy) NSAttributedString * placeholder;
+
+- (instancetype)initWithTheme:(TKOTheme *)theme;
 
 @end

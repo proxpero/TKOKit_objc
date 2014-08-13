@@ -13,7 +13,7 @@
 
 @interface TKOResizingTextView ()
 
-@property (nonatomic, copy) NSAttributedString * placeholder;
+
 
 @end
 

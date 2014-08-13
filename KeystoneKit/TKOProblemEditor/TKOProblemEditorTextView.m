@@ -113,7 +113,7 @@ static TKOTheme * theme = nil;
     CGFloat height = [self.attributedString heightForWidth:self.bounds.size.width - _doubleInset]; // text width without padding
     height += _doubleInset; // vertical padding
     if (height < _minHeight) height = _minHeight;
-    self.heightConstraint.constant = height * 3;
+    self.heightConstraint.constant = height;
 }
 
 - (void)keyDown:(NSEvent *)theEvent
