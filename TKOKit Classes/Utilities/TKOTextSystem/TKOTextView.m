@@ -37,7 +37,7 @@
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self configureTextView];    
+//    [self configureTextView];    
     return self;
 }
 
@@ -57,7 +57,7 @@
     [self setMaxSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [self setVerticallyResizable:YES];
     [self setHorizontallyResizable:YES];
-    [self setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+//    [self setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
     
     // Behavioral Attributes
     [self setAllowsUndo:YES];
@@ -87,28 +87,11 @@
 - (BOOL)isOpaque {
     return YES;
 }
+
 - (BOOL)isFlipped {
     return YES;
 }
 
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (!self)
-//        return nil;
-//
-//    _textStorage = [[TKOTextStorage alloc] init];
-//    TKOLayoutManager * layoutManager = [[TKOLayoutManager alloc] init];
-//    [_textStorage addLayoutManager:layoutManager];
-//
-//    TKOTextContainer * textContainer = [[TKOTextContainer alloc] init];
-//    [layoutManager addTextContainer:textContainer];
-//
-//    [textContainer setTextView:self];
-//    [self configureTextView];
-//
-//    return self;
-//}
 @end
 
 NSString * const TKOTextViewDidChangeFontNotification = @"TKOTextViewDidChangeFontNotification";

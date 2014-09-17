@@ -13,8 +13,6 @@
 
 @interface TKOResizingTextView ()
 
-
-
 @end
 
 @implementation TKOResizingTextView
@@ -39,7 +37,6 @@
     
     return self;
 }
-
 
 - (instancetype)init { return [self initWithTheme:nil]; }
 - (instancetype)initWithFrame:(NSRect)frameRect { return [self initWithTheme:nil]; }
@@ -105,14 +102,8 @@
     }
 }
 
-- (void)setDirections:(NSAttributedString *)directions
-{
-    [self.textStorage setAttributedString:directions];
-}
-
-- (NSAttributedString *)directions
-{
-    return [self attributedString];
+- (NSArray *)readablePasteboardTypes {
+    return @[NSPasteboardTypeString];
 }
 
 - (void)didChangeText
@@ -133,56 +124,6 @@
     height += (_verticalPadding + _verticalPadding); // vertical padding
     if (height < _minimumHeight) height = _minimumHeight;
     self.heightConstraint.constant = height;
-}
-
-//- (BOOL)becomeFirstResponder
-//{
-//    [self setNeedsDisplay:YES];
-//    return [super becomeFirstResponder];
-//}
-
-//- (BOOL)resignFirstResponder
-//{
-//    [self setNeedsDisplay:YES];
-//    return [super resignFirstResponder];
-//}
-
-//- (void)drawRect:(NSRect)dirtyRect
-//{
-//    [super drawRect:dirtyRect];
-//    
-//    static CGFloat x = CGFLOAT_MAX; if (x == CGFLOAT_MAX) x = _widthInset + 5;
-//    static CGFloat y = CGFLOAT_MAX; if (y == CGFLOAT_MAX) y = _heightInset - fabsf(self.font.descender) - 2;
-//    
-//    if ([[self string] isEqualToString:@""] && self != [[self window] firstResponder])
-//        [self.placeholder drawAtPoint:NSMakePoint(x, y)];
-//}
-
-- (void)keyDown:(NSEvent *)theEvent
-{
-    unsigned short left     = 123;
-    unsigned short right    = 124;
-    unsigned short up       = 126;
-    unsigned short down     = 125;
-    unsigned short tab      = 48;
-    unsigned short enter    = 36;
-    
-    unsigned short keyCode = theEvent.keyCode;
-    NSRange selectedRange = self.selectedRange;
-    BOOL isAtFirstPosition = NSEqualRanges(selectedRange, NSMakeRange(0, 0));
-    BOOL isAtLastPosition = NSEqualRanges(selectedRange, NSMakeRange(self.string.length, 0));
-    
-    if (((keyCode == left) && isAtFirstPosition)      ||
-        ((keyCode == up) && isAtFirstPosition)) {
-        [self.window selectKeyViewPrecedingView:self];
-    } else if (((keyCode == right) && isAtLastPosition) ||
-             ((keyCode == down) && isAtLastPosition)  ||
-             (keyCode == tab)                         ||
-             (keyCode == enter)) {
-        [self.window selectKeyViewFollowingView:self];
-    } else {
-        [super keyDown:theEvent];
-    }
 }
 
 @end

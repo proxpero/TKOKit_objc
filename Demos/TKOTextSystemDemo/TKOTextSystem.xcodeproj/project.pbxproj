@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		459897F418A6BE71005CDD90 /* TKOLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897ED18A6BE71005CDD90 /* TKOLayoutManager.m */; };
-		459897F518A6BE71005CDD90 /* TKOTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897EF18A6BE71005CDD90 /* TKOTextContainer.m */; };
-		459897F618A6BE71005CDD90 /* TKOTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897F118A6BE71005CDD90 /* TKOTextStorage.m */; };
-		459897F718A6BE71005CDD90 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459897F318A6BE71005CDD90 /* TKOTextView.m */; };
+		459F88A019B56C07000123B5 /* TKOLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 459F889819B56C07000123B5 /* TKOLayoutManager.m */; };
+		459F88A119B56C07000123B5 /* TKOTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459F889A19B56C07000123B5 /* TKOTextContainer.m */; };
+		459F88A219B56C07000123B5 /* TKOTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 459F889C19B56C07000123B5 /* TKOTextStorage.m */; };
+		459F88A319B56C07000123B5 /* TKOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459F889F19B56C07000123B5 /* TKOTextView.m */; };
 		45A22EB318A533E20055F894 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A22EB218A533E20055F894 /* Cocoa.framework */; };
 		45A22EBD18A533E20055F894 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A22EBB18A533E20055F894 /* InfoPlist.strings */; };
 		45A22EBF18A533E20055F894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A22EBE18A533E20055F894 /* main.m */; };
@@ -36,14 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		459897EC18A6BE71005CDD90 /* TKOLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOLayoutManager.h; sourceTree = "<group>"; };
-		459897ED18A6BE71005CDD90 /* TKOLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOLayoutManager.m; sourceTree = "<group>"; };
-		459897EE18A6BE71005CDD90 /* TKOTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextContainer.h; sourceTree = "<group>"; };
-		459897EF18A6BE71005CDD90 /* TKOTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextContainer.m; sourceTree = "<group>"; };
-		459897F018A6BE71005CDD90 /* TKOTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextStorage.h; sourceTree = "<group>"; };
-		459897F118A6BE71005CDD90 /* TKOTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextStorage.m; sourceTree = "<group>"; };
-		459897F218A6BE71005CDD90 /* TKOTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextView.h; sourceTree = "<group>"; };
-		459897F318A6BE71005CDD90 /* TKOTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextView.m; sourceTree = "<group>"; };
+		459F889719B56C07000123B5 /* TKOLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOLayoutManager.h; sourceTree = "<group>"; };
+		459F889819B56C07000123B5 /* TKOLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOLayoutManager.m; sourceTree = "<group>"; };
+		459F889919B56C07000123B5 /* TKOTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextContainer.h; sourceTree = "<group>"; };
+		459F889A19B56C07000123B5 /* TKOTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextContainer.m; sourceTree = "<group>"; };
+		459F889B19B56C07000123B5 /* TKOTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextStorage.h; sourceTree = "<group>"; };
+		459F889C19B56C07000123B5 /* TKOTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextStorage.m; sourceTree = "<group>"; };
+		459F889D19B56C07000123B5 /* TKOTextSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextSystem.h; sourceTree = "<group>"; };
+		459F889E19B56C07000123B5 /* TKOTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOTextView.h; sourceTree = "<group>"; };
+		459F889F19B56C07000123B5 /* TKOTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOTextView.m; sourceTree = "<group>"; };
 		45A22EAF18A533E20055F894 /* TKOTextSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKOTextSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A22EB218A533E20055F894 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45A22EB518A533E20055F894 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,26 +88,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		459897EB18A6BE71005CDD90 /* Classes */ = {
+		459F889619B56C07000123B5 /* TKOTextSystem */ = {
 			isa = PBXGroup;
 			children = (
-				459897EC18A6BE71005CDD90 /* TKOLayoutManager.h */,
-				459897ED18A6BE71005CDD90 /* TKOLayoutManager.m */,
-				459897EE18A6BE71005CDD90 /* TKOTextContainer.h */,
-				459897EF18A6BE71005CDD90 /* TKOTextContainer.m */,
-				459897F018A6BE71005CDD90 /* TKOTextStorage.h */,
-				459897F118A6BE71005CDD90 /* TKOTextStorage.m */,
-				459897F218A6BE71005CDD90 /* TKOTextView.h */,
-				459897F318A6BE71005CDD90 /* TKOTextView.m */,
+				459F889719B56C07000123B5 /* TKOLayoutManager.h */,
+				459F889819B56C07000123B5 /* TKOLayoutManager.m */,
+				459F889919B56C07000123B5 /* TKOTextContainer.h */,
+				459F889A19B56C07000123B5 /* TKOTextContainer.m */,
+				459F889B19B56C07000123B5 /* TKOTextStorage.h */,
+				459F889C19B56C07000123B5 /* TKOTextStorage.m */,
+				459F889D19B56C07000123B5 /* TKOTextSystem.h */,
+				459F889E19B56C07000123B5 /* TKOTextView.h */,
+				459F889F19B56C07000123B5 /* TKOTextView.m */,
 			);
-			name = Classes;
-			path = "../../TKOKit Classes/TKOTextSystem";
+			name = TKOTextSystem;
+			path = "../../TKOKit Classes/Utilities/TKOTextSystem";
 			sourceTree = "<group>";
 		};
 		45A22EA618A533E20055F894 = {
 			isa = PBXGroup;
 			children = (
-				459897EB18A6BE71005CDD90 /* Classes */,
+				459F889619B56C07000123B5 /* TKOTextSystem */,
 				45A22EB818A533E20055F894 /* TKOTextSystem */,
 				45A22ED918A533E20055F894 /* TKOTextSystemTests */,
 				45A22EB118A533E20055F894 /* Frameworks */,
@@ -286,12 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459897F418A6BE71005CDD90 /* TKOLayoutManager.m in Sources */,
+				459F88A019B56C07000123B5 /* TKOLayoutManager.m in Sources */,
 				45A22EBF18A533E20055F894 /* main.m in Sources */,
 				45A22EC618A533E20055F894 /* TKODocument.m in Sources */,
-				459897F618A6BE71005CDD90 /* TKOTextStorage.m in Sources */,
-				459897F718A6BE71005CDD90 /* TKOTextView.m in Sources */,
-				459897F518A6BE71005CDD90 /* TKOTextContainer.m in Sources */,
+				459F88A219B56C07000123B5 /* TKOTextStorage.m in Sources */,
+				459F88A319B56C07000123B5 /* TKOTextView.m in Sources */,
+				459F88A119B56C07000123B5 /* TKOTextContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

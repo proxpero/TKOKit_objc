@@ -7,11 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TKOResizingTextView.h"
 
 extern NSString * const TKOTextViewDidChangeFontNotification;
 
-//@class TKOTextStorage;
-
-@interface TKOTextView : NSTextView
+@interface TKOTextView : TKOResizingTextView
 
 @end

@@ -104,7 +104,7 @@
     }
 }
 
-- (NSManagedObjectContext *)mainManagedObjectContext
+- (NSManagedObjectContext *)mainContext
 {
     if (_mainManagedObjectContext != nil) {
         return _mainManagedObjectContext;

@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSString * html;
 
-- (NSView *)initialResponder;
+//- (NSView *)initialResponder;
 
 - (void)setComponents:(NSArray *)components;
 - (void)addComponent:(NSView *)component;

@@ -18,11 +18,11 @@
 
 @implementation TKOProblemEditorComponentsView
 
-- (NSView *)initialResponder
-{
-    id <TKOComponentView> initialResponder = self.views.firstObject;
-    return [initialResponder firstKeyView];
-}
+//- (NSView *)initialResponder
+//{
+//    id <TKOComponentView> initialResponder = self.views.firstObject;
+//    return [initialResponder firstKeyView];
+//}
 
 - (instancetype)init
 {

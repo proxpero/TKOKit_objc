@@ -7,6 +7,7 @@
 //
 
 #import "NSAttributedString+TKOKit.h"
+#import "NSColor+TKOKit.h"
 
 @implementation NSAttributedString (TKOKit)
 
@@ -26,6 +27,5 @@
 	return [[self alloc] initWithString:text
                              attributes:attributes];
 }
-
 
 @end

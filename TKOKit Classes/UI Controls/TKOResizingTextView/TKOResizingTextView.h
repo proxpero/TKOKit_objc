@@ -15,6 +15,7 @@
 @property (nonatomic) TKOTheme * theme;
 @property (nonatomic, strong) NSLayoutConstraint * heightConstraint;
 @property (nonatomic, copy) NSAttributedString * placeholder;
+@property (nonatomic, setter = setCollapsed:) BOOL isCollapsed;
 
 - (instancetype)initWithTheme:(TKOTheme *)theme;
 
