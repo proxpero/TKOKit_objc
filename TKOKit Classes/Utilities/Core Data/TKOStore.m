@@ -8,6 +8,10 @@
 
 #import "TKOStore.h"
 
+NSString * const TKOStoreModelName = @"Keystone_v1_2";
+NSString * const TKOStoreStoreName = @"problemui_db.sqlite";
+NSString * const TKOStoreArchiveName = @"problemuidb_backup";
+
 @interface TKOStore ()
 
 @property (nonatomic,strong,readwrite) NSManagedObjectContext * mainManagedObjectContext;
@@ -24,8 +28,22 @@
     BOOL _deleteStore;
 }
 
++ (instancetype)defaultStore
+{
+    static dispatch_once_t once;
+    static id _defaultStore = nil;
+    dispatch_once(&once, ^{
+        _defaultStore = [[self alloc] initWithStoreURL:[self storeURL]
+                                              modelURL:[self modelURL]
+                                           deleteStore:NO];
+    });
+    return _defaultStore;
+}
+
 - (instancetype)initWithTemporaryStoreType
 {
+    self = [super init]; if (!self) return nil;
+    
     _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
     id store = [_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
@@ -45,13 +63,13 @@
 - (id)initWithStoreURL:(NSURL *)storeURL
               modelURL:(NSURL *)modelURL
 {
-    self = [super init];
-    if (self) {
-        _storeURL = storeURL;
-        _modelURL = modelURL;
-        [self setupManagedObjectContext];
-        [self setupSaveNotification];
-    }
+    self = [super init]; if (!self) return nil;
+    
+    _storeURL = storeURL;
+    _modelURL = modelURL;
+    [self setupManagedObjectContext];
+    [self setupSaveNotification];
+
     return self;
 }
 
@@ -69,8 +87,9 @@
 {
     _mainManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_mainManagedObjectContext setPersistentStoreCoordinator:[self persistentStoreCoordinator]];
-    if (!_mainManagedObjectContext.undoManager)
+    if (!_mainManagedObjectContext.undoManager) {
         _mainManagedObjectContext.undoManager = [[NSUndoManager alloc] init];
+    }
 }
 
 - (void)setupSaveNotification
@@ -79,7 +98,7 @@
                                                       object:nil
                                                        queue:nil
                                                   usingBlock:^(NSNotification * note) {
-                                                      NSManagedObjectContext * moc = _mainManagedObjectContext;
+                                                      NSManagedObjectContext * moc = self->_mainManagedObjectContext;
                                                       if (![note.object isEqual:moc]) {
                                                           [moc performBlock:^(){
                                                               [moc mergeChangesFromContextDidSaveNotification:note];
@@ -158,6 +177,32 @@
     NSManagedObjectContext * context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     context.persistentStoreCoordinator = self.persistentStoreCoordinator;
     return context;
+}
+
++ (NSURL *)storeURL
+{
+    NSURL * documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
+                                                                        inDomain:NSUserDomainMask
+                                                               appropriateForURL:nil
+                                                                          create:YES
+                                                                           error:NULL];
+    return [documentsDirectory URLByAppendingPathComponent:TKOStoreStoreName];
+}
+
++ (NSURL *)archiveURL
+{
+    NSURL * documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
+                                                                        inDomain:NSUserDomainMask
+                                                               appropriateForURL:nil
+                                                                          create:YES
+                                                                           error:NULL];
+    return [documentsDirectory URLByAppendingPathComponent:TKOStoreArchiveName];
+}
+
++ (NSURL *)modelURL
+{
+    return [[NSBundle mainBundle] URLForResource:TKOStoreModelName
+                                   withExtension:@"momd"];
 }
 
 @end

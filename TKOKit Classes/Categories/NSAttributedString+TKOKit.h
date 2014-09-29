@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TKOPlatform.h"
+//#import "TKOPlatform.h"
 
 @interface NSAttributedString (TKOKit)
 
@@ -16,9 +16,9 @@
  (Except that it breaks NSTextView's text pasteboard writing. So 
  don't do it there.)*/
 
-+ (NSAttributedString *)attributedStringWithText:(NSString *)text
-                                            font:(TKO_FONT *)font
-                                           color:(TKO_COLOR *)color
-                                         kerning:(BOOL)kerning;
+//+ (NSAttributedString *)attributedStringWithText:(NSString *)text
+//                                            font:(TKO_Font *)font
+//                                           color:(TKO_Color *)color
+//                                         kerning:(BOOL)kerning;
 
 @end

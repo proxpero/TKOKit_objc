@@ -7,7 +7,8 @@
 //  Modified by TKO
 //
 
-#import <Foundation/Foundation.h>
+@import Cocoa;
+
 #import "TKOPlatform.h"
 #import "TKOThemeConstants.h"
 

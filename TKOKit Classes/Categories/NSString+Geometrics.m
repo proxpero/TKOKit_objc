@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
+#import "NSString+Geometrics.h"
+
 NSInteger gNSStringGeometricsTypesetterBehavior = NSTypesetterLatestBehavior ;
 
 @implementation NSAttributedString (Geometrics)

@@ -32,6 +32,8 @@
 - (NSButton *)buttonForItem:(NSDictionary *)item;
 - (void)applyThemeToCell:(TKOButtonCell *)cell;
 
+- (void)addItemWithWithLabel:(NSString *)label image:(NSImage *)image tag:(NSInteger)tag;
+
 @end
 
 

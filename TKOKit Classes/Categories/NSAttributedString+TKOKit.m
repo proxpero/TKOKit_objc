@@ -12,8 +12,8 @@
 @implementation NSAttributedString (TKOKit)
 
 + (NSAttributedString *)attributedStringWithText:(NSString *)text
-                                            font:(TKO_FONT *)font
-                                           color:(TKO_COLOR *)color
+                                            font:(NSFont *)font
+                                           color:(NSColor *)color
                                          kerning:(BOOL)kerning
 {
 	NSDictionary *attributes;

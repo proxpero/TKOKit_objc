@@ -129,7 +129,7 @@
  
  */
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 extern NSInteger gNSStringGeometricsTypesetterBehavior ;
 

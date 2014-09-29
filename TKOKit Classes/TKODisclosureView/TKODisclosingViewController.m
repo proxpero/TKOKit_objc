@@ -89,7 +89,7 @@
             context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
             self.heightConstraint.animator.constant = 0;
         } completionHandler:^{
-            _disclosureIsClosed = YES;
+            self->_disclosureIsClosed = YES;
         }];
     }
     else
@@ -99,7 +99,7 @@
             self.heightConstraint.animator.constant -= self.contentView.frame.size.height;
         } completionHandler:^{
             [self.view removeConstraint:self.heightConstraint];
-            _disclosureIsClosed = NO;
+            self->_disclosureIsClosed = NO;
         }];
     }
 }

@@ -103,8 +103,8 @@ NSString * const TKODefaultTokenName = @"TKODefaultTokenName";
     NSRange extendedRange;
     extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
     extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(NSMaxRange(changedRange), 0)]);
-//    [self applyTextListMarkersToRange:extendedRange];
-//    [self applyTokenAttributesToRange:extendedRange];
+    [self applyTextListMarkersToRange:extendedRange];
+    [self applyTokenAttributesToRange:extendedRange];
 }
 
 - (void)applyTextListMarkersToRange:(NSRange)searchRange

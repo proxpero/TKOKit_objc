@@ -24,7 +24,7 @@ NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSS
 - (NSString *)stringByStrippingPrefix:(NSString *)prefix
                         caseSensitive:(BOOL)caseSensitive;
 
-- (NSRange)rangeOfStringWithinTag:(NSString *)tag;
+//- (NSRange)rangeOfStringWithinTag:(NSString *)tag;
 
 - (NSArray*)csvComponents;
 

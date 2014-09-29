@@ -7,6 +7,7 @@
 //
 
 #import "TKOSegmentedControlView.h"
+#import "TKOSegmentedItem.h"
 #import "TKOThemeLoader.h"
 #import "TKOTheme.h"
 #import "TKOButtonCell.h"
@@ -17,6 +18,15 @@
 @end
 
 @implementation TKOSegmentedControlView
+
+- (void)addItemWithWithLabel:(NSString *)label image:(NSImage *)image tag:(NSInteger)tag
+{
+    TKOSegmentedItem * newItem = [[TKOSegmentedItem alloc] initWithLabel:label
+                                                                   image:image
+                                                                     tag:tag];
+    [self.items addObject:newItem];
+    [self layoutItems];
+}
 
 - (id)initWithFrame:(NSRect)frame
 {

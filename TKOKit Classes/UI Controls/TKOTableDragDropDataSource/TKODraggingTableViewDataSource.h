@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Cocoa;
 
 @protocol TKOIndexReassignable <NSObject>
 - (void)reassignToIndex:(NSUInteger)newIndex;

@@ -31,7 +31,7 @@ NSString * TKODataFolder(NSString * appName) {
                                                     attributes:nil
                                                          error:&error])
     {
-		NSLog(@"QSDataFolder error: %@", error);
+		NSLog(@"TKODataFolder error: %@", error);
 		return nil;
     }
     

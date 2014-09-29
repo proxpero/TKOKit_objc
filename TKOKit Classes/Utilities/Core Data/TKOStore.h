@@ -6,18 +6,21 @@
 //  Copyright (c) 2013 Todd Olsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreData;
 
 @interface TKOStore : NSObject
 
 @property (nonatomic,strong,readonly) NSManagedObjectContext * mainManagedObjectContext;
 
-- (instancetype)initWithStoreURL:(NSURL*)storeURL
-                        modelURL:(NSURL*)modelURL;
++ (instancetype)defaultStore;
 
-- (instancetype)initWithStoreURL:(NSURL*)storeURL
-                        modelURL:(NSURL*)modelURL
-                     deleteStore:(BOOL)deleteStore;
+//- (instancetype)initWithStoreURL:(NSURL*)storeURL
+//                        modelURL:(NSURL*)modelURL;
+
+//- (instancetype)initWithStoreURL:(NSURL*)storeURL
+//                        modelURL:(NSURL*)modelURL
+//                     deleteStore:(BOOL)deleteStore;
 
 - (instancetype)initWithTemporaryStoreType;
 
