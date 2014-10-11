@@ -31,7 +31,7 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
 + (instancetype)defaultStore
 {
     static dispatch_once_t once;
-    static id _defaultStore = nil;
+    static TKOStore * _defaultStore = nil;
     dispatch_once(&once, ^{
         _defaultStore = [[self alloc] initWithStoreURL:[self storeURL]
                                               modelURL:[self modelURL]
