@@ -14,6 +14,7 @@
 @property (nonatomic,strong,readonly) NSManagedObjectContext * mainManagedObjectContext;
 
 + (instancetype)defaultStore;
++ (NSURL *)archiveURL;
 
 //- (instancetype)initWithStoreURL:(NSURL*)storeURL
 //                        modelURL:(NSURL*)modelURL;

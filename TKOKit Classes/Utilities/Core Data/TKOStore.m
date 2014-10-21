@@ -7,10 +7,13 @@
 //
 
 #import "TKOStore.h"
+#import "TKOBaseEntity+ImportSeedData.h"
+#import "TKOBaseEntity+Archive.h"
 
-NSString * const TKOStoreModelName = @"Keystone_v1_2";
-NSString * const TKOStoreStoreName = @"problemui_db.sqlite";
-NSString * const TKOStoreArchiveName = @"problemuidb_backup";
+NSString * const TKOStoreModelName      = @"Keystone_v1_2";
+NSString * const TKOStoreStoreName      = @"problemui_db.sqlite";
+NSString * const TKOStoreArchiveName    = @"problemuidb_backup";
+NSString * const TKOSeedDataName        = @"SATSeedData";
 
 @interface TKOStore ()
 
@@ -23,10 +26,14 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
 
 @end
 
+
+
 @implementation TKOStore
 {
     BOOL _deleteStore;
+    BOOL _importSeedData;
 }
+
 
 + (instancetype)defaultStore
 {
@@ -35,10 +42,12 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     dispatch_once(&once, ^{
         _defaultStore = [[self alloc] initWithStoreURL:[self storeURL]
                                               modelURL:[self modelURL]
-                                           deleteStore:NO];
+                                           deleteStore:NO
+                                        importSeedData:NO];
     });
     return _defaultStore;
 }
+
 
 - (instancetype)initWithTemporaryStoreType
 {
@@ -60,6 +69,7 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     return self;
 }
 
+
 - (id)initWithStoreURL:(NSURL *)storeURL
               modelURL:(NSURL *)modelURL
 {
@@ -69,9 +79,10 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     _modelURL = modelURL;
     [self setupManagedObjectContext];
     [self setupSaveNotification];
-
+    
     return self;
 }
+
 
 - (id)initWithStoreURL:(NSURL *)storeURL
               modelURL:(NSURL *)modelURL
@@ -83,6 +94,21 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     return self;
 }
 
+
+- (id)initWithStoreURL:(NSURL *)storeURL
+              modelURL:(NSURL *)modelURL
+           deleteStore:(BOOL)deleteStore
+        importSeedData:(BOOL)importSeedData
+{
+    _importSeedData = importSeedData;
+    self = [self initWithStoreURL:storeURL
+                         modelURL:modelURL
+                      deleteStore:deleteStore];
+    
+    return self;
+}
+
+
 - (void)setupManagedObjectContext
 {
     _mainManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
@@ -90,7 +116,12 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     if (!_mainManagedObjectContext.undoManager) {
         _mainManagedObjectContext.undoManager = [[NSUndoManager alloc] init];
     }
+    
+    if (_importSeedData) {
+        [self importSeedData];
+    }
 }
+
 
 - (void)setupSaveNotification
 {
@@ -108,6 +139,7 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
                                                   }];
 }
 
+
 - (void)saveContext
 {
     NSError *error = nil;
@@ -119,9 +151,15 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-        
     }
 }
+
+
+- (void)importSeedData
+{
+    [TKOBaseEntity importSeedDataAtURL:[TKOStore seedURL] context:[self newPrivateContext]];
+}
+
 
 - (NSManagedObjectContext *)mainContext
 {
@@ -129,13 +167,10 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
         return _mainManagedObjectContext;
     }
     
-    _mainManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_mainManagedObjectContext setPersistentStoreCoordinator:[self persistentStoreCoordinator]];
-    if (!_mainManagedObjectContext.undoManager)
-        _mainManagedObjectContext.undoManager = [[NSUndoManager alloc] init];
-
+    [self setupManagedObjectContext];
     return _mainManagedObjectContext;
 }
+
 
 - (NSManagedObjectModel *)managedObjectModel
 {
@@ -145,6 +180,7 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
     return _managedObjectModel;
 }
+
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
@@ -172,6 +208,7 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     return _persistentStoreCoordinator;
 }
 
+
 - (NSManagedObjectContext *)newPrivateContext
 {
     NSManagedObjectContext * context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
@@ -179,25 +216,28 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
     return context;
 }
 
+
 + (NSURL *)storeURL
 {
-    NSURL * documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
+    NSURL * appSupport = [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                                         inDomain:NSUserDomainMask
                                                                appropriateForURL:nil
                                                                           create:YES
                                                                            error:NULL];
-    return [documentsDirectory URLByAppendingPathComponent:TKOStoreStoreName];
+    return [appSupport URLByAppendingPathComponent:TKOStoreStoreName];
 }
+
 
 + (NSURL *)archiveURL
 {
-    NSURL * documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
-                                                                        inDomain:NSUserDomainMask
-                                                               appropriateForURL:nil
-                                                                          create:YES
-                                                                           error:NULL];
-    return [documentsDirectory URLByAppendingPathComponent:TKOStoreArchiveName];
+    NSURL * appSupport = [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
+                                                                inDomain:NSUserDomainMask
+                                                       appropriateForURL:nil
+                                                                  create:YES
+                                                                   error:NULL];
+    return [appSupport URLByAppendingPathComponent:TKOStoreArchiveName];
 }
+
 
 + (NSURL *)modelURL
 {
@@ -205,4 +245,13 @@ NSString * const TKOStoreArchiveName = @"problemuidb_backup";
                                    withExtension:@"momd"];
 }
 
+
++ (NSURL *)seedURL
+{
+    return [[NSBundle mainBundle] URLForResource:TKOSeedDataName
+                                   withExtension:@"plist"];
+}
+
+
 @end
+

@@ -11,21 +11,24 @@
 
 @implementation NSAttributedString (TKOKit)
 
-+ (NSAttributedString *)attributedStringWithText:(NSString *)text
-                                            font:(NSFont *)font
-                                           color:(NSColor *)color
-                                         kerning:(BOOL)kerning
+- (NSString *)markdown
 {
-	NSDictionary *attributes;
-    
-	if (kerning) {
-		attributes = @{NSFontAttributeName : font, NSForegroundColorAttributeName : color, NSKernAttributeName : [NSNull null]};
-	} else {
-		attributes = @{NSFontAttributeName : font, NSForegroundColorAttributeName : color};
-	}
-    
-	return [[self alloc] initWithString:text
-                             attributes:attributes];
+    NSMutableString * markdown = self.string.mutableCopy;
+    [self enumerateAttribute:NSFontAttributeName
+                     inRange:NSMakeRange(0, self.length)
+                     options:NSAttributedStringEnumerationReverse
+                  usingBlock:^(NSFont * font, NSRange range, BOOL *stop) {
+                      
+                      NSInteger symbolicTraits = font.fontDescriptor.symbolicTraits;
+                      if (symbolicTraits & NSFontItalicTrait) {
+                          [markdown insertString:@"/" atIndex:range.location + range.length];
+                          [markdown insertString:@"/" atIndex:range.location];
+                      } else if (symbolicTraits & NSFontBoldTrait) {
+                          [markdown insertString:@"*" atIndex:range.location + range.length];
+                          [markdown insertString:@"*" atIndex:range.location];
+                      }
+                  }];
+    return markdown;
 }
 
 @end

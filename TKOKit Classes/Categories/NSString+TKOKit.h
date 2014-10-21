@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Todd Olsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Cocoa;
 
 NSArray * TKOComponentsBySplittingOnWhitespaceWithString(NSString *string);
 
@@ -14,6 +14,9 @@ BOOL TKOStringIsEmpty(NSString *s); /*Yes if null, NSNull, or length < 1*/
 BOOL TKOEqualStrings(NSString *s1, NSString *s2); /*Equal if both are nil*/
 
 NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSString *replaceWith); /*Literal search*/
+NSString * TKOBinaryStringFromInteger(NSInteger integer);
+//NSString * TKOMarkdownFromAttributedString(NSAttributedString * attributedString);
+//NSAttributedString * TKOAttributedStringFromMarkdown(NSString * markdown);
 
 @interface NSString (TKOKit)
 
@@ -23,6 +26,8 @@ NSString *TKOStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSS
 - (NSString *)stringByTrimmingWhitespaceAndNewLineCharacters;
 - (NSString *)stringByStrippingPrefix:(NSString *)prefix
                         caseSensitive:(BOOL)caseSensitive;
+
+- (NSAttributedString *)attributedStringFromMarkdown;
 
 //- (NSRange)rangeOfStringWithinTag:(NSString *)tag;
 

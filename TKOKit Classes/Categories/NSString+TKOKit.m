@@ -17,6 +17,8 @@ NSArray * TKOComponentsBySplittingOnWhitespaceWithString(NSString * string) {
     return components;
 }
 
+
+
 BOOL TKOStringIsEmpty(NSString *s) {
     
 	if (s == nil || (id)s == [NSNull null]) {
@@ -53,7 +55,32 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
 }
 
 
+NSString * TKOBinaryStringFromInteger(NSInteger number)
+{
+    NSMutableString * string = [NSMutableString new];
+    NSInteger spacing = pow(2, 3);
+    NSInteger width = (sizeof(number)) * spacing;
+    NSInteger binaryDigit = 0;
+    NSInteger integer = number;
+    
+    while (binaryDigit < width) {
+        binaryDigit++;
+        [string insertString:(integer & 1) ? @"1" : @"0"
+                     atIndex:0];
+        
+        if (binaryDigit % spacing == 0 && binaryDigit != width) {
+            [string insertString:@" "
+                         atIndex:0];
+        }
+        integer = integer >> 1;
+    }
+    return string;
+}
+
+
 @implementation NSString (TKOKit)
+
+
 
 
 - (BOOL)containsString:(NSString *)substring
@@ -129,6 +156,79 @@ NSString * TKOStringReplaceAll(NSString * stringToSearch, NSString * searchFor, 
     
     return [self substringFromIndex:[prefix length]];
 }
+
+- (NSAttributedString *)attributedStringFromMarkdown
+{
+    NSMutableString * markdown = self.mutableCopy;
+    
+    NSRange limitedRange = NSMakeRange(0, markdown.length);
+    NSRange range = [markdown rangeOfString:@"/" options:0 range:limitedRange];
+    NSInteger open  = NSNotFound;
+    NSInteger close = NSNotFound;
+    
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:markdown];
+    
+    NSFont * systemFont = [NSFont systemFontOfSize:[NSFont systemFontSize]];
+    NSFont * italic = [[NSFontManager sharedFontManager] convertFont:systemFont toHaveTrait:NSFontItalicTrait];
+    NSFont * bold = [NSFont boldSystemFontOfSize:[NSFont systemFontSize]];
+    
+    NSMutableArray * italicRanges = [NSMutableArray new];
+    
+    while (range.location != NSNotFound) {
+        if (open == NSNotFound) {
+            open = range.location;
+            limitedRange = NSMakeRange(open + 1, markdown.length - open - 1);
+        } else if (close == NSNotFound) {
+            close = range.location;
+            limitedRange= NSMakeRange(close + 1, markdown.length - close - 1);
+        }
+        if (open != NSNotFound && close != NSNotFound) {
+            NSRange italicRange = NSMakeRange(open, close - open);
+            [italicRanges addObject:[NSValue valueWithRange:italicRange]];
+            open = NSNotFound;
+            close = NSNotFound;
+        }
+        range = [markdown rangeOfString:@"/" options:0 range:limitedRange];
+    }
+    
+    for (NSValue * value in italicRanges) {
+        NSRange range = [value rangeValue];
+        [attributedString addAttribute:NSFontAttributeName value:italic range:range];
+    }
+    
+    limitedRange = NSMakeRange(0, markdown.length);
+    range = [markdown rangeOfString:@"*" options:0 range:limitedRange];
+    
+    NSMutableArray * boldRanges = [NSMutableArray new];
+    
+    while (range.location != NSNotFound) {
+        if (open == NSNotFound) {
+            open = range.location;
+            limitedRange = NSMakeRange(open + 1, markdown.length - open - 1);
+        } else if (close == NSNotFound) {
+            close = range.location;
+            limitedRange = NSMakeRange(close + 1, markdown.length - close - 1);
+        }
+        if (open != NSNotFound && close != NSNotFound) {
+            NSRange boldRange = NSMakeRange(open, close - open);
+            [boldRanges addObject:[NSValue valueWithRange:boldRange]];
+            open = NSNotFound;
+            close = NSNotFound;
+        }
+        range = [markdown rangeOfString:@"*" options:0 range:limitedRange];
+    }
+    
+    for (NSValue * value in boldRanges) {
+        NSRange range = [value rangeValue];
+        [attributedString addAttribute:NSFontAttributeName value:bold range:range];
+    }
+    
+    [attributedString.mutableString replaceOccurrencesOfString:@"/" withString:@"" options:0 range:NSMakeRange(0, attributedString.length)];
+    [attributedString.mutableString replaceOccurrencesOfString:@"*" withString:@"" options:0 range:NSMakeRange(0, attributedString.length)];
+    
+    return attributedString;
+}
+
 
 - (NSRange)rangeofSubstringWithinDelimitersOpen:(NSString *)open close:(NSString *)close
 {

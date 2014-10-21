@@ -11,14 +11,6 @@
 
 @interface NSAttributedString (TKOKit)
 
-/*If kerning, adds NSKernAttributeName : [NSNull null] (which is 
- the right way to turn on kerning, weirdly). Always Be Kerning.
- (Except that it breaks NSTextView's text pasteboard writing. So 
- don't do it there.)*/
-
-//+ (NSAttributedString *)attributedStringWithText:(NSString *)text
-//                                            font:(TKO_Font *)font
-//                                           color:(TKO_Color *)color
-//                                         kerning:(BOOL)kerning;
+- (NSString *)markdown;
 
 @end
