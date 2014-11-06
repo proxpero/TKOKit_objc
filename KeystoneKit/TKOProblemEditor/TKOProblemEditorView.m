@@ -38,7 +38,6 @@
     NSScrollView * scrollView = [NSView viewWithClass:[NSScrollView class]];
     TKOFlippedClipView * clipView = [TKOFlippedClipView new];
     clipView.backgroundColor = [NSColor darkGrayColor];
-    scrollView.contentView = clipView;
     
     scrollView.borderType              = NSNoBorder;
     scrollView.hasHorizontalScroller   = NO;

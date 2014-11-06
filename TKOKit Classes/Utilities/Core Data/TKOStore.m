@@ -7,8 +7,8 @@
 //
 
 #import "TKOStore.h"
-#import "TKOBaseEntity+ImportSeedData.h"
-#import "TKOBaseEntity+Archive.h"
+//#import "TKOBaseEntity+ImportSeedData.h"
+//#import "TKOBaseEntity+Archive.h"
 
 NSString * const TKOStoreModelName      = @"Keystone_v1_2";
 NSString * const TKOStoreStoreName      = @"problemui_db.sqlite";
@@ -116,7 +116,7 @@ NSString * const TKOSeedDataName        = @"SATSeedData";
     if (!_mainManagedObjectContext.undoManager) {
         _mainManagedObjectContext.undoManager = [[NSUndoManager alloc] init];
     }
-    
+        
     if (_importSeedData) {
         [self importSeedData];
     }
@@ -155,9 +155,15 @@ NSString * const TKOSeedDataName        = @"SATSeedData";
 }
 
 
+- (void)setupInitialData
+{
+    
+}
+
+
 - (void)importSeedData
 {
-    [TKOBaseEntity importSeedDataAtURL:[TKOStore seedURL] context:[self newPrivateContext]];
+//    [TKOBaseEntity importSeedDataAtURL:[TKOStore seedURL] context:[self newPrivateContext]];
 }
 
 

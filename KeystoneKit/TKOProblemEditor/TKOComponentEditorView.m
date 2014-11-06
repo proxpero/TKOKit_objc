@@ -39,7 +39,7 @@
     
     CGFloat margin;
     
-    margin = (CGFloat)[theme floatForKey:@"TKOProblemEditorFontSize"] - (CGFloat)[theme floatForKey:@"TKOProblemEditorTextInsetWidth"];
+    margin = [theme floatForKey:@"TKOProblemEditorFontSize"] - [theme floatForKey:@"TKOProblemEditorTextInsetWidth"];
     NSString * hFormat = [NSString stringWithFormat:@"H:|-%f-[_textView]-%f-|", margin, margin];
     [self addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:hFormat
