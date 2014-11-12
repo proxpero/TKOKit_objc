@@ -7,8 +7,6 @@
 //
 
 #import "TKOStore.h"
-//#import "TKOBaseEntity+ImportSeedData.h"
-//#import "TKOBaseEntity+Archive.h"
 
 NSString * const TKOStoreModelName      = @"Keystone_v1_2";
 NSString * const TKOStoreStoreName      = @"problemui_db.sqlite";

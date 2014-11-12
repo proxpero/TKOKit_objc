@@ -1,6 +1,5 @@
 //
 //  TKODisclosingView.m
-//  TKOProblemTemplateClassDemo
 //
 //  Created by Todd Olsen on 3/5/14.
 //  Copyright (c) 2014 Todd Olsen. All rights reserved.
@@ -41,7 +40,6 @@
         return nil;
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    self.trimsTopContentHeight = YES;
     
     self.accessoryView = accessoryView;
     self.accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -88,13 +86,6 @@
     
     [_contentView removeFromSuperview];
     _contentView = contentView;
-
-    if (self.trimsTopContentHeight) {
-        NSLayoutConstraint * topConstraint;
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"secondItem = %@ AND firstAttribute = %d", _contentView, NSLayoutAttributeTop];
-        topConstraint = [[_contentView.constraints filteredArrayUsingPredicate:predicate] firstObject];
-        topConstraint.constant = 0.0;
-    }
     
     [self addSubview:_contentView];
     
@@ -179,7 +170,7 @@
     self.titleField.bordered = NO;
     self.titleField.backgroundColor = [NSColor controlColor];
     self.titleField.font = [NSFont boldSystemFontOfSize:13.0];
-    self.titleField.textColor = [NSColor darkGrayColor];
+    self.titleField.textColor = [NSColor secondaryLabelColor];
     
     if (!self.accessoryView)
     {
@@ -245,22 +236,22 @@
                                                views:views]
      ];
     
-    NSBox * separator = [NSView horizontalSeparator];    
-    [self addSubview:separator];
-    
-    views = @{@"separator": separator};
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
-    [self addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[separator]|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]
-     ];
+//    NSBox * separator = [NSView horizontalSeparator];    
+//    [self addSubview:separator];
+//    
+//    views = @{@"separator": separator};
+//    [self addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[separator]|"
+//                                             options:0
+//                                             metrics:nil
+//                                               views:views]
+//     ];
+//    [self addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[separator]|"
+//                                             options:0
+//                                             metrics:nil
+//                                               views:views]
+//     ];
 }
 
 
