@@ -10,6 +10,7 @@
 
 @interface NSColor (TKOKit)
 
++ (instancetype)colorWithString:(NSString *)string;
 + (instancetype)colorWithHexString:(NSString *)hexString;
 
 @end

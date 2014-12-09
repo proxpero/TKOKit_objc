@@ -7,15 +7,15 @@
 //
 
 #import "TKOJumpbarView.h"
-#import "TKOThemeLoader.h"
-#import "TKOTheme.h"
+//#import "TKOThemeLoader.h"
+//#import "TKOTheme.h"
 #import "NSView+TKOKit.h"
-#import "TKOButtonCell.h"
+//#import "TKOButtonCell.h"
 
 @interface TKOJumpbarView ()
 
-@property (nonatomic) TKOTheme * theme;
-@property (nonatomic) NSGradient * gradient;
+//@property (nonatomic) TKOTheme * theme;
+//@property (nonatomic) NSGradient * gradient;
 
 @property (nonatomic) NSScrollView * scrollView;
 
@@ -47,7 +47,10 @@
 }
 
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
     if ([keyPath isEqualToString:@"name"]) {
         [self layoutHierarchy];
@@ -65,8 +68,8 @@
     static BOOL configured = NO; if (configured) return; configured = YES;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.wantsLayer = YES;
-    TKOThemeLoader * themeloader = [[TKOThemeLoader alloc] init];
-    self.theme = [themeloader themeNamed:@"TKOJumpbarControl"];
+//    TKOThemeLoader * themeloader = [[TKOThemeLoader alloc] init];
+//    self.theme = [themeloader themeNamed:@"TKOJumpbarControl"];
     
     [self addConstraintForHeight:28];
 
@@ -118,22 +121,22 @@
 }
 
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [super drawRect:dirtyRect];
-    
-    NSRect main, border;
-    NSDivideRect(self.bounds, &border, &main, 1.0, NSMinYEdge);
-    
-    NSColor * color = [_theme colorForKey:TKOControlBorderColor];
-    [color set];
-    NSRectFill(border);
-    
-    if (!self.gradient) {
-        self.gradient = [_theme colorGradientForKey:TKOControlBackgroundGradient];
-    }
-    [self.gradient drawInRect:main angle:270.0];
-}
+//- (void)drawRect:(NSRect)dirtyRect
+//{
+//    [super drawRect:dirtyRect];
+//    
+//    NSRect main, border;
+//    NSDivideRect(self.bounds, &border, &main, 1.0, NSMinYEdge);
+//    
+//    NSColor * color = [_theme colorForKey:TKOControlBorderColor];
+//    [color set];
+//    NSRectFill(border);
+//    
+//    if (!self.gradient) {
+//        self.gradient = [_theme colorGradientForKey:TKOControlBackgroundGradient];
+//    }
+//    [self.gradient drawInRect:main angle:270.0];
+//}
 
 
 - (void)layoutHierarchy
@@ -145,7 +148,15 @@
     
     while (nomad) {
         [items addObject:nomad];
-        nomad = [nomad valueForKey:@"parent"];
+        
+        if ([nomad respondsToSelector:@selector(parent)]) {
+            nomad = [nomad valueForKey:@"parent"];
+        }
+        
+        else if ([nomad respondsToSelector:NSSelectorFromString(@"parents")]) {
+            NSSet * parents = [nomad valueForKey:@"parents"];
+            nomad = parents.anyObject;
+        }
     }
     
     for (id item in [[items reverseObjectEnumerator] allObjects]) {
@@ -208,32 +219,33 @@
 {
     NSButton * button = [NSView viewWithClass:[NSButton class]];
     
-    TKOButtonCell * cell = [[TKOButtonCell alloc] init];
+    NSButtonCell * cell = [[NSButtonCell alloc] init];
+//    TKOButtonCell * cell = [[TKOButtonCell alloc] init];
 //    [cell bind:@"title" toObject:item withKeyPath:@"name" options:nil];
     cell.title = [item valueForKey:@"name"];
     cell.buttonType = NSMomentaryChangeButton;
     cell.bordered = NO;
 
-    cell.verticalTextOffset = [self.theme floatForKey:TKOControlVerticalTextOffset];
-    cell.verticalImageOffset = [self.theme floatForKey:TKOControlVerticalImageOffset];
+//    cell.verticalTextOffset = [self.theme floatForKey:TKOControlVerticalTextOffset];
+//    cell.verticalImageOffset = [self.theme floatForKey:TKOControlVerticalImageOffset];
     
-    cell.backgroundGradient = [self.theme colorGradientForKey:TKOControlBackgroundGradient];
-    cell.backgroundHighlightGradient = [self.theme colorGradientForKey:TKOControlBackgroundHighlightGradient];
+//    cell.backgroundGradient = [self.theme colorGradientForKey:TKOControlBackgroundGradient];
+//    cell.backgroundHighlightGradient = [self.theme colorGradientForKey:TKOControlBackgroundHighlightGradient];
     
-    cell.font                     = [self.theme fontForKey:TKOControlFont];
-    cell.backgroundColor          = [self.theme colorForKey:TKOControlBackgroundColor];
-    cell.backgroundHighlightColor = [self.theme colorForKey:TKOControlBackgroundHighlightColor];
-    cell.textColor                = [self.theme colorForKey:TKOControlTextColor];
-    cell.textHighlightColor       = [self.theme colorForKey:TKOControlTextHighlightColor];
-    cell.imageColor               = [self.theme colorForKey:TKOControlImageColor];
-    cell.imageHighlightColor      = [self.theme colorForKey:TKOControlImageHighlightColor];
-    cell.borderColor              = [self.theme colorForKey:TKOControlBorderColor];
-    cell.borderHighlightColor     = [self.theme colorForKey:TKOControlBorderHighlightColor];
-    cell.gradientAngle            = [self.theme floatForKey:TKOControlGradientAngle];
-    cell.verticalTextOffset       = [self.theme floatForKey:TKOControlVerticalTextOffset];
+//    cell.font                     = [self.theme fontForKey:TKOControlFont];
+//    cell.backgroundColor          = [self.theme colorForKey:TKOControlBackgroundColor];
+//    cell.backgroundHighlightColor = [self.theme colorForKey:TKOControlBackgroundHighlightColor];
+//    cell.textColor                = [self.theme colorForKey:TKOControlTextColor];
+//    cell.textHighlightColor       = [self.theme colorForKey:TKOControlTextHighlightColor];
+//    cell.imageColor               = [self.theme colorForKey:TKOControlImageColor];
+//    cell.imageHighlightColor      = [self.theme colorForKey:TKOControlImageHighlightColor];
+//    cell.borderColor              = [self.theme colorForKey:TKOControlBorderColor];
+//    cell.borderHighlightColor     = [self.theme colorForKey:TKOControlBorderHighlightColor];
+//    cell.gradientAngle            = [self.theme floatForKey:TKOControlGradientAngle];
+//    cell.verticalTextOffset       = [self.theme floatForKey:TKOControlVerticalTextOffset];
     
-    cell.borderMask = TKOBorderMaskBottom;
-    cell.borderHighlightMask = TKOBorderMaskBottom;
+//    cell.borderMask = TKOBorderMaskBottom;
+//    cell.borderHighlightMask = TKOBorderMaskBottom;
 
     button.cell = cell;
     

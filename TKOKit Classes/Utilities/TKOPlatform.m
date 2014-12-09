@@ -29,8 +29,7 @@ NSString * TKODataFolder(NSString * appName) {
     if (![[NSFileManager defaultManager] createDirectoryAtPath:dataFolder
                                    withIntermediateDirectories:YES
                                                     attributes:nil
-                                                         error:&error])
-    {
+                                                         error:&error]) {
 		NSLog(@"TKODataFolder error: %@", error);
 		return nil;
     }

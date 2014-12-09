@@ -49,7 +49,10 @@
     _movingItem = nil;
 }
 
-- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
+- (NSDragOperation)tableView:(NSTableView *)tableView
+                validateDrop:(id<NSDraggingInfo>)info
+                 proposedRow:(NSInteger)row
+       proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
     if (self.filteredItems) return NSDragOperationNone; // No dragdrop while filtering
     
@@ -59,7 +62,10 @@
     return NSDragOperationNone;
 }
 
-- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation
+- (BOOL)tableView:(NSTableView *)tableView
+       acceptDrop:(id<NSDraggingInfo>)info
+              row:(NSInteger)row
+    dropOperation:(NSTableViewDropOperation)dropOperation
 {
     if (dropOperation != NSTableViewDropAbove) return NO;
     
@@ -76,7 +82,8 @@
     [self.items insertObject:self.movingItem atIndex:insertionRow];
     
     [tableView beginUpdates];
-    [tableView moveRowAtIndex:movingRow toIndex:insertionRow];
+    [tableView moveRowAtIndex:movingRow
+                      toIndex:insertionRow];
     
     NSInteger limit = movingRow < row ? range.length + range.location + 1 : range.length + range.location;
     
@@ -84,7 +91,7 @@
         id <TKOIndexReassignable> child = [self.items objectAtIndex:i];
         [child reassignToIndex:i];
         [tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:i]
-                                  columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+                             columnIndexes:[NSIndexSet indexSetWithIndex:0]];
     }
     
     [tableView endUpdates];

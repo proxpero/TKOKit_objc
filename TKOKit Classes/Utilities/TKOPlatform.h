@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Todd Olsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #if TARGET_OS_IPHONE
 
@@ -14,7 +14,6 @@
 #define TKO_COLOR         UIColor
 #define TKO_FONT          UIFont
 #define TKO_EDGE_INSETS   UIEdgeInsets
-
 #define TKOEdgeInsetsMake UIEdgeInsetsMake
 
 #else
@@ -23,7 +22,6 @@
 #define TKO_COLOR         NSColor
 #define TKO_FONT          NSFont
 #define TKO_EDGE_INSETS   NSEdgeInsets
-
 #define TKOEdgeInsetsMake NSEdgeInsetsMake
 
 #endif

@@ -17,7 +17,7 @@
 {
     [super setObjectValue:objectValue];
     self.textField.stringValue = [[objectValue name] uppercaseString];
-    [self.hidingViews addObjectsFromArray:@[self.addButton, self.removeButton]];
+//    [self.hidingViews addObjectsFromArray:@[self.addButton, self.removeButton]];
 }
 
 

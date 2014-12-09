@@ -11,6 +11,21 @@
 
 @implementation NSColor (TKOKit)
 
++ (instancetype)colorWithString:(NSString *)string
+{
+    NSColor * color = nil;
+    
+    if ([string isEqualToString:@"textColor"])              color = [NSColor textColor];
+    else if ([string isEqualToString:@"controlColor"])      color = [NSColor controlColor];
+    else if ([string isEqualToString:@"grayColor"])         color = [NSColor grayColor];
+    else if ([string isEqualToString:@"darkGrayColor"])     color = [NSColor darkGrayColor];
+    else if ([string isEqualToString:@"lightGrayColor"])    color = [NSColor lightGrayColor];
+    else if ([string isEqualToString:@"gridColor"])         color = [NSColor gridColor];
+    else if ([string isEqualToString:@"labelColor"])        color = [NSColor labelColor];
+    else                                                    color = [self colorWithHexString:string];
+    
+    return color;
+}
 
 + (instancetype)colorWithHexString:(NSString *)hexString
 {

@@ -7,10 +7,16 @@
 
 #import "TKOResizingTextView.h"
 #import "NSString+Geometrics.h"
+//#import "NSString+TKOKit.h"
+#import "NSColor+TKOKit.h"
 
 @interface TKOResizingTextView ()
 
 @property (nonatomic) NSLayoutConstraint * heightConstraint;
+@property (nonatomic) NSColor * borderColor;
+@property (nonatomic) NSColor * highlightBorderColor;
+@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) CGFloat highlightBorderWidth;
 
 @property (nonatomic) CGFloat singleLineHeight;
 @property (nonatomic) NSSize inset;
@@ -24,7 +30,6 @@
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
-    [self setDefaultFont];
     [self configure];
     return self;
 }
@@ -32,7 +37,6 @@
 - (instancetype)initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
-    [self setDefaultFont];
     [self configure];
     return self;
 }
@@ -40,35 +44,18 @@
 - (instancetype)initWithFrame:(NSRect)frameRect textContainer:(NSTextContainer *)container
 {
     self = [super initWithFrame:frameRect textContainer:container];
-    [self setDefaultFont];
     [self configure];
     return self;
 }
 
-- (void)setDefaultFont
-{
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSFont * font = [NSFont fontWithName:[defaults stringForKey:@"TKOApplicationTextViewFontName"]
-                                    size:[defaults floatForKey:@"TKOApplicationTextViewFontSize"]];
-    self.font = font;
-}
-
 - (void)setFont:(NSFont *)font
 {
-    if (!font) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-        return;
-    }
     [super setFont:font];
     [self configure];
 }
 
 - (void)setFont:(NSFont *)font range:(NSRange)range
 {
-    if (!font) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-        return;
-    }
     [super setFont:font range:range];
     [self configure];
 }
@@ -81,18 +68,33 @@
 
 - (void)configure
 {
+    NSUserDefaults * standardDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (!_borderColor) {
+        _borderColor = [NSColor colorWithString:[standardDefaults stringForKey:@"TKOTextViewBorderColor"]];
+    }
+    
+    if (!_highlightBorderColor) {
+        _highlightBorderColor = [NSColor colorWithHexString:[standardDefaults stringForKey:@"TKOTextViewHighlightBorderColor"]];
+    }
+    
+    _borderWidth = [standardDefaults floatForKey:@"TKOTextViewBorderWidth"];
+    _highlightBorderWidth = [standardDefaults floatForKey:@"TKOTextViewHighlightBorderWidth"];
+    
+    self.shouldOutlineBorder = YES;
+    self.shouldHighlightBorder = YES;
+    
     if (!self.wantsLayer) {
         self.wantsLayer = YES;
-        self.layer.borderColor = [[NSColor gridColor] CGColor];
-        self.layer.cornerRadius = 5.0;
-        self.layer.borderWidth = self.shouldOutlineBorder ? 1.0 : 0.0;
+        self.layer.borderColor = [_borderColor CGColor];
+        self.layer.cornerRadius = [standardDefaults floatForKey:@"TKOTextViewCornerRadius"];
+        self.layer.borderWidth = self.shouldOutlineBorder ? _borderWidth : 0.0;
     }
-
+    
+    self.richText = YES;
     self.allowsUndo = YES;
     
-    NSFont * font = self.font;
-    
-    self.singleLineHeight   = ceilf(font.ascender + fabsf(font.descender));
+    self.singleLineHeight   = ceilf(self.font.ascender + fabsf(self.font.descender));
     
     if (NSEqualSizes(self.textContainerInset, NSZeroSize)) {
         self.textContainerInset = NSMakeSize(_singleLineHeight, _singleLineHeight);
@@ -118,7 +120,6 @@
                                                          attribute:NSLayoutAttributeNotAnAttribute
                                                         multiplier:1
                                                           constant:_minimumHeight];
-//        _heightConstraint.priority = NSLayoutPriorityFittingSizeCompression - 20;
         [self addConstraint:_heightConstraint];
     } else {
         _heightConstraint.constant = _minimumHeight;
@@ -126,7 +127,7 @@
 }
 
 
-- (void)viewWillDraw // Not the granularity I want: overkill? But only coarser updates are available AFAIK. They are jittery and insufficient.
+- (void)viewWillDraw
 {
     [super viewWillDraw];
     [self resizeTextView];
@@ -146,13 +147,11 @@
     if (!self.shouldHighlightBorder) return [super becomeFirstResponder];
     if (![super becomeFirstResponder]) return NO;
     
-    static NSColor * blueBorder;
-    if (!blueBorder) {
-        blueBorder = [NSColor colorWithCalibratedRed:61.0/255.0 green:152.0/255.0 blue:246.0/255.0 alpha:1.0];
-    }
+    self.layer.borderColor = [self.highlightBorderColor CGColor];
+    self.layer.borderWidth = self.highlightBorderWidth;
     
-    self.layer.borderColor = [blueBorder CGColor];
-    self.layer.borderWidth = 2.0;
+    
+    
     return YES;
 }
 
@@ -163,9 +162,12 @@
     if (!self.shouldOutlineBorder) {
         self.layer.borderWidth = 0.0;
     } else {
-        self.layer.borderColor = [[NSColor gridColor] CGColor];
-        self.layer.borderWidth = 1.0;
+        self.layer.borderColor = [self.borderColor CGColor];
+        self.layer.borderWidth = self.borderWidth;
     }
+    
+    
+    
     return YES;
 }
 
